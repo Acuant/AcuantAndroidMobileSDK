@@ -1,0 +1,4 @@
+<resources>
+    <bool name="is600dp">true</bool>
+    
+</resources>

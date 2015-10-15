@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AcuantAndroidMobileSampleSDK.iml" filepath="$PROJECT_DIR$/AcuantAndroidMobileSampleSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acuantMobileSDK/acuantMobileSDK.iml" filepath="$PROJECT_DIR$/acuantMobileSDK/acuantMobileSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acuantSampleSDK/acuantSampleSDK.iml" filepath="$PROJECT_DIR$/acuantSampleSDK/acuantSampleSDK.iml" />
+    </modules>
+  </component>
+</project>

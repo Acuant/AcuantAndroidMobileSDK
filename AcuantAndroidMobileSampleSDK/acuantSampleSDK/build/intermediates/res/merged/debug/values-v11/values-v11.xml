@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/DiegoArena/Work/Varun/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/res/values-v11/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!-- API 11 theme customizations can go here. -->
+    </style>
+    <!-- From: file:/Users/DiegoArena/Work/Varun/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/res/values-v11/values-v11.xml -->
+    <eat-comment/>
+    <style name="CSSNMobileSDKAppBaseTheme" parent="android:Theme.Holo.Light">
+        <!-- API 11 theme customizations can go here. -->
+    </style>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="backgroud_color">#C4CADC</color>
+    <color name="backgroud_color2">#CFFADF</color>
+    <color name="backgroud_color3">#EAAADC</color>
+    <color name="backgroud_color4">#FECDDC</color>
+    <color name="backgroud_Transparent">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    
+</resources>
