@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 10/14/2015
+Last updated on – 10/19/2015
 
 #Introduction
 
@@ -59,18 +59,17 @@ need to write integration with Acuant Android Mobile SDK.
 
 ## Add AcuantAndroidMobileSDK SDK
 
-### Manual
-In order to add the framework to your project, uncompress the
-AcuantAndroidMobileSDK.aar file and move the .jar file into your project's libfolder and import the following libraries inside the uncompresed .aar
-
 ### Using Gradle
 In order to add the framework to your project, add the
-AcuantAndroidMobileSDK.aar dependecie 
+AcuantAndroidMobileSDK.aar dependencies  
 
+#### Local file
+Add the following code in your build.gradle to avoid some file collision
+
+>dependencies {
 >configurations.create("default")
 >artifacts.add("default", file('acuantMobileSDK.aar'))
-
-Add the following code in your build.gradle to aviod some file collision
+>}
 >android{
 >    packagingOptions {
 >        exclude 'META-INF/NOTICE'
@@ -82,25 +81,34 @@ Add the following code in your build.gradle to aviod some file collision
 >    }
 >}
 
-### Using Gradle
+#### JCenter repositories
 In order to add the framework to your project, add the
-AcuantAndroidMobileSDK dependecie from xxxxxxx
+AcuantAndroidMobileSDK dependecie from JCenter
 
 >repositories {
->    jcenter { url 'http://xxxx.AcuantMobileSDK.com' }
+>    jcenter ()
 >}
 >dependencies {
->    compile 'xxxxxxx:xxxxx:2.7.0'
+>    compile 'com.acuant.mobilesdk:acuantMobileSDK:2.7.0'
 >}
 
+Add the following code in your build.gradle to avoid some file collision
+>android{
+>    packagingOptions {
+>        exclude 'META-INF/NOTICE'
+>        exclude 'META-INF/LICENSE'
+>        exclude 'META-INF/DEPENDENCIES'
+>        exclude 'META-INF/DEPENDENCIES.txt'
+>        exclude 'META-INF/LICENSE.txt'
+>        exclude 'META-INF/NOTICE.txt'
+>    }
+>}
 
-### Manual way
+### Manual
 In order to add the framework to your project, uncompress the
 AcuantAndroidMobileSDK.aar file and move the .jar file into your project's libfolder and import the following libraries inside the uncompresed .aar
 
-Natives frameworks and libraries
---------------------------------
-
+**Libraries**
 Add the following libraries to use the framework:
 
 -   httpclient-4.2.5.jar
@@ -786,12 +794,4 @@ This is the implementation in the Sample project:
 
 #Change Log
 
-If you are updating the Acuant Android MobileSDK to the version 2.6,
-check the following new methods.
-
-## New Methods
-
-setShowActionBar: Enable or disable the action bar. By default is false.
->setShowActionBar (false);
-setShowStatusBar: Enable or disable the status bar. By default is false.
->setShowStatusBar (false);
+Gradle support added in version 2.7

@@ -2,18 +2,18 @@
 <items version="2" >
 
     <item
-        jar="/Users/DiegoArena/StudioProjects/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/acuantMobileSDK/jars/libs/httpmime-4.2.6.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="270386011895bc6c7ee6496fd87511d6a98093c1">
-        <dex dex="/Users/DiegoArena/StudioProjects/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/httpmime-4.2.6-1f51bfb2a3b1e519c67eca447a1aa374be9364b5.jar" />
-    </item>
-    <item
         jar="/Users/DiegoArena/StudioProjects/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/acuantMobileSDK/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="f8f55d18454a28c815cd7e929288d9c0ad6af212">
         <dex dex="/Users/DiegoArena/StudioProjects/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/classes-9dbf4f1fe5059c358986d0bcd1b9f8ba936106f4.jar" />
+    </item>
+    <item
+        jar="/Users/DiegoArena/StudioProjects/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/acuantMobileSDK/jars/libs/httpclient-4.2.6.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e4ca30a6a3a075053a61c6fc850d2432dc012ba7">
+        <dex dex="/Users/DiegoArena/StudioProjects/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/httpclient-4.2.6-d4f0823ff7e5932c7fb47ce72859f75a321191fe.jar" />
     </item>
     <item
         jar="/Users/DiegoArena/StudioProjects/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/acuantMobileSDK/jars/libs/gson-2.2.4.jar"
@@ -30,18 +30,18 @@
         <dex dex="/Users/DiegoArena/StudioProjects/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/Pdf417MobiSdk-25bf97f7133dfb365deeebf1635039d2ed610ff1.jar" />
     </item>
     <item
-        jar="/Users/DiegoArena/StudioProjects/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/acuantMobileSDK/jars/libs/httpclient-4.2.6.jar"
+        jar="/Users/DiegoArena/StudioProjects/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/acuantMobileSDK/jars/libs/httpmime-4.2.6.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="e4ca30a6a3a075053a61c6fc850d2432dc012ba7">
-        <dex dex="/Users/DiegoArena/StudioProjects/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/httpclient-4.2.6-d4f0823ff7e5932c7fb47ce72859f75a321191fe.jar" />
+        sha1="270386011895bc6c7ee6496fd87511d6a98093c1">
+        <dex dex="/Users/DiegoArena/StudioProjects/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/httpmime-4.2.6-1f51bfb2a3b1e519c67eca447a1aa374be9364b5.jar" />
     </item>
     <item
-        jar="/Users/DiegoArena/Work/Varun/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/jars/classes.jar"
+        jar="/Users/DiegoArena/Work/Varun/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.acuant.mobilesdk/acuantMobileSDK/2.7.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="b0d35a22f23c02ca835b60fb02457d7b16610b6a">
-        <dex dex="/Users/DiegoArena/Work/Varun/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/classes-7c2e39c743a1773ffdf3a6536076c8c8bf0b9cbe.jar" />
+        sha1="68dc36e18d9d3b0df10e3fa77af5e909ec75546a">
+        <dex dex="/Users/DiegoArena/Work/Varun/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/classes-87e4fc512d989a5fbb5df6e1d09bdcfc59f46836.jar" />
     </item>
 
 </items>

@@ -16,6 +16,11 @@
 
 apply plugin: 'com.android.application'
 
+repositories{
+    /*maven {
+        url  "https://dl.bintray.com/acuant/Acuant"
+    }*/
+}
 android {
     compileSdkVersion 19
     buildToolsVersion "23.0.1"
@@ -46,5 +51,8 @@ android {
 }
 
 dependencies {
+    //JCenter()
+    //compile 'com.acuant.mobilesdk:acuantMobileSDK:2.7.0'
+    //Local File
     compile project(':acuantMobileSDK')
 }
