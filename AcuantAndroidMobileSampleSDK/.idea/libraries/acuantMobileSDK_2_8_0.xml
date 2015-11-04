@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="acuantMobileSDK-2.8.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/acuantSampleSDK/build/intermediates/exploded-aar/com.acuant.mobilesdk/acuantMobileSDK/2.8.0/res" />
+      <root url="jar://$PROJECT_DIR$/acuantSampleSDK/build/intermediates/exploded-aar/com.acuant.mobilesdk/acuantMobileSDK/2.8.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.acuant.mobilesdk/acuantMobileSDK/2.8.0/f257977ad96b5fd20c5885d6e355c5a8fc201649/acuantMobileSDK-2.8.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

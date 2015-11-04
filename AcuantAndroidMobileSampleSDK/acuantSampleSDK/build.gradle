@@ -47,7 +47,7 @@ android {
 
 dependencies {
     //JCenter()
-    //compile 'com.acuant.mobilesdk:acuantMobileSDK:2.8.0'
+    compile 'com.acuant.mobilesdk:acuantMobileSDK:2.8.0'
     //Local File
-    compile project(':acuantMobileSDK')
+    //compile project(':acuantMobileSDK')
 }
