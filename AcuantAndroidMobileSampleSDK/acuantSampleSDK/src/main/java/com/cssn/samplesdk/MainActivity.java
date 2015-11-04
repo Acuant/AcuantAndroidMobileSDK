@@ -117,6 +117,8 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         acuantAndroidMobileSdkControllerInstance.setWebServiceListener(this);
         acuantAndroidMobileSdkControllerInstance.setCloudUrl("cssnwebservices.com");
         acuantAndroidMobileSdkControllerInstance.setWatermarkText("Powered By Acuant", 0, 0, 30, 0);
+        //acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
+        //acuantAndroidMobileSdkControllerInstance.setShowInitialMessage(true);
         // load several member variables
         setContentView(R.layout.activity_main);
 

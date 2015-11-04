@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 10/19/2015
+Last updated on – 11/02/2015
 
 #Introduction
 
@@ -47,7 +47,7 @@ need to write integration with Acuant Android Mobile SDK.
 #Requirements
 
 
--   AndroidSDK Version 16 or later.
+-   AndroidSDK Version 17 or later.
 
 -   5 MP camera resolution or higher.
 
@@ -89,7 +89,7 @@ AcuantAndroidMobileSDK dependecie from JCenter
 >    jcenter ()
 >}
 >dependencies {
->    compile 'com.acuant.mobilesdk:acuantMobileSDK:2.7.0'
+>    compile 'com.acuant.mobilesdk:acuantMobileSDK:2.8.0'
 >}
 
 Add the following code in your build.gradle to avoid some file collision
@@ -206,9 +206,7 @@ Add the followings activities into manifest.xml file:
 >
 >android:label="CameraDetect"
 >
->android:screenOrientation="portrait"
->
->android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+>android:screenOrientation="portrait">
 >
 ></activity>
 
@@ -420,6 +418,11 @@ setShowStatusBar: Enable or disable the status bar. By default is false.
 
 >setShowStatusBar (false);
 
+setShowInitialMessage: Enable or disable the barcode camera message. By default is false.
+
+>setShowInitialMessage (false);
+
+
 ##Add the following methods to set the size of the card. 
 
 If the proper card size is not set, MobileSDK will not be able to
@@ -427,11 +430,11 @@ process the card.
 
 **For Driver's License Cards**
 
->AcuantAndroidMobileSDKControllerInstance.setWidth(1009);
+>AcuantAndroidMobileSDKControllerInstance.setWidth(1012);
 
 **For Medical Insurance Cards**
 
->AcuantAndroidMobileSDKControllerInstance.setWidth(1009);
+>AcuantAndroidMobileSDKControllerInstance.setWidth(1012);
 
 **For Passport Documents**
 
@@ -794,4 +797,9 @@ This is the implementation in the Sample project:
 
 #Change Log
 
-Gradle support added in version 2.7
+Acuant Android MobileSDK version 2.8.0.
+
+##New Methods
+Optional method to enable the initial message on the barcode camera interface. By default, it is disabled.
+
+>setShowInitialMessage (false);

@@ -16,11 +16,6 @@
 
 apply plugin: 'com.android.application'
 
-repositories{
-    /*maven {
-        url  "https://dl.bintray.com/acuant/Acuant"
-    }*/
-}
 android {
     compileSdkVersion 19
     buildToolsVersion "23.0.1"
@@ -38,8 +33,8 @@ android {
         applicationId "com.cssn.samplesdk"
         minSdkVersion 17
         targetSdkVersion 19
-        versionCode=72
-        versionName="2.7.0"
+        versionCode=73
+        versionName="2.8.0"
     }
 
     buildTypes {
@@ -52,7 +47,7 @@ android {
 
 dependencies {
     //JCenter()
-    //compile 'com.acuant.mobilesdk:acuantMobileSDK:2.7.0'
+    //compile 'com.acuant.mobilesdk:acuantMobileSDK:2.8.0'
     //Local File
     compile project(':acuantMobileSDK')
 }
