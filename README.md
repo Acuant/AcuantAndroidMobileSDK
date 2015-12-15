@@ -76,21 +76,21 @@ Add the following code in your build.gradle to avoid some file collision
 >
 > android{
 >
->    packagingOptions {
+> packagingOptions {
 >
->        exclude 'META-INF/NOTICE'
+> exclude 'META-INF/NOTICE'
 >
->        exclude 'META-INF/LICENSE'
+> exclude 'META-INF/LICENSE'
 >
->        exclude 'META-INF/DEPENDENCIES'
+> exclude 'META-INF/DEPENDENCIES'
 >
->        exclude 'META-INF/DEPENDENCIES.txt'
+> exclude 'META-INF/DEPENDENCIES.txt'
 >
->        exclude 'META-INF/LICENSE.txt'
+> exclude 'META-INF/LICENSE.txt'
 >
->        exclude 'META-INF/NOTICE.txt'
+> exclude 'META-INF/NOTICE.txt'
 >
->    }
+> }
 >
 > }
 
@@ -100,34 +100,34 @@ AcuantAndroidMobileSDK dependecie from JCenter
 
 > repositories {
 >
->     jcenter ()
+> jcenter ()
 >
 > }
 >
 > dependencies {
 >
->    compile 'com.acuant.mobilesdk:acuantMobileSDK:2.9.0'
+> compile 'com.acuant.mobilesdk:acuantMobileSDK:2.9.0'
 >
 > }
 
 Add the following code in your build.gradle to avoid some file collision
 > android{
 >
->    packagingOptions {
+> packagingOptions {
 >
->        exclude 'META-INF/NOTICE'
+> exclude 'META-INF/NOTICE'
 >
->        exclude 'META-INF/LICENSE'
+> exclude 'META-INF/LICENSE'
 >
->        exclude 'META-INF/DEPENDENCIES'
+> exclude 'META-INF/DEPENDENCIES'
 >
->        exclude 'META-INF/DEPENDENCIES.txt'
+> exclude 'META-INF/DEPENDENCIES.txt'
 >
->        exclude 'META-INF/LICENSE.txt'
+> exclude 'META-INF/LICENSE.txt'
 >
->        exclude 'META-INF/NOTICE.txt'
+> exclude 'META-INF/NOTICE.txt'
 >
->    }
+> }
 >
 > }
 
@@ -205,37 +205,37 @@ Add a folder named 'x86_64' inside the 'libs' folder. Inside the
 
 Add the followings activities into manifest.xml file:
 
->uses-permissionandroid:name="android.permission.CAMERA"/>
+> uses-permissionandroid:name="android.permission.CAMERA"/>
 >
->uses-permissionandroid:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+> uses-permissionandroid:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 >
->uses-permissionandroid:name="android.permission.READ_EXTERNAL_STORAGE"/>
+> uses-permissionandroid:name="android.permission.READ_EXTERNAL_STORAGE"/>
 >
->uses-permissionandroid:name="android.permission.READ_PHONE_STATE"/>
+> uses-permissionandroid:name="android.permission.READ_PHONE_STATE"/>
 >
->uses-permissionandroid:name="android.permission.ACCESS_NETWORK_STATE"/>
+> uses-permissionandroid:name="android.permission.ACCESS_NETWORK_STATE"/>
 >
->uses-permissionandroid:name="android.permission.INTERNET"/>
+> uses-permissionandroid:name="android.permission.INTERNET"/>
 >
->uses-featureandroid:name="android.hardware.camera"/>
+> uses-featureandroid:name="android.hardware.camera"/>
 >
->uses-featureandroid:name="android.hardware.camera.autofocus"/>
+> uses-featureandroid:name="android.hardware.camera.autofocus"/>
 >
->uses-featureandroid:name="android.hardware.camera.front"android:required="true"/>
+> uses-featureandroid:name="android.hardware.camera.front"android:required="true"/>
 >
->activityandroid:name="com.acuant.mobilesdk.detect.CameraCardDetectAuto"/>
+> activityandroid:name="com.acuant.mobilesdk.detect.CameraCardDetectAuto"/>
 >
->activityandroid:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"/>
+> activityandroid:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"/>
 >
-><activity
+> <activity>
 >
->android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417"
+> android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417"
 >
->android:label="CameraDetect"
+> android:label="CameraDetect"
 >
->android:screenOrientation="portrait">
+> android:screenOrientation="portrait"/>
 >
-></activity>
+> </activity>
 
 ##Add XML to values folder.
 
@@ -410,15 +410,15 @@ This function returns the card image without crop process.
 After the user opens the camera, the detection process begins, there are
 only one callback methods:
 
->public void onPDF417Finish (String result);
+> public void onPDF417Finish (String result);
 
 result: the barcode string result
 
->public void onBarcodeTimeOut();
+> public void onBarcodeTimeOut();
 
 This function will trigger to alert that the capture is pending without closing the camera view
 
->getBarcodeCameraContext();
+> getBarcodeCameraContext();
 
 return: The current barcode camera context.
 This function return null if the barcode camera is close.
@@ -791,77 +791,142 @@ doc.
 This is the implementation in the Sample project:
 
 >/**
+>
 >*
+>
 >*/
 >
 >@Override
 >
 >-public void processImageServiceCompleted(AcuantCard card, int status, String errorMessage)
+>
 >{
+>
 >Util.dismissDialog(progressDialog);
+>
 >String dialogMessage = null;
+>
 >try
+>
 >{
+>
 >DataContext.getInstance().setCardType(mainActivityModel.getCurrentOptionType());
+>
 >if (status == AcuantErrorType.AcuantNoneError)
+>
 >{
+>
 >if (card == null || card.isEmpty())
+>
 >{
+>
 >dialogMessage = "No data found for this license card!";
+>
 >}else
+>
 >{
+>
 >switch (mainActivityModel.getCurrentOptionType())
+>
 >{
+>
 >case CardType.DRIVERS_LICENSE:
+>
 >DataContext.getInstance().setProcessedLicenseCard((DriversLicenseCard) card);
+>
 >break;
+>
 >case CardType.MEDICAL_INSURANCE:
+>
 >DataContext.getInstance*().setProcessedMedicalCard((AcuantMedicalCard) card);
+>
 >break;
+>
 >case CardType.PASSPORT:
+>
 >DataContext.getInstance().setProcessedPassportCard((AcuantPassportCard) card);
+>
 >break
+>
 >default
+>
 >thrownew IllegalStateException("There is not implementation for processing the card type '" + >mainActivityModel.getCurrentOptionType() + "'");
+>
 >}
+>
 >Util.unLockScreen(MainActivity.this);
+>
 >Intent showDataActivityIntent = new Intent(this, ShowDataActivity.class);
+>
 >this.startActivity(showDataActivityIntent);
+>
 >}
+>
 >} else
+>
 >{
+>
 >Log.v(TAG, "processImageServiceCompleted, webService returns an
+>
 >error: " + errorMessage);
+>
 >dialogMessage = "" + errorMessage;
+>
 >}
+>
 >} catch (Exception e)
+>
 >{
+>
 >Log.v(TAG, e.getMessage(), e);
+>
 >dialogMessage = "Sorry! Internal error has occurred, please contact us!";
+>
 >}
+>
 >if (dialogMessage != null)
+>
 >{
+>
 >Util.showDialog(this, dialogMessage);
+>
 >}
+>
 >}
+>
 
 #Error Types
 
 >public final static int *AcuantErrorCouldNotReachServer* = 0; //check internet connection
+>
 >public final static int *AcuantErrorUnableToAuthenticate* = 1; //keyLicense are incorrect
+>
 >public final static int *AcuantErrorUnableToProcess* = 2; //image eceived by the server was unreadable, take a new one
+>
 >public final static int *AcuantErrorInternalServerError* = 3; //there was an error in our server, try again later
+>
 >public final static int *AcuantErrorUnknown* = 4; //there was an error but we were unable to determine the reason, try again later
+>
 >public final static int *AcuantErrorTimedOut* = 5; //request timed out, may be because internet connection is too slow
+>
 >public final static int *AcuantErrorAutoDetectState* = 6; //Error when try to detect the state
+>
 >public final static int *AcuantErrorWebResponse* = 7; //the json was received by the server contain error
+>
 >public final static int *AcuantErrorUnableToCrop* = 8; //the received image can't be cropped.
+>
 >public final static int *AcuantErrorInvalidLicenseKey* = 9; //Is an invalid license key.
+>
 >public final static int *AcuantErrorInactiveLicenseKey* = 10; //Is an native license key.
+>
 >public final static int *AcuantErrorAccountDisabled* = 11; //Is an account disabled.
+>
 >public final static int *AcuantErrorOnActiveLicenseKey* = 12; //there was an error on activation key.
+>
 >public final static int *AcuantErrorValidatingLicensekey* = 13; //The validation is still in process.
+>
 >public final static int *AcuantErrorCameraUnauthorized* = 14; //The privacy settings are preventing us from accessing your camera.
+>
 >public final static int *AcuantNoneError* = 200; //The privacy settings are preventing us from accessing your camera.
 
 #Change Log
@@ -874,4 +939,3 @@ Added methods to retrieve the original card image
 
 Added optional method to enable or disable the guiding brackets for tablets. By default, it is disabled.
 >setCanShowBracketsOnTablet(true);
-
