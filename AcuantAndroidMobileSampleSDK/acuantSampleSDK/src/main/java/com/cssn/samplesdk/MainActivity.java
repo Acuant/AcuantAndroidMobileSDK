@@ -28,7 +28,7 @@ import com.acuant.mobilesdk.*;
 import com.acuant.mobilesdk.exceptions.AuthorizationException;
 import com.acuant.mobilesdk.exceptions.ConnectionException;
 import com.acuant.mobilesdk.util.Utils;
-import com.cssn.mobilesdk.utilities.CSSNUtil;
+import com.cssn.mobilesdk.utilities.AcuantUtil;
 import com.cssn.samplesdk.model.MainActivityModel;
 import com.cssn.samplesdk.model.MainActivityModel.State;
 import com.cssn.samplesdk.util.DataContext;
@@ -75,7 +75,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     private static boolean isShowDuplexDialog;
     private MainActivity mainActivity;
     private int cardRegion;
-
+    private Bitmap originalImage;
     /**
      *
      */
@@ -109,7 +109,6 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
 
         // load the controller instance
         acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this, licenseKey);
-
         if (!Util.isTablet(this)) {
             acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));
         }
@@ -117,8 +116,12 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         acuantAndroidMobileSdkControllerInstance.setWebServiceListener(this);
         acuantAndroidMobileSdkControllerInstance.setCloudUrl("cssnwebservices.com");
         acuantAndroidMobileSdkControllerInstance.setWatermarkText("Powered By Acuant", 0, 0, 30, 0);
-        //acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
+        acuantAndroidMobileSdkControllerInstance.setShowActionBar(false);
+        acuantAndroidMobileSdkControllerInstance.setShowStatusBar(false);
         //acuantAndroidMobileSdkControllerInstance.setShowInitialMessage(true);
+        //acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
+        //acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeDialogWaitingBarcode("AcuantAndroidMobileSampleSDK","ALIGN AND TAP", 10, "Try Again", "Yes");
+        acuantAndroidMobileSdkControllerInstance.setCanShowBracketsOnTablet(true);
         // load several member variables
         setContentView(R.layout.activity_main);
 
@@ -244,6 +247,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         }else{
             // set an error to be shown in the onResume method.
             mainActivityModel.setErrorMessage("Unable to detect the card. Please try again.");
+            updateModelAndUIFromCroppedCard(originalImage);
         }
         Util.unLockScreen(this);
 
@@ -263,30 +267,31 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             Log.v("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - begin");
         }
         cardRegion = DataContext.getInstance().getCardRegion();
-        if ((cardRegion == Region.REGION_UNITED_STATES || cardRegion == Region.REGION_CANADA) && !scanBackSide) {
-        }else {
-            if (bitmap != null) {
-                isBarcodeSide = scanBackSide;
-                if (isBarcodeSide) {
-                    mainActivityModel.setCardSideSelected(MainActivityModel.CardSide.FRONT);
-                } else {
-                    mainActivityModel.setCardSideSelected(MainActivityModel.CardSide.BACK);
-                }
-
-                if (mainActivityModel.getCurrentOptionType() == CardType.DRIVERS_LICENSE && isBarcodeSide) {
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            showDuplexDialog();
-                        }
-                    }, 1000);
-                }
-                updateModelAndUIFromCroppedCard(bitmap);
+        if (bitmap != null) {
+            isBarcodeSide = scanBackSide;
+            if (isBarcodeSide) {
+                mainActivityModel.setCardSideSelected(MainActivityModel.CardSide.FRONT);
+                //saveBitmap(bitmap);
             } else {
-                // set an error to be shown in the onResume method.
-                mainActivityModel.setErrorMessage("Unable to detect the card. Please try again.");
+                mainActivityModel.setCardSideSelected(MainActivityModel.CardSide.BACK);
+                //saveBitmap(bitmap);
             }
+
+            if (mainActivityModel.getCurrentOptionType() == CardType.DRIVERS_LICENSE && isBarcodeSide) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        showDuplexDialog();
+                    }
+                }, 1000);
+            }
+            updateModelAndUIFromCroppedCard(bitmap);
+        } else {
+            // set an error to be shown in the onResume method.
+            mainActivityModel.setErrorMessage("Unable to detect the card. Please try again.");
+            updateModelAndUIFromCroppedCard(originalImage);
         }
+
         Util.unLockScreen(this);
 
         if (Util.LOG_ENABLED) {
@@ -322,6 +327,37 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     @Override
     public void onPDF417Finish(String result) {
         sPdf417String = result;
+    }
+
+    @Override
+    public void onOriginalCapture(Bitmap bitmap) {
+        originalImage = bitmap;
+    }
+
+    @Override
+    public void onBarcodeTimeOut() {
+        acuantAndroidMobileSdkControllerInstance.pauseScanningBarcodeCamera();
+        AlertDialog.Builder builder = new AlertDialog.Builder(acuantAndroidMobileSdkControllerInstance.getBarcodeCameraContext());
+        // barcode Dialog "ignore" option
+        builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked OK button
+                acuantAndroidMobileSdkControllerInstance.finishScanningBarcodeCamera();
+                dialog.dismiss();
+            }
+        });
+        // barcode Dialog "retry" option
+        builder.setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                acuantAndroidMobileSdkControllerInstance.resumeScanningBarcodeCamera();
+                dialog.dismiss();
+            }
+        });
+        //barcode Dialog title and main message
+        builder.setMessage("Unable to scan the barcode?");
+        builder.setTitle("AcuantMobileSDK");
+        builder.create().show();
+
     }
 
     /**
@@ -384,10 +420,10 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         alertDialog = new AlertDialog.Builder(this).create();
         try {
             if (currentOptionType == CardType.PASSPORT) {
-                acuantAndroidMobileSdkControllerInstance.setWidth(CSSNUtil.DEFAULT_CROP_PASSPORT_WIDTH);
+                acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_PASSPORT_WIDTH);
                 acuantAndroidMobileSdkControllerInstance.setInitialMessageDescriptor(R.layout.tap_to_focus);
             } else {
-                acuantAndroidMobileSdkControllerInstance.setWidth(CSSNUtil.DEFAULT_CROP_DRIVERS_LICENSE_WIDTH);
+                acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_DRIVERS_LICENSE_WIDTH);
                 acuantAndroidMobileSdkControllerInstance.setInitialMessageDescriptor(R.layout.align_and_tap);
                 acuantAndroidMobileSdkControllerInstance.setFinalMessageDescriptor(R.layout.hold_steady);
             }
@@ -462,7 +498,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      * calculate the width and height of the front side card image and resize them
      */
     private void resizeImageFrames(int cardType) {
-        double aspectRatio = CSSNUtil.getAspectRatio(cardType);
+        double aspectRatio = AcuantUtil.getAspectRatio(cardType);
 
         int height = (int) (layoutFrontImage.getLayoutParams().width * aspectRatio);
         int width = layoutFrontImage.getLayoutParams().width;
@@ -744,6 +780,10 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             } else {
                 Log.v(TAG, "processImageServiceCompleted, webService returns an error: " + errorMessage);
                 dialogMessage = "" + errorMessage;
+                if (status == ErrorType.AcuantErrorUnableToCrop){
+                    updateModelAndUIFromCroppedCard(originalImage);
+
+                }
             }
 
         } catch (Exception e) {

@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 11/02/2015
+Last updated on – 12/09/2015
 
 #Introduction
 
@@ -66,43 +66,70 @@ AcuantAndroidMobileSDK.aar dependencies
 #### Local file
 Add the following code in your build.gradle to avoid some file collision
 
->dependencies {
->configurations.create("default")
->artifacts.add("default", file('acuantMobileSDK.aar'))
->}
->android{
+> dependencies {
+>
+> configurations.create("default")
+>
+> artifacts.add("default", file('acuantMobileSDK.aar'))
+>
+> }
+>
+> android{
+>
 >    packagingOptions {
+>
 >        exclude 'META-INF/NOTICE'
+>
 >        exclude 'META-INF/LICENSE'
+>
 >        exclude 'META-INF/DEPENDENCIES'
+>
 >        exclude 'META-INF/DEPENDENCIES.txt'
+>
 >        exclude 'META-INF/LICENSE.txt'
+>
 >        exclude 'META-INF/NOTICE.txt'
+>
 >    }
->}
+>
+> }
 
 #### JCenter repositories
 In order to add the framework to your project, add the
 AcuantAndroidMobileSDK dependecie from JCenter
 
->repositories {
->    jcenter ()
->}
->dependencies {
->    compile 'com.acuant.mobilesdk:acuantMobileSDK:2.8.0'
->}
+> repositories {
+>
+>     jcenter ()
+>
+> }
+>
+> dependencies {
+>
+>    compile 'com.acuant.mobilesdk:acuantMobileSDK:2.9.0'
+>
+> }
 
 Add the following code in your build.gradle to avoid some file collision
->android{
+> android{
+>
 >    packagingOptions {
+>
 >        exclude 'META-INF/NOTICE'
+>
 >        exclude 'META-INF/LICENSE'
+>
 >        exclude 'META-INF/DEPENDENCIES'
+>
 >        exclude 'META-INF/DEPENDENCIES.txt'
+>
 >        exclude 'META-INF/LICENSE.txt'
+>
 >        exclude 'META-INF/NOTICE.txt'
+>
 >    }
->}
+>
+> }
 
 ### Manual
 In order to add the framework to your project, uncompress the
@@ -328,10 +355,10 @@ stringMessageMessage to show.
 
 currentOptionType is one of the AcuantCardType possibilities: passport.
 
-### Retrieve the cropped card image from auto camera interface
+### Auto camera interface methods
 
 After the user taps the screen, the cropping process begins. There are
-two callback methods:
+three callback methods:
 
 >public void onCardCroppedStart(Activity activity);
 
@@ -341,12 +368,18 @@ of the modal dialog (in case of Passport and Tablet for example)
 >public void onCardCroppedFinish(final Bitmap bitmap);
 
 bitmap: the image card result
-On this function call, cropped card image is returned.
+This function returns the cropped card image is returned.
 
-### Retrieve the cropped card image from manual camera interface
+>public void onOriginalCapture(Bitmap bitmap);
+
+bitmap: the image before the cropping process begins. 
+This function returns the card image without crop process is returned.
+
+
+### Manual camera interface methods
 
 After the user taps the screen, the cropping process begins, there are
-two callback methods:
+four callback methods:
 
 >public void onCardCroppedStart(Activity activity);
 
@@ -356,17 +389,23 @@ of the modal dialog (in case of Passport and Tablet for example)
 >public void onCardCroppedFinish(Bitmap bitmap);
 
 bitmap: the image card result
-On this function call, cropped card image is returned.
+This function returns the cropped card image is returned.
 
 >public void onCardCroppedFinish(final Bitmap bitmap, boolean, scanBackSide);
 
 bitmap: the image card result
-On this function call, cropped card image is returned.
+This function returns the cropped card image is returned.
 
 scanBackSide: A flag to alert the user to capture the back side of the
 card.
 
-### Retrieve the PDF417
+>public void onOriginalCapture(Bitmap bitmap);
+
+bitmap: the image before the cropping process begins. 
+This function returns the card image without crop process.
+
+
+### Barcode camera methods
 
 After the user opens the camera, the detection process begins, there are
 only one callback methods:
@@ -375,25 +414,51 @@ only one callback methods:
 
 result: the barcode string result
 
+>public void onBarcodeTimeOut();
+
+This function will trigger to alert that the capture is pending without closing the camera view
+
+>getBarcodeCameraContext();
+
+return: The current barcode camera context.
+This function return null if the barcode camera is close.
+
+>pauseScanningBarcodeCamera();
+
+This function pause the barcode camera detection
+
+>resumeScanningBarcodeCamera();
+
+return: The current barcode camera context.
+This function resume the barcode camera detection
+
+>finishScanningBarcodeCamera();
+
+return: The current barcode camera context.
+This function close the barcode camera.
+
+### Retrieve the original card image
+
+After the user taps the screen, before the cropping process begins, there are callback methods:
+
+> public void onOriginalCapture(Bitmap bitmap);
+
+bitmap: the image card result
+On this function call, original card image is returned.
+
 ##Optional, Add the following methods to customize.
 
 setWatermarkText: method to see the watermark on your camera
 
 >AcuantAndroidMobileSDKController.setWatermarkText("Powered By Acuant",0,0,30,0);
 
-setPdf417 BarcodeDialogWaitingBarcode: method to customize dialog that
-shows if card is unable to scan.
->setPdf417BarcodeDialogWaitingBarcode("IdScan GO", "Unable to scan the barcode?", 10, "Try Again", "Yes");
-
-setInitialMessageDescriptor: Customize the initial message, default
-implementation says "Align and Tap" or “Tap to Focus”.
+setInitialMessageDescriptor: Customize the initial message, default implementation says "Align and Tap" or “Tap to Focus”.
 
 >setInitialMessageDescriptor(R.layout.hold_steady);
 
 >setInitialMessageDescriptor(message, red, green, blue, alpha);
 
-setFinalMessageDescriptor : Customize the capturing message, default
-implementation says "hold steady".
+setFinalMessageDescriptor : Customize the capturing message, default implementation says "hold steady".
 
 >setFinalMessageDescriptor(R.layout.align_and_tap);
 
@@ -405,8 +470,7 @@ setFlashlight: Enable or disable the flashlight, by default is false.
 
 >setFlashlight(left, top, right, bottom);
 
-setCropBarcode: Enable or disable the barcode image cropping. By default
-is false.
+setCropBarcode: Enable or disable the barcode image cropping. By default is false.
 
 >setCropBarcode(canCropBarcode);
 
@@ -421,6 +485,11 @@ setShowStatusBar: Enable or disable the status bar. By default is false.
 setShowInitialMessage: Enable or disable the barcode camera message. By default is false.
 
 >setShowInitialMessage (false);
+
+setCanShowBracketsOnTablet: Enable or disable the guiding brackets for tablets
+
+>setCanShowBracketsOnTablet(true);
+
 
 
 ##Add the following methods to set the size of the card. 
@@ -797,9 +866,12 @@ This is the implementation in the Sample project:
 
 #Change Log
 
-Acuant Android MobileSDK version 2.8.0.
+Acuant Android MobileSDK version 2.9.0.
 
-##New Methods
-Optional method to enable the initial message on the barcode camera interface. By default, it is disabled.
+Added methods to retrieve the original card image
 
->setShowInitialMessage (false);
+>public void onOriginalCapture(Bitmap bitmap);
+
+Added optional method to enable or disable the guiding brackets for tablets. By default, it is disabled.
+>setCanShowBracketsOnTablet(true);
+
