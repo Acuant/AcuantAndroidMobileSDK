@@ -3,9 +3,9 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 12/09/2015
+Last updated on – 01/05/2016
 
-#Introduction
+# Introduction
 
 The AcuantAndroidMobileSDK is designed to simplify your development
 efforts. The processing of the captured images takes place via Acuant’s
@@ -44,7 +44,7 @@ This Acuant Android Mobile SDK API documentation document has the
 detailed description of all the important functions a developer would
 need to write integration with Acuant Android Mobile SDK.
 
-#Requirements
+# Requirements
 
 
 -   AndroidSDK Version 17 or later.
@@ -55,7 +55,7 @@ need to write integration with Acuant Android Mobile SDK.
 
 -   The card must preferably be fitted with in the brackets on the camera screen, to allow the picture to be taken at a maximum resolution.
 
-#Integration
+# Integration
 
 ## Add AcuantAndroidMobileSDK SDK
 
@@ -106,7 +106,7 @@ AcuantAndroidMobileSDK dependecie from JCenter
 >
 > dependencies {
 >
-> compile 'com.acuant.mobilesdk:acuantMobileSDK:2.9.0'
+> compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.0'
 >
 > }
 
@@ -151,9 +151,11 @@ Add the following libraries to use the framework:
 Add a folder named 'armeabi' inside the 'libs' folder. Inside the
 'armeabi' folder add the .so files and also the following files:
 
--   libcvlibbase.so.
+-   libcvlibbase.so
 
--   libzpassport.so.
+-   libzpassport.so
+
+-   libzpassportany.so
 
 -   libzcardany.so
 
@@ -162,9 +164,11 @@ Add a folder named 'armeabi' inside the 'libs' folder. Inside the
 Add a folder named 'armeabi-v7a' inside the 'libs' folder. Inside the
 'armeabi-v7a' folder add the .so files and also the following files:
 
--   libcvlibbase.so.
+-   libcvlibbase.so
 
--   libzpassport.so.
+-   libzpassport.so
+
+-   libzpassportany.so
 
 -   libzcardany.so
 
@@ -173,9 +177,11 @@ Add a folder named 'armeabi-v7a' inside the 'libs' folder. Inside the
 Add a folder named 'arm64-v8a’ inside the 'libs' folder. Inside the
 'arm64-v8a' folder add the .so files and also the following files:
 
--   libcvlibbase.so.
+-   libcvlibbase.so
 
--   libzpassport.so.
+-   libzpassport.so
+
+-   libzpassportany.so
 
 -   libzcardany.so
 
@@ -184,24 +190,56 @@ Add a folder named 'arm64-v8a’ inside the 'libs' folder. Inside the
 Add a folder named 'mips' inside the 'libs' folder. Inside the 'mips'
 folder add the .so files and also the following files:
 
+-   libcvlibbase.so
+
+-   libzpassport.so
+
+-   libzpassportany.so
+
+-   libzcardany.so
+
 -   libBlinkBarcode.so
 
 Add a folder named 'mips64' inside the 'libs' folder. Inside the
 'mips64' folder add the .so files and also the following files:
+
+-   libcvlibbase.so
+
+-   libzpassport.so
+
+-   libzpassportany.so
+
+-   libzcardany.so
 
 -   libBlinkBarcode.so
 
 Add a folder named 'x86' inside the 'libs' folder. Inside the 'x86'
 folder add the .so files and also the following files:
 
+-   libcvlibbase.so
+
+-   libzpassport.so
+
+-   libzpassportany.so
+
+-   libzcardany.so
+
 -   libBlinkBarcode.so
 
 Add a folder named 'x86_64' inside the 'libs' folder. Inside the
 'x86_64' folder add the .so files and also the following files:
 
+-   libcvlibbase.so
+
+-   libzpassport.so
+
+-   libzpassportany.so
+
+-   libzcardany.so
+
 -   libBlinkBarcode.so
 
-##Add views into manifest
+## Add views into manifest
 
 Add the followings activities into manifest.xml file:
 
@@ -223,8 +261,6 @@ Add the followings activities into manifest.xml file:
 >
 > uses-featureandroid:name="android.hardware.camera.front"android:required="true"/>
 >
-> activityandroid:name="com.acuant.mobilesdk.detect.CameraCardDetectAuto"/>
->
 > activityandroid:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"/>
 >
 > <activity>
@@ -237,15 +273,15 @@ Add the followings activities into manifest.xml file:
 >
 > </activity>
 
-##Add XML to values folder.
+## Add XML to values folder.
 
 -   values.xml
 
-##Add raw folder.
+## Add raw folder.
 
 -   device_list.json
 
-##Create and initialize the controller instance in your implementation class.
+## Create and initialize the controller instance in your implementation class.
 
 ### With activity, cloud address. And license Key
 
@@ -271,9 +307,9 @@ Once the controller was created, you can obtain it through:
 
 >AcuantAndroidMobileSDKController.getInstance();
 
-#Validating a license key
+# Validating a license key
 
-##Activating and validating a license key.
+## Activating and validating a license key.
 
 You need to activate and validate the license key before you can start using the library.
 
@@ -311,40 +347,30 @@ key. After the license is activated, you only need to validate the
 license key every time you create an instance of the library on any
 Android device.
 
-#Capturing and cropping a card
+# Capturing and cropping a card
 
-##Add the card capture method.
+## Add the card capture method.
 
 In order to show the camera interface, you need to know the card type
 that you want to capture.
 
-If you need to capture passports, then you need to use the auto capture
-camera interface. If you need to capture driver’s license or medical
-card you will need to use the manual camera interfaces.
+If you need to capture driver’s license card or medical card or passport you will need to use the manual camera interfaces.
 
 If you need to capture Driver’s License, you need to call 2 times: for
 the front side card and for the back side card.
-
-### Show the camera interface
-
->AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
->
->AcuantAndroidMobileSDKControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));
->
->AcuantAndroidMobileSDKControllerInstance.showCameraInterface(this,currentOptionType, cardRegion, isBarcodeSide);
 
 ### Validating a license key and show the camera interface
 
 >AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
 >
 >AcuantAndroidMobileSDKControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));
-
+>
 >AcuantAndroidMobileSDKControllerInstance.getInstanceAndShowCameraInterface(contextActivity, license, activity,cardType, region, isBarcodeSide);
 
 The width values are mandatory, they are set to indicate the width and
 height of the cropped cardimage.
 
-A Drawable can be provided before calling showCameraInterface method in
+A Drawable can be provided before calling getInstanceAndShowCameraInterface method in
 order to be displayed in the barcode scanning functionality. If not, no
 image will be shown.
 
@@ -355,28 +381,14 @@ stringMessageMessage to show.
 
 currentOptionType is one of the AcuantCardType possibilities: passport.
 
-### Auto camera interface methods
+### Show the manual camera interface methods
 
-After the user taps the screen, the cropping process begins. There are
-three callback methods:
+>AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
+>
+>acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(mainActivity, CardType.DRIVERS_LICENSE, cardRegion, isBackSide);
+>
 
->public void onCardCroppedStart(Activity activity);
-
-activity: the activity of the full screen Window, or the activity owner
-of the modal dialog (in case of Passport and Tablet for example)
-
->public void onCardCroppedFinish(final Bitmap bitmap);
-
-bitmap: the image card result
-This function returns the cropped card image is returned.
-
->public void onOriginalCapture(Bitmap bitmap);
-
-bitmap: the image before the cropping process begins. 
-This function returns the card image without crop process is returned.
-
-
-### Manual camera interface methods
+The width values are mandatory, they are set to indicate the width and height of the cropped cardimage.
 
 After the user taps the screen, the cropping process begins, there are
 four callback methods:
@@ -405,7 +417,17 @@ bitmap: the image before the cropping process begins.
 This function returns the card image without crop process.
 
 
-### Barcode camera methods
+### Show the barcode camera methods
+
+>AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
+>
+>AcuantAndroidMobileSDKControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));
+>
+>acuantAndroidMobileSdkControllerInstance.showCameraInterfacePDF417(mainActivity, CardType.DRIVERS_LICENSE, cardRegion);
+>
+
+The width values are mandatory, they are set to indicate the width and height of the cropped cardimage.
+A Drawable can be provided before calling showCameraInterfacePDF417 method in order to be displayed in the barcode scanning functionality. If not, no image will be shown.
 
 After the user opens the camera, the detection process begins, there are
 only one callback methods:
@@ -446,7 +468,10 @@ After the user taps the screen, before the cropping process begins, there are ca
 bitmap: the image card result
 On this function call, original card image is returned.
 
-##Optional, Add the following methods to customize.
+## Optional, Add the following methods to customize.
+
+setPdf417BarcodeImageDrawable: Customize the barcode interface with an image, default empty.
+>AcuantAndroidMobileSDKControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));
 
 setWatermarkText: method to see the watermark on your camera
 
@@ -492,7 +517,7 @@ setCanShowBracketsOnTablet: Enable or disable the guiding brackets for tablets
 
 
 
-##Add the following methods to set the size of the card. 
+## Add the following methods to set the size of the card. 
 
 If the proper card size is not set, MobileSDK will not be able to
 process the card.
@@ -509,18 +534,18 @@ process the card.
 
 >AcuantAndroidMobileSDKControllerInstance.setWidth(1478);
 
-#Processing a card
+# Processing a card
 
-After the captureand the crop process, you can retrieve information
+After the capture and the crop process, you can retrieve information
 through processing of the cropped image.
 
-##Add a callback for the web service.
+## Add a callback for the web service.
 
 >AcuantAndroidMobileSDKControllerInstance.setWebServiceListener(callback);
 
-##Call the web service to process the card image
+## Call the web service to process the card image
 
-###For Driver's License Cards
+### For Driver's License Cards
 
 >ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
 >
@@ -540,7 +565,7 @@ through processing of the cropped image.
 >
 >options.signDetec = true;
 >
->options.iRegion = 0;
+>options.iRegion = region;
 >
 >options.imageSource = 101;
 >
@@ -716,7 +741,7 @@ DPI value. Size of the image will depend on the DPI value. Lower value
 Boolean value. Since MobileSDK crops the image, leave this flag to
 false.
 
-##Finally, do your post-processing of the card information
+## Finally, do your post-processing of the card information
 
 The callback method:
 
@@ -895,7 +920,7 @@ This is the implementation in the Sample project:
 >}
 >
 
-#Error Types
+# Error Types
 
 >public final static int *AcuantErrorCouldNotReachServer* = 0; //check internet connection
 >
@@ -929,13 +954,15 @@ This is the implementation in the Sample project:
 >
 >public final static int *AcuantNoneError* = 200; //The privacy settings are preventing us from accessing your camera.
 
-#Change Log
+# Change Log
 
-Acuant Android MobileSDK version 2.9.0.
+Acuant Android MobileSDK version 3.0.
 
-Added methods to retrieve the original card image
+Deprecated 1 methods to show the camera interface based on the card type and card side
+>acuantAndroidMobileSdkControllerInstance.showCameraInterface(mainActivity, CardType.DRIVERS_LICENSE, cardRegion, isBackSide);
 
->public void onOriginalCapture(Bitmap bitmap);
+Added 2 methods to show the camera interface
 
-Added optional method to enable or disable the guiding brackets for tablets. By default, it is disabled.
->setCanShowBracketsOnTablet(true);
+>acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(mainActivity, CardType.DRIVERS_LICENSE, cardRegion, isBackSide);
+
+>acuantAndroidMobileSdkControllerInstance.showCameraInterfacePDF417(mainActivity, CardType.DRIVERS_LICENSE, cardRegion);

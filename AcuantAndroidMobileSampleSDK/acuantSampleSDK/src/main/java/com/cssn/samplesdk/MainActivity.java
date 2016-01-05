@@ -23,8 +23,27 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.*;
-import com.acuant.mobilesdk.*;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.acuant.mobilesdk.AcuantAndroidMobileSDKController;
+import com.acuant.mobilesdk.Card;
+import com.acuant.mobilesdk.CardCroppingListener;
+import com.acuant.mobilesdk.CardType;
+import com.acuant.mobilesdk.DriversLicenseCard;
+import com.acuant.mobilesdk.ErrorType;
+import com.acuant.mobilesdk.LicenseActivationDetails;
+import com.acuant.mobilesdk.LicenseDetails;
+import com.acuant.mobilesdk.MedicalCard;
+import com.acuant.mobilesdk.PassportCard;
+import com.acuant.mobilesdk.ProcessImageRequestOptions;
+import com.acuant.mobilesdk.Region;
+import com.acuant.mobilesdk.WebServiceListener;
 import com.acuant.mobilesdk.exceptions.AuthorizationException;
 import com.acuant.mobilesdk.exceptions.ConnectionException;
 import com.acuant.mobilesdk.util.Utils;
@@ -34,7 +53,10 @@ import com.cssn.samplesdk.model.MainActivityModel.State;
 import com.cssn.samplesdk.util.DataContext;
 import com.cssn.samplesdk.util.Util;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -71,7 +93,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     private static boolean isValidating;
     private static boolean isActivating;
     private static boolean isCropping;
-    private static boolean isBarcodeSide;
+    private static boolean isBackSide;
     private static boolean isShowDuplexDialog;
     private MainActivity mainActivity;
     private int cardRegion;
@@ -268,8 +290,8 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         }
         cardRegion = DataContext.getInstance().getCardRegion();
         if (bitmap != null) {
-            isBarcodeSide = scanBackSide;
-            if (isBarcodeSide) {
+            isBackSide = scanBackSide;
+            if (isBackSide) {
                 mainActivityModel.setCardSideSelected(MainActivityModel.CardSide.FRONT);
                 //saveBitmap(bitmap);
             } else {
@@ -277,7 +299,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
                 //saveBitmap(bitmap);
             }
 
-            if (mainActivityModel.getCurrentOptionType() == CardType.DRIVERS_LICENSE && isBarcodeSide) {
+            if (mainActivityModel.getCurrentOptionType() == CardType.DRIVERS_LICENSE && isBackSide) {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -306,11 +328,15 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         Util.dismissDialog(showDuplexAlertDialog);
         Util.dismissDialog(alertDialog);
         showDuplexAlertDialog = new AlertDialog.Builder(this).create();
-        showDuplexAlertDialog = Util.showDialog(this, getString(R.string.dl_duplex_dialog),new DialogInterface.OnClickListener() {
+        showDuplexAlertDialog = Util.showDialog(this, getString(R.string.dl_duplex_dialog), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try {
-                    acuantAndroidMobileSdkControllerInstance.showCameraInterface(mainActivity, CardType.DRIVERS_LICENSE, cardRegion, isBarcodeSide);
+                    if (cardRegion == Region.REGION_UNITED_STATES || cardRegion == Region.REGION_CANADA) {
+                        acuantAndroidMobileSdkControllerInstance.showCameraInterfacePDF417(mainActivity, CardType.DRIVERS_LICENSE, cardRegion);
+                    } else {
+                        acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(mainActivity, CardType.DRIVERS_LICENSE, cardRegion, isBackSide);
+                    }
                 } catch (AuthorizationException e) {
                     e.printStackTrace();
                 } catch (ConnectionException e) {
@@ -387,7 +413,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         if (Util.LOG_ENABLED) {
             Log.v(TAG, "public void frontSideCapturePressed(View v)");
         }
-        isBarcodeSide = false;
+        isBackSide = false;
 
         mainActivityModel.clearImages();
 
@@ -403,7 +429,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         if (Util.LOG_ENABLED) {
             Log.v(TAG, "public void backSideCapturePressed(View v)");
         }
-        isBarcodeSide = true;
+        isBackSide = true;
 
         //mainActivityModel.clearImages();
 
@@ -421,13 +447,13 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         try {
             if (currentOptionType == CardType.PASSPORT) {
                 acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_PASSPORT_WIDTH);
-                acuantAndroidMobileSdkControllerInstance.setInitialMessageDescriptor(R.layout.tap_to_focus);
             } else {
                 acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_DRIVERS_LICENSE_WIDTH);
-                acuantAndroidMobileSdkControllerInstance.setInitialMessageDescriptor(R.layout.align_and_tap);
-                acuantAndroidMobileSdkControllerInstance.setFinalMessageDescriptor(R.layout.hold_steady);
             }
-            acuantAndroidMobileSdkControllerInstance.showCameraInterface(this, currentOptionType, cardRegion, isBarcodeSide);
+            acuantAndroidMobileSdkControllerInstance.setInitialMessageDescriptor(R.layout.align_and_tap);
+            acuantAndroidMobileSdkControllerInstance.setFinalMessageDescriptor(R.layout.hold_steady);
+
+            acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(this, currentOptionType, cardRegion, isBackSide);
 
         } catch (AuthorizationException e) {
             Log.e(TAG, e.getMessage(), e);
@@ -692,13 +718,13 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             options.cropImage = false;
             options.faceDetec = true;
             options.signDetec = true;
+            options.imageSource = 101;
             options.iRegion = DataContext.getInstance().getCardRegion();
             options.acuantCardType = mainActivityModel.getCurrentOptionType();
 
             acuantAndroidMobileSdkControllerInstance.callProcessImageServices(mainActivityModel.getFrontSideCardImage(), mainActivityModel.getBackSideCardImage(), sPdf417String, this, options);
 
             resetPdf417String();
-
         }
     }
 

@@ -18,7 +18,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23"
 
     packagingOptions {
         exclude 'META-INF/NOTICE'
@@ -33,8 +33,8 @@ android {
         applicationId "com.cssn.samplesdk"
         minSdkVersion 17
         targetSdkVersion 19
-        versionCode=73
-        versionName="2.9.0"
+        versionCode 84
+        versionName="3.0"
     }
 
     buildTypes {

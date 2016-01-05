@@ -40,4 +40,4 @@
         android:text="@string/activate" android:textSize="11sp"/>
 
 </RelativeLayout>
-<!-- From: file:/Users/DiegoArena/Work/Varun/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/res/layout/include_key_validation.xml -->
+<!-- From: file:/Users/DiegoArena/Work/Varun/GitHub/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/res/layout/include_key_validation.xml -->

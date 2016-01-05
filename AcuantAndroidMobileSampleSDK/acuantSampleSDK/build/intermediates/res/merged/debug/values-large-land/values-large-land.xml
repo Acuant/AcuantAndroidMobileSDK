@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/DiegoArena/Work/Varun/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/res/values-large-land/dimens.xml -->
+    <!-- From: file:/Users/DiegoArena/Work/Varun/GitHub/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/res/values-large-land/dimens.xml -->
     <eat-comment/>
     <bool name="is600dp">true</bool>
 </resources>
