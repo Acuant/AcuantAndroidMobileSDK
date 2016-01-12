@@ -106,7 +106,7 @@ AcuantAndroidMobileSDK dependecie from JCenter
 >
 > dependencies {
 >
-> compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.0'
+> compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.1'
 >
 > }
 
