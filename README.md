@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 01/05/2016
+Last updated on – 01/12/2016
 
 # Introduction
 
@@ -254,12 +254,6 @@ Add the followings activities into manifest.xml file:
 > uses-permissionandroid:name="android.permission.ACCESS_NETWORK_STATE"/>
 >
 > uses-permissionandroid:name="android.permission.INTERNET"/>
->
-> uses-featureandroid:name="android.hardware.camera"/>
->
-> uses-featureandroid:name="android.hardware.camera.autofocus"/>
->
-> uses-featureandroid:name="android.hardware.camera.front"android:required="true"/>
 >
 > activityandroid:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"/>
 >
@@ -956,13 +950,8 @@ This is the implementation in the Sample project:
 
 # Change Log
 
-Acuant Android MobileSDK version 3.0.
+Acuant Android MobileSDK version 3.0.1.
 
-Deprecated 1 methods to show the camera interface based on the card type and card side
->acuantAndroidMobileSdkControllerInstance.showCameraInterface(mainActivity, CardType.DRIVERS_LICENSE, cardRegion, isBackSide);
-
-Added 2 methods to show the camera interface
-
->acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(mainActivity, CardType.DRIVERS_LICENSE, cardRegion, isBackSide);
-
->acuantAndroidMobileSdkControllerInstance.showCameraInterfacePDF417(mainActivity, CardType.DRIVERS_LICENSE, cardRegion);
+Hot fix:
+-	Refactor Android Manifest 
+-	Make flashlight an optional resource.

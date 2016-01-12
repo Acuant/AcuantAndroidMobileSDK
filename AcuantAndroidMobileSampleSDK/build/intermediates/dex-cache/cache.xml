@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="/Users/DiegoArena/Work/Varun/GitHub/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8a41add1c350778c0e9b02b07e321e5e58ea4fa1">
+        <dex dex="/Users/DiegoArena/Work/Varun/GitHub/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/classes-779bcef906a94d25fefb516192461502b631399f.jar" />
+    </item>
+    <item
         jar="/Users/DiegoArena/Work/Varun/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0"
