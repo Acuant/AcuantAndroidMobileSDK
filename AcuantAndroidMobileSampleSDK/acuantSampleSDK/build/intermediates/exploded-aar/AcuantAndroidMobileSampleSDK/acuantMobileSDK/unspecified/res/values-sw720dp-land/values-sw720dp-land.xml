@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- From: file:/Users/DiegoArena/Work/Varun/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/AcuantAndroidMobileSDK/acuantMobileSDK/src/main/res/values-sw720dp-land/dimens.xml -->
-    <eat-comment/>
-    <bool name="is600dp">false</bool>
-    <dimen name="activity_horizontal_margin">128dp</dimen>
-</resources>

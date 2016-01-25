@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 01/12/2016
+Last updated on – 01/25/2016
 
 # Introduction
 
@@ -94,6 +94,19 @@ Add the following code in your build.gradle to avoid some file collision
 >
 > }
 
+> dependencies {
+>
+> compile ('com.google.code.gson:gson:2.5')
+>
+> compile ('org.apache.httpcomponents:httpclient:4.2.6')
+>
+> compile ('org.apache.httpcomponents:httpmime:4.2.6')
+>
+> compile ('org.apache.httpcomponents:httpcore:4.2.5')
+>
+> }
+
+
 #### JCenter repositories
 In order to add the framework to your project, add the
 AcuantAndroidMobileSDK dependecie from JCenter
@@ -106,9 +119,17 @@ AcuantAndroidMobileSDK dependecie from JCenter
 >
 > dependencies {
 >
-> compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.1'
+> compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.2'
 >
-> }
+> compile ('com.google.code.gson:gson:2.5')
+>
+> compile ('org.apache.httpcomponents:httpclient:4.2.6')
+>
+> compile ('org.apache.httpcomponents:httpmime:4.2.6')
+> 
+> compile ('org.apache.httpcomponents:httpcore:4.2.5')
+>
+}
 
 Add the following code in your build.gradle to avoid some file collision
 > android{
@@ -138,15 +159,11 @@ AcuantAndroidMobileSDK.aar file and move the .jar file into your project's libfo
 **Libraries**
 Add the following libraries to use the framework:
 
--   httpclient-4.2.5.jar
+-   httpclient-4.2.6.jar
 
--   httpmime-4.2.5.jar
+-   httpmime-4.2.6.jar
 
--   android-support-v4.jar
-
--   gson-2.2.4.jar
-
--   Pdf417MobiSdk.jar
+-   gson-2.5.jar
 
 Add a folder named 'armeabi' inside the 'libs' folder. Inside the
 'armeabi' folder add the .so files and also the following files:
@@ -953,5 +970,4 @@ This is the implementation in the Sample project:
 Acuant Android MobileSDK version 3.0.1.
 
 Hot fix:
--	Refactor Android Manifest 
--	Make flashlight an optional resource.
+-	Changed internal dependencies to external dependencies.

@@ -5,8 +5,22 @@
         jar="/Users/DiegoArena/Work/Varun/GitHub/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="8a41add1c350778c0e9b02b07e321e5e58ea4fa1">
+        sha1="27c8b4c8faba895a32bea428abd2671971f3c75e">
         <dex dex="/Users/DiegoArena/Work/Varun/GitHub/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/classes-779bcef906a94d25fefb516192461502b631399f.jar" />
+    </item>
+    <item
+        jar="/Users/DiegoArena/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.5/686c608d1805b6d4d425ec4459e88164ffc85870/gson-2.5.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
+        <dex dex="/Users/DiegoArena/Work/Varun/GitHub/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/gson-2.5-8473cd3e7999dc9974b1cb25b23c3a8c923c2bc2.jar" />
+    </item>
+    <item
+        jar="/Users/DiegoArena/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.2.6/270386011895bc6c7ee6496fd87511d6a98093c1/httpmime-4.2.6.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="270386011895bc6c7ee6496fd87511d6a98093c1">
+        <dex dex="/Users/DiegoArena/Work/Varun/GitHub/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/httpmime-4.2.6-a88c74ca17e69d8e6329d786c219b6def180a65c.jar" />
     </item>
     <item
         jar="/Users/DiegoArena/Work/Varun/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/jars/classes.jar"
@@ -14,6 +28,13 @@
         revision="23.0.0"
         sha1="e1d55aee1f253984d982dab9eeb8e0dac86a2586">
         <dex dex="/Users/DiegoArena/Work/Varun/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/classes-7c2e39c743a1773ffdf3a6536076c8c8bf0b9cbe.jar" />
+    </item>
+    <item
+        jar="/Users/DiegoArena/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.2.5/472f0f5f8dba5d1962cb9d7739feed739a31c30d/httpcore-4.2.5.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="472f0f5f8dba5d1962cb9d7739feed739a31c30d">
+        <dex dex="/Users/DiegoArena/Work/Varun/GitHub/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/httpcore-4.2.5-d7ac5ebd8fa915e1dd777b57f25c03d3b6a6cc0c.jar" />
     </item>
 
 </items>
