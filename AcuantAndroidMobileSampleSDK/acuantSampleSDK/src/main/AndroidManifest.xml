@@ -9,21 +9,25 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-feature android:name="android.hardware.camera" />
+	<uses-feature android:name="android.hardware.camera.autofocus" />
+	<uses-feature android:name="android.hardware.camera.front" android:required="true" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="theme"
+        >
         <activity
                 android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417"
-                android:label="CameraDetect"
-                android:screenOrientation="portrait" >
+                android:label="CameraDetect">
         </activity>
         <activity
             android:name="com.cssn.samplesdk.MainActivity"
-            android:configChanges="orientation"            
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

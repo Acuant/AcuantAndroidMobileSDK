@@ -712,6 +712,11 @@
         "description": "Galaxy Tab 10.1",
         "model": "G7",
         "device": "S9"
+      },
+      {
+        "description": "Nexus 5X",
+        "model": "Nexus 5X",
+        "device": "bullhead"
       }
     ]
   },

@@ -18,7 +18,6 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
@@ -32,6 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.acuant.mobilesdk.AcuantAndroidMobileSDKController;
+import com.acuant.mobilesdk.AcuantErrorListener;
 import com.acuant.mobilesdk.Card;
 import com.acuant.mobilesdk.CardCroppingListener;
 import com.acuant.mobilesdk.CardType;
@@ -44,8 +44,6 @@ import com.acuant.mobilesdk.PassportCard;
 import com.acuant.mobilesdk.ProcessImageRequestOptions;
 import com.acuant.mobilesdk.Region;
 import com.acuant.mobilesdk.WebServiceListener;
-import com.acuant.mobilesdk.exceptions.AuthorizationException;
-import com.acuant.mobilesdk.exceptions.ConnectionException;
 import com.acuant.mobilesdk.util.Utils;
 import com.cssn.mobilesdk.utilities.AcuantUtil;
 import com.cssn.samplesdk.model.MainActivityModel;
@@ -63,7 +61,7 @@ import java.util.Calendar;
 /**
  *
  */
-public class MainActivity extends Activity implements WebServiceListener, CardCroppingListener {
+public class MainActivity extends Activity implements WebServiceListener, CardCroppingListener, AcuantErrorListener {
 
     private static final String TAG = MainActivity.class.getName();
     private static final String IS_SHOWING_DIALOG_KEY = "isShowingDialog";
@@ -106,18 +104,18 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         super.onCreate(savedInstanceState);
 
         if (Util.LOG_ENABLED) {
-            Log.v(TAG, "protected void onCreate(Bundle savedInstanceState)");
+            Utils.appendLog(TAG, "protected void onCreate(Bundle savedInstanceState)");
         }
 
         // load the model
         if (savedInstanceState == null) {
             if (Util.LOG_ENABLED) {
-                Log.v(TAG, "if (savedInstanceState == null)");
+                Utils.appendLog(TAG, "if (savedInstanceState == null)");
             }
             mainActivityModel = new MainActivityModel();
         } else {
             if (Util.LOG_ENABLED) {
-                Log.v(TAG, "if (savedInstanceState != null)");
+                Utils.appendLog(TAG, "if (savedInstanceState != null)");
             }
             mainActivityModel = DataContext.getInstance().getMainActivityModel();
             // if coming from background and kill the app, restart the model
@@ -206,9 +204,9 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         // update the UI from the model
         updateUI();
         acuantAndroidMobileSdkControllerInstance.setCardCroppingListener(this);
-
+        acuantAndroidMobileSdkControllerInstance.setAcuantErrorListener(this);
         if (Utils.LOG_ENABLED) {
-            Log.v(TAG, "getScreenOrientation()=" + Util.getScreenOrientation(this));
+            Utils.appendLog(TAG, "getScreenOrientation()=" + Util.getScreenOrientation(this));
         }
     }
 
@@ -233,7 +231,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         super.onActivityResult(requestCode, resultCode, data);
 
         if (Util.LOG_ENABLED) {
-            Log.v(TAG, "protected void onActivityResult(int requestCode, int resultCode, Intent data)");
+            Utils.appendLog(TAG, "protected void onActivityResult(int requestCode, int resultCode, Intent data)");
         }
     }
 
@@ -246,7 +244,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     @Override
     public void onCardCroppingStart(Activity activity) {
         if (Utils.LOG_ENABLED) {
-            Log.v(TAG, "public void onCardCroppingStart(Activity activity)");
+            Utils.appendLog(TAG, "public void onCardCroppingStart(Activity activity)");
         }
         cardRegion = DataContext.getInstance().getCardRegion();
         Util.dismissDialog(progressDialog);
@@ -262,7 +260,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     @Override
     public void onCardCroppingFinish(final Bitmap bitmap) {
         if (Util.LOG_ENABLED) {
-            Log.v("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - begin");
+            Utils.appendLog("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - begin");
         }
         if (bitmap != null) {
             updateModelAndUIFromCroppedCard(bitmap);
@@ -274,7 +272,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         Util.unLockScreen(this);
 
         if (Util.LOG_ENABLED) {
-            Log.v("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - end");
+            Utils.appendLog("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - end");
         }
         isCropping = false;
     }
@@ -286,7 +284,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     @Override
     public void onCardCroppingFinish(final Bitmap bitmap, boolean scanBackSide) {
         if (Util.LOG_ENABLED) {
-            Log.v("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - begin");
+            Utils.appendLog("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - begin");
         }
         cardRegion = DataContext.getInstance().getCardRegion();
         if (bitmap != null) {
@@ -317,7 +315,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         Util.unLockScreen(this);
 
         if (Util.LOG_ENABLED) {
-            Log.v("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - end");
+            Utils.appendLog("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - end");
         }
         isCropping = false;
     }
@@ -331,16 +329,10 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         showDuplexAlertDialog = Util.showDialog(this, getString(R.string.dl_duplex_dialog), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                try {
-                    if (cardRegion == Region.REGION_UNITED_STATES || cardRegion == Region.REGION_CANADA) {
-                        acuantAndroidMobileSdkControllerInstance.showCameraInterfacePDF417(mainActivity, CardType.DRIVERS_LICENSE, cardRegion);
-                    } else {
-                        acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(mainActivity, CardType.DRIVERS_LICENSE, cardRegion, isBackSide);
-                    }
-                } catch (AuthorizationException e) {
-                    e.printStackTrace();
-                } catch (ConnectionException e) {
-                    e.printStackTrace();
+                if (cardRegion == Region.REGION_UNITED_STATES || cardRegion == Region.REGION_CANADA) {
+                    acuantAndroidMobileSdkControllerInstance.showCameraInterfacePDF417(mainActivity, CardType.DRIVERS_LICENSE, cardRegion);
+                } else {
+                    acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(mainActivity, CardType.DRIVERS_LICENSE, cardRegion, isBackSide);
                 }
                 dialog.dismiss();
                 isShowDuplexDialog = false;
@@ -411,7 +403,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      */
     public void frontSideCapturePressed(View v) {
         if (Util.LOG_ENABLED) {
-            Log.v(TAG, "public void frontSideCapturePressed(View v)");
+            Utils.appendLog(TAG, "public void frontSideCapturePressed(View v)");
         }
         isBackSide = false;
 
@@ -427,7 +419,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      */
     public void backSideCapturePressed(View v) {
         if (Util.LOG_ENABLED) {
-            Log.v(TAG, "public void backSideCapturePressed(View v)");
+            Utils.appendLog(TAG, "public void backSideCapturePressed(View v)");
         }
         isBackSide = true;
 
@@ -444,40 +436,15 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         final int currentOptionType = mainActivityModel.getCurrentOptionType();
         cardRegion = DataContext.getInstance().getCardRegion();
         alertDialog = new AlertDialog.Builder(this).create();
-        try {
-            if (currentOptionType == CardType.PASSPORT) {
-                acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_PASSPORT_WIDTH);
-            } else {
-                acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_DRIVERS_LICENSE_WIDTH);
-            }
-            acuantAndroidMobileSdkControllerInstance.setInitialMessageDescriptor(R.layout.align_and_tap);
-            acuantAndroidMobileSdkControllerInstance.setFinalMessageDescriptor(R.layout.hold_steady);
-
-            acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(this, currentOptionType, cardRegion, isBackSide);
-
-        } catch (AuthorizationException e) {
-            Log.e(TAG, e.getMessage(), e);
-            Util.dismissDialog(alertDialog);
-            alertDialog = Util.showDialog(this, e.getMessage(),new DialogInterface.OnClickListener() {
-
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    isShowErrorAlertDialog = false;
-                }
-            });
-            isShowErrorAlertDialog = true;
-        } catch (ConnectionException e) {
-            Log.e(TAG, e.getMessage(), e);
-            Util.dismissDialog(alertDialog);
-            alertDialog = Util.showDialog(this, e.getMessage(), new DialogInterface.OnClickListener() {
-
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    isShowErrorAlertDialog = false;
-                }
-            });
-            isShowErrorAlertDialog = true;
+        if (currentOptionType == CardType.PASSPORT) {
+            acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_PASSPORT_WIDTH);
+        } else {
+            acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_DRIVERS_LICENSE_WIDTH);
         }
+        acuantAndroidMobileSdkControllerInstance.setInitialMessageDescriptor(R.layout.align_and_tap);
+        acuantAndroidMobileSdkControllerInstance.setFinalMessageDescriptor(R.layout.hold_steady);
+
+        acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(this, currentOptionType, cardRegion, isBackSide);
     }
 
     /**
@@ -548,7 +515,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      */
     public void updateUI() {
         if (Utils.LOG_ENABLED) {
-            Log.v(TAG, "private void updateUI()");
+            Utils.appendLog(TAG, "private void updateUI()");
         }
 
         if (mainActivityModel.getErrorMessage() != null) {
@@ -691,7 +658,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             // check for the internet connection
             if (!Utils.isNetworkAvailable(this)) {
                 String msg = getString(R.string.no_internet_message);
-                Log.e(TAG, msg);
+                Utils.appendLog(TAG, msg);
                 Util.dismissDialog(alertDialog);
                 alertDialog = Util.showDialog(this, msg,new DialogInterface.OnClickListener() {
 
@@ -762,9 +729,9 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      *
      */
     @Override
-    public void processImageServiceCompleted(Card card, int status, String errorMessage) {
+    public void processImageServiceCompleted(Card card) {
         if (Util.LOG_ENABLED) {
-            Log.v(TAG, "public void processImageServiceCompleted(CSSNCard card, int status, String errorMessage)");
+            Utils.appendLog(TAG, "public void processImageServiceCompleted(CSSNCard card, int status, String errorMessage)");
         }
         isProcessing = false;
 
@@ -775,45 +742,36 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         try {
             DataContext.getInstance().setCardType(mainActivityModel.getCurrentOptionType());
 
-            if (status == ErrorType.AcuantNoneError) {
-                if (card == null || card.isEmpty()) {
-                    dialogMessage = "No data found for this license card!";
-                } else {
-
-                    switch (mainActivityModel.getCurrentOptionType()) {
-                        case CardType.DRIVERS_LICENSE:
-                            DataContext.getInstance().setProcessedLicenseCard((DriversLicenseCard) card);
-                            break;
-
-                        case CardType.MEDICAL_INSURANCE:
-                            DataContext.getInstance().setProcessedMedicalCard((MedicalCard) card);
-                            break;
-
-                        case CardType.PASSPORT:
-                            DataContext.getInstance().setProcessedPassportCard((PassportCard) card);
-                            break;
-
-                        default:
-                            throw new IllegalStateException("There is not implementation for processing the card type '"
-                                    + mainActivityModel.getCurrentOptionType() + "'");
-                    }
-
-                    Util.unLockScreen(MainActivity.this);
-
-                    Intent showDataActivityIntent = new Intent(this, ShowDataActivity.class);
-                    this.startActivity(showDataActivityIntent);
-                }
+            if (card == null || card.isEmpty()) {
+                dialogMessage = "No data found for this license card!";
             } else {
-                Log.v(TAG, "processImageServiceCompleted, webService returns an error: " + errorMessage);
-                dialogMessage = "" + errorMessage;
-                if (status == ErrorType.AcuantErrorUnableToCrop){
-                    updateModelAndUIFromCroppedCard(originalImage);
 
+                switch (mainActivityModel.getCurrentOptionType()) {
+                    case CardType.DRIVERS_LICENSE:
+                        DataContext.getInstance().setProcessedLicenseCard((DriversLicenseCard) card);
+                        break;
+
+                    case CardType.MEDICAL_INSURANCE:
+                        DataContext.getInstance().setProcessedMedicalCard((MedicalCard) card);
+                        break;
+
+                    case CardType.PASSPORT:
+                        DataContext.getInstance().setProcessedPassportCard((PassportCard) card);
+                        break;
+
+                    default:
+                        throw new IllegalStateException("There is not implementation for processing the card type '"
+                                + mainActivityModel.getCurrentOptionType() + "'");
                 }
+
+                Util.unLockScreen(MainActivity.this);
+
+                Intent showDataActivityIntent = new Intent(this, ShowDataActivity.class);
+                this.startActivity(showDataActivityIntent);
             }
 
         } catch (Exception e) {
-            Log.v(TAG, e.getMessage(), e);
+            Utils.appendLog(TAG, e.getMessage());
             dialogMessage = "Sorry! Internal error has occurred, please contact us!";
 
         }
@@ -835,27 +793,15 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      *
      */
     @Override
-    public void activateLicenseKeyCompleted(LicenseActivationDetails cssnLicenseActivationDetails, final int status, String message) {
+    public void activateLicenseKeyCompleted(LicenseActivationDetails cssnLicenseActivationDetails) {
         Util.dismissDialog(progressDialog);
         Util.unLockScreen(MainActivity.this);
         isActivating = false;
 
-        String msg = message;
+        String msg="";
 
-        if (status == ErrorType.AcuantNoneError) {
-            if (cssnLicenseActivationDetails != null) {
-                msg = cssnLicenseActivationDetails.getIsLicenseKeyActivatedDescscription();
-            }
-
-        } else {
-            if (Util.LOG_ENABLED) {
-                Log.v(TAG, "activateLicenseKeyCompleted, error from server:" + message);
-            }
-
-            if (status == ErrorType.AcuantErrorCouldNotReachServer) {
-                msg = getString(R.string.no_internet_message);
-            }
-
+        if (cssnLicenseActivationDetails != null) {
+            msg = cssnLicenseActivationDetails.getIsLicenseKeyActivatedDescscription();
         }
 
         Util.lockScreen(this);
@@ -868,9 +814,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
                 // validation if there was not error in the activation, because the
                 // validation is done before, every time the license key text
                 // changes.
-                if (status != ErrorType.AcuantErrorCouldNotReachServer) {
-                    validateLicenseKey(editTextLicense.getText().toString());
-                }
+                validateLicenseKey(editTextLicense.getText().toString());
                 isShowErrorAlertDialog = false;
             }
         });
@@ -882,7 +826,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      *
      */
     @Override
-    public void validateLicenseKeyCompleted(LicenseDetails details, int status, String message) {
+    public void validateLicenseKeyCompleted(LicenseDetails details) {
 
         Util.dismissDialog(progressDialog);
         Util.unLockScreen(MainActivity.this);
@@ -899,22 +843,6 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         }
         updateActivateLicenseButtonFromModel();
         // message dialogs
-        if (status == ErrorType.AcuantNoneError) // the license key may be no valid, but this status is returned ..
-        {
-//            Util.showDialog(this, "Successful license key validation");
-        } else {
-            String msg = message;
-            if (status == ErrorType.AcuantErrorCouldNotReachServer) {
-                msg = getString(R.string.no_internet_message);
-            }
-            alertDialog = Util.showDialog(this, msg, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    isShowErrorAlertDialog = false;
-                }
-            });
-            isShowErrorAlertDialog = true;
-        }
         isValidating = false;
     }
 
@@ -982,7 +910,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         super.onResume();
 
         if (Util.LOG_ENABLED) {
-            Log.v(TAG, "protected void onResume()");
+            Utils.appendLog(TAG, "protected void onResume()");
         }
         editTextLicense.clearFocus();
         frontImageView.requestFocus();
@@ -1027,7 +955,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         super.onSaveInstanceState(outState);
 
         if (Util.LOG_ENABLED) {
-            Log.v(TAG, "protected void onSaveInstanceState(Bundle outState)");
+            Utils.appendLog(TAG, "protected void onSaveInstanceState(Bundle outState)");
         }
 
         DataContext.getInstance().setMainActivityModel(mainActivityModel);
@@ -1048,7 +976,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         super.onPause();
 
         if (Utils.LOG_ENABLED) {
-            Log.v(TAG, "protected void onPause()");
+            Utils.appendLog(TAG, "protected void onPause()");
         }
     }
 
@@ -1060,7 +988,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         super.onDestroy();
 
         if (Util.LOG_ENABLED) {
-            Log.v(TAG, "protected void onDestroy()");
+            Utils.appendLog(TAG, "protected void onDestroy()");
         }
     }
 
@@ -1088,13 +1016,13 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
                 MediaStore.Images.Media.insertImage(getContentResolver(), file.getAbsolutePath(), file.getName(), file.getName());
             } catch (FileNotFoundException e) {
                 if (Util.LOG_ENABLED) {
-                    Log.e(TAG, e.getMessage(), e);
+                    Utils.appendLog(TAG, e.getMessage());
                 }
                 Toast.makeText(this, "Save Failed", Toast.LENGTH_SHORT).show();
                 return false;
             } catch (IOException e) {
                 if (Util.LOG_ENABLED) {
-                    Log.e(TAG, e.getMessage(), e);
+                    Utils.appendLog(TAG, e.getMessage());
                 }
                 Toast.makeText(this, "Save Failed", Toast.LENGTH_SHORT).show();
                 return false;
@@ -1125,5 +1053,31 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
 
+    }
+
+    @Override
+    public void didFailWithError(int code, String message) {
+        Util.dismissDialog(progressDialog);
+        Util.unLockScreen(MainActivity.this);
+        String msg = message;
+        if (code == ErrorType.AcuantErrorCouldNotReachServer) {
+            msg = getString(R.string.no_internet_message);
+        }else if (code == ErrorType.AcuantErrorUnableToCrop){
+            updateModelAndUIFromCroppedCard(originalImage);
+        }
+        alertDialog = Util.showDialog(this, msg, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                isShowErrorAlertDialog = false;
+            }
+        });
+        isShowErrorAlertDialog = true;
+        if (Util.LOG_ENABLED) {
+            Utils.appendLog(TAG, "didFailWithError:" + message);
+        }
+        // message dialogs
+        isValidating = false;
+        isProcessing = false;
+        isActivating = false;
     }
 }

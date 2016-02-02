@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 01/25/2016
+Last updated on – 02/01/2016
 
 # Introduction
 
@@ -119,7 +119,7 @@ AcuantAndroidMobileSDK dependecie from JCenter
 >
 > dependencies {
 >
-> compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.2'
+> compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.3'
 >
 > compile ('com.google.code.gson:gson:2.5')
 >
@@ -272,15 +272,13 @@ Add the followings activities into manifest.xml file:
 >
 > uses-permissionandroid:name="android.permission.INTERNET"/>
 >
-> activityandroid:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"/>
+> <activity 
 >
-> <activity>
+> android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"/>
 >
-> android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417"
+> <activity
 >
-> android:label="CameraDetect"
->
-> android:screenOrientation="portrait"/>
+> android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417">
 >
 > </activity>
 
@@ -535,7 +533,7 @@ process the card.
 
 **For Driver's License Cards**
 
->AcuantAndroidMobileSDKControllerInstance.setWidth(1012);
+>AcuantAndroidMobileSDKControllerInstance.setWidth(1250);
 
 **For Medical Insurance Cards**
 
@@ -756,7 +754,7 @@ false.
 
 The callback method:
 
->processImageServiceCompleted(AcuantCard card, int status, String message);
+>processImageServiceCompleted(AcuantCard card);
 
 card: a ‘card ‘ object with the scanned information
 
@@ -826,45 +824,38 @@ doc.
 
 This is the implementation in the Sample project:
 
+>
 >/**
 >
->*
+> *
 >
->*/
+> */
 >
 >@Override
 >
->-public void processImageServiceCompleted(AcuantCard card, int status, String errorMessage)
+>public void processImageServiceCompleted(Card card) {
 >
->{
+>if (Util.LOG_ENABLED) {Utils.appendLog(TAG, "public void processImageServiceCompleted(CSSNCard card, int >status, String errorMessage)");
+>
+>}
+>
+>isProcessing = false;
 >
 >Util.dismissDialog(progressDialog);
 >
 >String dialogMessage = null;
 >
->try
->
->{
+>try {
 >
 >DataContext.getInstance().setCardType(mainActivityModel.getCurrentOptionType());
 >
->if (status == AcuantErrorType.AcuantNoneError)
->
->{
->
->if (card == null || card.isEmpty())
->
->{
+>if (card == null || card.isEmpty()) {
 >
 >dialogMessage = "No data found for this license card!";
 >
->}else
+>} else {
 >
->{
->
->switch (mainActivityModel.getCurrentOptionType())
->
->{
+>switch (mainActivityModel.getCurrentOptionType()) {
 >
 >case CardType.DRIVERS_LICENSE:
 >
@@ -874,19 +865,21 @@ This is the implementation in the Sample project:
 >
 >case CardType.MEDICAL_INSURANCE:
 >
->DataContext.getInstance*().setProcessedMedicalCard((AcuantMedicalCard) card);
+>DataContext.getInstance().setProcessedMedicalCard((MedicalCard) card);
 >
 >break;
 >
 >case CardType.PASSPORT:
 >
->DataContext.getInstance().setProcessedPassportCard((AcuantPassportCard) card);
+>DataContext.getInstance().setProcessedPassportCard((PassportCard) card);
 >
->break
+>break;
 >
->default
+>default:
 >
->thrownew IllegalStateException("There is not implementation for processing the card type '" + >mainActivityModel.getCurrentOptionType() + "'");
+>throw new IllegalStateException("There is not implementation for processing the card type '"
+>
+>+ mainActivityModel.getCurrentOptionType() + "'");
 >
 >}
 >
@@ -898,35 +891,90 @@ This is the implementation in the Sample project:
 >
 >}
 >
->} else
+>} catch (Exception e) {
 >
->{
->
->Log.v(TAG, "processImageServiceCompleted, webService returns an
->
->error: " + errorMessage);
->
->dialogMessage = "" + errorMessage;
->
->}
->
->} catch (Exception e)
->
->{
->
->Log.v(TAG, e.getMessage(), e);
+>Utils.appendLog(TAG, e.getMessage());
 >
 >dialogMessage = "Sorry! Internal error has occurred, please contact us!";
 >
 >}
 >
->if (dialogMessage != null)
+>if (dialogMessage != null) {
 >
->{
+>Util.dismissDialog(alertDialog);
 >
->Util.showDialog(this, dialogMessage);
+>alertDialog = Util.showDialog(this, dialogMessage,new DialogInterface.OnClickListener() {
+>
+>@Override
+>
+>public void onClick(DialogInterface dialog, int which) {
+>
+>isShowErrorAlertDialog = false;
 >
 >}
+>
+>});
+>
+>isShowErrorAlertDialog = true;
+>
+>}
+>
+>}
+>
+
+# Errors handling
+In order to handle the errors or alert over SDK’s action , you will receive the error on didFailWithError(int code, String message) method.
+
+This is the implementation in the Sample project:
+
+>
+>@Override
+>
+>public void didFailWithError(int code, String message) {
+>
+>Util.dismissDialog(progressDialog);
+>
+>Util.unLockScreen(MainActivity.this);
+>
+>String msg = message;
+>
+>if (code == ErrorType.AcuantErrorCouldNotReachServer) {
+>
+>msg = getString(R.string.no_internet_message);
+>
+>}else if (code == ErrorType.AcuantErrorUnableToCrop){
+>
+>updateModelAndUIFromCroppedCard(originalImage);
+>
+>}
+>
+>alertDialog = Util.showDialog(this, msg, new DialogInterface.OnClickListener() {
+>
+>@Override
+>
+>public void onClick(DialogInterface dialog, int which) {
+>
+>isShowErrorAlertDialog = false;
+>
+>}
+>
+>});
+>
+>isShowErrorAlertDialog = true;
+>
+>if (Util.LOG_ENABLED) {
+>
+>Utils.appendLog(TAG, "didFailWithError:" + message);
+>
+>}
+>
+>// message dialogs
+>
+>isValidating = false;
+>
+>isProcessing = false;
+>
+>isActivating = false;
 >
 >}
 >
@@ -953,7 +1001,7 @@ This is the implementation in the Sample project:
 >
 >public final static int *AcuantErrorInvalidLicenseKey* = 9; //Is an invalid license key.
 >
->public final static int *AcuantErrorInactiveLicenseKey* = 10; //Is an native license key.
+>public final static int *AcuantErrorInactiveLicenseKey* = 10; //Is an inactive license key.
 >
 >public final static int *AcuantErrorAccountDisabled* = 11; //Is an account disabled.
 >
@@ -967,7 +1015,11 @@ This is the implementation in the Sample project:
 
 # Change Log
 
-Acuant Android MobileSDK version 3.0.1.
+Acuant Android MobileSDK version 3.0.3.
 
-Hot fix:
--	Changed internal dependencies to external dependencies.
+Changes:
+-	Update image size to 1250 for IDs only.
+-	Nexus 5X camera rotation fix.
+-	Removed the check for internet to open up the camera interface. 
+-	Removed two parameter on processImageServiceCompleted() method.
+-	Added didFailWithError() method to handle all errors.
