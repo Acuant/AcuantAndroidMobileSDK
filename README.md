@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 02/01/2016
+Last updated on – 02/18/2016
 
 # Introduction
 
@@ -290,41 +290,9 @@ Add the followings activities into manifest.xml file:
 
 -   device_list.json
 
-## Create and initialize the controller instance in your implementation class.
+# Activating the license keykey
 
-### With activity, cloud address. And license Key
-
-Pass an activity to initialize the AcuantAndroidMobileSDKController class, the cloud address and the license key. The cloud Address must not contain “https://”. Ex: “https://cloud.myAddress.com/” must be written “cloud.myAddress.com”. Note: Only set cloud address if you are hosting Acuant web services in your own data center. By default, Android MobileSDK communicates with the Acuant data center. 
-
->AcuantAndroidMobileSDKController.getInstance(activity,“cloud.myAddress.com”, licenseKey);
-
-### With activity and license key.
-
-Pass an activity to initialize the AcuantAndroidMobileSDKController class, and the license key. 
-
->AcuantAndroidMobileSDKController.getInstance(activity,licenseKey);
-
-### With activity.
-
-Pass an activity to initialize the AcuantAndroidMobileSDKController class, the entry point to the library:
-
->AcuantAndroidMobileSDKController.getInstance(activity);
-
-### If your instance was created previously.
-
-Once the controller was created, you can obtain it through:
-
->AcuantAndroidMobileSDKController.getInstance();
-
-# Validating a license key
-
-## Activating and validating a license key.
-
-You need to activate and validate the license key before you can start using the library.
-
--   The activation process enables you to use the license key.
-    Activation process is only done once. To activate a license, set the
-    callback for the web service methods:
+In order to activate the license key, use the following method:
 
 >AcuantAndroidMobileSDKControllerInstance.setWebServiceListener(this);
 
@@ -334,27 +302,34 @@ then, call the web service:
 
 the callback method activateLicenseKeyCompleted in the listener will be called when the activation finishes.
 
--   The validation process implies the use of a web service process
-    which retrieves permissions to use the library. It must be done
-    every time you create a AcuantAndroidMobileSDKController instance to
-    use the library.
+**Note:** The license key only needs to be activated once. Execute this method only one time. Some licensees are issued by Acuant pre-activated and don’t need further actions.
 
-To validate, first set the callback for the web service methods like
-before:
 
-AcuantAndroidMobileSDKControllerInstance.setWebServiceListener(this);
+# Initialize and create the SDK’s instance
 
-then, set the license key to the controller:
+## With activity and license key.
 
->AcuantAndroidMobileSDKControllerInstance.setLicensekey(licenseKey);
+Pass an activity to initialize the AcuantAndroidMobileSDKController class, and the license key. 
 
-the callback method validateLicenseKeyCompleted in the listener will be
-called when the validation will finish.
+>AcuantAndroidMobileSDKController.getInstance(activity,licenseKey);
 
-For the first time use, you must activate and then validate the license
-key. After the license is activated, you only need to validate the
-license key every time you create an instance of the library on any
-Android device.
+## With activity, cloud address. And license Key
+
+Pass an activity to initialize the AcuantAndroidMobileSDKController class, the cloud address and the license key. The cloud Address must not contain “https://”. Ex: “https://cloud.myAddress.com/” must be written “cloud.myAddress.com”. Note: Only set cloud address if you are hosting Acuant web services in your own data center. By default, Android MobileSDK communicates with the Acuant data center. 
+
+>AcuantAndroidMobileSDKController.getInstance(activity,“cloud.myAddress.com”, licenseKey);
+
+## With activity.
+
+Pass an activity to initialize the AcuantAndroidMobileSDKController class, the entry point to the library:
+
+>AcuantAndroidMobileSDKController.getInstance(activity);
+
+## If your instance was created previously.
+
+Once the controller was created, you can obtain it through:
+
+>AcuantAndroidMobileSDKController.getInstance();
 
 # Capturing and cropping a card
 
@@ -1023,3 +998,4 @@ Changes:
 -	Removed the check for internet to open up the camera interface. 
 -	Removed two parameter on processImageServiceCompleted() method.
 -	Added didFailWithError() method to handle all errors.
+-   Update framework documentation
