@@ -374,8 +374,9 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         //barcode Dialog title and main message
         builder.setMessage("Unable to scan the barcode?");
         builder.setTitle("AcuantMobileSDK");
-        builder.create().show();
-
+        if (builder != null) {
+            builder.create().show();
+        }
     }
 
     /**
