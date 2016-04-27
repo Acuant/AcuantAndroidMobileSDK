@@ -330,6 +330,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if (cardRegion == Region.REGION_UNITED_STATES || cardRegion == Region.REGION_CANADA) {
+                    acuantAndroidMobileSdkControllerInstance.setInitialMessageDescriptor(R.layout.tap_to_focus);
                     acuantAndroidMobileSdkControllerInstance.showCameraInterfacePDF417(mainActivity, CardType.DRIVERS_LICENSE, cardRegion);
                 } else {
                     acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(mainActivity, CardType.DRIVERS_LICENSE, cardRegion, isBackSide);
@@ -350,6 +351,10 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     @Override
     public void onOriginalCapture(Bitmap bitmap) {
         originalImage = bitmap;
+    }
+
+    @Override
+    public void onCancelCapture() {
     }
 
     @Override
@@ -374,9 +379,8 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         //barcode Dialog title and main message
         builder.setMessage("Unable to scan the barcode?");
         builder.setTitle("AcuantMobileSDK");
-        if (builder != null) {
-            builder.create().show();
-        }
+        builder.create().show();
+
     }
 
     /**

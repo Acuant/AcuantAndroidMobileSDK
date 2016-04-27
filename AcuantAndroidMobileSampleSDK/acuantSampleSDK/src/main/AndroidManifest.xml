@@ -16,9 +16,6 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417">
-        </activity>
-        <activity
             android:name="com.cssn.samplesdk.MainActivity"
             android:configChanges="orientation"
             android:label="@string/app_name">
@@ -39,10 +36,14 @@
         </activity>
 
         <activity
-            android:name="com.acuant.mobilesdk.detect.CameraCardDetectAuto">
+            android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417">
         </activity>
         <activity
-            android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"/>
+            android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual">
+        </activity>
+        <activity
+            android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual">
+        </activity>
 
     </application>
 

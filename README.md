@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 02/18/2016
+Last updated on – 04/25/2016
 
 # Introduction
 
@@ -96,13 +96,13 @@ Add the following code in your build.gradle to avoid some file collision
 
 > dependencies {
 >
+> compile ('com.microblink:pdf417.mobi:5.4.1@aar')
+>
+> compile ('com.android.support:appcompat-v7:23.1.1')
+>
 > compile ('com.google.code.gson:gson:2.5')
 >
-> compile ('org.apache.httpcomponents:httpclient:4.2.6')
->
-> compile ('org.apache.httpcomponents:httpmime:4.2.6')
->
-> compile ('org.apache.httpcomponents:httpcore:4.2.5')
+> compile ('com.squareup.okhttp3:okhttp:3.2.0')
 >
 > }
 
@@ -119,15 +119,15 @@ AcuantAndroidMobileSDK dependecie from JCenter
 >
 > dependencies {
 >
-> compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.3'
+> compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.4'
+>
+> compile ('com.microblink:pdf417.mobi:5.4.1@aar')
+>
+> compile ('com.android.support:appcompat-v7:23.1.1')
 >
 > compile ('com.google.code.gson:gson:2.5')
 >
-> compile ('org.apache.httpcomponents:httpclient:4.2.6')
->
-> compile ('org.apache.httpcomponents:httpmime:4.2.6')
-> 
-> compile ('org.apache.httpcomponents:httpcore:4.2.5')
+> compile ('com.squareup.okhttp3:okhttp:3.2.0')
 >
 }
 
@@ -152,109 +152,6 @@ Add the following code in your build.gradle to avoid some file collision
 >
 > }
 
-### Manual
-In order to add the framework to your project, uncompress the
-AcuantAndroidMobileSDK.aar file and move the .jar file into your project's libfolder and import the following libraries inside the uncompresed .aar
-
-**Libraries**
-Add the following libraries to use the framework:
-
--   httpclient-4.2.6.jar
-
--   httpmime-4.2.6.jar
-
--   gson-2.5.jar
-
-Add a folder named 'armeabi' inside the 'libs' folder. Inside the
-'armeabi' folder add the .so files and also the following files:
-
--   libcvlibbase.so
-
--   libzpassport.so
-
--   libzpassportany.so
-
--   libzcardany.so
-
--   libBlinkBarcode.so
-
-Add a folder named 'armeabi-v7a' inside the 'libs' folder. Inside the
-'armeabi-v7a' folder add the .so files and also the following files:
-
--   libcvlibbase.so
-
--   libzpassport.so
-
--   libzpassportany.so
-
--   libzcardany.so
-
--   libBlinkBarcode.so
-
-Add a folder named 'arm64-v8a’ inside the 'libs' folder. Inside the
-'arm64-v8a' folder add the .so files and also the following files:
-
--   libcvlibbase.so
-
--   libzpassport.so
-
--   libzpassportany.so
-
--   libzcardany.so
-
--   libBlinkBarcode.so
-
-Add a folder named 'mips' inside the 'libs' folder. Inside the 'mips'
-folder add the .so files and also the following files:
-
--   libcvlibbase.so
-
--   libzpassport.so
-
--   libzpassportany.so
-
--   libzcardany.so
-
--   libBlinkBarcode.so
-
-Add a folder named 'mips64' inside the 'libs' folder. Inside the
-'mips64' folder add the .so files and also the following files:
-
--   libcvlibbase.so
-
--   libzpassport.so
-
--   libzpassportany.so
-
--   libzcardany.so
-
--   libBlinkBarcode.so
-
-Add a folder named 'x86' inside the 'libs' folder. Inside the 'x86'
-folder add the .so files and also the following files:
-
--   libcvlibbase.so
-
--   libzpassport.so
-
--   libzpassportany.so
-
--   libzcardany.so
-
--   libBlinkBarcode.so
-
-Add a folder named 'x86_64' inside the 'libs' folder. Inside the
-'x86_64' folder add the .so files and also the following files:
-
--   libcvlibbase.so
-
--   libzpassport.so
-
--   libzpassportany.so
-
--   libzcardany.so
-
--   libBlinkBarcode.so
 
 ## Add views into manifest
 
@@ -274,21 +171,22 @@ Add the followings activities into manifest.xml file:
 >
 > <activity 
 >
-> android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"/>
+> android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual">
+>
+> </activity>
 >
 > <activity
 >
 > android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417">
 >
 > </activity>
+>
+> <activity
+>
+> android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual">
+>
+> </activity>
 
-## Add XML to values folder.
-
--   values.xml
-
-## Add raw folder.
-
--   device_list.json
 
 # Activating the license keykey
 
@@ -400,6 +298,10 @@ card.
 bitmap: the image before the cropping process begins. 
 This function returns the card image without crop process.
 
+>public void onCancelCapture();
+
+Called when the user tap the back button.
+
 
 ### Show the barcode camera methods
 
@@ -443,14 +345,9 @@ This function resume the barcode camera detection
 return: The current barcode camera context.
 This function close the barcode camera.
 
-### Retrieve the original card image
+>public void onCancelCapture();
 
-After the user taps the screen, before the cropping process begins, there are callback methods:
-
-> public void onOriginalCapture(Bitmap bitmap);
-
-bitmap: the image card result
-On this function call, original card image is returned.
+Called when the user tap the back button.
 
 ## Optional, Add the following methods to customize.
 
@@ -990,12 +887,15 @@ This is the implementation in the Sample project:
 
 # Change Log
 
-Acuant Android MobileSDK version 3.0.3.
+Acuant Android MobileSDK version 4.0.0
 
 Changes:
--	Update image size to 1250 for IDs only.
--	Nexus 5X camera rotation fix.
--	Removed the check for internet to open up the camera interface. 
--	Removed two parameter on processImageServiceCompleted() method.
--	Added didFailWithError() method to handle all errors.
--   Update framework documentation
+-	Changed internal dependence to external dependence.
+-	Added callback when the user taps the back button.
+-	Made several improvements to barcode scanning interface.
+-	Replaced HTTPClient with OkHTTP.
+-	Fixed camera focus issues on Galaxy S6 and Nexus 9.
+-	Added a new field DocumentDetectNameShort for IDs/DLs.
+
+Added:
+-	Added support for Camera2 API.

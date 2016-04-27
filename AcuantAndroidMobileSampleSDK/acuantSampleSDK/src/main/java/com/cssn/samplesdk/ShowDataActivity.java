@@ -7,14 +7,18 @@ import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.acuant.mobilesdk.*;
+import com.acuant.mobilesdk.CardType;
+import com.acuant.mobilesdk.DriversLicenseCard;
+import com.acuant.mobilesdk.MedicalCard;
+import com.acuant.mobilesdk.PassportCard;
+import com.acuant.mobilesdk.Region;
 import com.acuant.mobilesdk.util.Constants;
+import com.acuant.mobilesdk.util.Utils;
 import com.cssn.samplesdk.util.DataContext;
 import com.cssn.samplesdk.util.Util;
 
@@ -123,15 +127,14 @@ public class ShowDataActivity extends Activity
                     break;
 
                 default:
-                    Log.e(TAG,"Invalid card type. This method is bad implemented or DataContext.getInstance().getCardType() has an invalid card type.");
-                    Toast.makeText(ShowDataActivity.this, Constants.ERROR_RESULT, Toast.LENGTH_LONG).show();
+                    Utils.appendLog(TAG,"Invalid card type. This method is bad implemented or DataContext.getInstance().getCardType() has an invalid card type.");
                     break;
 
             }
 
         } catch (Exception e)
         {
-            Log.e(TAG, e.getMessage(), e);
+            Utils.appendLog(TAG, e.getMessage());
         }
 
     }
@@ -477,6 +480,13 @@ public class ShowDataActivity extends Activity
         // NameSuffix_NonMRZ
         info.append(("NameSuffix_NonMRZ").concat(" - "))
                 .append(processedLicenseCard.getNameSuffix_NonMRZ()).append("<br/>");
+        // DocumentDetectName
+        info.append(("Document Detectd Name").concat(" - "))
+                .append(processedLicenseCard.getDocumentDetectedName()).append("<br/>");
+        // DocumentDetectNameShort
+        info.append(("Document Detectd Name Short").concat(" - "))
+                .append(processedLicenseCard.getDocumentDetectedNameShort()).append("<br/>");
+
         // Nationality
         info.append(("Nationality").concat(" - "))
                 .append(processedLicenseCard.getNationality()).append("<br/>");
@@ -497,9 +507,9 @@ public class ShowDataActivity extends Activity
             info.append("Is Barcode Read ".concat(" - ")).append(processedLicenseCard.getIsBarcodeRead()).append("<br/>");
             info.append("Is ID Verified ".concat(" - ")).append(processedLicenseCard.getIsIDVerified()).append("<br/>");
             info.append("Is Ocr Read ".concat(" - ")).append(processedLicenseCard.getIsOcrRead()).append("<br/>");
-
-            info.append("Document Verification Confidence Rating".concat(" - ")).append(processedLicenseCard.getDocumentVerificationConfidenceRating()).append("<br/>");
         }
+
+        info.append("Document Verification Confidence Rating".concat(" - ")).append(processedLicenseCard.getDocumentVerificationConfidenceRating()).append("<br/>");
 
 
         textViewCardInfo.setText(Html.fromHtml(info.toString()));

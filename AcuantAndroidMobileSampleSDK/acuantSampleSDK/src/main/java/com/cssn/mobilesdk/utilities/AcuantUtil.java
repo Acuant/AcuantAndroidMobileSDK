@@ -12,7 +12,7 @@ public class AcuantUtil
 {
     public static final int DEFAULT_CROP_PASSPORT_WIDTH = 1478;
 
-    public static final int DEFAULT_CROP_DRIVERS_LICENSE_WIDTH = 1012;
+    public static final int DEFAULT_CROP_DRIVERS_LICENSE_WIDTH = 1250;
 
     /**
      * 

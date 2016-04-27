@@ -22,6 +22,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.Surface;
 
+import com.acuant.mobilesdk.util.Utils;
 import com.cssn.samplesdk.R;
 
 /**
@@ -235,7 +236,7 @@ public class Util
                     retVal = ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
                     break;
                 default:
-                    Log.e(TAG, "Unknown screen orientation. Defaulting to " + "portrait.");
+                    Utils.appendLog(TAG, "Unknown screen orientation. Defaulting to " + "portrait.");
                     retVal = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
                     break;
             }
@@ -260,7 +261,7 @@ public class Util
                     retVal = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
                     break;
                 default:
-                    Log.e(TAG, "Unknown screen orientation. Defaulting to " + "landscape.");
+                    Utils.appendLog(TAG, "Unknown screen orientation. Defaulting to " + "landscape.");
                     retVal = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
                     break;
             }
