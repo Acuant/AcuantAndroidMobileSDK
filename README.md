@@ -890,5 +890,5 @@ This is the implementation in the Sample project:
 Acuant Android MobileSDK version 4.0.1
 
 Changes: 
-		- Removed dependency for com.google.android.gms:play-services-appindexing:8.1.0  
-		- Updated the feature android.hardware.camera as optional 
+- Removed dependency for com.google.android.gms:play-services-appindexing:8.1.0  
+- Updated the feature android.hardware.camera as optional 
