@@ -887,15 +887,8 @@ This is the implementation in the Sample project:
 
 # Change Log
 
-Acuant Android MobileSDK version 4.0.0
+Acuant Android MobileSDK version 4.0.1
 
-Changes:
--	Changed internal dependence to external dependence.
--	Added callback when the user taps the back button.
--	Made several improvements to barcode scanning interface.
--	Replaced HTTPClient with OkHTTP.
--	Fixed camera focus issues on Galaxy S6 and Nexus 9.
--	Added a new field DocumentDetectNameShort for IDs/DLs.
-
-Added:
--	Added support for Camera2 API.
+Changes: 
+		- Removed dependency for com.google.android.gms:play-services-appindexing:8.1.0  
+		- Updated the feature android.hardware.camera as optional 
