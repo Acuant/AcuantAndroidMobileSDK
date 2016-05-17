@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_frame">#DDFFFFFF</color>
+    <color name="formDetect_frame">#DDEEE718</color>
+    <color name="greenlight">#FF5EC102</color>
+    <color name="helpButtonBackgroundDisabled">#22000000</color>
+    <color name="helpButtonBackgroundNormal">#AA000000</color>
+    <color name="helpButtonBackgroundPressed">#AA888888</color>
+    <color name="max_quality_ocr_color">#FF00FF00</color>
+    <color name="mbButtonBackgroundDisabled">#22FFFFFF</color>
+    <color name="mbButtonBackgroundNormal">#99FFFFFF</color>
+    <color name="mbButtonBackgroundPressed">#FFFFFFFF</color>
+    <color name="mbButtonBorder">#FF000000</color>
+    <color name="mbButtonForeground">#FF000000</color>
+    <color name="med_quality_ocr_color">#FFFFFF00</color>
+    <color name="min_quality_ocr_color">#FFFF0000</color>
+    <color name="ocr_line_background">#77000000</color>
+    <color name="ocr_line_help_background">#FFBF0000</color>
+    <color name="photopayButtonBackgroundDisabled">#22FFFFFF</color>
+    <color name="photopayButtonBackgroundNormal">#99FFFFFF</color>
+    <color name="photopayButtonBackgroundPressed">#FFFFFFFF</color>
+    <color name="photopayButtonBorder">#FF000000</color>
+    <color name="photopayButtonForeground">#FF000000</color>
+    <color name="recognized_frame">#DDAAFFAA</color>
+    <color name="statusBackground">#BB000000</color>
+    <color name="statusForeground">#DDEEEEEE</color>
+    <color name="textback">#FF000000</color>
+    <color name="transparent">#00000000</color>
+    <declare-styleable name="RecognizerView"><attr format="enum" name="initialOrientation"><enum name="portrait" value="0"/><enum name="landscapeRight" value="1"/><enum name="inversePortrait" value="2"/><enum name="landscapeLeft" value="3"/></attr><attr format="boolean" name="animateRotation"/><attr format="integer" name="animationDuration"/><attr format="enum" name="aspectMode"><enum name="fit" value="0"/><enum name="fill" value="1"/></attr></declare-styleable>
+    <declare-styleable name="RecognizerView_LayoutParams"><attr format="boolean" name="rotatable"/></declare-styleable>
+    <string name="Align">Position the phone over the barcode</string>
+    <string name="AutofocusFail">Camera cannot focus. Try scanning under different light.</string>
+    <string name="CameraAtAngle">Please align the barcode with the device. Barcode angle is too steep.</string>
+    <string name="CameraTooHigh">Please position the phone closer to the barcode</string>
+    <string name="Copied">Text copied to clipboard</string>
+    <string name="Copy">Copy</string>
+    <string name="CustomUIForbidden">License does not permit custom camera overlay!</string>
+    <string name="FeatureUnsuportedAndroidVersion">This feature is supported for Android 2.1 and newer</string>
+    <string name="FeatureUnsuportedAutofocus">This feature is not supported on phones without autofocus</string>
+    <string name="FeatureUnsuportedDevice">PDF417.mobi is not supported because of the technical properties of your device</string>
+    <string name="FullRecognition">Barcode recognized</string>
+    <string name="InvalidLicense">Invalid license key! Please check ADB error log for more details.</string>
+    <string name="NoRecognition">Barcode is not recognized</string>
+    <string name="NoRecognizers">At least one recognizer must be enabled!</string>
+    <string name="PPCancel">Cancel</string>
+    <string name="PPUse">Use</string>
+    <string name="PartialDetected">Some parts of the barcode are not visible</string>
+    <string name="PartialRecognition">Barcode partially recognized</string>
+    <string name="Processing">Please, hold your phone still, processing</string>
+    <string name="ResultList">List of scan results</string>
+    <string name="loading">Loading…</string>
+    <string name="mb">mb Barcode</string>
+    <string name="mbCameraNotAllowed">Camera not allowed by permission settings.</string>
+    <string name="mbCameraNotReady">Camera not ready.</string>
+    <string name="mbCameraPermissionRequired">Camera permission is required.</string>
+    <string name="mbEnableCamera">Enable camera</string>
+    <string name="mbEnablePermissionHelp">You will now be taken to permission settings where you need to give camera permission to the app.</string>
+    <string name="mbErrorInitializing">Failed to initialize native library.</string>
+    <string name="mbHelpImageDescription">Description</string>
+    <string name="mbHome">Back</string>
+    <string name="mbLightOff">Light</string>
+    <string name="mbLightOn">Light</string>
+    <string name="mbOK">OK</string>
+    <string name="mbWarningTitle">Warning</string>
+    <string name="scanBarcode">Start barcode scanning</string>
+</resources>

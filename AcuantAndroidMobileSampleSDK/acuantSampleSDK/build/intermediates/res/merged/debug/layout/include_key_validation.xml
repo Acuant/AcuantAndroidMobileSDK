@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/textViewCardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextLicenceKey"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/editTextLicenceKey"
+        android:layout_centerVertical="false"
+        android:gravity="center_vertical"
+        android:text="@string/license_key" />
+
+    <EditText
+        android:id="@+id/editTextLicenceKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="27dp"
+        android:layout_toLeftOf="@+id/activateLicenseButton"
+        android:layout_toRightOf="@+id/textViewCardInfo"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="text" android:text="">
+    </EditText>
+
+    <Button
+        android:id="@+id/activateLicenseButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextLicenceKey"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="activateLicenseKey"
+        android:text="@string/activate" android:textSize="11sp"/>
+
+</RelativeLayout>
