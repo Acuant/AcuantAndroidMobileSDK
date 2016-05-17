@@ -94,6 +94,12 @@ Add the following code in your build.gradle to avoid some file collision
 >
 > }
 
+> repositories { 
+>
+> maven { url 'http://maven.microblink.com' } 
+>
+> }
+
 > dependencies {
 >
 > compile ('com.microblink:pdf417.mobi:5.4.1@aar')
@@ -107,29 +113,31 @@ Add the following code in your build.gradle to avoid some file collision
 > }
 
 
-#### JCenter repositories
+#### Maven repositories
 In order to add the framework to your project, add the
-AcuantAndroidMobileSDK dependecie from JCenter
+AcuantAndroidMobileSDK dependecie from Maven
 
-> repositories {
+> repositories { 
 >
-> jcenter ()
+> maven { url 'https://dl.bintray.com/acuant/Acuant' }
 >
+> maven { url 'http://maven.microblink.com' }
 > }
 >
 > dependencies {
 >
-> compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.4'
+> compile 'com.acuant.mobilesdk:acuantMobileSDK:4.0.1'
 >
-> compile ('com.microblink:pdf417.mobi:5.4.1@aar')
+> compile 'com.microblink:pdf417.mobi:5.4.1@aar'
 >
-> compile ('com.android.support:appcompat-v7:23.1.1')
+> compile ('com.android.support:appcompat-v7:23.1.1') 
 >
-> compile ('com.google.code.gson:gson:2.5')
+> compile > ('com.google.code.gson:gson:2.5')
 >
 > compile ('com.squareup.okhttp3:okhttp:3.2.0')
 >
-}
+> }
+
 
 Add the following code in your build.gradle to avoid some file collision
 > android{
