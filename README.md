@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 04/25/2016
+Last updated on – 05/17/2016
 
 # Introduction
 
