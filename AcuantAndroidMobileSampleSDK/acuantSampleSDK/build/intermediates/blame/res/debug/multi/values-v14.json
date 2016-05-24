@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/res/merged/debug/values-v14/values-v14.xml",
+        "outputFile": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/res/merged/debug/values-v14/values-v14.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 201
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/res/values-v14/styles.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/res/values-v14/styles.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -33,7 +33,7 @@
                     "endOffset": 477
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -54,7 +54,7 @@
                     "endOffset": 641
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/res/values-v14/values-v14.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/res/values-v14/values-v14.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -74,7 +74,7 @@
                     "endOffset": 712
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -93,7 +93,7 @@
                     "endOffset": 795
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -113,7 +113,7 @@
                     "endOffset": 1205
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -134,7 +134,7 @@
                     "endOffset": 1627
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -154,7 +154,7 @@
                     "endOffset": 1747
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 4,
@@ -173,7 +173,7 @@
                     "endOffset": 1810
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
@@ -193,7 +193,7 @@
                     "endOffset": 1964
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
@@ -213,7 +213,7 @@
                     "endOffset": 2027
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -232,7 +232,7 @@
                     "endOffset": 2159
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v14/values-v14.xml",
                     "position": {
                         "startLine": 33,
                         "startColumn": 4,

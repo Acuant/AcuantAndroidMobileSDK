@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/res/merged/debug/values-hdpi-v4/values-hdpi-v4.xml",
+        "outputFile": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/res/merged/debug/values-hdpi-v4/values-hdpi-v4.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 327
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-hdpi/values-hdpi.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-hdpi/values-hdpi.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

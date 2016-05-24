@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 05/17/2016
+Last updated on – 05/24/2016
 
 # Introduction
 
@@ -94,12 +94,6 @@ Add the following code in your build.gradle to avoid some file collision
 >
 > }
 
-> repositories { 
->
-> maven { url 'http://maven.microblink.com' } 
->
-> }
-
 > dependencies {
 >
 > compile ('com.microblink:pdf417.mobi:5.4.1@aar')
@@ -113,31 +107,29 @@ Add the following code in your build.gradle to avoid some file collision
 > }
 
 
-#### Maven repositories
+#### JCenter repositories
 In order to add the framework to your project, add the
-AcuantAndroidMobileSDK dependecie from Maven
+AcuantAndroidMobileSDK dependecie from JCenter
 
-> repositories { 
+> repositories {
 >
-> maven { url 'https://dl.bintray.com/acuant/Acuant' }
+> jcenter ()
 >
-> maven { url 'http://maven.microblink.com' }
 > }
 >
 > dependencies {
 >
-> compile 'com.acuant.mobilesdk:acuantMobileSDK:4.0.1'
+> compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.4'
 >
-> compile 'com.microblink:pdf417.mobi:5.4.1@aar'
+> compile ('com.microblink:pdf417.mobi:5.4.1@aar')
 >
-> compile ('com.android.support:appcompat-v7:23.1.1') 
+> compile ('com.android.support:appcompat-v7:23.1.1')
 >
-> compile > ('com.google.code.gson:gson:2.5')
+> compile ('com.google.code.gson:gson:2.5')
 >
 > compile ('com.squareup.okhttp3:okhttp:3.2.0')
 >
-> }
-
+}
 
 Add the following code in your build.gradle to avoid some file collision
 > android{
@@ -895,9 +887,8 @@ This is the implementation in the Sample project:
 
 # Change Log
 
-Acuant Android MobileSDK version 4.0.1
+Acuant Android MobileSDK version 4.0.2
 
 Changes:
 
--	Removed dependency for com.google.android.gms:play-services-appindexing:8.1.0
--	Updated the feature android.hardware.camera as optional
+-	Crash during multi touch while opening the camera is fixed.

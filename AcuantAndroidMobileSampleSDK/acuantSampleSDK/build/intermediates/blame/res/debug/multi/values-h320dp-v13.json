@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/res/merged/debug/values-h320dp-v13/values-h320dp-v13.xml",
+        "outputFile": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/res/merged/debug/values-h320dp-v13/values-h320dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-h320dp/values-h320dp.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-h320dp/values-h320dp.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

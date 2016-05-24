@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/res/merged/debug/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+        "outputFile": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/res/merged/debug/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 88
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/res/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/res/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 147
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/SVN/MobileApps/Android/Frameworks/MobileSDK-AndroidStudio/4.0.1/SampleProject/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/res/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/res/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
