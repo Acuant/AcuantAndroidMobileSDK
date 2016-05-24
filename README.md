@@ -66,125 +66,100 @@ AcuantAndroidMobileSDK.aar dependencies
 #### Local file
 Add the following code in your build.gradle to avoid some file collision
 
-  dependencies {
-
-   configurations.create("default")
-
-   artifacts.add("default", file('acuantMobileSDK.aar'))
-
- }
-
- android{
-
- packagingOptions {
-
- exclude 'META-INF/NOTICE'
-
- exclude 'META-INF/LICENSE'
-
- exclude 'META-INF/DEPENDENCIES'
-
- exclude 'META-INF/DEPENDENCIES.txt'
-
- exclude 'META-INF/LICENSE.txt'
-
- exclude 'META-INF/NOTICE.txt'
-
- }
-
- }
-
- dependencies {
-
- compile ('com.microblink:pdf417.mobi:5.4.1@aar')
-
- compile ('com.android.support:appcompat-v7:23.1.1')
-
- compile ('com.google.code.gson:gson:2.5')
-
- compile ('com.squareup.okhttp3:okhttp:3.2.0')
-
- }
-
+	dependencies {
+	
+	   configurations.create("default")
+	
+	   artifacts.add("default", file('acuantMobileSDK.aar'))
+	
+	 }
+	
+	 android{
+	
+		 packagingOptions {
+		
+		 exclude 'META-INF/NOTICE'
+		
+		 exclude 'META-INF/LICENSE'
+		
+		 exclude 'META-INF/DEPENDENCIES'
+		
+		 exclude 'META-INF/DEPENDENCIES.txt'
+		
+		 exclude 'META-INF/LICENSE.txt'
+		
+		 exclude 'META-INF/NOTICE.txt'
+		
+		 }
+	
+	 }
+	
+	 dependencies {
+	
+		 compile ('com.microblink:pdf417.mobi:5.4.1@aar')
+		
+		 compile ('com.android.support:appcompat-v7:23.1.1')
+		
+		 compile ('com.google.code.gson:gson:2.5')
+		
+		 compile ('com.squareup.okhttp3:okhttp:3.2.0')
+	
+	 }
 
 #### JCenter repositories
-In order to add the framework to your project, add the
-AcuantAndroidMobileSDK dependecie from JCenter
+In order to add the framework to your project, add the AcuantAndroidMobileSDK dependecie from JCenter
 
- repositories {
-
- jcenter ()
-
- }
-
- dependencies {
-
- compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.4'
-
- compile ('com.microblink:pdf417.mobi:5.4.1@aar')
-
- compile ('com.android.support:appcompat-v7:23.1.1')
-
- compile ('com.google.code.gson:gson:2.5')
-
- compile ('com.squareup.okhttp3:okhttp:3.2.0')
-
-}
-
-Add the following code in your build.gradle to avoid some file collision
- android{
-
- packagingOptions {
-
- exclude 'META-INF/NOTICE'
-
- exclude 'META-INF/LICENSE'
-
- exclude 'META-INF/DEPENDENCIES'
-
- exclude 'META-INF/DEPENDENCIES.txt'
-
- exclude 'META-INF/LICENSE.txt'
-
- exclude 'META-INF/NOTICE.txt'
-
- }
-
- }
+	repositories {
+		jcenter ()
+	}
+	
+	 dependencies {
+		compile 'com.acuant.mobilesdk:acuantMobileSDK:3.0.4'
+		compile ('com.microblink:pdf417.mobi:5.4.1@aar')
+		compile ('com.android.support:appcompat-v7:23.1.1')
+		compile ('com.google.code.gson:gson:2.5')
+		compile ('com.squareup.okhttp3:okhttp:3.2.0')
+	}
+	
+	
+	Add the following code in your build.gradle to avoid some file collision
+	
+	android{
+		 packagingOptions {
+			 exclude 'META-INF/NOTICE'
+			 exclude 'META-INF/LICENSE'
+			 exclude 'META-INF/DEPENDENCIES'
+			 exclude 'META-INF/DEPENDENCIES.txt'
+			 exclude 'META-INF/LICENSE.txt'
+			 exclude 'META-INF/NOTICE.txt'
+		 }
+	 }
 
 
 ## Add views into manifest
 
 Add the followings activities into manifest.xml file:
 
-< uses-permissionandroid:name="android.permission.CAMERA"/>
-
-< uses-permissionandroid:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
-< uses-permissionandroid:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
-< uses-permissionandroid:name="android.permission.READ_PHONE_STATE"/>
-
-< uses-permissionandroid:name="android.permission.ACCESS_NETWORK_STATE"/>
-
-< uses-permissionandroid:name="android.permission.INTERNET"/>
-
- <activity android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"></activity>
-
- <activity android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417"> </activity>
-
-<activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual"></activity>
+	< uses-permissionandroid:name="android.permission.CAMERA"/>
+	< uses-permissionandroid:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	< uses-permissionandroid:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	< uses-permissionandroid:name="android.permission.READ_PHONE_STATE"/>
+	< uses-permissionandroid:name="android.permission.ACCESS_NETWORK_STATE"/>
+	< uses-permissionandroid:name="android.permission.INTERNET"/>
+	<activity android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"></activity>
+	<activity android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417"> </activity>
+	<activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual"></activity>
 
 
 # Activating the license keykey
 
 In order to activate the license key, use the following method:
 
-AcuantAndroidMobileSDKControllerInstance.setWebServiceListener(this);
+`	AcuantAndroidMobileSDKControllerInstance.setWebServiceListener(this);`
 
 then, call the web service:
 
-AcuantAndroidMobileSDKControllerInstance.callActivateLicenseKeyService(key);
+`	AcuantAndroidMobileSDKControllerInstance.callActivateLicenseKeyService(key);`
 
 the callback method activateLicenseKeyCompleted in the listener will be called when the activation finishes.
 
@@ -197,25 +172,25 @@ the callback method activateLicenseKeyCompleted in the listener will be called w
 
 Pass an activity to initialize the AcuantAndroidMobileSDKController class, and the license key. 
 
-AcuantAndroidMobileSDKController.getInstance(activity,licenseKey);
+`	AcuantAndroidMobileSDKController.getInstance(activity,licenseKey);`
 
 ## With activity, cloud address. And license Key
 
 Pass an activity to initialize the AcuantAndroidMobileSDKController class, the cloud address and the license key. The cloud Address must not contain “https://”. Ex: “https://cloud.myAddress.com/” must be written “cloud.myAddress.com”. Note: Only set cloud address if you are hosting Acuant web services in your own data center. By default, Android MobileSDK communicates with the Acuant data center. 
 
-AcuantAndroidMobileSDKController.getInstance(activity,“cloud.myAddress.com”, licenseKey);
+`	AcuantAndroidMobileSDKController.getInstance(activity,“cloud.myAddress.com”, licenseKey);`
 
 ## With activity.
 
 Pass an activity to initialize the AcuantAndroidMobileSDKController class, the entry point to the library:
 
-AcuantAndroidMobileSDKController.getInstance(activity);
+`	AcuantAndroidMobileSDKController.getInstance(activity);`
 
 ## If your instance was created previously.
 
 Once the controller was created, you can obtain it through:
 
-AcuantAndroidMobileSDKController.getInstance();
+`	AcuantAndroidMobileSDKController.getInstance();`
 
 # Capturing and cropping a card
 
@@ -253,51 +228,51 @@ currentOptionType is one of the AcuantCardType possibilities: passport.
 
 ### Show the manual camera interface methods
 
-AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
-
-acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(mainActivity, CardType.DRIVERS_LICENSE, cardRegion, isBackSide);
+`	AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
+acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(mainActivity,CardType.DRIVERS_LICENSE, cardRegion, isBackSide);`
 
 
 The width values are mandatory, they are set to indicate the width and height of the cropped cardimage.
 
-After the user taps the screen, the cropping process begins, there are
-four callback methods:
+After the user taps the screen, the cropping process begins, there are four callback methods:
 
-public void onCardCroppedStart(Activity activity);
+`	public void onCardCroppedStart(Activity activity);`
 
-activity: the activity of the full screen Window, or the activity owner
+*activity*: the activity of the full screen Window, or the activity owner
 of the modal dialog (in case of Passport and Tablet for example)
 
-public void onCardCroppedFinish(Bitmap bitmap);
+`	public void onCardCroppedFinish(Bitmap bitmap);`
 
-bitmap: the image card result
+*bitmap*: the image card result
+
 This function returns the cropped card image is returned.
 
-public void onCardCroppedFinish(final Bitmap bitmap, boolean, scanBackSide);
+`	public void onCardCroppedFinish(final Bitmap bitmap, boolean, scanBackSide);`
 
-bitmap: the image card result
+*bitmap*: the image card result
 This function returns the cropped card image is returned.
 
-scanBackSide: A flag to alert the user to capture the back side of the
+*scanBackSide*: A flag to alert the user to capture the back side of the
 card.
 
-public void onOriginalCapture(Bitmap bitmap);
+`	public void onOriginalCapture(Bitmap bitmap);`
 
-bitmap: the image before the cropping process begins. 
+*bitmap*: the image before the cropping process begins. 
+
 This function returns the card image without crop process.
 
-public void onCancelCapture();
+`	public void onCancelCapture();`
 
 Called when the user tap the back button.
 
 
 ### Show the barcode camera methods
 
-AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
+`AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);`
 
-AcuantAndroidMobileSDKControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));
+`AcuantAndroidMobileSDKControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));`
 
-acuantAndroidMobileSdkControllerInstance.showCameraInterfacePDF417(mainActivity, CardType.DRIVERS_LICENSE, cardRegion);
+`acuantAndroidMobileSdkControllerInstance.showCameraInterfacePDF417(mainActivity, CardType.DRIVERS_LICENSE, cardRegion);`
 
 
 The width values are mandatory, they are set to indicate the width and height of the cropped cardimage.
@@ -629,51 +604,51 @@ passed to the web service. You can retrieve state, signature, name, etc.
 from this class, for example for license driver’s card, these are some
 properties:
 
-String name;
-
-String licenceID;
-
-String address;
-
-String city;
-
-String zip;
-
-String state;
-
-String idCountry;
-
-String eyeColor;
-
-String hair;
-
-String height;
-
-String weight;
-
-String licenceClass;
-
-String restriction;
-
-String sex;
-
-String county;
-
-String dateOfBirth;
-
-String expirationDate;
-
-String nameLast;
-
-String nationality;
-
-String placeOfBirth;
-
-Bitmap faceImage;
-
-Bitmap signImage;
-
-Bitmap reformatImage;
+	String name;
+	
+	String licenceID;
+	
+	String address;
+	
+	String city;
+	
+	String zip;
+	
+	String state;
+	
+	String idCountry;
+	
+	String eyeColor;
+	
+	String hair;
+	
+	String height;
+	
+	String weight;
+	
+	String licenceClass;
+	
+	String restriction;
+	
+	String sex;
+	
+	String county;
+	
+	String dateOfBirth;
+	
+	String expirationDate;
+	
+	String nameLast;
+	
+	String nationality;
+	
+	String placeOfBirth;
+	
+	Bitmap faceImage;
+	
+	Bitmap signImage;
+	
+	Bitmap reformatImage;
 
 You can retrieve the name through:
 
@@ -685,101 +660,58 @@ doc.
 This is the implementation in the Sample project:
 
 
-/**
-
- *
-
- */
-
-@Override
-
-public void processImageServiceCompleted(Card card) {
-
-if (Util.LOG_ENABLED) {Utils.appendLog(TAG, "public void processImageServiceCompleted(CSSNCard card, int >status, String errorMessage)");
-
-}
-
-isProcessing = false;
-
-Util.dismissDialog(progressDialog);
-
-String dialogMessage = null;
-
-try {
-
-DataContext.getInstance().setCardType(mainActivityModel.getCurrentOptionType());
-
-if (card == null || card.isEmpty()) {
-
-dialogMessage = "No data found for this license card!";
-
-} else {
-
-switch (mainActivityModel.getCurrentOptionType()) {
-
-case CardType.DRIVERS_LICENSE:
-
-DataContext.getInstance().setProcessedLicenseCard((DriversLicenseCard) card);
-
-break;
-
-case CardType.MEDICAL_INSURANCE:
-
-DataContext.getInstance().setProcessedMedicalCard((MedicalCard) card);
-
-break;
-
-case CardType.PASSPORT:
-
-DataContext.getInstance().setProcessedPassportCard((PassportCard) card);
-
-break;
-
-default:
-
-throw new IllegalStateException("There is not implementation for processing the card type '"
-
-+ mainActivityModel.getCurrentOptionType() + "'");
-
-}
-
-Util.unLockScreen(MainActivity.this);
-
-Intent showDataActivityIntent = new Intent(this, ShowDataActivity.class);
-
-this.startActivity(showDataActivityIntent);
-
-}
-
-} catch (Exception e) {
-
-Utils.appendLog(TAG, e.getMessage());
-
-dialogMessage = "Sorry! Internal error has occurred, please contact us!";
-
-}
-
-if (dialogMessage != null) {
-
-Util.dismissDialog(alertDialog);
-
-alertDialog = Util.showDialog(this, dialogMessage,new DialogInterface.OnClickListener() {
-
-@Override
-
-public void onClick(DialogInterface dialog, int which) {
-
-isShowErrorAlertDialog = false;
-
-}
-
-});
-
-isShowErrorAlertDialog = true;
-
-}
-
-}
+	/**
+	
+	 *
+	
+	 */
+	
+	@Override
+	
+	public void processImageServiceCompleted(Card card) {
+		if (Util.LOG_ENABLED) {
+			Utils.appendLog(TAG, "public void processImageServiceCompleted(CSSNCard card, int status, String errorMessage)");
+		}
+		isProcessing = false;
+		Util.dismissDialog(progressDialog);
+		String dialogMessage = null;
+		try {
+			DataContext.getInstance().setCardType(mainActivityModel.getCurrentOptionType());
+			if (card == null || card.isEmpty()) {
+				dialogMessage = "No data found for this license card!";
+			} else {
+				switch (mainActivityModel.getCurrentOptionType()) {
+					case CardType.DRIVERS_LICENSE:
+						DataContext.getInstance().setProcessedLicenseCard((DriversLicenseCard) card);
+						break;
+					case CardType.MEDICAL_INSURANCE:
+						DataContext.getInstance().setProcessedMedicalCard((MedicalCard) card);
+						break;
+					case CardType.PASSPORT:
+						DataContext.getInstance().setProcessedPassportCard((PassportCard) card);
+						break;
+					default:
+						throw new IllegalStateException("There is not implementation for processing the card type '" + mainActivityModel.getCurrentOptionType() + "'");
+				}
+				Util.unLockScreen(MainActivity.this);
+				Intent showDataActivityIntent = new Intent(this, ShowDataActivity.class);
+				this.startActivity(showDataActivityIntent);
+			}	
+	} catch (Exception e) {
+		Utils.appendLog(TAG, e.getMessage());
+		dialogMessage = "Sorry! Internal error has occurred, please contact us!";
+	}
+	if (dialogMessage != null) {
+		Util.dismissDialog(alertDialog);
+		alertDialog = Util.showDialog(this, dialogMessage,new DialogInterface.OnClickListener() {
+		@Override
+		public void onClick(DialogInterface dialog, int which) {
+			isShowErrorAlertDialog = false;
+		}});
+		isShowErrorAlertDialog = true;
+		}
+	
+	}
 
 
 # Errors handling
@@ -788,90 +720,90 @@ In order to handle the errors or alert over SDK’s action , you will receive th
 This is the implementation in the Sample project:
 
 
-@Override
-
-public void didFailWithError(int code, String message) {
-
-Util.dismissDialog(progressDialog);
-
-Util.unLockScreen(MainActivity.this);
-
-String msg = message;
-
-if (code == ErrorType.AcuantErrorCouldNotReachServer) {
-
-msg = getString(R.string.no_internet_message);
-
-}else if (code == ErrorType.AcuantErrorUnableToCrop){
-
-updateModelAndUIFromCroppedCard(originalImage);
-
-}
-
-alertDialog = Util.showDialog(this, msg, new DialogInterface.OnClickListener() {
-
-@Override
-
-public void onClick(DialogInterface dialog, int which) {
-
-isShowErrorAlertDialog = false;
-
-}
-
-});
-
-isShowErrorAlertDialog = true;
-
-if (Util.LOG_ENABLED) {
-
-Utils.appendLog(TAG, "didFailWithError:" + message);
-
-}
-
-// message dialogs
-
-isValidating = false;
-
-isProcessing = false;
-
-isActivating = false;
-
-}
+	@Override
+	
+	public void didFailWithError(int code, String message) {
+	
+	Util.dismissDialog(progressDialog);
+	
+	Util.unLockScreen(MainActivity.this);
+	
+	String msg = message;
+	
+	if (code == ErrorType.AcuantErrorCouldNotReachServer) {
+	
+	msg = getString(R.string.no_internet_message);
+	
+	}else if (code == ErrorType.AcuantErrorUnableToCrop){
+	
+	updateModelAndUIFromCroppedCard(originalImage);
+	
+	}
+	
+	alertDialog = Util.showDialog(this, msg, new DialogInterface.OnClickListener() {
+	
+	@Override
+	
+	public void onClick(DialogInterface dialog, int which) {
+	
+	isShowErrorAlertDialog = false;
+	
+	}
+	
+	});
+	
+	isShowErrorAlertDialog = true;
+	
+	if (Util.LOG_ENABLED) {
+	
+	Utils.appendLog(TAG, "didFailWithError:" + message);
+	
+	}
+	
+	// message dialogs
+	
+	isValidating = false;
+	
+	isProcessing = false;
+	
+	isActivating = false;
+	
+	}
 
 
 # Error Types
 
-public final static int *AcuantErrorCouldNotReachServer* = 0; //check internet connection
-
-public final static int *AcuantErrorUnableToAuthenticate* = 1; //keyLicense are incorrect
-
-public final static int *AcuantErrorUnableToProcess* = 2; //image eceived by the server was unreadable, take a new one
-
-public final static int *AcuantErrorInternalServerError* = 3; //there was an error in our server, try again later
-
-public final static int *AcuantErrorUnknown* = 4; //there was an error but we were unable to determine the reason, try again later
-
-public final static int *AcuantErrorTimedOut* = 5; //request timed out, may be because internet connection is too slow
-
-public final static int *AcuantErrorAutoDetectState* = 6; //Error when try to detect the state
-
-public final static int *AcuantErrorWebResponse* = 7; //the json was received by the server contain error
-
-public final static int *AcuantErrorUnableToCrop* = 8; //the received image can't be cropped.
-
-public final static int *AcuantErrorInvalidLicenseKey* = 9; //Is an invalid license key.
-
-public final static int *AcuantErrorInactiveLicenseKey* = 10; //Is an inactive license key.
-
-public final static int *AcuantErrorAccountDisabled* = 11; //Is an account disabled.
-
-public final static int *AcuantErrorOnActiveLicenseKey* = 12; //there was an error on activation key.
-
-public final static int *AcuantErrorValidatingLicensekey* = 13; //The validation is still in process.
-
-public final static int *AcuantErrorCameraUnauthorized* = 14; //The privacy settings are preventing us from accessing your camera.
-
-public final static int *AcuantNoneError* = 200; //The privacy settings are preventing us from accessing your camera.
+	public final static int *AcuantErrorCouldNotReachServer* = 0; //check internet connection
+	
+	public final static int *AcuantErrorUnableToAuthenticate* = 1; //keyLicense are incorrect
+	
+	public final static int *AcuantErrorUnableToProcess* = 2; //image eceived by the server was unreadable, take a new one
+	
+	public final static int *AcuantErrorInternalServerError* = 3; //there was an error in our server, try again later
+	
+	public final static int *AcuantErrorUnknown* = 4; //there was an error but we were unable to determine the reason, try again later
+	
+	public final static int *AcuantErrorTimedOut* = 5; //request timed out, may be because internet connection is too slow
+	
+	public final static int *AcuantErrorAutoDetectState* = 6; //Error when try to detect the state
+	
+	public final static int *AcuantErrorWebResponse* = 7; //the json was received by the server contain error
+	
+	public final static int *AcuantErrorUnableToCrop* = 8; //the received image can't be cropped.
+	
+	public final static int *AcuantErrorInvalidLicenseKey* = 9; //Is an invalid license key.
+	
+	public final static int *AcuantErrorInactiveLicenseKey* = 10; //Is an inactive license key.
+	
+	public final static int *AcuantErrorAccountDisabled* = 11; //Is an account disabled.
+	
+	public final static int *AcuantErrorOnActiveLicenseKey* = 12; //there was an error on activation key.
+	
+	public final static int *AcuantErrorValidatingLicensekey* = 13; //The validation is still in process.
+	
+	public final static int *AcuantErrorCameraUnauthorized* = 14; //The privacy settings are preventing us from accessing your camera.
+	
+	public final static int *AcuantNoneError* = 200; //The privacy settings are preventing us from accessing your camera.
 
 # Change Log
 
