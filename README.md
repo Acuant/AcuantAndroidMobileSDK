@@ -66,45 +66,45 @@ AcuantAndroidMobileSDK.aar dependencies
 #### Local file
 Add the following code in your build.gradle to avoid some file collision
 
-> dependencies {
->
-> configurations.create("default")
->
-> artifacts.add("default", file('acuantMobileSDK.aar'))
->
-> }
->
-> android{
->
-> packagingOptions {
->
-> exclude 'META-INF/NOTICE'
->
-> exclude 'META-INF/LICENSE'
->
-> exclude 'META-INF/DEPENDENCIES'
->
-> exclude 'META-INF/DEPENDENCIES.txt'
->
-> exclude 'META-INF/LICENSE.txt'
->
-> exclude 'META-INF/NOTICE.txt'
->
-> }
->
-> }
+  dependencies {
 
-> dependencies {
->
-> compile ('com.microblink:pdf417.mobi:5.4.1@aar')
->
-> compile ('com.android.support:appcompat-v7:23.1.1')
->
-> compile ('com.google.code.gson:gson:2.5')
->
-> compile ('com.squareup.okhttp3:okhttp:3.2.0')
->
-> }
+   configurations.create("default")
+
+   artifacts.add("default", file('acuantMobileSDK.aar'))
+
+ }
+
+ android{
+
+ packagingOptions {
+
+ exclude 'META-INF/NOTICE'
+
+ exclude 'META-INF/LICENSE'
+
+ exclude 'META-INF/DEPENDENCIES'
+
+ exclude 'META-INF/DEPENDENCIES.txt'
+
+ exclude 'META-INF/LICENSE.txt'
+
+ exclude 'META-INF/NOTICE.txt'
+
+ }
+
+ }
+
+ dependencies {
+
+ compile ('com.microblink:pdf417.mobi:5.4.1@aar')
+
+ compile ('com.android.support:appcompat-v7:23.1.1')
+
+ compile ('com.google.code.gson:gson:2.5')
+
+ compile ('com.squareup.okhttp3:okhttp:3.2.0')
+
+ }
 
 
 #### JCenter repositories
