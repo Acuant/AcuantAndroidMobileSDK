@@ -151,7 +151,7 @@ Add the followings activities into manifest.xml file:
 	<activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual"></activity>
 
 
-# Activating the license keykey
+# Activating the license key
 
 In order to activate the license key, use the following method:
 
