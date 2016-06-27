@@ -14,6 +14,8 @@ public class AcuantUtil
 
     public static final int DEFAULT_CROP_DRIVERS_LICENSE_WIDTH = 1250;
 
+    public static final int DEFAULT_CROP_DRIVERS_LICENSE_WIDTH_FOR_AUTHENTICATION = 2024;
+
     /**
      * 
      * @param cardType
@@ -26,6 +28,7 @@ public class AcuantUtil
         switch (cardType)
         {
             case CardType.DRIVERS_LICENSE:
+            case CardType.FACIAL_RECOGNITION:
             case CardType.MEDICAL_INSURANCE:
                 
                 retVal = 0.637;

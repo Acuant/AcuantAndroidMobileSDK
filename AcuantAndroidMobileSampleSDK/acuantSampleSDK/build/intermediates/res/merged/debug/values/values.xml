@@ -302,8 +302,10 @@
     <string name="dl_duplex">DL Duplex</string>
     <string name="dl_duplex_dialog">Scan the backside of the license</string>
     <string name="driver_license">Drivers License</string>
+    <string name="driver_license_facial">Drivers License with Facial</string>
     <string name="europe">Europe</string>
     <string name="face_detection">Face detection</string>
+    <string name="facial_instruction_dialog">Please position your face in front of the front camera and blink when red rectangle appears.</string>
     <string name="hello_world">Hello world!</string>
     <string name="help">Help</string>
     <string name="hold_steady">HOLD STEADY</string>
@@ -331,6 +333,7 @@
     <string name="onHelpClick">onHelpClick</string>
     <string name="onSettingsClick">onSettingsClick</string>
     <string name="passport">Passport</string>
+    <string name="passport_facial">Passport with Facial</string>
     <string name="process">Process</string>
     <string name="scanBarcode">Start barcode scanning</string>
     <string name="settingsButton">Settings</string>

@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.acuant.mobilesdk.CardType;
 import com.acuant.mobilesdk.DriversLicenseCard;
+import com.acuant.mobilesdk.FacialData;
 import com.acuant.mobilesdk.MedicalCard;
 import com.acuant.mobilesdk.PassportCard;
 import com.acuant.mobilesdk.Region;
@@ -21,6 +22,8 @@ import com.acuant.mobilesdk.util.Constants;
 import com.acuant.mobilesdk.util.Utils;
 import com.cssn.samplesdk.util.DataContext;
 import com.cssn.samplesdk.util.Util;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -31,6 +34,7 @@ public class ShowDataActivity extends Activity
     private static final String TAG = ShowDataActivity.class.getName();
 
     public Boolean isError = false;
+    private boolean isFacialFlow = false;
     ImageView imgFaceViewer;
     ImageView imgSignatureViewer;
     ImageView frontSideCardImageView;
@@ -63,6 +67,8 @@ public class ShowDataActivity extends Activity
         imgFaceViewer = (ImageView) findViewById(R.id.faceImage);
         imgSignatureViewer = (ImageView) findViewById(R.id.signatureImage);
         textViewCardInfo = (TextView) findViewById(R.id.textViewLicenseCardInfo);
+
+        isFacialFlow = getIntent().getBooleanExtra("FACIAL",false);
 
         loadResult();
     }
@@ -145,6 +151,7 @@ public class ShowDataActivity extends Activity
     private void setResultsForPassportCard()
     {
         PassportCard processedPassportCard = DataContext.getInstance().getProcessedPassportCard();
+        FacialData processedFacialData = DataContext.getInstance().getProcessedFacialData();
 
         StringBuilder info = new StringBuilder();
 
@@ -184,6 +191,20 @@ public class ShowDataActivity extends Activity
         // Place of Birth
         info.append(("Place of Birth").concat(" - "))
                 .append(processedPassportCard.getEnd_POB()).append("<br/>");
+        if(processedPassportCard.getAuthenticationResult()!=null) {
+            info.append("Document Authentication".concat(" - ")).append(processedPassportCard.getAuthenticationResult()).append("<br/>");
+        }
+        if(processedPassportCard.getAuthenticationResultSummaryList()!=null && processedPassportCard.getAuthenticationResultSummaryList().size()>0) {
+            info.append("Document Authentication".concat(" - ")).append(getStringFromList(processedPassportCard.getAuthenticationResultSummaryList())).append("<br/>");
+        }
+        info.append("TID".concat(" - ")).append(processedPassportCard.getTransactionId()).append("<br/>");
+        if(processedFacialData!=null && isFacialFlow) {
+            info.append("FTID".concat(" - ")).append(processedFacialData.getTransactionId()).append("<br/>");
+            info.append("Facial Matched".concat(" - ")).append(processedFacialData.getFacialMatch()).append("<br/>");
+            info.append("Facial Match Confidence Rating".concat(" - ")).append(processedFacialData.getFacialMatchConfidenceRating()).append("<br/>");
+            info.append("Facial Enabled".concat(" - ")).append(processedFacialData.getFacialEnabled()).append("<br/>");
+            info.append("Live Face Detected".concat(" - ")).append(processedFacialData.getFaceLivelinessDetection()).append("<br/>");
+        }
 
         textViewCardInfo.setText(Html.fromHtml(info.toString()));
 
@@ -300,6 +321,7 @@ public class ShowDataActivity extends Activity
         // State
         info.append(("State").concat(" - ")).append(processedMedicalCard.getState())
                 .append("<br/>");
+        info.append("TID".concat(" - ")).append(processedMedicalCard.getTransactionId()).append("<br/>");
 
         textViewCardInfo.setText(Html.fromHtml(info.toString()));
 
@@ -320,7 +342,7 @@ public class ShowDataActivity extends Activity
     private void setResultsForDriversLicenseCard()
     {
         DriversLicenseCard processedLicenseCard = DataContext.getInstance().getProcessedLicenseCard();
-
+        FacialData processedFacialData = DataContext.getInstance().getProcessedFacialData();
         StringBuilder info = new StringBuilder();
         // first name
         info.append(("First Name").concat(" - "))
@@ -500,8 +522,8 @@ public class ShowDataActivity extends Activity
         info.append(("Place Of Issue").concat(" - ")).append(processedLicenseCard.getPlaceOfIssue()).append("<br/>");
         // Social Security
         info.append(("Social Security").concat(" - ")).append(processedLicenseCard.getSocialSecurity()).append("<br/>");
-        info.append("IsAddressCorrected ".concat(" - ")).append(processedLicenseCard.isAddressCorrected()).append("<br/>");
-        info.append("IsAddressVerified ".concat(" - ")).append(processedLicenseCard.isAddressVerified()).append("<br/>");
+        //info.append("IsAddressCorrected ".concat(" - ")).append(processedLicenseCard.isAddressCorrected()).append("<br/>");
+        //IsAddressVerifiedinfo.append("IsAddressVerified ".concat(" - ")).append(processedLicenseCard.isAddressVerified()).append("<br/>");
 
         if (processedLicenseCard.getRegion() == Region.REGION_CANADA || processedLicenseCard.getRegion() == Region.REGION_UNITED_STATES) {
             info.append("Is Barcode Read ".concat(" - ")).append(processedLicenseCard.getIsBarcodeRead()).append("<br/>");
@@ -510,7 +532,21 @@ public class ShowDataActivity extends Activity
         }
 
         info.append("Document Verification Confidence Rating".concat(" - ")).append(processedLicenseCard.getDocumentVerificationConfidenceRating()).append("<br/>");
+        if(processedLicenseCard.getAuthenticationResult()!=null) {
+            info.append("Document Authentication".concat(" - ")).append(processedLicenseCard.getAuthenticationResult()).append("<br/>");
+        }
+        if(processedLicenseCard.getAuthenticationResultSummaryList()!=null && processedLicenseCard.getAuthenticationResultSummaryList().size()>0) {
+            info.append("Document Authentication".concat(" - ")).append(getStringFromList(processedLicenseCard.getAuthenticationResultSummaryList())).append("<br/>");
+        }
 
+        info.append("TID".concat(" - ")).append(processedLicenseCard.getTransactionId()).append("<br/>");
+        if(processedFacialData!=null && isFacialFlow) {
+            info.append("FTID".concat(" - ")).append(processedFacialData.getTransactionId()).append("<br/>");
+            info.append("Facial Matched".concat(" - ")).append(processedFacialData.getFacialMatch()).append("<br/>");
+            info.append("Facial Match Confidence Rating".concat(" - ")).append(processedFacialData.getFacialMatchConfidenceRating()).append("<br/>");
+            info.append("Facial Enabled".concat(" - ")).append(processedFacialData.getFacialEnabled()).append("<br/>");
+            info.append("Live Face Detected".concat(" - ")).append(processedFacialData.getFaceLivelinessDetection()).append("<br/>");
+        }
 
         textViewCardInfo.setText(Html.fromHtml(info.toString()));
         if (processedLicenseCard.getReformatImage() != null) {
@@ -537,6 +573,21 @@ public class ShowDataActivity extends Activity
         }else {
             backSideCardImageView.setVisibility(View.GONE);
         }
+    }
+
+    private String getStringFromList(ArrayList list){
+        String retStr = null;
+
+        for(Object str:list){
+            if(retStr==null){
+                retStr = (String)str;
+            }else{
+                retStr = retStr + ", "+str;
+            }
+
+        }
+
+        return retStr;
     }
 
 }

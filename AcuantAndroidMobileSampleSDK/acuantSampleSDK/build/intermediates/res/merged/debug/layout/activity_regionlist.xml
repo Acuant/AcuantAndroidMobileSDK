@@ -11,12 +11,14 @@
             android:text="United States"
             android:textColor="#ff054cff"
             android:gravity="center"
+            android:clickable="true"
             android:layout_weight="1" android:onClick="selectedRegion"/>
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/Canada"
             android:text="Canada"
+            android:clickable="true"
             android:textColor="#ff054cff"
             android:layout_weight="1" android:gravity="center" android:onClick="selectedRegion"/>
     <TextView
@@ -24,6 +26,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Europe"
             android:text="Europe"
+            android:clickable="true"
             android:textColor="#ff054cff"
             android:layout_weight="1" android:gravity="center" android:onClick="selectedRegion"/>
     <TextView
@@ -31,6 +34,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Africa"
             android:text="Africa"
+            android:clickable="true"
             android:textColor="#ff054cff"
             android:layout_weight="1" android:gravity="center" android:onClick="selectedRegion"/>
     <TextView
@@ -38,6 +42,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Asia"
             android:text="Asia"
+            android:clickable="true"
             android:textColor="#ff054cff"
             android:layout_weight="1" android:gravity="center" android:onClick="selectedRegion"/>
     <TextView
@@ -45,6 +50,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/America"
             android:text="Latin America"
+            android:clickable="true"
             android:textColor="#ff054cff"
             android:layout_weight="1" android:gravity="center" android:onClick="selectedRegion"/>
     <TextView
@@ -52,6 +58,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Australia"
             android:text="Australia"
+            android:clickable="true"
             android:textColor="#ff054cff"
             android:layout_weight="1" android:gravity="center" android:onClick="selectedRegion"/>
 </LinearLayout>

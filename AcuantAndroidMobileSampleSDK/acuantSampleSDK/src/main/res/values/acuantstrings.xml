@@ -14,10 +14,12 @@
     <string name="activate">Activate</string>
     <string name="medical_insurance">Medical card</string>
     <string name="passport">Passport</string>
+    <string name="passport_facial">Passport with Facial</string>
     <string name="cam_front">Front Side</string>
     <string name="process">Process</string>
     <string name="cam_back">Back Side</string>
     <string name="driver_license">Drivers License</string>
+    <string name="driver_license_facial">Drivers License with Facial</string>
     <string name="todo">TODO</string>
     <string name="tap_to_capture_back_side_optional_">Tap to capture back side (Optional)</string>
     <string name="tap_to_capture_front_side">Tap to capture front side</string>
@@ -26,6 +28,7 @@
     <string name="tap_to_capture">Tap to capture card</string>
     <string name="dl_duplex">DL Duplex</string>
     <string name="dl_duplex_dialog">Scan the backside of the license</string>
+    <string name="facial_instruction_dialog">Please position your face in front of the front camera and blink when red rectangle appears.</string>
     <string name="no_internet_message">Internet connection appears to be offline. Please check your network settings.
     </string>
 

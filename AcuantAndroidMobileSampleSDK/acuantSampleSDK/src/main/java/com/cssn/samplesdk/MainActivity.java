@@ -12,12 +12,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
@@ -37,6 +43,7 @@ import com.acuant.mobilesdk.CardCroppingListener;
 import com.acuant.mobilesdk.CardType;
 import com.acuant.mobilesdk.DriversLicenseCard;
 import com.acuant.mobilesdk.ErrorType;
+import com.acuant.mobilesdk.FacialData;
 import com.acuant.mobilesdk.LicenseActivationDetails;
 import com.acuant.mobilesdk.LicenseDetails;
 import com.acuant.mobilesdk.MedicalCard;
@@ -44,11 +51,14 @@ import com.acuant.mobilesdk.PassportCard;
 import com.acuant.mobilesdk.ProcessImageRequestOptions;
 import com.acuant.mobilesdk.Region;
 import com.acuant.mobilesdk.WebServiceListener;
+import com.acuant.mobilesdk.FacialRecognitionListener;
 import com.acuant.mobilesdk.util.Utils;
 import com.cssn.mobilesdk.utilities.AcuantUtil;
 import com.cssn.samplesdk.model.MainActivityModel;
 import com.cssn.samplesdk.model.MainActivityModel.State;
+import com.cssn.samplesdk.util.ConfirmationListener;
 import com.cssn.samplesdk.util.DataContext;
+import com.cssn.samplesdk.util.TempImageStore;
 import com.cssn.samplesdk.util.Util;
 
 import java.io.File;
@@ -61,7 +71,7 @@ import java.util.Calendar;
 /**
  *
  */
-public class MainActivity extends Activity implements WebServiceListener, CardCroppingListener, AcuantErrorListener {
+public class MainActivity extends Activity implements WebServiceListener, CardCroppingListener, AcuantErrorListener, FacialRecognitionListener {
 
     private static final String TAG = MainActivity.class.getName();
     private static final String IS_SHOWING_DIALOG_KEY = "isShowingDialog";
@@ -93,9 +103,13 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     private static boolean isCropping;
     private static boolean isBackSide;
     private static boolean isShowDuplexDialog;
+    private static boolean isProcessingFacial;
+    private static boolean isFacialFlow;
     private MainActivity mainActivity;
     private int cardRegion;
     private Bitmap originalImage;
+    private Card processedCardInformation;
+    private FacialData processedFacialData;
     /**
      *
      */
@@ -136,8 +150,30 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         acuantAndroidMobileSdkControllerInstance.setWebServiceListener(this);
         acuantAndroidMobileSdkControllerInstance.setCloudUrl("cssnwebservices.com");
         acuantAndroidMobileSdkControllerInstance.setWatermarkText("Powered By Acuant", 0, 0, 30, 0);
-        acuantAndroidMobileSdkControllerInstance.setShowActionBar(false);
-        acuantAndroidMobileSdkControllerInstance.setShowStatusBar(false);
+        DisplayMetrics metrics = this.getResources().getDisplayMetrics();
+
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        int height = displaymetrics.heightPixels;
+        int width = displaymetrics.widthPixels;
+        int minLength = (int) (Math.min(width,height)*0.9);
+        int maxLength = (int) (minLength*1.5);
+        int left = minLength/2-50;
+        int top = maxLength/2-100;
+        Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
+        Typeface currentTypeFace =   textPaint.getTypeface();
+        Typeface bold = Typeface.create(currentTypeFace, Typeface.BOLD);
+        textPaint.setColor(Color.WHITE);
+        textPaint.setTextSize(50);
+        textPaint.setTextAlign(Paint.Align.LEFT);
+        textPaint.setTypeface(bold);
+        Paint.FontMetrics metric = textPaint.getFontMetrics();
+        acuantAndroidMobileSdkControllerInstance.setInstructionText("Blink Slowly", left,top,textPaint);
+        //acuantAndroidMobileSdkControllerInstance.setShowActionBar(false);
+        //acuantAndroidMobileSdkControllerInstance.setShowStatusBar(false);
+        //acuantAndroidMobileSdkControllerInstance.setFlashlight(true);
+        //acuantAndroidMobileSdkControllerInstance.setFlashlight(0,0,50,50);
+        acuantAndroidMobileSdkControllerInstance.setFlashlightImageDrawable(getResources().getDrawable(R.drawable.lighton), getResources().getDrawable(R.drawable.lightoff));
         //acuantAndroidMobileSdkControllerInstance.setShowInitialMessage(true);
         //acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
         //acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeDialogWaitingBarcode("AcuantAndroidMobileSampleSDK","ALIGN AND TAP", 10, "Try Again", "Yes");
@@ -217,7 +253,10 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     private void validateLicenseKey(String licenseKey) {
         Util.lockScreen(MainActivity.this);
         DataContext.getInstance().setLicenseKey(editTextLicense.getText().toString());
-        progressDialog = Util.showProgessDialog(this, "Validating License ..");
+        if(progressDialog!=null && progressDialog.isShowing()){
+            Util.dismissDialog(progressDialog);
+        }
+        progressDialog = Util.showProgessDialog(MainActivity.this, "Validating License ..");
         isValidating = true;
         acuantAndroidMobileSdkControllerInstance.setLicensekey(licenseKey);
         hideVirtualKeyboard();
@@ -247,7 +286,9 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             Utils.appendLog(TAG, "public void onCardCroppingStart(Activity activity)");
         }
         cardRegion = DataContext.getInstance().getCardRegion();
-        Util.dismissDialog(progressDialog);
+        if(progressDialog!=null && progressDialog.isShowing()) {
+            Util.dismissDialog(progressDialog);
+        }
         Util.lockScreen(this);
         progressDialog = Util.showProgessDialog(activity, "Cropping image...");
         isCropping = true;
@@ -259,22 +300,44 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      */
     @Override
     public void onCardCroppingFinish(final Bitmap bitmap) {
-        if (Util.LOG_ENABLED) {
-            Utils.appendLog("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - begin");
-        }
-        if (bitmap != null) {
-            updateModelAndUIFromCroppedCard(bitmap);
-        }else{
-            // set an error to be shown in the onResume method.
-            mainActivityModel.setErrorMessage("Unable to detect the card. Please try again.");
-            updateModelAndUIFromCroppedCard(originalImage);
-        }
-        Util.unLockScreen(this);
+        Util.dismissDialog(progressDialog);
+        TempImageStore.setBitmapImage(bitmap);
+        TempImageStore.setImageConfirmationListener(new ConfirmationListener() {
+            @Override
+            public void confimed() {
+                if (Util.LOG_ENABLED) {
+                    Utils.appendLog("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - begin");
+                }
+                if (bitmap != null) {
+                    updateModelAndUIFromCroppedCard(bitmap);
+                }else{
+                    // set an error to be shown in the onResume method.
+                    mainActivityModel.setErrorMessage("Unable to detect the card. Please try again.");
+                    updateModelAndUIFromCroppedCard(originalImage);
+                }
+                Util.unLockScreen(MainActivity.this);
 
-        if (Util.LOG_ENABLED) {
-            Utils.appendLog("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - end");
+                if (Util.LOG_ENABLED) {
+                    Utils.appendLog("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - end");
+                }
+                isCropping = false;
+            }
+
+            @Override
+            public void retry() {
+                showCameraInterface();
+            }
+        });
+
+        Intent imageConfirmationIntent = new Intent(this, ImageConformationActivity.class);
+        if(bitmap==null){
+            TempImageStore.setCroppingPassed(false);
+        }else{
+            TempImageStore.setCroppingPassed(true);
         }
-        isCropping = false;
+        TempImageStore.setCardType(mainActivityModel.getCurrentOptionType());
+        startActivity(imageConfirmationIntent);
+
     }
 
     /**
@@ -282,7 +345,31 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      * popover == true
      */
     @Override
-    public void onCardCroppingFinish(final Bitmap bitmap, boolean scanBackSide) {
+    public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide) {
+        TempImageStore.setBitmapImage(bitmap);
+        TempImageStore.setImageConfirmationListener(new ConfirmationListener() {
+            @Override
+            public void confimed() {
+                presentCameraForBackSide(bitmap,scanBackSide);
+            }
+
+            @Override
+            public void retry() {
+                showCameraInterface();
+            }
+        });
+        Intent imageConfirmationIntent = new Intent(this, ImageConformationActivity.class);
+        if(bitmap==null){
+            TempImageStore.setCroppingPassed(false);
+        }else{
+            TempImageStore.setCroppingPassed(true);
+        }
+        TempImageStore.setCardType(mainActivityModel.getCurrentOptionType());
+        startActivity(imageConfirmationIntent);
+    }
+
+    public void presentCameraForBackSide(final Bitmap bitmap, boolean scanBackSide) {
+
         if (Util.LOG_ENABLED) {
             Utils.appendLog("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - begin");
         }
@@ -303,7 +390,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
                     public void run() {
                         showDuplexDialog();
                     }
-                }, 1000);
+                }, 100);
             }
             updateModelAndUIFromCroppedCard(bitmap);
         } else {
@@ -343,6 +430,19 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     }
 
 
+    private void showFacialDialog() {
+        AlertDialog facialInstructionDialog = new AlertDialog.Builder(this).create();
+        facialInstructionDialog = Util.showDialog(this, getString(R.string.facial_instruction_dialog), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                AcuantAndroidMobileSDKController.getInstance().setFacialListener(MainActivity.this);
+                isProcessingFacial = AcuantAndroidMobileSDKController.getInstance().showManualFacialCameraInterface(MainActivity.this);
+                dialog.dismiss();
+            }
+        });
+    }
+
+
     @Override
     public void onPDF417Finish(String result) {
         sPdf417String = result;
@@ -355,6 +455,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
 
     @Override
     public void onCancelCapture() {
+        Utils.appendLog("Acuant", "onCancelCapture");
     }
 
     @Override
@@ -441,10 +542,11 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         final int currentOptionType = mainActivityModel.getCurrentOptionType();
         cardRegion = DataContext.getInstance().getCardRegion();
         alertDialog = new AlertDialog.Builder(this).create();
+        LicenseDetails license_details = DataContext.getInstance().getCssnLicenseDetails();
         if (currentOptionType == CardType.PASSPORT) {
             acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_PASSPORT_WIDTH);
         } else {
-            acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_DRIVERS_LICENSE_WIDTH);
+                acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_DRIVERS_LICENSE_WIDTH);
         }
         acuantAndroidMobileSdkControllerInstance.setInitialMessageDescriptor(R.layout.align_and_tap);
         acuantAndroidMobileSdkControllerInstance.setFinalMessageDescriptor(R.layout.hold_steady);
@@ -459,12 +561,34 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      */
     public void driverCardButtonPressed(View v) {
         // update the model
+        processedCardInformation = null;
+        processedFacialData=null;
         mainActivityModel.setCurrentOptionType(CardType.DRIVERS_LICENSE);
         mainActivityModel.clearImages();
-
+        isProcessing=false;
+        isProcessingFacial=false;
+        isFacialFlow = false;
         Intent regionList = new Intent(this, RegionList.class);
         this.startActivity(regionList);
 
+        updateUI();
+    }
+
+    public void driverCardWithFacialButtonPressed(View v){
+        // update the model
+        processedCardInformation = null;
+        processedFacialData=null;
+        mainActivityModel.setCurrentOptionType(CardType.DRIVERS_LICENSE);
+        mainActivityModel.clearImages();
+        isProcessing=false;
+        isProcessingFacial=false;
+        if(DataContext.getInstance().getCssnLicenseDetails().isFacialAllowed()) {
+            isFacialFlow = true;
+        }else{
+            isFacialFlow = false;
+        }
+        Intent regionList = new Intent(this, RegionList.class);
+        this.startActivity(regionList);
         updateUI();
     }
 
@@ -473,8 +597,29 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      *
      * @param v
      */
+
     public void passportCardButtonPressed(View v) {
+        processedCardInformation = null;
+        processedFacialData=null;
         mainActivityModel.setCurrentOptionType(CardType.PASSPORT);
+        isProcessing=false;
+        isProcessingFacial=false;
+        isFacialFlow=false;
+        mainActivityModel.clearImages();
+
+        updateUI();
+    }
+    public void passportCardWithFacialButtonPressed(View v) {
+        processedCardInformation = null;
+        processedFacialData=null;
+        mainActivityModel.setCurrentOptionType(CardType.PASSPORT);
+        isProcessing=false;
+        isProcessingFacial=false;
+        if(DataContext.getInstance().getCssnLicenseDetails().isFacialAllowed()) {
+            isFacialFlow = true;
+        }else{
+            isFacialFlow = false;
+        }
         mainActivityModel.clearImages();
 
         updateUI();
@@ -486,6 +631,8 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      * @param v
      */
     public void medicalCardButtonPressed(View v) {
+        processedCardInformation = null;
+        processedFacialData=null;
         mainActivityModel.setCurrentOptionType(CardType.MEDICAL_INSURANCE);
         mainActivityModel.clearImages();
 
@@ -576,6 +723,14 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
                 showFrontSideCardImage();
                 showBackSideCardImage();
                 break;
+            case CardType.FACIAL_RECOGNITION:
+                showFrontSideCardImage();
+                if (mainActivityModel.getBackSideCardImage() != null){
+                    showBackSideCardImage();
+                }else{
+                    hideBackSideCardImage();
+                }
+                break;
 
             default:
                 throw new IllegalArgumentException(
@@ -621,20 +776,37 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         switch (mainActivityModel.getCurrentOptionType()) {
 
             case CardType.DRIVERS_LICENSE:
-
                 buttonId = R.id.buttonDriver;
+                if(isFacialFlow){
+                    buttonId = R.id.buttonDriverFacial;
+                }else {
+                    buttonId = R.id.buttonDriver;
+                }
 
                 break;
 
             case CardType.PASSPORT:
-
                 buttonId = R.id.buttonPassport;
+                if(isFacialFlow){
+                    buttonId = R.id.buttonPassportFacial;
+                }else {
+                    buttonId = R.id.buttonPassport;
+                }
 
                 break;
 
             case CardType.MEDICAL_INSURANCE:
 
                 buttonId = R.id.buttonMedical;
+
+                break;
+            case CardType.FACIAL_RECOGNITION:
+                buttonId = R.id.buttonDriverFacial;
+                if(processedCardInformation instanceof DriversLicenseCard) {
+                    buttonId = R.id.buttonDriverFacial;
+                }else if(processedCardInformation instanceof PassportCard){
+                    buttonId = R.id.buttonPassportFacial;
+                }
 
                 break;
 
@@ -648,6 +820,8 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         ((Button) findViewById(R.id.buttonDriver)).setTypeface(null, Typeface.NORMAL);
         ((Button) findViewById(R.id.buttonPassport)).setTypeface(null, Typeface.NORMAL);
         ((Button) findViewById(R.id.buttonMedical)).setTypeface(null, Typeface.NORMAL);
+        ((Button) findViewById(R.id.buttonPassportFacial)).setTypeface(null, Typeface.NORMAL);
+        ((Button) findViewById(R.id.buttonPassportFacial)).setTypeface(null, Typeface.NORMAL);
 
         ((Button) findViewById(buttonId)).setTypeface(null, Typeface.BOLD);
     }
@@ -658,7 +832,20 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      * @param v
      */
     public void processCard(View v) {
-        if (!isProcessing) {
+        if(isFacialFlow) {
+            if (mainActivityModel.getCurrentOptionType() == CardType.FACIAL_RECOGNITION || mainActivityModel.getCurrentOptionType() == CardType.PASSPORT || mainActivityModel.getCurrentOptionType() == CardType.DRIVERS_LICENSE) {
+                isProcessingFacial = true;
+                showFacialDialog();
+            }
+        }
+        if(!isProcessingFacial) {
+            if(progressDialog!=null && progressDialog.isShowing()){
+                Util.dismissDialog(progressDialog);
+            }
+            progressDialog = Util.showProgessDialog(MainActivity.this, "Capturing data ...");
+            Util.lockScreen(this);
+        }
+        if (!isProcessing && processedCardInformation==null) {
             isProcessing = true;
             // check for the internet connection
             if (!Utils.isNetworkAvailable(this)) {
@@ -677,9 +864,9 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             }
 
             // process the card
-            progressDialog = Util.showProgessDialog(this, "Capturing data ...");
+            //progressDialog = Util.showProgessDialog(MainActivity.this, "Capturing data ...");
 
-            Util.lockScreen(this);
+            //Util.lockScreen(this);
 
             ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
             options.autoDetectState = true;
@@ -700,6 +887,39 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         }
     }
 
+
+    /**
+     * Called after card processing is over.
+     *
+     * @param
+     */
+    public void processImageValidation(Bitmap faceImage,Bitmap idCropedFaceImage) {
+        if(processedCardInformation!=null){
+            isProcessingFacial=false;
+        }
+            mainActivityModel.setCurrentOptionType(CardType.FACIAL_RECOGNITION);
+            if (!Utils.isNetworkAvailable(this)) {
+                String msg = getString(R.string.no_internet_message);
+                Utils.appendLog(TAG, msg);
+                Util.dismissDialog(alertDialog);
+                alertDialog = Util.showDialog(this, msg,new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        isShowErrorAlertDialog = false;
+                    }
+                });
+                isShowErrorAlertDialog = true;
+                return;
+            }
+
+            //Util.lockScreen(this);
+
+            ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
+            options.acuantCardType = CardType.FACIAL_RECOGNITION;
+            acuantAndroidMobileSdkControllerInstance.callProcessImageServices(faceImage, idCropedFaceImage, null, this, options);
+    }
+
     private void resetPdf417String() {
         sPdf417String = "";
     }
@@ -713,7 +933,10 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         String key = editTextLicense.getText().toString().trim();
         if (!key.equals("")) {
             Util.lockScreen(MainActivity.this);
-            progressDialog = Util.showProgessDialog(this, "Activating License ..");
+            if(progressDialog!=null && progressDialog.isShowing()){
+                Util.dismissDialog(progressDialog);
+            }
+            progressDialog = Util.showProgessDialog(MainActivity.this, "Activating License ..");
             isActivating = true;
             acuantAndroidMobileSdkControllerInstance.callActivateLicenseKeyService(key);
 
@@ -738,60 +961,87 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         if (Util.LOG_ENABLED) {
             Utils.appendLog(TAG, "public void processImageServiceCompleted(CSSNCard card, int status, String errorMessage)");
         }
-        isProcessing = false;
 
-        Util.dismissDialog(progressDialog);
+        if(mainActivityModel.getCurrentOptionType()!=CardType.FACIAL_RECOGNITION) {
+            isProcessing = false;
+            processedCardInformation = card;
+        }else{
+            isProcessingFacial=false;
+            processedFacialData = (FacialData) card;
+        }
 
-        String dialogMessage = null;
+        presentResults(processedCardInformation,processedFacialData);
 
-        try {
-            DataContext.getInstance().setCardType(mainActivityModel.getCurrentOptionType());
+    }
 
-            if (card == null || card.isEmpty()) {
-                dialogMessage = "No data found for this license card!";
-            } else {
 
-                switch (mainActivityModel.getCurrentOptionType()) {
-                    case CardType.DRIVERS_LICENSE:
-                        DataContext.getInstance().setProcessedLicenseCard((DriversLicenseCard) card);
-                        break;
+    public void presentResults(Card card,FacialData facialData){
+        if(!isProcessing && !isProcessingFacial) {
+            Util.dismissDialog(progressDialog);
+            String dialogMessage = null;
+            try {
+                DataContext.getInstance().setCardType(mainActivityModel.getCurrentOptionType());
 
-                    case CardType.MEDICAL_INSURANCE:
-                        DataContext.getInstance().setProcessedMedicalCard((MedicalCard) card);
-                        break;
+                if (card == null || card.isEmpty()) {
+                    dialogMessage = "No data found for this license card!";
+                } else {
 
-                    case CardType.PASSPORT:
-                        DataContext.getInstance().setProcessedPassportCard((PassportCard) card);
-                        break;
+                    switch (mainActivityModel.getCurrentOptionType()) {
+                        case CardType.DRIVERS_LICENSE:
+                            DataContext.getInstance().setProcessedLicenseCard((DriversLicenseCard) card);
+                            break;
 
-                    default:
-                        throw new IllegalStateException("There is not implementation for processing the card type '"
-                                + mainActivityModel.getCurrentOptionType() + "'");
+                        case CardType.MEDICAL_INSURANCE:
+                            DataContext.getInstance().setProcessedMedicalCard((MedicalCard) card);
+                            break;
+
+                        case CardType.PASSPORT:
+                            DataContext.getInstance().setProcessedPassportCard((PassportCard) card);
+                            break;
+                        case CardType.FACIAL_RECOGNITION:
+                            if( processedCardInformation instanceof DriversLicenseCard) {
+                                DriversLicenseCard dlCard = (DriversLicenseCard)processedCardInformation;
+                                DataContext.getInstance().setProcessedLicenseCard(dlCard);
+                                DataContext.getInstance().setCardType(CardType.DRIVERS_LICENSE);
+                            }else if(processedCardInformation instanceof PassportCard) {
+                                PassportCard passportCard = (PassportCard) processedCardInformation;
+                                DataContext.getInstance().setProcessedPassportCard(passportCard);
+                                DataContext.getInstance().setCardType(CardType.PASSPORT);
+                            }
+                            DataContext.getInstance().setProcessedFacialData(processedFacialData);
+                            break;
+                        default:
+                            throw new IllegalStateException("There is not implementation for processing the card type '"
+                                    + mainActivityModel.getCurrentOptionType() + "'");
+                    }
+
+                    Util.unLockScreen(MainActivity.this);
+
+                    Intent showDataActivityIntent = new Intent(this, ShowDataActivity.class);
+                    showDataActivityIntent.putExtra("FACIAL",isFacialFlow);
+                    this.startActivity(showDataActivityIntent);
                 }
 
-                Util.unLockScreen(MainActivity.this);
 
-                Intent showDataActivityIntent = new Intent(this, ShowDataActivity.class);
-                this.startActivity(showDataActivityIntent);
+            } catch (Exception e) {
+                Utils.appendLog(TAG, e.getMessage());
+                dialogMessage = "Sorry! Internal error has occurred, please contact us!";
+
             }
 
-        } catch (Exception e) {
-            Utils.appendLog(TAG, e.getMessage());
-            dialogMessage = "Sorry! Internal error has occurred, please contact us!";
+            if (dialogMessage != null) {
+                Util.dismissDialog(alertDialog);
+                alertDialog = Util.showDialog(this, dialogMessage, new DialogInterface.OnClickListener() {
 
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        isShowErrorAlertDialog = false;
+                    }
+                });
+                isShowErrorAlertDialog = true;
+            }
         }
 
-        if (dialogMessage != null) {
-            Util.dismissDialog(alertDialog);
-            alertDialog = Util.showDialog(this, dialogMessage,new DialogInterface.OnClickListener() {
-
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    isShowErrorAlertDialog = false;
-                }
-            });
-            isShowErrorAlertDialog = true;
-        }
     }
 
     /**
@@ -931,20 +1181,23 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         isValidating = savedInstanceState.getBoolean(IS_VALIDATING_DIALOG_KEY, false);
         isActivating = savedInstanceState.getBoolean(IS_ACTIVATING_DIALOG_KEY, false);
         isShowDuplexDialog = savedInstanceState.getBoolean(IS_SHOWDUPLEXDIALOG_DIALOG_KEY, false);
+        if(progressDialog!=null && progressDialog.isShowing()){
+            Util.dismissDialog(progressDialog);
+        }
         if (isShowDuplexDialog) {
             showDuplexDialog();
         }
         if (isProcessing) {
-            progressDialog = Util.showProgessDialog(this, "Capturing data ...");
+            progressDialog = Util.showProgessDialog(MainActivity.this, "Capturing data ...");
         }
         if (isCropping){
-            progressDialog = Util.showProgessDialog(this, "Cropping image...");
+            progressDialog = Util.showProgessDialog(MainActivity.this, "Cropping image...");
         }
         if (isValidating){
-            progressDialog = Util.showProgessDialog(this, "Validating License ..");
+            progressDialog = Util.showProgessDialog(MainActivity.this, "Validating License ..");
         }
         if (isActivating){
-            progressDialog = Util.showProgessDialog(this, "Activating License ..");
+            progressDialog = Util.showProgessDialog(MainActivity.this, "Activating License ..");
         }
         if (isShowErrorAlertDialog){
             alertDialog.show();
@@ -1062,6 +1315,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
 
     @Override
     public void didFailWithError(int code, String message) {
+        Utils.appendLog("didFailWithError", "didFailWithError:" + code + "message" + message);
         Util.dismissDialog(progressDialog);
         Util.unLockScreen(MainActivity.this);
         String msg = message;
@@ -1084,5 +1338,48 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         isValidating = false;
         isProcessing = false;
         isActivating = false;
+    }
+
+    @Override
+    public void onFacialRecognitionCompleted(final Bitmap bitmap) {
+        Util.lockScreen(this);
+        runOnUiThread(new Runnable(){
+            @Override
+            public void run() {
+                if(progressDialog!=null && progressDialog.isShowing()){
+                    Util.dismissDialog(progressDialog);
+                }
+                progressDialog = Util.showProgessDialog(MainActivity.this, "Capturing data ...");
+                new Thread(new Runnable()
+                {
+                    @Override
+                    public void run() {
+                        while(isProcessing){
+                            try {
+                                Thread.sleep(100);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        // process the card
+                        if(mainActivityModel.getCurrentOptionType()==CardType.DRIVERS_LICENSE) {
+                            DriversLicenseCard dlCard = (DriversLicenseCard)processedCardInformation;
+                            processImageValidation(bitmap,dlCard.getFaceImage());
+                        }else if(mainActivityModel.getCurrentOptionType()==CardType.PASSPORT) {
+                            PassportCard passportCard = (PassportCard) processedCardInformation;
+                            processImageValidation(bitmap,passportCard.getFaceImage());
+                        }
+                    }
+                }).start();
+
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onFacialRecognitionCanceled(){
+        isProcessingFacial=false;
     }
 }

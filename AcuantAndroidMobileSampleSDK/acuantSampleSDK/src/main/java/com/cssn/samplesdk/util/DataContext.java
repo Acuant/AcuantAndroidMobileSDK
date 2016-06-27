@@ -24,6 +24,7 @@ public class DataContext extends android.app.Application
     private DriversLicenseCard processedLicenseCard;
     private MedicalCard processedMedicalCard;
     private PassportCard processedPassportCard;
+    private FacialData processedFacialData;
     
     private MainActivityModel mainActivityModel = null;
     
@@ -112,6 +113,14 @@ public class DataContext extends android.app.Application
     public void setProcessedPassportCard(PassportCard processedPassportCard)
     {
         this.processedPassportCard = processedPassportCard;
+    }
+
+    public FacialData getProcessedFacialData() {
+        return processedFacialData;
+    }
+
+    public void setProcessedFacialData(FacialData processedFacialData) {
+        this.processedFacialData = processedFacialData;
     }
 
     /**

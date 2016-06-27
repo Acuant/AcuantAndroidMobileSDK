@@ -105,6 +105,7 @@ public class Util
         ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.setMessage(message);
         progressDialog.setIndeterminate(true);
+        progressDialog.setCancelable(false);
         progressDialog.show();
 
         return progressDialog;
@@ -157,6 +158,7 @@ public class Util
         {
             try
             {
+                dialog.setCancelable(true);
                 dialog.dismiss();
             } catch (IllegalArgumentException e) // even sometimes happens?: http://stackoverflow.com/questions/12533677/illegalargumentexception-when-dismissing-dialog-in-async-task
             {

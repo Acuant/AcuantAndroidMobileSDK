@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
-    api-level="22"
-    density="xxxhdpi"
+    api-level="23"
+    density="560dpi"
     format="7"
-    timestamp="13685073535155" >
+    timestamp="1528090840303" >
 
     <task
         name="javac"
-        duration="923" />
+        duration="1203" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="476" />
+        duration="475" />
     <task
         name="verifier"
-        duration="127" />
+        duration="134" />
 
     <artifact
         location="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/outputs/apk/acuantSampleSDK-debug.apk"
         type="MAIN" />
 
-    <build timestamp="13685073535155" >
+    <build timestamp="1528090840303" >
         <artifact
             location="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/outputs/apk/acuantSampleSDK-debug.apk"
             type="MAIN" />
