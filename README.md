@@ -934,3 +934,4 @@ Acuant Android MobileSDK version 4.2
 Changes:
 
 -	Image size optimization for AssureID document authentication feature
+-	libpng version updated to resolve security vulnerabilities issue.
