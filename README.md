@@ -7,7 +7,8 @@ Last updated on – 07/21/2016
 
 # Introduction
 
-The AcuantAndroidMobileSDK is designed to simplify your development efforts. Processing of the captured images takes place via Acuant’s Web Services.  Acuant’s Web Services offer fast data extraction and authentication with zero downtime. 
+The AcuantAndroidMobileSDK is designed to simplify your development efforts. 
+Processing of the captured images takes place via Acuant’s Web Services.  Acuant’s Web Services offer fast data extraction and authentication with zero downtime. 
 
 Benefits:
 
@@ -147,7 +148,9 @@ Add the followings activities into manifest.xml file:
 	<activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual"></activity>
 	
 	
-## Multiple APK Support (Optional)Multiple APK support is a feature on Google Play that allows to split the large APK file into smaller APKs for different CPU architectures. This helps in keeping the application size small for the end user. Please follow the instructions from Google to split the application as specified at https://developer.android.com/google/play/publishing/multiple-apks.html 
+## Multiple APK Support (Optional)
+
+Multiple APK support is a feature on Google Play that allows to split the large APK file into smaller APKs for different CPU architectures. This helps in keeping the application size small for the end user. Please follow the instructions from Google to split the application as specified at https://developer.android.com/google/play/publishing/multiple-apks.html 
 
 
 # Activating the license key
@@ -367,7 +370,12 @@ process the card.
 
 **For Driver's License Cards**
 
-	LicenseDetails details ;  // license details obtained during license key validation	if(details.isAssureIDAllowed()){    	AcuantAndroidMobileSDKControllerInstance.setWidth(2024);	}else {    	AcuantAndroidMobileSDKControllerInstance.setWidth(1250);	}
+	LicenseDetails details ;  // license details obtained during license key validation
+	if(details.isAssureIDAllowed()){
+    	AcuantAndroidMobileSDKControllerInstance.setWidth(2024);
+	}else {
+    	AcuantAndroidMobileSDKControllerInstance.setWidth(1250);
+	}
 
 **For Medical Insurance Cards**
 
@@ -717,15 +725,115 @@ This is the implementation in the Sample project:
 	}
 	
 	
-# Facial Recognition and Match FeatureAcuant FRM (Facial Recognition Match) is a person authentication solution for mobile devices based on biometric face recognition.Acuant FRM 
--	Opens the front camera-	Ensures the user is correctly placed in front of the camera-	Detects a live person -	Detects spoofing attacks by presenting eye blink challenge -	Acquires biometric samples-	Verifies the identity of a user-	All the steps are done in real time.Benefits of Acuant FRM -	Helps in reducing fraud by matching the face biometrics to the face image on the driver’s license or passport.-	Easy to integrate-	Secure-	Fast and convenient-	Real time checks and processing within secondsThe Acuant FRM performs following checks to recognize a live face and match face biometrics to the face picture on the driver’s license or passport.
- ###### 1 - Face position checks: check that the face is well detected, correctly centered and in a good distance from the camera.
-- Distance to person algorithm ensures that person’s face is at optimal distance from the front camera. 
-- Ensures that person is only presenting frontal face (Side faces are rejected).
-###### 2 - Tracks eye blinks as an added layer to check for face liveliness and avoid spoofing attacks.
-###### 3 - Captures face biometrics and matches it to the face picture on the driver’s license or passport.####  Following are the APIs/Classes to use the Facial Match feature.**a.FacialRecognitionListener**This is the listener to be used to get the call back from the SDK interface. It has two interfaces- public void onFacialRecognitionCompleted(final Bitmap bitmap);	This is called when a live face is successfully recognized. The parameter “bitmap”  contains  the face image recognized by facial recognition.- Public void onFacialRecognitionCanceled();  This is called when the user cancels facial recognition.***b.	Show facial recognition user interface***To show the facial recognition interface, call the following method: 	AcuantAndroidMobileSDKController.getInstance().showManualFacialCameraInterface(Activity activity);To customize “Blink Slowly” instruction message, use the following API.	setInstructionText(String instructionStr, int left, int top,Paint paint)	Parameters : 	instructionStr : instruction to be displayed	left : left padding	top : top padding	paint : Paint object to specify color,text font etc**c.	Facial Match function call**The facial match function call can be made the same way as the other card processing function calls. Below is an example:    	public void processImageValidation(Bitmap faceImage,Bitmap idCropedFaceImage)	{		//code        	ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();        	options.acuantCardType = CardType.FACIAL_RECOGNITION;        	acuantAndroidMobileSdkControllerInstance.callProcessImageServices(faceImage, 		idCropedFaceImage, null, this, options);
-        //Code	}The following web service call back method will be called after the above function call returns	@Override	public void processImageServiceCompleted(Card card) {	//Code	if(mainActivityModel.getCurrentOptionType()==CardType.FACIAL_RECOGNITION) {        FacialData  processedFacialData = (FacialData) card;    }
-    //Code    } **d.	FacialData**This class is the data class for facial results. Following are the methods to get the facial data	public boolean getFacialMatch() 	public String getTransactionId() // Facial match transaction id		  public Boolean getFacialEnabled() // If facial feature is enabled.		  public Boolean getFaceLivelinessDetection() // If a live face was detected.				  public String getFacialMatchConfidenceRating() // Confidence level out of 100
+# Facial Recognition and Match Feature
+
+Acuant FRM (Facial Recognition Match) is a person authentication solution for mobile devices based on biometric face recognition.
+
+Acuant FRM 
+
+-	Opens the front camera
+-	Ensures the user is correctly placed in front of the camera
+-	Detects a live person 
+-	Detects spoofing attacks by presenting eye blink challenge 
+-	Acquires biometric samples
+-	Verifies the identity of a user
+-	All the steps are done in real time.
+
+Benefits of Acuant FRM 
+
+-	Helps in reducing fraud by matching the face biometrics to the face image on the driver’s license or passport.
+-	Easy to integrate
+-	Secure
+-	Fast and convenient
+-	Real time checks and processing within seconds
+
+The Acuant FRM performs following checks to recognize a live face and match face biometrics to the face picture on the driver’s license or passport.
+
+ 
+###### 1 - Face position checks: check that the face is well detected, correctly centered and in a good distance from the camera.
+
+- Distance to person algorithm ensures that person’s face is at optimal distance from the front camera. 
+
+- Ensures that person is only presenting frontal face (Side faces are rejected).
+
+###### 2 - Tracks eye blinks as an added layer to check for face liveliness and avoid spoofing attacks.
+
+
+###### 3 - Captures face biometrics and matches it to the face picture on the driver’s license or passport.
+
+####  Following are the APIs/Classes to use the Facial Match feature.
+
+**a.FacialRecognitionListener**
+This is the listener to be used to get the call back from the SDK interface. It has two interfaces
+
+- public void onFacialRecognitionCompleted(final Bitmap bitmap);
+
+	This is called when a live face is successfully recognized. The parameter “bitmap”  contains  the face image recognized by facial recognition.
+
+- Public void onFacialRecognitionCanceled();
+  This is called when the user cancels facial recognition.
+
+
+
+***b.	Show facial recognition user interface***
+
+To show the facial recognition interface, call the following method: 
+
+	AcuantAndroidMobileSDKController.getInstance().showManualFacialCameraInterface(Activity activity);
+
+To customize “Blink Slowly” instruction message, use the following API.
+
+	setInstructionText(String instructionStr, int left, int top,Paint paint)
+
+	Parameters : 
+	instructionStr : instruction to be displayed
+	left : left padding
+	top : top padding
+	paint : Paint object to specify color,text font etc
+
+
+**c.	Facial Match function call**
+
+The facial match function call can be made the same way as the other card processing function calls. Below is an example:
+    
+	public void processImageValidation(Bitmap faceImage,Bitmap idCropedFaceImage)
+	{
+		//code
+        	ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
+        	options.acuantCardType = CardType.FACIAL_RECOGNITION;
+        	acuantAndroidMobileSdkControllerInstance.callProcessImageServices(faceImage, 		idCropedFaceImage, null, this, options);
+
+        //Code
+	}
+
+
+
+The following web service call back method will be called after the above function call returns
+
+	@Override
+	public void processImageServiceCompleted(Card card) {
+	//Code
+	if(mainActivityModel.getCurrentOptionType()==CardType.FACIAL_RECOGNITION) {
+        FacialData  processedFacialData = (FacialData) card;
+
+    }
+
+    //Code
+    
+}
+ 
+**d.	FacialData**
+This class is the data class for facial results. Following are the methods to get the facial data
+
+	public boolean getFacialMatch() 
+
+	public String getTransactionId() // Facial match transaction id
+
+		  public Boolean getFacialEnabled() // If facial feature is enabled.
+
+		  public Boolean getFaceLivelinessDetection() // If a live face was detected.
+		
+		  public String getFacialMatchConfidenceRating() // Confidence level out of 100
 
 
 # Errors handling
@@ -825,4 +933,4 @@ Acuant Android MobileSDK version 4.2
 
 Changes:
 
--	Image size optimization for AssureId
+-	Image size optimization for AssureID document authentication feature
