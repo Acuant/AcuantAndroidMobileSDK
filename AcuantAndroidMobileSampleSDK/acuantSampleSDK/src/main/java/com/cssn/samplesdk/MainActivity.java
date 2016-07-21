@@ -171,9 +171,9 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         acuantAndroidMobileSdkControllerInstance.setInstructionText("Blink Slowly", left,top,textPaint);
         //acuantAndroidMobileSdkControllerInstance.setShowActionBar(false);
         //acuantAndroidMobileSdkControllerInstance.setShowStatusBar(false);
-        //acuantAndroidMobileSdkControllerInstance.setFlashlight(true);
-        //acuantAndroidMobileSdkControllerInstance.setFlashlight(0,0,50,50);
-        acuantAndroidMobileSdkControllerInstance.setFlashlightImageDrawable(getResources().getDrawable(R.drawable.lighton), getResources().getDrawable(R.drawable.lightoff));
+        acuantAndroidMobileSdkControllerInstance.setFlashlight(false);
+        //acuantAndroidMobileSdkControllerInstance.setFlashlight(0,0,50,0);
+        //acuantAndroidMobileSdkControllerInstance.setFlashlightImageDrawable(getResources().getDrawable(R.drawable.lighton), getResources().getDrawable(R.drawable.lightoff));
         //acuantAndroidMobileSdkControllerInstance.setShowInitialMessage(true);
         //acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
         //acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeDialogWaitingBarcode("AcuantAndroidMobileSampleSDK","ALIGN AND TAP", 10, "Try Again", "Yes");
@@ -256,7 +256,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         if(progressDialog!=null && progressDialog.isShowing()){
             Util.dismissDialog(progressDialog);
         }
-        progressDialog = Util.showProgessDialog(MainActivity.this, "Validating License ..");
+        //progressDialog = Util.showProgessDialog(MainActivity.this, "Validating License ..");
         isValidating = true;
         acuantAndroidMobileSdkControllerInstance.setLicensekey(licenseKey);
         hideVirtualKeyboard();

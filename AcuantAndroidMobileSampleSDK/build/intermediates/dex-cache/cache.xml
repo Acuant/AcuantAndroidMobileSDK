@@ -23,13 +23,6 @@
         <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_d3789996f04d178700e831ee4228140b5a5e15a1.jar" />
     </item>
     <item
-        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.microblink/pdf417.mobi/5.4.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="7373e1e83625a9b7e267828758199fe0380c2c01">
-        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/com.microblink-pdf417.mobi-5.4.1_5b772fe5d6045a5e51a26c4c55b9c492d1596591.jar" />
-    </item>
-    <item
         jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
         jumboMode="false"
         revision="23.0.2"
@@ -58,10 +51,17 @@
         <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/okhttp-3.2.0_4d689bb2ee65e79f05fcc0014c3405fb19d78868.jar" />
     </item>
     <item
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.microblink/pdf417.mobi/5.4.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="7373e1e83625a9b7e267828758199fe0380c2c01">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/com.microblink-pdf417.mobi-5.4.1_5b772fe5d6045a5e51a26c4c55b9c492d1596591.jar" />
+    </item>
+    <item
         jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="bedd919069e4cec282176b0978f7b3150b2f709d">
+        sha1="0935fc98ed613e8a7f695595053c2713873b7720">
         <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/AcuantAndroidMobileSampleSDK-acuantMobileSDK-unspecified_36610468f1e53414c50bcb458affa2b61ca01c4f.jar" />
     </item>
 

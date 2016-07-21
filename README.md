@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 06/27/2016
+Last updated on – 07/21/2016
 
 # Introduction
 
@@ -110,7 +110,7 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 	}
 	
 	 dependencies {
-		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.1'
+		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.2'
 		compile ('com.microblink:pdf417.mobi:5.4.1@aar')
 		compile ('com.android.support:appcompat-v7:23.1.1')
 		compile ('com.google.code.gson:gson:2.5')
@@ -145,6 +145,9 @@ Add the followings activities into manifest.xml file:
 	<activity android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"></activity>
 	<activity android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417"> </activity>
 	<activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual"></activity>
+	
+	
+## Multiple APK Support (Optional)Multiple APK support is a feature on Google Play that allows to split the large APK file into smaller APKs for different CPU architectures. This helps in keeping the application size small for the end user. Please follow the instructions from Google to split the application as specified at https://developer.android.com/google/play/publishing/multiple-apks.html 
 
 
 # Activating the license key
@@ -364,15 +367,15 @@ process the card.
 
 **For Driver's License Cards**
 
-AcuantAndroidMobileSDKControllerInstance.setWidth(1250);
+	LicenseDetails details ;  // license details obtained during license key validation	if(details.isAssureIDAllowed()){    	AcuantAndroidMobileSDKControllerInstance.setWidth(2024);	}else {    	AcuantAndroidMobileSDKControllerInstance.setWidth(1250);	}
 
 **For Medical Insurance Cards**
 
-AcuantAndroidMobileSDKControllerInstance.setWidth(1012);
+	AcuantAndroidMobileSDKControllerInstance.setWidth(1012);
 
 **For Passport Documents**
 
-AcuantAndroidMobileSDKControllerInstance.setWidth(1478);
+	AcuantAndroidMobileSDKControllerInstance.setWidth(1478);
 
 # Processing a card
 
@@ -818,8 +821,8 @@ This is the implementation in the Sample project:
 
 # Change Log
 
-Acuant Android MobileSDK version 4.1
+Acuant Android MobileSDK version 4.2
 
 Changes:
 
--	Added facial recognition and match feature.  -	Added captured image review screen to verify the captured image.-	Added assure ID authentication
+-	Image size optimization for AssureId
