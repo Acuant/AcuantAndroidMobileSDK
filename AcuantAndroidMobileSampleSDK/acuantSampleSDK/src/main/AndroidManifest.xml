@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cssn.samplesdk">
 
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -38,9 +38,6 @@
         </activity>
         <activity
             android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417">
-        </activity>
-        <activity
-            android:name="com.acuant.mobilesdk.detect.CameraCardDetectAuto">
         </activity>
         <activity
             android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual">

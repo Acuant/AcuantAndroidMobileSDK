@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 07/21/2016
+Last updated on – 08/18/2016
 
 # Introduction
 
@@ -111,7 +111,7 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 	}
 	
 	 dependencies {
-		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.2'
+		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.3'
 		compile ('com.microblink:pdf417.mobi:5.4.1@aar')
 		compile ('com.android.support:appcompat-v7:23.1.1')
 		compile ('com.google.code.gson:gson:2.5')
@@ -131,6 +131,9 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 			 exclude 'META-INF/NOTICE.txt'
 		 }
 	 }
+	 
+	 
+##Obfuscation If you are using ProGaurd to obfuscate, make sure to add the following rules	-keep class com.microblink.** { *; }	-keepclassmembers class com.microblink.** { *; }	-dontwarn android.hardware.**	-dontwarn android.support.v4.**
 
 
 ## Add views into manifest
@@ -379,7 +382,7 @@ process the card.
 
 **For Medical Insurance Cards**
 
-	AcuantAndroidMobileSDKControllerInstance.setWidth(1012);
+	AcuantAndroidMobileSDKControllerInstance.setWidth(1500);
 
 **For Passport Documents**
 
@@ -929,9 +932,10 @@ This is the implementation in the Sample project:
 
 # Change Log
 
-Acuant Android MobileSDK version 4.2
+Acuant Android MobileSDK version 4.3
 
 Changes:
 
--	Image size optimization for AssureID document authentication feature
--	libpng version updated to resolve security vulnerabilities issue.
+-	Improved image cropping
+-	Updated image size to 1500 for Medical Insurance Cards only
+-	Memory optimization to fix memory out of bound crashes in low memory devices

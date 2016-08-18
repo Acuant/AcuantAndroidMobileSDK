@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:2:1-59:12
+ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:2:1-56:12
 	package
 		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:3:5-33
 		INJECTED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/Acua
 		INJECTED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml
 		INJECTED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml
 uses-permission#android.permission.CAMERA
-ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:5:5-65
+ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:5:5-64
 MERGED from [com.microblink:pdf417.mobi:5.4.1] /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.microblink/pdf417.mobi/5.4.1/AndroidManifest.xml:18:5-65
 	android:name
 		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:5:22-62
@@ -44,7 +44,7 @@ MERGED from [com.microblink:pdf417.mobi:5.4.1] /Users/tapasbehera/Desktop/Androi
 	android:name
 		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:11:22-66
 application
-ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:13:5-57:19
+ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:13:5-54:19
 MERGED from [com.microblink:pdf417.mobi:5.4.1] /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.microblink/pdf417.mobi/5.4.1/AndroidManifest.xml:35:5-40:19
 MERGED from [com.android.support:appcompat-v7:23.1.1] /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml:22:5-20
@@ -100,26 +100,22 @@ activity#com.acuant.mobilesdk.detect.PDF417.CameraPDF417
 ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:39:9-41:20
 	android:name
 		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:40:13-75
-activity#com.acuant.mobilesdk.detect.CameraCardDetectAuto
+activity#com.acuant.mobilesdk.detect.CameraCardDetectManual
 ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:42:9-44:20
 	android:name
-		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:43:13-76
-activity#com.acuant.mobilesdk.detect.CameraCardDetectManual
+		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:43:13-78
+activity#com.acuant.mobilesdk.detect.Camera2CardDetectManual
 ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:45:9-47:20
 	android:name
-		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:46:13-78
-activity#com.acuant.mobilesdk.detect.Camera2CardDetectManual
+		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:46:13-79
+activity#com.acuant.mobilesdk.detect.Camera2FacialRecognitionManual
 ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:48:9-50:20
 	android:name
-		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:49:13-79
-activity#com.acuant.mobilesdk.detect.Camera2FacialRecognitionManual
+		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:49:13-86
+activity#com.cssn.samplesdk.ImageConformationActivity
 ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:51:9-53:20
 	android:name
-		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:52:13-86
-activity#com.cssn.samplesdk.ImageConformationActivity
-ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:54:9-56:20
-	android:name
-		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:55:13-72
+		ADDED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml:52:13-72
 uses-sdk
 INJECTED from /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [AcuantAndroidMobileSampleSDK:acuantMobileSDK:unspecified] /Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/AndroidManifest.xml:7:5-9:41

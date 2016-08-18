@@ -3,6 +3,7 @@
  */
 package com.cssn.samplesdk;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -10,16 +11,22 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
@@ -52,6 +59,7 @@ import com.acuant.mobilesdk.ProcessImageRequestOptions;
 import com.acuant.mobilesdk.Region;
 import com.acuant.mobilesdk.WebServiceListener;
 import com.acuant.mobilesdk.FacialRecognitionListener;
+import com.acuant.mobilesdk.task.CroppingTaskManual;
 import com.acuant.mobilesdk.util.Utils;
 import com.cssn.mobilesdk.utilities.AcuantUtil;
 import com.cssn.samplesdk.model.MainActivityModel;
@@ -115,6 +123,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         if (Util.LOG_ENABLED) {
@@ -146,6 +155,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         if (!Util.isTablet(this)) {
             acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));
         }
+
 
         acuantAndroidMobileSdkControllerInstance.setWebServiceListener(this);
         acuantAndroidMobileSdkControllerInstance.setCloudUrl("cssnwebservices.com");
@@ -256,7 +266,6 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         if(progressDialog!=null && progressDialog.isShowing()){
             Util.dismissDialog(progressDialog);
         }
-        //progressDialog = Util.showProgessDialog(MainActivity.this, "Validating License ..");
         isValidating = true;
         acuantAndroidMobileSdkControllerInstance.setLicensekey(licenseKey);
         hideVirtualKeyboard();
@@ -545,15 +554,20 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         LicenseDetails license_details = DataContext.getInstance().getCssnLicenseDetails();
         if (currentOptionType == CardType.PASSPORT) {
             acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_PASSPORT_WIDTH);
+        }else if (currentOptionType == CardType.MEDICAL_INSURANCE) {
+            acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_MEDICAL_INSURANCE);
         } else {
+            if(license_details.isAssureIDAllowed()) {
+                acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_DRIVERS_LICENSE_WIDTH_FOR_AUTHENTICATION);
+            }else {
                 acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_DRIVERS_LICENSE_WIDTH);
+            }
         }
         acuantAndroidMobileSdkControllerInstance.setInitialMessageDescriptor(R.layout.align_and_tap);
         acuantAndroidMobileSdkControllerInstance.setFinalMessageDescriptor(R.layout.hold_steady);
-
         acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(this, currentOptionType, cardRegion, isBackSide);
-    }
 
+    }
     /**
      * Called after a tap in the driver's card button.
      *

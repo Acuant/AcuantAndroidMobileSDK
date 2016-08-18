@@ -16,6 +16,8 @@ public class AcuantUtil
 
     public static final int DEFAULT_CROP_DRIVERS_LICENSE_WIDTH_FOR_AUTHENTICATION = 2024;
 
+    public static final int DEFAULT_CROP_MEDICAL_INSURANCE = 1500;
+
     /**
      * 
      * @param cardType
