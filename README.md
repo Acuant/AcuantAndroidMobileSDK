@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 08/18/2016
+Last updated on – 08/30/2016
 
 # Introduction
 
@@ -93,9 +93,9 @@ Add the following code in your build.gradle to avoid some file collision
 	
 	 dependencies {
 	
-		 compile ('com.microblink:pdf417.mobi:5.4.1@aar')
+		 compile ('com.microblink:pdf417.mobi:5.5.2@aar')
 		
-		 compile ('com.android.support:appcompat-v7:23.1.1')
+		 compile ('com.android.support:appcompat-v7:24.0.0')
 		
 		 compile ('com.google.code.gson:gson:2.5')
 		
@@ -111,9 +111,9 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 	}
 	
 	 dependencies {
-		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.3'
-		compile ('com.microblink:pdf417.mobi:5.4.1@aar')
-		compile ('com.android.support:appcompat-v7:23.1.1')
+		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.4'
+		compile ('com.microblink:pdf417.mobi:5.5.2@aar')
+		compile ('com.android.support:appcompat-v7:24.0.0')
 		compile ('com.google.code.gson:gson:2.5')
 		compile ('com.squareup.okhttp3:okhttp:3.2.0')
 	}
@@ -270,6 +270,8 @@ This function returns the card image without crop process.
 
 Called when the user tap the back button.
 
+If the application is targeted for Android API 23 and above, the control will return to the following method after the user taps on allow/deny for camera permission. The requestCode will be Permission.PERMISSION_CAMERA. If the permission is already given manually then the control won’t come here.	//Override this only for API 23 and Above 	@Override 	public void onRequestPermissionsResult(int requestCode,										String permissions[], int[] grantResults) {	 		switch (requestCode) {		 		case Permission.PERMISSION_CAMERA: {			 			// If request is cancelled, the result arrays are empty.			 			if (grantResults.length > 0					 		&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {				 		// Permission granted			 		} else {				 		// permission denied					}			 		return;		 		}	 		} 	}
+
 
 ### Show the barcode camera methods
 
@@ -375,9 +377,9 @@ process the card.
 
 	LicenseDetails details ;  // license details obtained during license key validation
 	if(details.isAssureIDAllowed()){
-    	AcuantAndroidMobileSDKControllerInstance.setWidth(2024);
+		AcuantAndroidMobileSDKControllerInstance.setWidth(2024);
 	}else {
-    	AcuantAndroidMobileSDKControllerInstance.setWidth(1250);
+		AcuantAndroidMobileSDKControllerInstance.setWidth(1250);
 	}
 
 **For Medical Insurance Cards**
@@ -798,15 +800,15 @@ To customize “Blink Slowly” instruction message, use the following API.
 **c.	Facial Match function call**
 
 The facial match function call can be made the same way as the other card processing function calls. Below is an example:
-    
+	
 	public void processImageValidation(Bitmap faceImage,Bitmap idCropedFaceImage)
 	{
 		//code
-        	ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
-        	options.acuantCardType = CardType.FACIAL_RECOGNITION;
-        	acuantAndroidMobileSdkControllerInstance.callProcessImageServices(faceImage, 		idCropedFaceImage, null, this, options);
+			ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
+			options.acuantCardType = CardType.FACIAL_RECOGNITION;
+			acuantAndroidMobileSdkControllerInstance.callProcessImageServices(faceImage, 		idCropedFaceImage, null, this, options);
 
-        //Code
+		//Code
 	}
 
 
@@ -817,12 +819,12 @@ The following web service call back method will be called after the above functi
 	public void processImageServiceCompleted(Card card) {
 	//Code
 	if(mainActivityModel.getCurrentOptionType()==CardType.FACIAL_RECOGNITION) {
-        FacialData  processedFacialData = (FacialData) card;
+		FacialData  processedFacialData = (FacialData) card;
 
-    }
+	}
 
-    //Code
-    
+	//Code
+	
 }
  
 **d.	FacialData**
@@ -932,10 +934,8 @@ This is the implementation in the Sample project:
 
 # Change Log
 
-Acuant Android MobileSDK version 4.3
+Acuant Android MobileSDK version 4.4
 
 Changes:
 
--	Improved image cropping
--	Updated image size to 1500 for Medical Insurance Cards only
--	Memory optimization to fix memory out of bound crashes in low memory devices
+-	Added callback for camera runtime permission for target API level 23 and above.

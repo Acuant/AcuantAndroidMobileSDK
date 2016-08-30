@@ -28,7 +28,6 @@
     android:paddingTop="4dp"
     android:paddingBottom="4dp"
     android:gravity="bottom"
-    app:allowStacking="@bool/abc_allow_stacked_button_bar"
     style="?attr/buttonBarStyle">
 
     <Button
@@ -57,4 +56,3 @@
         android:layout_height="wrap_content" />
 
 </android.support.v7.widget.ButtonBarLayout>
-<!-- From: file:/usr/local/google/buildbot/src/googleplex-android/mnc-supportlib-release/frameworks/support/v7/appcompat/res/layout/abc_alert_dialog_button_bar_material.xml -->

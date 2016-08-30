@@ -12,14 +12,14 @@
                     "endOffset": 223
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 233,
-                        "endLine": 6,
+                        "startOffset": 55,
+                        "endLine": 4,
                         "endColumn": 12,
-                        "endOffset": 401
+                        "endOffset": 223
                     }
                 }
             },
@@ -33,14 +33,14 @@
                     "endOffset": 451
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 7,
+                        "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 406,
-                        "endLine": 10,
+                        "startOffset": 228,
+                        "endLine": 8,
                         "endColumn": 12,
-                        "endOffset": 629
+                        "endOffset": 451
                     }
                 }
             },
@@ -54,14 +54,14 @@
                     "endOffset": 609
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 11,
+                        "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 634,
-                        "endLine": 13,
+                        "startOffset": 456,
+                        "endLine": 11,
                         "endColumn": 12,
-                        "endOffset": 787
+                        "endOffset": 609
                     }
                 }
             },
@@ -75,14 +75,14 @@
                     "endOffset": 759
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 14,
+                        "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 792,
-                        "endLine": 16,
+                        "startOffset": 614,
+                        "endLine": 14,
                         "endColumn": 12,
-                        "endOffset": 937
+                        "endOffset": 759
                     }
                 }
             },
@@ -96,14 +96,14 @@
                     "endOffset": 931
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 17,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 942,
-                        "endLine": 19,
+                        "startOffset": 764,
+                        "endLine": 17,
                         "endColumn": 12,
-                        "endOffset": 1109
+                        "endOffset": 931
                     }
                 }
             },
@@ -117,14 +117,14 @@
                     "endOffset": 1159
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 20,
+                        "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 1114,
-                        "endLine": 23,
+                        "startOffset": 936,
+                        "endLine": 21,
                         "endColumn": 12,
-                        "endOffset": 1337
+                        "endOffset": 1159
                     }
                 }
             },
@@ -138,14 +138,14 @@
                     "endOffset": 1401
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 24,
+                        "startLine": 22,
                         "startColumn": 4,
-                        "startOffset": 1342,
-                        "endLine": 27,
+                        "startOffset": 1164,
+                        "endLine": 25,
                         "endColumn": 12,
-                        "endOffset": 1579
+                        "endOffset": 1401
                     }
                 }
             },
@@ -159,14 +159,14 @@
                     "endOffset": 1572
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 28,
+                        "startLine": 26,
                         "startColumn": 4,
-                        "startOffset": 1584,
-                        "endLine": 30,
+                        "startOffset": 1406,
+                        "endLine": 28,
                         "endColumn": 12,
-                        "endOffset": 1750
+                        "endOffset": 1572
                     }
                 }
             },
@@ -180,14 +180,14 @@
                     "endOffset": 1746
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 31,
+                        "startLine": 29,
                         "startColumn": 4,
-                        "startOffset": 1755,
-                        "endLine": 33,
+                        "startOffset": 1577,
+                        "endLine": 31,
                         "endColumn": 12,
-                        "endOffset": 1924
+                        "endOffset": 1746
                     }
                 }
             },
@@ -201,14 +201,14 @@
                     "endOffset": 1915
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 34,
+                        "startLine": 32,
                         "startColumn": 4,
-                        "startOffset": 1929,
-                        "endLine": 36,
+                        "startOffset": 1751,
+                        "endLine": 34,
                         "endColumn": 12,
-                        "endOffset": 2093
+                        "endOffset": 1915
                     }
                 }
             },
@@ -222,14 +222,14 @@
                     "endOffset": 2188
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 37,
+                        "startLine": 35,
                         "startColumn": 4,
-                        "startOffset": 2098,
-                        "endLine": 40,
+                        "startOffset": 1920,
+                        "endLine": 38,
                         "endColumn": 12,
-                        "endOffset": 2366
+                        "endOffset": 2188
                     }
                 }
             },
@@ -243,14 +243,14 @@
                     "endOffset": 2388
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 41,
+                        "startLine": 39,
                         "startColumn": 4,
-                        "startOffset": 2371,
-                        "endLine": 43,
+                        "startOffset": 2193,
+                        "endLine": 41,
                         "endColumn": 12,
-                        "endOffset": 2566
+                        "endOffset": 2388
                     }
                 }
             },
@@ -264,14 +264,14 @@
                     "endOffset": 2592
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 44,
+                        "startLine": 42,
                         "startColumn": 4,
-                        "startOffset": 2571,
-                        "endLine": 47,
+                        "startOffset": 2393,
+                        "endLine": 45,
                         "endColumn": 12,
-                        "endOffset": 2770
+                        "endOffset": 2592
                     }
                 }
             },
@@ -285,14 +285,14 @@
                     "endOffset": 2921
                 },
                 "from": {
-                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v17/values-v17.xml",
+                    "file": "/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/values-v17/values-v17.xml",
                     "position": {
-                        "startLine": 48,
+                        "startLine": 46,
                         "startColumn": 4,
-                        "startOffset": 2775,
-                        "endLine": 51,
+                        "startOffset": 2597,
+                        "endLine": 49,
                         "endColumn": 12,
-                        "endOffset": 3099
+                        "endOffset": 2921
                     }
                 }
             }

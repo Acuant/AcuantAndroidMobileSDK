@@ -55,6 +55,7 @@ import com.acuant.mobilesdk.LicenseActivationDetails;
 import com.acuant.mobilesdk.LicenseDetails;
 import com.acuant.mobilesdk.MedicalCard;
 import com.acuant.mobilesdk.PassportCard;
+import com.acuant.mobilesdk.Permission;
 import com.acuant.mobilesdk.ProcessImageRequestOptions;
 import com.acuant.mobilesdk.Region;
 import com.acuant.mobilesdk.WebServiceListener;
@@ -911,27 +912,27 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         if(processedCardInformation!=null){
             isProcessingFacial=false;
         }
-            mainActivityModel.setCurrentOptionType(CardType.FACIAL_RECOGNITION);
-            if (!Utils.isNetworkAvailable(this)) {
-                String msg = getString(R.string.no_internet_message);
-                Utils.appendLog(TAG, msg);
-                Util.dismissDialog(alertDialog);
-                alertDialog = Util.showDialog(this, msg,new DialogInterface.OnClickListener() {
+        mainActivityModel.setCurrentOptionType(CardType.FACIAL_RECOGNITION);
+        if (!Utils.isNetworkAvailable(this)) {
+            String msg = getString(R.string.no_internet_message);
+            Utils.appendLog(TAG, msg);
+            Util.dismissDialog(alertDialog);
+            alertDialog = Util.showDialog(this, msg,new DialogInterface.OnClickListener() {
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        isShowErrorAlertDialog = false;
-                    }
-                });
-                isShowErrorAlertDialog = true;
-                return;
-            }
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    isShowErrorAlertDialog = false;
+                }
+            });
+            isShowErrorAlertDialog = true;
+            return;
+        }
 
-            //Util.lockScreen(this);
+        //Util.lockScreen(this);
 
-            ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
-            options.acuantCardType = CardType.FACIAL_RECOGNITION;
-            acuantAndroidMobileSdkControllerInstance.callProcessImageServices(faceImage, idCropedFaceImage, null, this, options);
+        ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
+        options.acuantCardType = CardType.FACIAL_RECOGNITION;
+        acuantAndroidMobileSdkControllerInstance.callProcessImageServices(faceImage, idCropedFaceImage, null, this, options);
     }
 
     private void resetPdf417String() {
@@ -1395,5 +1396,26 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     @Override
     public void onFacialRecognitionCanceled(){
         isProcessingFacial=false;
+    }
+
+
+   //Override this only for API 23 and Above
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case Permission.PERMISSION_CAMERA: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    showCameraInterface();
+
+                } else {
+                    // permission denied
+                    Util.showDialog(this,"Denied permission.Please give camera permission to proceed.");
+                }
+                return;
+            }
+        }
     }
 }
