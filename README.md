@@ -136,7 +136,15 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 	 }
 	 
 	 
-##Obfuscation If you are using ProGaurd to obfuscate, make sure to add the following rules	-keep class com.microblink.** { *; }	-keepclassmembers class com.microblink.** { *; }	-dontwarn android.hardware.**	-dontwarn android.support.v4.**
+##Obfuscation 
+
+If you are using ProGaurd to obfuscate, make sure to add the following rules
+
+	-keep class com.microblink.** { *; }
+	-keepclassmembers class com.microblink.** { *; }
+	-dontwarn android.hardware.**
+	-dontwarn android.support.v4.**
+
 
 
 ## Add views into manifest
@@ -153,6 +161,7 @@ Add the followings activities into manifest.xml file:
 	<uses-permission android:name="android.permission.NFC" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     
+
 	<activity android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"></activity>
 	<activity android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417"> </activity>
 	<activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual"></activity>
@@ -278,7 +287,26 @@ This function returns the card image without crop process.
 
 Called when the user tap the back button.
 
-If the application is targeted for Android API 23 and above, the control will return to the following method after the user taps on allow/deny for camera permission. The requestCode will be Permission.PERMISSION_CAMERA. If the permission is already given manually then the control won’t come here.	//Override this only for API 23 and Above 	@Override 	public void onRequestPermissionsResult(int requestCode,										String permissions[], int[] grantResults) {	 		switch (requestCode) {		 		case Permission.PERMISSION_CAMERA: {			 			// If request is cancelled, the result arrays are empty.			 			if (grantResults.length > 0					 		&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {				 		// Permission granted			 		} else {				 		// permission denied					}			 		return;		 		}	 		} 	}
+If the application is targeted for Android API 23 and above, the control will return to the following method after the user taps on allow/deny for camera permission. The requestCode will be Permission.PERMISSION_CAMERA. If the permission is already given manually then the control won’t come here.
+
+	//Override this only for API 23 and Above
+ 	@Override
+ 	public void onRequestPermissionsResult(int requestCode,
+										String permissions[], int[] grantResults) {
+	 		switch (requestCode) {
+		 		case Permission.PERMISSION_CAMERA: {
+			 			// If request is cancelled, the result arrays are empty.
+			 			if (grantResults.length > 0
+					 		&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+				 		// Permission granted
+			 		} else {
+				 		// permission denied
+					}
+			 		return;
+		 		}
+	 		}
+ 	}
+
 
 
 ### Show the barcode camera methods
@@ -1204,4 +1232,3 @@ Changes:
 	
 		
 - 	Added APIs for e-Passport chip scanning and reading information. 
-		
