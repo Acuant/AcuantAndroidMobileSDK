@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="pdf417.mobi-6.0.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/acuantSampleSDK/build/intermediates/exploded-aar/com.microblink/pdf417.mobi/6.0.1/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/acuantSampleSDK/build/intermediates/exploded-aar/com.microblink/pdf417.mobi/6.0.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

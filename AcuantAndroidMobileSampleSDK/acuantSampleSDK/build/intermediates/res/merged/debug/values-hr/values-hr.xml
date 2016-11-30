@@ -22,6 +22,8 @@
     <string name="mbCameraPermissionRequired">Potrebna je dozvola za pristup kameri.</string>
     <string name="mbEnableCamera">Dozvoli pristup kameri</string>
     <string name="mbEnablePermissionHelp">Bit ćete odvedeni na sustavske postavke gdje morate aplikaciji dozvoliti pristup kameri.</string>
+    <string name="mbOK">U redu</string>
     <string name="mbWarningTitle">Upozorenje</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Pretraživanje"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

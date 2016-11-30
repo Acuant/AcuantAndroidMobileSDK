@@ -24,6 +24,16 @@
             android:background="@drawable/border_card_image"
             android:contentDescription="about"
             android:scaleType="fitXY" />
+        <Button
+            android:id="@+id/buttonNFC"
+            android:visibility="visible"
+            android:text="Scan eChip"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:onClick="nfcPressed"
+            tools:text="Scan eChip"
+            android:layout_below="@+id/frontSideCardImage"
+            android:contentDescription="Scan eChip" />
         <ImageView
             android:id="@+id/faceImage"
 
@@ -57,6 +67,12 @@
             android:scaleType="fitXY" />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
@@ -66,6 +82,8 @@
             android:id="@+id/textViewLicenseCardInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
     </ScrollView>
+    </RelativeLayout>
 
 </TableLayout>

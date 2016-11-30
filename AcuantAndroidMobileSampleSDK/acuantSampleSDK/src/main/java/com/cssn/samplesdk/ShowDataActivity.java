@@ -4,36 +4,51 @@
 package com.cssn.samplesdk;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.acuant.mobilesdk.AcuantAndroidMobileSDKController;
+import com.acuant.mobilesdk.AcuantNFCCardDetails;
+import com.acuant.mobilesdk.AcuantTagReadingListener;
 import com.acuant.mobilesdk.CardType;
 import com.acuant.mobilesdk.DriversLicenseCard;
 import com.acuant.mobilesdk.FacialData;
+import com.acuant.mobilesdk.LocationVerificationResult;
 import com.acuant.mobilesdk.MedicalCard;
 import com.acuant.mobilesdk.PassportCard;
 import com.acuant.mobilesdk.Region;
 import com.acuant.mobilesdk.util.Constants;
 import com.acuant.mobilesdk.util.Utils;
 import com.cssn.samplesdk.util.DataContext;
+import com.cssn.samplesdk.util.NFCStore;
 import com.cssn.samplesdk.util.Util;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
  *
  */
-public class ShowDataActivity extends Activity
+public class ShowDataActivity extends Activity implements AcuantTagReadingListener
 {
     private static final String TAG = ShowDataActivity.class.getName();
 
     public Boolean isError = false;
+    private static AlertDialog alertDialog;
     private boolean isFacialFlow = false;
     ImageView imgFaceViewer;
     ImageView imgSignatureViewer;
@@ -41,6 +56,10 @@ public class ShowDataActivity extends Activity
     ImageView backSideCardImageView;
 
     TextView textViewCardInfo;
+    Button nfcScanningBtn;
+
+    NfcAdapter nfcAdapter;
+
     int nFields = 17;
 
     @Override
@@ -67,10 +86,44 @@ public class ShowDataActivity extends Activity
         imgFaceViewer = (ImageView) findViewById(R.id.faceImage);
         imgSignatureViewer = (ImageView) findViewById(R.id.signatureImage);
         textViewCardInfo = (TextView) findViewById(R.id.textViewLicenseCardInfo);
+        nfcScanningBtn = (Button) findViewById(R.id.buttonNFC);
 
         isFacialFlow = getIntent().getBooleanExtra("FACIAL",false);
 
+        if (DataContext.getInstance().getCardType() == CardType.PASSPORT){
+            nfcScanningBtn.setVisibility(View.VISIBLE);
+        }else{
+            nfcScanningBtn.setVisibility(View.GONE);
+        }
         loadResult();
+
+        if(nfcAdapter==null){
+            nfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        }
+    }
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+
+        if (this.nfcAdapter != null)
+        {
+            this.nfcAdapter.disableForegroundDispatch(this);
+        }
+    }
+
+    public void nfcPressed(View v){
+        ensureSensorIsOn();
+        AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance();
+        if(acuantAndroidMobileSdkControllerInstance!=null){
+            acuantAndroidMobileSdkControllerInstance.listenNFC(this,nfcAdapter);
+            if(alertDialog!=null && alertDialog.isShowing()){
+                Util.dismissDialog(alertDialog);
+            }
+            alertDialog = Util.showDialog(this, "Searching for passport chip...\n\nTap and place the phone on top of passport chip.");
+            alertDialog.setCancelable(false);
+        }
     }
 
     private void loadResult()
@@ -197,6 +250,50 @@ public class ShowDataActivity extends Activity
         if(processedPassportCard.getAuthenticationResultSummaryList()!=null && processedPassportCard.getAuthenticationResultSummaryList().size()>0) {
             info.append("Document Authentication".concat(" - ")).append(getStringFromList(processedPassportCard.getAuthenticationResultSummaryList())).append("<br/>");
         }
+
+        if(processedPassportCard.idLocationCountryTestResult!= LocationVerificationResult.NOT_AVAILABLE) {
+            info.append("ID Location Country Test".concat(" - ")).append(processedPassportCard.idLocationCountryTestResult).append("<br/>");
+        }
+
+        if(processedPassportCard.idLocationStateTestResult!= LocationVerificationResult.NOT_AVAILABLE) {
+            info.append("ID Location State Test".concat(" - ")).append(processedPassportCard.idLocationStateTestResult).append("<br/>");
+        }
+
+        if(processedPassportCard.idLocationCityTestResult!= LocationVerificationResult.NOT_AVAILABLE) {
+            info.append("ID Location City Test".concat(" - ")).append(processedPassportCard.idLocationCityTestResult).append("<br/>");
+        }
+
+        if(processedPassportCard.idLocationZipcodeTestResult!= LocationVerificationResult.NOT_AVAILABLE) {
+            info.append("ID Location Zipcode Test".concat(" - ")).append(processedPassportCard.idLocationZipcodeTestResult).append("<br/>");
+        }
+
+        AcuantAndroidMobileSDKController instance = AcuantAndroidMobileSDKController.getInstance();
+
+        if(instance.getDeviceCountryName()!= null) {
+            info.append("Device Country".concat(" - ")).append(instance.getDeviceCountryName()).append("<br/>");
+        }
+
+        if(instance.getDeviceCountryCode()!= null) {
+            info.append("Device Country Code".concat(" - ")).append(instance.getDeviceCountryCode()).append("<br/>");
+        }
+
+        if(instance.getDeviceState()!= null) {
+            info.append("Device State".concat(" - ")).append(instance.getDeviceState()).append("<br/>");
+        }
+
+        if(instance.getDeviceCity()!= null) {
+            info.append("Device City".concat(" - ")).append(instance.getDeviceCity()).append("<br/>");
+        }
+
+        if(instance.getDeviceArea()!= null) {
+            info.append("Device Area".concat(" - ")).append(instance.getDeviceArea()).append("<br/>");
+        }
+
+        if(instance.getDeviceZipCode()!= null) {
+            info.append("Device Zip Code".concat(" - ")).append(instance.getDeviceZipCode()).append("<br/>");
+        }
+
+
         info.append("TID".concat(" - ")).append(processedPassportCard.getTransactionId()).append("<br/>");
         if(processedFacialData!=null && isFacialFlow) {
             info.append("FTID".concat(" - ")).append(processedFacialData.getTransactionId()).append("<br/>");
@@ -322,6 +419,48 @@ public class ShowDataActivity extends Activity
         info.append(("State").concat(" - ")).append(processedMedicalCard.getState())
                 .append("<br/>");
         info.append("TID".concat(" - ")).append(processedMedicalCard.getTransactionId()).append("<br/>");
+
+        if(processedMedicalCard.idLocationCountryTestResult!= LocationVerificationResult.NOT_AVAILABLE) {
+            info.append("ID Location Country Test".concat(" - ")).append(processedMedicalCard.idLocationCountryTestResult).append("<br/>");
+        }
+
+        if(processedMedicalCard.idLocationStateTestResult!= LocationVerificationResult.NOT_AVAILABLE) {
+            info.append("ID Location State Test".concat(" - ")).append(processedMedicalCard.idLocationStateTestResult).append("<br/>");
+        }
+
+        if(processedMedicalCard.idLocationCityTestResult!= LocationVerificationResult.NOT_AVAILABLE) {
+            info.append("ID Location City Test".concat(" - ")).append(processedMedicalCard.idLocationCityTestResult).append("<br/>");
+        }
+
+        if(processedMedicalCard.idLocationZipcodeTestResult!= LocationVerificationResult.NOT_AVAILABLE) {
+            info.append("ID Location Zipcode Test".concat(" - ")).append(processedMedicalCard.idLocationZipcodeTestResult).append("<br/>");
+        }
+
+        AcuantAndroidMobileSDKController instance = AcuantAndroidMobileSDKController.getInstance();
+
+        if(instance.getDeviceCountryName()!= null) {
+            info.append("Device Country".concat(" - ")).append(instance.getDeviceCountryName()).append("<br/>");
+        }
+
+        if(instance.getDeviceCountryCode()!= null) {
+            info.append("Device Country Code".concat(" - ")).append(instance.getDeviceCountryCode()).append("<br/>");
+        }
+
+        if(instance.getDeviceState()!= null) {
+            info.append("Device State".concat(" - ")).append(instance.getDeviceState()).append("<br/>");
+        }
+
+        if(instance.getDeviceCity()!= null) {
+            info.append("Device City".concat(" - ")).append(instance.getDeviceCity()).append("<br/>");
+        }
+
+        if(instance.getDeviceArea()!= null) {
+            info.append("Device Area".concat(" - ")).append(instance.getDeviceArea()).append("<br/>");
+        }
+
+        if(instance.getDeviceZipCode()!= null) {
+            info.append("Device Zip Code".concat(" - ")).append(instance.getDeviceZipCode()).append("<br/>");
+        }
 
         textViewCardInfo.setText(Html.fromHtml(info.toString()));
 
@@ -539,6 +678,51 @@ public class ShowDataActivity extends Activity
             info.append("Document Authentication".concat(" - ")).append(getStringFromList(processedLicenseCard.getAuthenticationResultSummaryList())).append("<br/>");
         }
 
+        if(processedLicenseCard.idLocationCountryTestResult!= LocationVerificationResult.NOT_AVAILABLE) {
+            info.append("ID Location Country Test".concat(" - ")).append(processedLicenseCard.idLocationCountryTestResult).append("<br/>");
+        }
+
+        if(processedLicenseCard.idLocationStateTestResult!= LocationVerificationResult.NOT_AVAILABLE) {
+            info.append("ID Location State Test".concat(" - ")).append(processedLicenseCard.idLocationStateTestResult).append("<br/>");
+        }
+
+        if(processedLicenseCard.idLocationCityTestResult!= LocationVerificationResult.NOT_AVAILABLE) {
+            info.append("ID Location City Test".concat(" - ")).append(processedLicenseCard.idLocationCityTestResult).append("<br/>");
+        }
+
+        if(processedLicenseCard.idLocationZipcodeTestResult!= LocationVerificationResult.NOT_AVAILABLE) {
+            info.append("ID Location Zipcode Test".concat(" - ")).append(processedLicenseCard.idLocationZipcodeTestResult).append("<br/>");
+        }
+
+
+        AcuantAndroidMobileSDKController instance = AcuantAndroidMobileSDKController.getInstance();
+
+        if(instance.getDeviceCountryName()!= null) {
+            info.append("Device Country".concat(" - ")).append(instance.getDeviceCountryName()).append("<br/>");
+        }
+
+        if(instance.getDeviceCountryCode()!= null) {
+            info.append("Device Country Code".concat(" - ")).append(instance.getDeviceCountryCode()).append("<br/>");
+        }
+
+        if(instance.getDeviceState()!= null) {
+            info.append("Device State".concat(" - ")).append(instance.getDeviceState()).append("<br/>");
+        }
+
+        if(instance.getDeviceCity()!= null) {
+            info.append("Device City".concat(" - ")).append(instance.getDeviceCity()).append("<br/>");
+        }
+
+        if(instance.getDeviceArea()!= null) {
+            info.append("Device Area".concat(" - ")).append(instance.getDeviceArea()).append("<br/>");
+        }
+
+        if(instance.getDeviceZipCode()!= null) {
+            info.append("Device Zip Code".concat(" - ")).append(instance.getDeviceZipCode()).append("<br/>");
+        }
+
+
+
         info.append("TID".concat(" - ")).append(processedLicenseCard.getTransactionId()).append("<br/>");
         if(processedFacialData!=null && isFacialFlow) {
             info.append("FTID".concat(" - ")).append(processedFacialData.getTransactionId()).append("<br/>");
@@ -590,4 +774,112 @@ public class ShowDataActivity extends Activity
         return retStr;
     }
 
+    @Override
+    public void tagReadSucceeded(AcuantNFCCardDetails cardDetails, Bitmap image, Bitmap sign_image) {
+        Log.d(TAG,"NFC Tag successfully read");
+        if(alertDialog!=null && alertDialog.isShowing()){
+            Util.dismissDialog(alertDialog);
+        }
+        Intent intent = new Intent(getBaseContext(), NFCResultActivity.class);
+        NFCStore.image = image;
+        NFCStore.signature_image=sign_image;
+        NFCStore.cardDetails = cardDetails;
+        startActivity(intent);
+        if (this.nfcAdapter != null)
+        {
+            this.nfcAdapter.disableForegroundDispatch(this);
+        }
+    }
+
+    @Override
+    public void tagReadFailed(String message) {
+        Log.d(TAG,message);
+        if(alertDialog!=null && alertDialog.isShowing()){
+            Util.dismissDialog(alertDialog);
+        }
+        alertDialog = Util.showDialog(this, message);
+        if (this.nfcAdapter != null)
+        {
+            try {
+                this.nfcAdapter.disableForegroundDispatch(this);
+            }catch(Exception e){
+
+            }
+        }
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent)
+    {
+        super.onNewIntent(intent);
+        if(alertDialog!=null && alertDialog.isShowing()){
+            Util.dismissDialog(alertDialog);
+        }
+        alertDialog = Util.showProgessDialog(this, "Reading passport chip...\n\nPlease don't move passport or phone.");
+        PassportCard passportCard = DataContext.getInstance().getProcessedPassportCard();
+        AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance();
+        if(acuantAndroidMobileSdkControllerInstance!=null){
+            acuantAndroidMobileSdkControllerInstance.setAcuantTagReadingListener(this);
+            String docNumber = passportCard.getPassportNumber();
+            String dob = getFromattedStringFromDateString(passportCard.getDateOfBirth());
+            String doe = getFromattedStringFromDateString(passportCard.getExpirationDate());
+            acuantAndroidMobileSdkControllerInstance.readNFCTag(intent,docNumber,dob,doe);
+        }
+
+    }
+
+
+    private void ensureSensorIsOn()
+    {
+        if(!this.nfcAdapter.isEnabled())
+        {
+            // Alert the user that NFC is off
+            new AlertDialog.Builder(this)
+                    .setTitle("NFC Sensor Turned Off")
+                    .setMessage("In order to use this application, the NFC sensor must be turned on. Do you wish to turn it on?")
+                    .setPositiveButton("Go to Settings", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i)
+                        {
+                            // Send the user to the settings page and hope they turn it on
+                            if (android.os.Build.VERSION.SDK_INT >= 16)
+                            {
+                                startActivity(new Intent(android.provider.Settings.ACTION_NFC_SETTINGS));
+                            }
+                            else
+                            {
+                                startActivity(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS));
+                            }
+                        }
+                    })
+                    .setNegativeButton("Do Nothing", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i)
+                        {
+                            // Do nothing
+                        }
+                    })
+                    .show();
+        }
+
+    }
+
+    public static String getFromattedStringFromDateString(String dateString){
+        String retString = null;
+        if(dateString!=null && !dateString.trim().equals("")) {
+            String[] dateComps = dateString.split("-");
+            if(dateComps.length==3) {
+                int year = Integer.parseInt(dateComps[2]);
+                int day = Integer.parseInt(dateComps[1]);
+                int month = Integer.parseInt(dateComps[0])-1;
+                Date date = new Date(year, month, day);
+                SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd");
+                retString = sdf.format(date);
+            }
+        }
+        return retString;
+    }
 }

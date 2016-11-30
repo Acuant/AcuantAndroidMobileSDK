@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 08/30/2016
+Last updated on – 11/30/2016
 
 # Introduction
 
@@ -92,15 +92,14 @@ Add the following code in your build.gradle to avoid some file collision
 	 }
 	
 	 dependencies {
-	
-		 compile ('com.microblink:pdf417.mobi:5.5.2@aar')
-		
-		 compile ('com.android.support:appcompat-v7:24.0.0')
-		
-		 compile ('com.google.code.gson:gson:2.5')
-		
-		 compile ('com.squareup.okhttp3:okhttp:3.2.0')
-	
+	 	compile ('com.microblink:pdf417.mobi:6.0.1@aar')
+		compile ('com.android.support:appcompat-v7:25.0.0')
+		compile ('com.google.code.gson:gson:2.5')
+		compile ('com.squareup.okhttp3:okhttp:3.2.0')
+		compile ('org.jmrtd:jmrtd:0.5.6')
+    	compile ('org.ejbca.cvc:cert-cvc:1.4.3')
+    	compile ('com.madgag.spongycastle:prov:1.54.0.0')
+    	compile ('net.sf.scuba:scuba-sc-android:0.0.9')
 	 }
 
 #### JCenter repositories
@@ -111,11 +110,15 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 	}
 	
 	 dependencies {
-		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.4'
-		compile ('com.microblink:pdf417.mobi:5.5.2@aar')
-		compile ('com.android.support:appcompat-v7:24.0.0')
+		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.5'
+		compile ('com.microblink:pdf417.mobi:6.0.1@aar')
+		compile ('com.android.support:appcompat-v7:25.0.0')
 		compile ('com.google.code.gson:gson:2.5')
 		compile ('com.squareup.okhttp3:okhttp:3.2.0')
+		compile ('org.jmrtd:jmrtd:0.5.6')
+    	compile ('org.ejbca.cvc:cert-cvc:1.4.3')
+    	compile ('com.madgag.spongycastle:prov:1.54.0.0')
+    	compile ('net.sf.scuba:scuba-sc-android:0.0.9')
 	}
 	
 	
@@ -146,9 +149,14 @@ Add the followings activities into manifest.xml file:
 	< uses-permissionandroid:name="android.permission.READ_PHONE_STATE"/>
 	< uses-permissionandroid:name="android.permission.ACCESS_NETWORK_STATE"/>
 	< uses-permissionandroid:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.FLASHLIGHT" />
+	<uses-permission android:name="android.permission.NFC" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    
 	<activity android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"></activity>
 	<activity android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417"> </activity>
 	<activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual"></activity>
+	<activity android:name="com.acuant.mobilesdk.detect.Camera2FacialRecognitionManual" />
 	
 	
 ## Multiple APK Support (Optional)
@@ -812,7 +820,6 @@ The facial match function call can be made the same way as the other card proces
 	}
 
 
-
 The following web service call back method will be called after the above function call returns
 
 	@Override
@@ -826,8 +833,24 @@ The following web service call back method will be called after the above functi
 	//Code
 	
 }
+
+If either live face image or face image from ID card is not valid then it won’t make any web service call. The call will return successfully with following values
+
+	facialData.facialMatch = false;
+	facialData.faceLivelinessDetection = <Based on if live face detected or not>
+	transactionId=null
+	facialData.facialMatchConfidenceRating = null;
+
+**d.	Facial Liveliness timeout** This SDK method will allow to set a timeout limit for facial liveliness detection. By default it is set to 20 seconds.
+
+	public synchronized void setFacialRecognitionTimeoutInSeconds(int seconds)
+	
+
+When it times out the following call back method will be called.
+
+	public void onFacialRecognitionTimedOut(final Bitmap bitmap)
  
-**d.	FacialData**
+**e.	FacialData**
 This class is the data class for facial results. Following are the methods to get the facial data
 
 	public boolean getFacialMatch() 
@@ -840,6 +863,171 @@ This class is the data class for facial results. Following are the methods to ge
 		
 		  public String getFacialMatchConfidenceRating() // Confidence level out of 100
 
+# AssureID Authentication
+For Driving license and Passport , in order to see AssureID authentication results, please look for these two methods : “public String getAuthenticationResult()”, “public ArrayList<String> getAuthenticationResultSummaryList()”.
+
+getAuthenticationResult: can return either of the following values:
+
+        -  Passed
+        -  Failed
+        -  Attention
+
+getAuthenticationResultSummaryList: When “AuthenticationResult” will have the value “Attention”, “getAuthenticationResultSummaryList” will return the list of reasons for “Attention’.
+
+Note: getAuthenticationResultSummaryList will return empty list for “Passed” and “Failed” results.
+
+# Tracking Capture Device Location
+
+If it is required to detect the location at which the ID/Passport is captured, location tracking can be enabled.
+
+	//public void enableLocationAuthentication(Activity activity)
+	acuantAndroidMobileSdkControllerInstance.enableLocationAuthentication(this);
+	
+Whenever during the capture process location is required, the following methods will return location details.
+
+	AcuantAndroidMobileSDKController instance = 
+	AcuantAndroidMobileSDKController.getInstance();
+	instance.getDeviceCountryName(); // Country of the device location
+	instance.getDeviceCountryCode(); // Country code of the device location
+	instance.getDeviceState(); // State of the device location
+	instance.getDeviceCity(); // City of the device location
+	instance.getDeviceArea(); //Area of the device location
+	instance.getDeviceZipCode(); // zipcode of the device location
+	instance.getDeviceAddress(); // Street address of device location
+	
+	
+Following constants are added for location test result
+
+			public class LocationVerificationResult {
+        		public final static int PASSED = 1;
+        		public final static int FAILED = 0;
+        		public final static int NOT_AVAILABLE = 2;
+			}
+			
+ Below are the location test fields in the Card class
+
+			public int idLocationStateTestResult;
+			public int idLocationCountryTestResult;
+			public int idLocationCityTestResult;
+    		public int idLocationZipcodeTestResult;
+    		
+    		
+# Reading e-Passports Chips
+
+If AssureID is enabled on your licenseKey then information from the chip in an e-Passport can be read by using Acuant Android mobile SDK.
+
+To scan and read information from a e-passport chip , follow the steps below .
+
+-	Ensure the following permission is enter in the application manifest file.
+		
+		<uses-permission android:name="android.permission.NFC" />
+		
+- Initialize Android NFC Adapter as below
+
+		NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this);
+		
+- Ensure the permission is provided in runtime for API level 23 and above. This could be modified as per the application need.Below is just an example.
+
+		private void ensureSensorIsOn(){
+        if(!this.nfcAdapter.isEnabled())
+        {
+            // Alert the user that NFC is off
+            new AlertDialog.Builder(this)
+                    .setTitle("NFC Sensor Turned Off")
+                    .setMessage("In order to use this application, the NFC sensor must be turned on. Do you wish to turn it on?")
+                    .setPositiveButton("Go to Settings", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i)
+                        {
+                            // Send the user to the settings page and hope they turn it on
+                            if (android.os.Build.VERSION.SDK_INT >= 16)
+                            {
+                                startActivity(new Intent(android.provider.Settings.ACTION_NFC_SETTINGS));
+                            }
+                            else
+                            {
+                                startActivity(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS));
+                            }
+                        }
+                    })
+                    .setNegativeButton("Do Nothing", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i)
+                        {
+                            // Do nothing
+                        }
+                    })
+                    .show();
+        	}
+        }
+
+-	The following SDK API can be used to listen to NFC tags available in an e-Passport
+		
+		//public void listenNFC(Activity activity,NfcAdapter nfcAdapter)
+		acuantAndroidMobileSdkControllerInstance.listenNFC(this,nfcAdapter);
+		
+- If a NFC Tag is successfully discovered , the control will come back to the following overrided method of the Activity.
+
+		@Override
+    	protected void onNewIntent(Intent intent)
+    	{
+        super.onNewIntent(intent);
+       
+       }
+        
+-	Inside the above method , set the listener to which the control will come after a chip is read successfully or an error occurs.
+
+AcuantTagReadingListener is an interface with the following methods
+
+	public void tagReadSucceeded(final AcuantNFCCardDetails cardDetails, final Bitmap image, final Bitmap sign_image);
+	public void tagReadFailed(final String message);
+	
+	
+API to set callback listener.
+
+		@Override
+    	protected void onNewIntent(Intent intent)
+    	{
+        super.onNewIntent(intent);
+        
+        // Acuant SDK Instance
+        AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance =
+        AcuantAndroidMobileSDKController.getInstance();
+        
+        
+        if(acuantAndroidMobileSdkControllerInstance!=null){
+    	// Setting listener
+    acuantAndroidMobileSdkControllerInstance.setAcuantTagReadingListener(this);
+            
+        	}
+        }
+        
+        
+ - Finally the chip reading method to be called with three parameters (document number, date of birth and date of expiry) to read the information from the chip.
+
+ 	
+	@Override
+    	protected void onNewIntent(Intent intent)
+    	{
+        super.onNewIntent(intent);
+        
+        // Acuant SDK Instance
+        AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance =
+        AcuantAndroidMobileSDKController.getInstance();
+        
+        
+        if(acuantAndroidMobileSdkControllerInstance!=null){
+            acuantAndroidMobileSdkControllerInstance.setAcuantTagReadingListener(this);
+            String docNumber = passportCard.getPassportNumber();
+            String dob = getFromattedStringFromDateString(passportCard.getDateOfBirth());
+            String doe = getFromattedStringFromDateString(passportCard.getExpirationDate());
+            acuantAndroidMobileSdkControllerInstance.readNFCTag(intent,docNumber,dob,doe);
+        	}
+        }
+
+	
 
 # Errors handling
 In order to handle the errors or alert over SDK’s action , you will receive the error on didFailWithError(int code, String message) method.
@@ -934,8 +1122,86 @@ This is the implementation in the Sample project:
 
 # Change Log
 
-Acuant Android MobileSDK version 4.4
+Acuant Android MobileSDK version 4.5
 
 Changes:
 
--	Added callback for camera runtime permission for target API level 23 and above.
+- 	Significant improvements done to ID capture interface.
+
+	-	Continuous Auto focus.
+	-	Continuous brightness correction.
+	-	Shake detection to avoid blurry images.
+	- Optimized memory and processing speed for document cropping.
+	- Improved 2D barcode capture interface.
+	- Added method to retrieve the barcode string and the backside image by the barcode capture interface for driving license.
+
+			// To Enable barcode side capture
+			acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
+			
+		If barcode side image capture is enabled then the image is returned
+			in the following callback method
+			
+			 public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide)
+        
+
+- Significant improvements done to Facial capture interface.
+
+	-	Continuous Auto focus.
+	-	Continuous brightness correction.
+	-	Improved live person detection.
+	-	Added guidance message to guide the user.
+	- Improved facial interface for live person detection.
+	- Added API to display custom message after red rectangle appears on the facial screen.
+
+			public void setSubInstructionText(String subInstructionStr, 
+			int left, int top,Paint paint)
+		
+	- Added timeout for live person detection.
+	
+			public synchronized void setFacialRecognitionTimeoutInSeconds(int seconds)
+			
+	- Added call back method for live person detection timeout
+
+			public void onFacialRecognitionTimedOut(final Bitmap bitmap)
+			
+	- Optimized facial match function. If either live face image or face image from ID card is not valid then it won’t make any web service call. The call will return successfully with following values
+
+			facialData.facialMatch = false;
+   			facialData.faceLivelinessDetection = <Based on if live face detected or not>
+   			transactionId=null
+   			facialData.facialMatchConfidenceRating = null;
+	
+- Added location tracking and authentication
+
+	-	Added API to track device location.
+
+			AcuantAndroidMobileSDKController instance = AcuantAndroidMobileSDKController.getInstance();
+			instance.getDeviceCountryName(); // Country of the device location
+			instance.getDeviceCountryCode(); // Country code of the device location
+			instance.getDeviceState(); // State of the device location
+			instance.getDeviceCity(); // City of the device location
+			instance.getDeviceArea(); //Area of the device location
+			instance.getDeviceZipCode(); // zipcode of the device location
+			instance.getDeviceAddress(); // Street address of device location
+
+	
+	-	Added new properties for location test to the Card class
+
+			public int idLocationStateTestResult;
+			public int idLocationCountryTestResult;
+			public int idLocationCityTestResult;
+    		public int idLocationZipcodeTestResult;
+    	
+    -	Added constants for location test result
+
+			public class LocationVerificationResult {
+        		public final static int PASSED = 1;
+        		public final static int FAILED = 0;
+        		public final static int NOT_AVAILABLE = 2;
+			}
+    
+	
+	
+		
+- 	Added APIs for e-Passport chip scanning and reading information. 
+		

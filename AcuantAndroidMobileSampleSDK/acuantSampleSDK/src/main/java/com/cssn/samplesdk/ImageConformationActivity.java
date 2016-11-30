@@ -76,6 +76,23 @@ public class ImageConformationActivity extends Activity {
         messageView.setText(getMessage());
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        image = null;
+        cropImageViewer = null;
+        messageView = null;
+        System.runFinalization();
+        Runtime.getRuntime().gc();
+        System.gc();
+
+    }
+
     public void retryButtonPressed(View v) {
         TempImageStore.getImageConfirmationListener().retry();
         finish();

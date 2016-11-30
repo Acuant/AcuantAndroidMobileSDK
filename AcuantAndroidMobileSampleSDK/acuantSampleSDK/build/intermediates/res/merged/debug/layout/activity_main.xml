@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:onClick="driverCardButtonPressed"
+            android:onClick="driverCardWithFacialButtonPressed"
             android:text="@string/driver_license"
             android:textSize="11sp" android:layout_weight="1"/>
 
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/buttonMedical"
             android:layout_toRightOf="@+id/buttonDriver"
-            android:onClick="passportCardButtonPressed"
+            android:onClick="passportCardWithFacialButtonPressed"
             android:text="@string/passport"
             android:textSize="11sp" android:layout_weight="1"/>
         
@@ -63,31 +63,6 @@
             android:textSize="11sp" android:layout_weight="1"/>
 
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/topButtonsFacial"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/buttonDriverFacial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:onClick="driverCardWithFacialButtonPressed"
-            android:text="@string/driver_license_facial"
-            android:textSize="11sp" android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/buttonPassportFacial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/buttonDriverFacial"
-            android:onClick="passportCardWithFacialButtonPressed"
-            android:text="@string/passport_facial"
-            android:textSize="11sp" android:layout_weight="1"/>
-
-    </LinearLayout>
-
     <LinearLayout
         android:id="@+id/cardImagesLayout"
         android:layout_width="match_parent"

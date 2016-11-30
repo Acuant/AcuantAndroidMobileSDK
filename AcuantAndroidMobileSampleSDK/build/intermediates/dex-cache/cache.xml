@@ -2,81 +2,265 @@
 <items version="2" >
 
     <item
-        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.microblink/pdf417.mobi/5.5.2/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="6f9610b0847319808683be4fff4a67eb047ed851">
-        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/com.microblink-pdf417.mobi-5.5.2_bc0cc882c648845a352405fedf23a81fd7099d34.jar" />
+        is-multidex="true"
+        jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.54/1acdedeb89f1d950d67b73d481eb7736df65eedb/bcprov-jdk15on-1.54.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1acdedeb89f1d950d67b73d481eb7736df65eedb">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/bcprov-jdk15on-1.54_36f91bf4c7e6ccaa5e9db7252a5f1ae5ea9db809/classes.dex" />
     </item>
     <item
-        jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/okio-1.6.0_fe7e5190c74919a1ae975fce067eb7e168036b08.jar" />
-    </item>
-    <item
-        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
-        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.0.0_7a5b0aca0fa1d8942281b181798704ad53e0bbb3.jar" />
-    </item>
-    <item
-        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
-        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_e08f949cad9d5f2b8a11be010da1567e556343e0.jar" />
-    </item>
-    <item
-        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
-        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.0.0_042a31b2511736e2b3b8b332918c8fb0e18fd0ba.jar" />
-    </item>
-    <item
-        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
-        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.0.0_1a4689d9db993560be865f89b4464b99951fea00.jar" />
-    </item>
-    <item
-        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
-        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_989605398331d4c9d84daa7e2f48afb6ae2b41b2.jar" />
-    </item>
-    <item
-        jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.5/686c608d1805b6d4d425ec4459e88164ffc85870/gson-2.5.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
-        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/gson-2.5_a7e8f659c022ec4a281d89389ace65280dd6ba00.jar" />
-    </item>
-    <item
-        jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/24.0.0/2943c74db6d4346ab8c6531adac91fa05c137c40/support-annotations-24.0.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
-        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_6edbb5046a53db20babc3289ddfc6dd2f436fa12.jar" />
-    </item>
-    <item
+        is-multidex="true"
         jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
         sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
-        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/okhttp-3.2.0_4d689bb2ee65e79f05fcc0014c3405fb19d78868.jar" />
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.2.0_4d689bb2ee65e79f05fcc0014c3405fb19d78868/classes.dex" />
     </item>
     <item
-        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/AcuantAndroidMobileSampleSDK/acuantMobileSDK/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="94c9ff9ab875601ca6202907c7337a22ab1835bb">
-        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/pre-dexed/debug/AcuantAndroidMobileSampleSDK-acuantMobileSDK-unspecified_36610468f1e53414c50bcb458affa2b61ca01c4f.jar" />
+        is-multidex="true"
+        jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/com.madgag.spongycastle/prov/1.54.0.0/2761c67fdffa21ffcd73cfb8c3acd52ca8866694/prov-1.54.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2761c67fdffa21ffcd73cfb8c3acd52ca8866694">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/prov-1.54.0.0_1895ffdba020d01ddfbc267e60e8a7b3403f7a53/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/net.sf.scuba/scuba-smartcards/0.0.9/36bc50a25aaeb0cb85e94ccc184a5273722c8fa9/scuba-smartcards-0.0.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="36bc50a25aaeb0cb85e94ccc184a5273722c8fa9">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/scuba-smartcards-0.0.9_5f6ddc3c3dc22bb57c62bd92785a4aeae2d9f6d8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/com.madgag.spongycastle/core/1.54.0.0/de79c5f8c67234f0d0073e00ed1f3bab0e5d1e67/core-1.54.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="de79c5f8c67234f0d0073e00ed1f3bab0e5d1e67">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/core-1.54.0.0_315f158cc283016c931c619f7cc3b453bdb6b233/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.5/686c608d1805b6d4d425ec4459e88164ffc85870/gson-2.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.5_a7e8f659c022ec4a281d89389ace65280dd6ba00/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_0f2ed46c8cbaee2e89e17dba973d292a2196b096/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c454b057684bd86f7b99c923cfb06d264bc63030">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_103b20026166eb21655ed28e9fc4d69a0a0ac828/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_49c4f9bbbbf95a6e4585b57b812d086d75368b7c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_95dd3a827757ee7d93475a41664a22e8d389127a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_2e0046b52f5ac97982add6fe2f7cec6e284ffbe1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/org.ejbca.cvc/cert-cvc/1.4.3/752907333ff7b4087d446249f7ec3472e4920691/cert-cvc-1.4.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="752907333ff7b4087d446249f7ec3472e4920691">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/cert-cvc-1.4.3_c835118100f77272fd80d193df13044b89f7c931/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_e1fc1a33a67e4b93a81ae1a7c0f1ad6952a42203/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.1_af9b7edd12ba9486eff7dd161730c612b2a1fa31/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_fcb79bd6ca334b1d635e1fea9944ebb71212391f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_5cb562139315d785fb051979fcff2b41dded88e3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_c788739ee8e0dc351854eb3a5cab213c05711779/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_62f82b83748475d68f977fb4413c20066ab609ba/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_1b863bfa189f0c6957347824e4cb95a60487422e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/net.sf.scuba/scuba-sc-android/0.0.9/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8238fc22de22ff4013508868fcd7ac96684b146e">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/net.sf.scuba-scuba-sc-android-0.0.9_61f8024a1aa89e524c619b8c9384602f0d9c999d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/org.jmrtd/jmrtd/0.5.6/7b5e6745db978620f75242c8de78fff7e8b693ee/jmrtd-0.5.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7b5e6745db978620f75242c8de78fff7e8b693ee">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/jmrtd-0.5.6_ce0e4265d84ff736a91fad743a63c54634501707/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_c76cab69dd1f18b228134507f6d12a746eb07bb7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_10322f5e2e6a44f7ec283143c658d681d32987cb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_f5f0e12397414b729eabd9fb778d7255ffb50100/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_5eb0b6cab0989f8a5e214198e31efd66d2ffe70d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f0e3e4b0392107e2797d3bf0b06af9331d08d4ec">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_190cc3deaa57830a78b903b63fc848235d3be13b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_defaee8b9600daa721379f171bb5dab6b6341bae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_fe7e5190c74919a1ae975fce067eb7e168036b08/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/exploded-aar/com.microblink/pdf417.mobi/6.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="10078eda3174305b7b87cdde145d7a80407ca31c">
+        <dex dex="/Users/tapasbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/acuantSampleSDK/build/intermediates/transforms/dex/debug/folders/1000/10/com.microblink-pdf417.mobi-6.0.1_41b72112fc7636cd287f09d5973ecef83ed67eaa/classes.dex" />
     </item>
 
 </items>
