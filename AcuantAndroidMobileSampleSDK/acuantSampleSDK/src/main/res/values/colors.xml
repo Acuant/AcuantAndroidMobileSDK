@@ -5,6 +5,8 @@
     <color name="backgroud_color3">#EAAADC</color>
     <color name="backgroud_color4">#FECDDC</color>
     <color name="backgroud_Transparent">#FFFFFF</color>
-    <color name="white">#FFFFFF</color>
-    
+    <color name="white">#ffffff</color>
+
+    <color name="black_overlay">#66000000</color>
+
 </resources>

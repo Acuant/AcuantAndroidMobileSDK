@@ -1,1 +1,6 @@
-<resources></resources>
+<resources>
+
+    <string name="title_activity_nfcconfirmation">NFCConfirmationActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

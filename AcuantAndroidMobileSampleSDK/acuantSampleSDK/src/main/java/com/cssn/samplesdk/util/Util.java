@@ -25,6 +25,9 @@ import android.view.Surface;
 import com.acuant.mobilesdk.util.Utils;
 import com.cssn.samplesdk.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * 
  *
@@ -37,6 +40,21 @@ public class Util
      * to show the debugs logs or not. Set it to false in production.
      */
     public static final boolean LOG_ENABLED = true;
+
+    public static String getDisplayFromattedStringFromDateString(int year,int month,int day){
+        String retString = null;
+        Date date = new Date(year, month, day);
+        SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd");
+        retString = sdf.format(date);
+        return retString;
+    }
+
+    public static int get4DigitYear(int year,int month,int day){
+        Date date = new Date(year, month, day);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        int ret_year = Integer.parseInt(sdf.format(date).split("/")[0]);
+        return ret_year;
+    }
 
     /**
      * 

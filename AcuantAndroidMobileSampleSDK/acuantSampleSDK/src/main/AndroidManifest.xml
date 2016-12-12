@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:allowClearUserData="true"
         android:hardwareAccelerated="true"
@@ -43,6 +44,7 @@
         <activity android:name="com.acuant.mobilesdk.detect.Camera2FacialRecognitionManual" />
         <activity android:name=".ImageConformationActivity" />
         <activity android:name=".NFCResultActivity" />
+        <activity android:name=".NFCConfirmationActivity"  android:noHistory="true"></activity>
     </application>
 
 </manifest>

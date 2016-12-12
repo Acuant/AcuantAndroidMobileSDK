@@ -145,6 +145,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
 
         // load the controller instance
         acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this, licenseKey);
+        Util.lockScreen(this);
         if (!Util.isTablet(this)) {
             acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));
         }
@@ -297,6 +298,23 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         acuantAndroidMobileSdkControllerInstance.setAcuantErrorListener(this);
         if (Utils.LOG_ENABLED) {
             Utils.appendLog(TAG, "getScreenOrientation()=" + Util.getScreenOrientation(this));
+        }
+    }
+
+
+    private void SaveImage(Bitmap finalBitmap) {
+
+        String fname = "/sdcard/cropped.jpg";
+        File file = new File (fname);
+        if (file.exists ()) file.delete ();
+        try {
+            FileOutputStream out = new FileOutputStream(file);
+            finalBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+            out.flush();
+            out.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -1396,6 +1414,9 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
 
     @Override
     public void onFacialRecognitionCompleted(final Bitmap bitmap) {
+        if(isShowErrorAlertDialog){
+            return;
+        }
         runOnUiThread(new Runnable(){
             @Override
             public void run() {

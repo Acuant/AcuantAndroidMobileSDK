@@ -173,7 +173,7 @@ public class NFCResultActivity extends Activity{
             addField(key, value);
         }
 
-        key = "Not Supported Authentications";
+        key = "Unsupported Authentications";
         value = data.notSupportedMethodsString();
         if(value!=null && !value.equals("")) {
             addField(key, value);
@@ -272,7 +272,7 @@ public class NFCResultActivity extends Activity{
 
         RelativeLayout.LayoutParams rparams = new RelativeLayout.LayoutParams(width/2, RelativeLayout.LayoutParams.WRAP_CONTENT);
         rparams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-        rparams.setMarginEnd(20);
+        rparams.setMarginEnd(10);
         TextView valueKey=new TextView(this);
         valueKey.setLayoutParams(rparams);
         valueKey.setText(value);
