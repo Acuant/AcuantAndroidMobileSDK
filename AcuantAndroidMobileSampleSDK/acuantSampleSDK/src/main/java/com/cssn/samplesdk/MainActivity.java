@@ -906,7 +906,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             progressDialog = Util.showProgessDialog(MainActivity.this, "Capturing data ...");
             Util.lockScreen(this);
         }
-        if (!isProcessing && processedCardInformation==null) {
+        if ((!isProcessing && processedCardInformation==null) || mainActivityModel.getCurrentOptionType()==CardType.MEDICAL_INSURANCE) {
             isProcessing = true;
             // check for the internet connection
             if (!Utils.isNetworkAvailable(this)) {
