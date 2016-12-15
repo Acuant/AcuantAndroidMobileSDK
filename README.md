@@ -25,10 +25,9 @@ other govt issued IDs, custom IDs, driver’s license barcodes, passports,
 medical insurance cards etc. It also supports address verification,
 identity verification and personal verification.
 
-For IDs from Asia, Australia, Europe, South America, Africa – we are
-support dd-mm-yyyy date format.
+For IDs from Asia, Australia, Europe, South America, Africa – we return dd-mm-yyyy date format.
 
-For IDs from Canada, USA – we are support mm-dd-yyyy date format.
+For IDs from Canada, USA – we return mm-dd-yyyy date format.
 
 For a complete list of regions, states, and countries supported for ID
 processing, please see Appendix F of ScanW document -
@@ -136,15 +135,7 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 	 }
 	 
 	 
-##Obfuscation 
-
-If you are using ProGaurd to obfuscate, make sure to add the following rules
-
-	-keep class com.microblink.** { *; }
-	-keepclassmembers class com.microblink.** { *; }
-	-dontwarn android.hardware.**
-	-dontwarn android.support.v4.**
-
+##Obfuscation If you are using ProGaurd to obfuscate, make sure to add the following rules	-keep class com.microblink.** { *; }	-keepclassmembers class com.microblink.** { *; }	-dontwarn android.hardware.**	-dontwarn android.support.v4.**
 
 
 ## Add views into manifest
@@ -161,7 +152,6 @@ Add the followings activities into manifest.xml file:
 	<uses-permission android:name="android.permission.NFC" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     
-
 	<activity android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"></activity>
 	<activity android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417"> </activity>
 	<activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual"></activity>
@@ -228,25 +218,9 @@ the front side card and for the back side card.
 
 ### Validating a license key and show the camera interface
 
-AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
-
-AcuantAndroidMobileSDKControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));
 
 AcuantAndroidMobileSDKControllerInstance.getInstanceAndShowCameraInterface(contextActivity, license, activity,cardType, region, isBarcodeSide);
 
-The width values are mandatory, they are set to indicate the width and
-height of the cropped cardimage.
-
-A Drawable can be provided before calling getInstanceAndShowCameraInterface method in
-order to be displayed in the barcode scanning functionality. If not, no
-image will be shown.
-
-currentOptionType is one of the AcuantCardType possibilities: Driver
-License, Medical Insurance or Passport.
-
-stringMessageMessage to show.
-
-currentOptionType is one of the AcuantCardType possibilities: passport.
 
 ### Show the manual camera interface methods
 
@@ -254,9 +228,9 @@ currentOptionType is one of the AcuantCardType possibilities: passport.
 acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(mainActivity,CardType.DRIVERS_LICENSE, cardRegion, isBackSide);`
 
 
-The width values are mandatory, they are set to indicate the width and height of the cropped cardimage.
+The width value is mandatory, it is set to indicate the width of the cropped card image.
 
-After the user taps the screen, the cropping process begins, there are four callback methods:
+After the user taps the screen, the image capture process begins, there are four callback methods:
 
 `	public void onCardCroppedStart(Activity activity);`
 
@@ -287,26 +261,7 @@ This function returns the card image without crop process.
 
 Called when the user tap the back button.
 
-If the application is targeted for Android API 23 and above, the control will return to the following method after the user taps on allow/deny for camera permission. The requestCode will be Permission.PERMISSION_CAMERA. If the permission is already given manually then the control won’t come here.
-
-	//Override this only for API 23 and Above
- 	@Override
- 	public void onRequestPermissionsResult(int requestCode,
-										String permissions[], int[] grantResults) {
-	 		switch (requestCode) {
-		 		case Permission.PERMISSION_CAMERA: {
-			 			// If request is cancelled, the result arrays are empty.
-			 			if (grantResults.length > 0
-					 		&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-				 		// Permission granted
-			 		} else {
-				 		// permission denied
-					}
-			 		return;
-		 		}
-	 		}
- 	}
-
+If the application is targeted for Android API 23 and above, the control will return to the following method after the user taps on allow/deny for camera permission. The requestCode will be Permission.PERMISSION_CAMERA. If the permission is already given manually then the control won’t come here.	//Override this only for API 23 and Above 	@Override 	public void onRequestPermissionsResult(int requestCode,										String permissions[], int[] grantResults) {	 		switch (requestCode) {		 		case Permission.PERMISSION_CAMERA: {			 			// If request is cancelled, the result arrays are empty.			 			if (grantResults.length > 0					 		&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {				 		// Permission granted			 		} else {				 		// permission denied					}			 		return;		 		}	 		} 	}
 
 
 ### Show the barcode camera methods
@@ -318,10 +273,10 @@ If the application is targeted for Android API 23 and above, the control will re
 `acuantAndroidMobileSdkControllerInstance.showCameraInterfacePDF417(mainActivity, CardType.DRIVERS_LICENSE, cardRegion);`
 
 
-The width values are mandatory, they are set to indicate the width and height of the cropped cardimage.
+The width value is mandatory, it is set to indicate the width of the cropped card image.
 A Drawable can be provided before calling showCameraInterfacePDF417 method in order to be displayed in the barcode scanning functionality. If not, no image will be shown.
 
-After the user opens the camera, the detection process begins, there are
+After the user opens the camera, the detection process begins, there is
 only one callback methods:
 
  public void onPDF417Finish (String result);
@@ -406,7 +361,7 @@ setCanShowBracketsOnTablet(true);
 
 ## Add the following methods to set the size of the card. 
 
-If the proper card size is not set, MobileSDK will not be able to
+If the proper card width is not set, MobileSDK will not be able to
 process the card.
 
 **For Driver's License Cards**
@@ -804,7 +759,8 @@ The Acuant FRM performs following checks to recognize a live face and match face
 
 ####  Following are the APIs/Classes to use the Facial Match feature.
 
-**a.FacialRecognitionListener**
+**a. FacialRecognitionListener**
+
 This is the listener to be used to get the call back from the SDK interface. It has two interfaces
 
 - public void onFacialRecognitionCompleted(final Bitmap bitmap);
@@ -816,7 +772,7 @@ This is the listener to be used to get the call back from the SDK interface. It 
 
 
 
-***b.	Show facial recognition user interface***
+**b.	Show facial recognition user interface**
 
 To show the facial recognition interface, call the following method: 
 
@@ -869,7 +825,9 @@ If either live face image or face image from ID card is not valid then it won’
 	transactionId=null
 	facialData.facialMatchConfidenceRating = null;
 
-**d.	Facial Liveliness timeout** This SDK method will allow to set a timeout limit for facial liveliness detection. By default it is set to 20 seconds.
+**d.	Facial Liveliness timeout** 
+
+This SDK method will allow to set a timeout limit for facial liveliness detection. By default it is set to 20 seconds.
 
 	public synchronized void setFacialRecognitionTimeoutInSeconds(int seconds)
 	
@@ -879,6 +837,7 @@ When it times out the following call back method will be called.
 	public void onFacialRecognitionTimedOut(final Bitmap bitmap)
  
 **e.	FacialData**
+
 This class is the data class for facial results. Following are the methods to get the facial data
 
 	public boolean getFacialMatch() 
@@ -1232,3 +1191,4 @@ Changes:
 	
 		
 - 	Added APIs for e-Passport chip scanning and reading information. 
+		
