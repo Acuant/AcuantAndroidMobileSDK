@@ -885,8 +885,8 @@ getAuthenticationResult: can return either of the following values:
         -  Passed
         -  Failed
         -  Attention
-	-  Unknown
-	-  Skipped
+        -  Unknown
+        -  Skipped
 getAuthenticationResultSummaryList: When “AuthenticationResult” will have the value “Attention”, “getAuthenticationResultSummaryList” will return the list of reasons for “Attention’.
 
 Note: getAuthenticationResultSummaryList will return empty list for “Passed” and “Failed” results.
