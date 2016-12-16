@@ -889,7 +889,7 @@ getAuthenticationResult: can return either of the following values:
         -  Skipped
 getAuthenticationResultSummaryList: When “AuthenticationResult” will have the value “Attention”, “getAuthenticationResultSummaryList” will return the list of reasons for “Attention’.
 
-Note: getAuthenticationResultSummaryList will return empty list for “Passed” and “Failed” results.
+Note: getAuthenticationResultSummaryList will return empty list for “Passed”,“Failed”,"Unknown" and "Skipped" results.
 
 # Tracking Capture Device Location
 
