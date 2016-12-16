@@ -135,7 +135,15 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 	 }
 	 
 	 
-##Obfuscation If you are using ProGaurd to obfuscate, make sure to add the following rules	-keep class com.microblink.** { *; }	-keepclassmembers class com.microblink.** { *; }	-dontwarn android.hardware.**	-dontwarn android.support.v4.**
+##Obfuscation 
+
+If you are using ProGaurd to obfuscate, make sure to add the following rules
+
+	-keep class com.microblink.** { *; }
+	-keepclassmembers class com.microblink.** { *; }
+	-dontwarn android.hardware.**
+	-dontwarn android.support.v4.**
+
 
 
 ## Add views into manifest
@@ -261,7 +269,26 @@ This function returns the card image without crop process.
 
 Called when the user tap the back button.
 
-If the application is targeted for Android API 23 and above, the control will return to the following method after the user taps on allow/deny for camera permission. The requestCode will be Permission.PERMISSION_CAMERA. If the permission is already given manually then the control won’t come here.	//Override this only for API 23 and Above 	@Override 	public void onRequestPermissionsResult(int requestCode,										String permissions[], int[] grantResults) {	 		switch (requestCode) {		 		case Permission.PERMISSION_CAMERA: {			 			// If request is cancelled, the result arrays are empty.			 			if (grantResults.length > 0					 		&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {				 		// Permission granted			 		} else {				 		// permission denied					}			 		return;		 		}	 		} 	}
+If the application is targeted for Android API 23 and above, the control will return to the following method after the user taps on allow/deny for camera permission. The requestCode will be Permission.PERMISSION_CAMERA. If the permission is already given manually then the control won’t come here.
+
+	//Override this only for API 23 and Above
+ 	@Override
+ 	public void onRequestPermissionsResult(int requestCode,
+										String permissions[], int[] grantResults) {
+	 		switch (requestCode) {
+		 		case Permission.PERMISSION_CAMERA: {
+			 			// If request is cancelled, the result arrays are empty.
+			 			if (grantResults.length > 0
+					 		&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+				 		// Permission granted
+			 		} else {
+				 		// permission denied
+					}
+			 		return;
+		 		}
+	 		}
+ 	}
+
 
 
 ### Show the barcode camera methods
@@ -858,6 +885,8 @@ getAuthenticationResult: can return either of the following values:
         -  Passed
         -  Failed
         -  Attention
+	-  Unknown
+	-  Skipped
 
 getAuthenticationResultSummaryList: When “AuthenticationResult” will have the value “Attention”, “getAuthenticationResultSummaryList” will return the list of reasons for “Attention’.
 
@@ -1191,4 +1220,5 @@ Changes:
 	
 		
 - 	Added APIs for e-Passport chip scanning and reading information. 
-		
+		
+
