@@ -230,7 +230,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         //acuantAndroidMobileSdkControllerInstance.setFlashlight(0,0,50,0);
         //acuantAndroidMobileSdkControllerInstance.setFlashlightImageDrawable(getResources().getDrawable(R.drawable.lighton), getResources().getDrawable(R.drawable.lightoff));
         //acuantAndroidMobileSdkControllerInstance.setShowInitialMessage(true);
-        //acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
+        acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
         //acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeDialogWaitingBarcode("AcuantAndroidMobileSampleSDK","ALIGN AND TAP", 10, "Try Again", "Yes");
         //acuantAndroidMobileSdkControllerInstance.setCanShowBracketsOnTablet(true);
         // load several member variables
@@ -639,7 +639,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         }else if (currentOptionType == CardType.MEDICAL_INSURANCE) {
             acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_MEDICAL_INSURANCE);
         } else {
-            if(license_details.isAssureIDAllowed()) {
+            if(license_details!=null && license_details.isAssureIDAllowed()) {
                 acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_DRIVERS_LICENSE_WIDTH_FOR_AUTHENTICATION);
             }else {
                 acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_DRIVERS_LICENSE_WIDTH);
