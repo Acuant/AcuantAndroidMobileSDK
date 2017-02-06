@@ -310,9 +310,9 @@ only one callback methods:
 
 result: the barcode string result
 
- public void onBarcodeTimeOut();
+ public void onBarcodeTimeOut(Bitmap croppedImage,Bitmap originalImage);
 
-This function will trigger to alert that the capture is pending without closing the camera view
+This function will be triggered to alert that the capture is pending without closing the camera view. The argument croppedImage will have the cropped image of the last frame before this function is triggered.If the frame could not be cropped this argument will be null.
 
  getBarcodeCameraContext();
 
@@ -1143,3 +1143,18 @@ Changes:
 
 - Defect fixes.
 - Added AuthenticationObject field to PassportCard and DriversLicenseCard.
+- Modified the signature of onBarcodeTimeOut
+
+		from,
+		
+		public void onBarcodeTimeOut();
+		
+		to,
+
+		public void onBarcodeTimeOut(Bitmap croppedImage,Bitmap originalImage);
+		
+		/*This function will be triggered to alert that the capture is
+		pending without closing the camera view. The argument
+		croppedImage will have the cropped image of the last frame
+		before this function is triggered.If the frame could not be 
+		cropped this argument will be null.*/

@@ -550,16 +550,19 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     }
 
     @Override
-    public void onBarcodeTimeOut(Bitmap image) {
-        final Bitmap pdfFrame = image;
+    public void onBarcodeTimeOut(Bitmap croppedImage,Bitmap originalImage) {
+        final Bitmap cImage = croppedImage;
+        final Bitmap oImage = originalImage;
         acuantAndroidMobileSdkControllerInstance.pauseScanningBarcodeCamera();
         AlertDialog.Builder builder = new AlertDialog.Builder(acuantAndroidMobileSdkControllerInstance.getBarcodeCameraContext());
         // barcode Dialog "ignore" option
         builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // User clicked OK button
-                if(pdfFrame!=null){
-                    mainActivityModel.setBackSideCardImage(pdfFrame);
+                if(cImage!=null){
+                    mainActivityModel.setBackSideCardImage(cImage);
+                }else if(oImage!=null){
+                    mainActivityModel.setBackSideCardImage(oImage);
                 }
                 acuantAndroidMobileSdkControllerInstance.finishScanningBarcodeCamera();
                 dialog.dismiss();
