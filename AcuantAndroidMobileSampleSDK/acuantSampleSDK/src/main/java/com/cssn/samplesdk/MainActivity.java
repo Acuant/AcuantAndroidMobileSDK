@@ -230,7 +230,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         //acuantAndroidMobileSdkControllerInstance.setFlashlight(0,0,50,0);
         //acuantAndroidMobileSdkControllerInstance.setFlashlightImageDrawable(getResources().getDrawable(R.drawable.lighton), getResources().getDrawable(R.drawable.lightoff));
         //acuantAndroidMobileSdkControllerInstance.setShowInitialMessage(true);
-        acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
+        //acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
         //acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeDialogWaitingBarcode("AcuantAndroidMobileSampleSDK","ALIGN AND TAP", 10, "Try Again", "Yes");
         //acuantAndroidMobileSdkControllerInstance.setCanShowBracketsOnTablet(true);
         // load several member variables
@@ -550,13 +550,17 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     }
 
     @Override
-    public void onBarcodeTimeOut() {
+    public void onBarcodeTimeOut(Bitmap image) {
+        final Bitmap pdfFrame = image;
         acuantAndroidMobileSdkControllerInstance.pauseScanningBarcodeCamera();
         AlertDialog.Builder builder = new AlertDialog.Builder(acuantAndroidMobileSdkControllerInstance.getBarcodeCameraContext());
         // barcode Dialog "ignore" option
         builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // User clicked OK button
+                if(pdfFrame!=null){
+                    mainActivityModel.setBackSideCardImage(pdfFrame);
+                }
                 acuantAndroidMobileSdkControllerInstance.finishScanningBarcodeCamera();
                 dialog.dismiss();
             }

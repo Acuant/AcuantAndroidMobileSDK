@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 11/30/2016
+Last updated on – 01/31/2017
 
 # Introduction
 
@@ -109,7 +109,7 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 	}
 	
 	 dependencies {
-		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.5'
+		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.6'
 		compile ('com.microblink:pdf417.mobi:6.0.1@aar')
 		compile ('com.android.support:appcompat-v7:25.0.0')
 		compile ('com.google.code.gson:gson:2.5')
@@ -1137,87 +1137,9 @@ This is the implementation in the Sample project:
 
 # Change Log
 
-Acuant Android MobileSDK version 4.5
+Acuant Android MobileSDK version 4.6
 
 Changes:
 
-- 	Significant improvements done to ID capture interface.
-
-	-	Continuous Auto focus.
-	-	Continuous brightness correction.
-	-	Shake detection to avoid blurry images.
-	- Optimized memory and processing speed for document cropping.
-	- Improved 2D barcode capture interface.
-	- Added method to retrieve the barcode string and the backside image by the barcode capture interface for driving license.
-
-			// To Enable barcode side capture
-			acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
-			
-		If barcode side image capture is enabled then the image is returned
-			in the following callback method
-			
-			 public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide)
-        
-
-- Significant improvements done to Facial capture interface.
-
-	-	Continuous Auto focus.
-	-	Continuous brightness correction.
-	-	Improved live person detection.
-	-	Added guidance message to guide the user.
-	- Improved facial interface for live person detection.
-	- Added API to display custom message after red rectangle appears on the facial screen.
-
-			public void setSubInstructionText(String subInstructionStr, 
-			int left, int top,Paint paint)
-		
-	- Added timeout for live person detection.
-	
-			public synchronized void setFacialRecognitionTimeoutInSeconds(int seconds)
-			
-	- Added call back method for live person detection timeout
-
-			public void onFacialRecognitionTimedOut(final Bitmap bitmap)
-			
-	- Optimized facial match function. If either live face image or face image from ID card is not valid then it won’t make any web service call. The call will return successfully with following values
-
-			facialData.facialMatch = false;
-   			facialData.faceLivelinessDetection = <Based on if live face detected or not>
-   			transactionId=null
-   			facialData.facialMatchConfidenceRating = null;
-	
-- Added location tracking and authentication
-
-	-	Added API to track device location.
-
-			AcuantAndroidMobileSDKController instance = AcuantAndroidMobileSDKController.getInstance();
-			instance.getDeviceCountryName(); // Country of the device location
-			instance.getDeviceCountryCode(); // Country code of the device location
-			instance.getDeviceState(); // State of the device location
-			instance.getDeviceCity(); // City of the device location
-			instance.getDeviceArea(); //Area of the device location
-			instance.getDeviceZipCode(); // zipcode of the device location
-			instance.getDeviceAddress(); // Street address of device location
-
-	
-	-	Added new properties for location test to the Card class
-
-			public int idLocationStateTestResult;
-			public int idLocationCountryTestResult;
-			public int idLocationCityTestResult;
-    		public int idLocationZipcodeTestResult;
-    	
-    -	Added constants for location test result
-
-			public class LocationVerificationResult {
-        		public final static int PASSED = 1;
-        		public final static int FAILED = 0;
-        		public final static int NOT_AVAILABLE = 2;
-			}
-    
-	
-	
-		
-- 	Added APIs for e-Passport chip scanning and reading information. 
-		
-
+- Defect fixes.
+- Added AuthenticationObject field to PassportCard and DriversLicenseCard.
