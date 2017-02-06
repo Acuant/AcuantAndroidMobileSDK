@@ -231,6 +231,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         //acuantAndroidMobileSdkControllerInstance.setFlashlightImageDrawable(getResources().getDrawable(R.drawable.lighton), getResources().getDrawable(R.drawable.lightoff));
         //acuantAndroidMobileSdkControllerInstance.setShowInitialMessage(true);
         //acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
+        //acuantAndroidMobileSdkControllerInstance.setCropBarcodeOnCancel(true);
         //acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeDialogWaitingBarcode("AcuantAndroidMobileSampleSDK","ALIGN AND TAP", 10, "Try Again", "Yes");
         //acuantAndroidMobileSdkControllerInstance.setCanShowBracketsOnTablet(true);
         // load several member variables
@@ -545,8 +546,17 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     }
 
     @Override
-    public void onCancelCapture() {
+    public void onCancelCapture(Bitmap croppedImage,Bitmap originalImage) {
         Utils.appendLog("Acuant", "onCancelCapture");
+        if(croppedImage!=null || originalImage!=null) {
+            final Bitmap cImage = croppedImage;
+            final Bitmap oImage = originalImage;
+            if (cImage != null) {
+                mainActivityModel.setBackSideCardImage(cImage);
+            } else if (oImage != null) {
+                mainActivityModel.setBackSideCardImage(oImage);
+            }
+        }
     }
 
     @Override

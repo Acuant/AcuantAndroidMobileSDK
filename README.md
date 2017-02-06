@@ -268,9 +268,9 @@ card.
 
 This function returns the card image without crop process.
 
-	public void onCancelCapture();
+	public void onCancelCapture(Bitmap croppedImage,Bitmap originalImage);
 
-Called when the user tap the back button.
+Called when the user tap the back button.If the back button is pressed in barcode interface and the barcode cropping on cancel is enabled then the arguments will contain the cropped image and original image.Otherwise the arguments will be null.
 
 If the application is targeted for Android API 23 and above, the control will return to the following method after the user taps on allow/deny for camera permission. The requestCode will be Permission.PERMISSION_CAMERA. If the permission is already given manually then the control won’t come here.
 
@@ -378,6 +378,10 @@ setFlashlight: Enable or disable the flashlight, by default is false.
 setCropBarcode: Enable or disable the barcode image cropping. By default is false.
 
 	setCropBarcode(canCropBarcode);
+	
+setCropBarcodeOnCancel : Enable or disable the barcode image cropping while pressing the back button.The default if false;
+
+	setCropBarcodeOnCancel(true);
 
 setShowActionBar: Enable or disable the action bar. By default is false.
 
@@ -1172,3 +1176,22 @@ Changes:
 -	When the barcode side cropping is enabled, the following listener function will be called to retrieve the original image of the barcode side.
 
 		public void onOriginalCapture(Bitmap bitmap);
+		
+- Added API to enable Barcode side image capture and cropping when back  button is pressed
+
+		/*setCropBarcodeOnCancel : Enable or disable the barcode image
+		cropping while pressing the back button.The default if false;*/
+
+		setCropBarcodeOnCancel(true);
+	
+		
+- Modified the onCancelCapture call back as below :
+
+		public void onCancelCapture(Bitmap croppedImage,Bitmap originalImage);
+
+		/*Called when the user tap the back button.If the back button is
+		pressed in barcode interface and the barcode cropping on cancel
+		is enabled then the arguments will contain the cropped image and
+		original image.Otherwise the arguments will be null.*/
+
+	
