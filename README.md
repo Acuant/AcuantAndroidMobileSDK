@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 01/31/2017
+Last updated on – 02/06/2017
 
 # Introduction
 
@@ -232,26 +232,29 @@ AcuantAndroidMobileSDKControllerInstance.getInstanceAndShowCameraInterface(conte
 
 ### Show the manual camera interface methods
 
-`	AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
-acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(mainActivity,CardType.DRIVERS_LICENSE, cardRegion, isBackSide);`
+	AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
+	
+	acuantAndroidMobileSdkControllerInstance.
+	showManualCameraInterface(mainActivity,CardType.DRIVERS_LICENSE,
+	cardRegion, isBackSide);
 
 
 The width value is mandatory, it is set to indicate the width of the cropped card image.
 
 After the user taps the screen, the image capture process begins, there are four callback methods:
 
-`	public void onCardCroppedStart(Activity activity);`
+	public void onCardCroppedStart(Activity activity);
 
 *activity*: the activity of the full screen Window, or the activity owner
 of the modal dialog (in case of Passport and Tablet for example)
 
-`	public void onCardCroppedFinish(Bitmap bitmap);`
+	public void onCardCroppedFinish(Bitmap bitmap);
 
 *bitmap*: the image card result
 
 This function returns the cropped card image is returned.
 
-`	public void onCardCroppedFinish(final Bitmap bitmap, boolean, scanBackSide);`
+	public void onCardCroppedFinish(final Bitmap bitmap, boolean, scanBackSide);`
 
 *bitmap*: the image card result
 This function returns the cropped card image is returned.
@@ -259,13 +262,13 @@ This function returns the cropped card image is returned.
 *scanBackSide*: A flag to alert the user to capture the back side of the
 card.
 
-`	public void onOriginalCapture(Bitmap bitmap);`
+	public void onOriginalCapture(Bitmap bitmap);
 
 *bitmap*: the image before the cropping process begins. 
 
 This function returns the card image without crop process.
 
-`	public void onCancelCapture();`
+	public void onCancelCapture();
 
 Called when the user tap the back button.
 
@@ -293,11 +296,15 @@ If the application is targeted for Android API 23 and above, the control will re
 
 ### Show the barcode camera methods
 
-`AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);`
+	AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
 
-`AcuantAndroidMobileSDKControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));`
+	AcuantAndroidMobileSDKControllerInstance.
+	setPdf417BarcodeImageDrawable(getResources().
+	getDrawable(R.drawable.barcode));
 
-`acuantAndroidMobileSdkControllerInstance.showCameraInterfacePDF417(mainActivity, CardType.DRIVERS_LICENSE, cardRegion);`
+	acuantAndroidMobileSdkControllerInstance.
+	showCameraInterfacePDF417(mainActivity, CardType.DRIVERS_LICENSE,
+	cardRegion);
 
 
 The width value is mandatory, it is set to indicate the width of the cropped card image.
@@ -306,83 +313,87 @@ A Drawable can be provided before calling showCameraInterfacePDF417 method in or
 After the user opens the camera, the detection process begins, there is
 only one callback methods:
 
- public void onPDF417Finish (String result);
+ 	public void onPDF417Finish(String result);
 
 result: the barcode string result
 
- public void onBarcodeTimeOut(Bitmap croppedImage,Bitmap originalImage);
+ 	public void onBarcodeTimeOut(Bitmap croppedImage,Bitmap originalImage);
 
 This function will be triggered to alert that the capture is pending without closing the camera view. The argument croppedImage will have the cropped image of the last frame before this function is triggered.If the frame could not be cropped this argument will be null.
 
- getBarcodeCameraContext();
+ 	getBarcodeCameraContext();
 
 return: The current barcode camera context.
 This function return null if the barcode camera is close.
 
-pauseScanningBarcodeCamera();
+	pauseScanningBarcodeCamera();
 
 This function pause the barcode camera detection
 
-resumeScanningBarcodeCamera();
+	resumeScanningBarcodeCamera();
 
-return: The current barcode camera context.
-This function resume the barcode camera detection
+return: The current barcode camera context.This function resume the barcode camera detection
 
-finishScanningBarcodeCamera();
+	finishScanningBarcodeCamera();
 
 return: The current barcode camera context.
 This function close the barcode camera.
 
-public void onCancelCapture();
+	public void onCancelCapture();
 
 Called when the user tap the back button.
 
 ## Optional, Add the following methods to customize.
 
-setPdf417BarcodeImageDrawable: Customize the barcode interface with an image, default empty.
-AcuantAndroidMobileSDKControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));
+setPdf417BarcodeImageDrawable  : Customize the barcode interface
+	with an image, default empty.
+			
+	AcuantAndroidMobileSDKControllerInstance.
+		setPdf417BarcodeImageDrawable(
+		getResources().getDrawable(R.drawable.barcode));
+
 
 setWatermarkText: method to see the watermark on your camera
 
-AcuantAndroidMobileSDKController.setWatermarkText("Powered By Acuant",0,0,30,0);
+	AcuantAndroidMobileSDKController.setWatermarkText("Powered By Acuant",0,0,30,0);
 
 setInitialMessageDescriptor: Customize the initial message, default implementation says "Align and Tap" or “Tap to Focus”.
 
-setInitialMessageDescriptor(R.layout.hold_steady);
+	setInitialMessageDescriptor(R.layout.hold_steady);
 
-setInitialMessageDescriptor(message, red, green, blue, alpha);
+	setInitialMessageDescriptor(message, red, green, blue, alpha);
 
 setFinalMessageDescriptor : Customize the capturing message, default implementation says "hold steady".
 
-setFinalMessageDescriptor(R.layout.align_and_tap);
+	setFinalMessageDescriptor(R.layout.align_and_tap);
 
-setFinalMessageDescriptor(message, red, green, blue, alpha);
+	setFinalMessageDescriptor(message, red, green, blue, alpha);
 
 setFlashlight: Enable or disable the flashlight, by default is false.
 
-setFlashlight(showFlashlight);
+	setFlashlight(showFlashlight);
 
-setFlashlight(left, top, right, bottom);
+	setFlashlight(left, top, right, bottom);
 
 setCropBarcode: Enable or disable the barcode image cropping. By default is false.
 
-setCropBarcode(canCropBarcode);
+	setCropBarcode(canCropBarcode);
 
 setShowActionBar: Enable or disable the action bar. By default is false.
 
-setShowActionBar (false);
+	setShowActionBar (false);
 
 setShowStatusBar: Enable or disable the status bar. By default is false.
 
-setShowStatusBar (false);
+	setShowStatusBar (false);
 
 setShowInitialMessage: Enable or disable the barcode camera message. By default is false.
 
-setShowInitialMessage (false);
+	setShowInitialMessage (false);
 
 setCanShowBracketsOnTablet: Enable or disable the guiding brackets for tablets
 
-setCanShowBracketsOnTablet(true);
+	setCanShowBracketsOnTablet(true);
 
 
 
@@ -1141,8 +1152,7 @@ Acuant Android MobileSDK version 4.6
 
 Changes:
 
-- Defect fixes.
-- Added AuthenticationObject field to PassportCard and DriversLicenseCard.
+- Optimizations for Android 7.
 - Modified the signature of onBarcodeTimeOut
 
 		from,
@@ -1158,3 +1168,7 @@ Changes:
 		croppedImage will have the cropped image of the last frame
 		before this function is triggered.If the frame could not be 
 		cropped this argument will be null.*/
+
+-	When the barcode side cropping is enabled, the following listener function will be called to retrieve the original image of the barcode side.
+
+		public void onOriginalCapture(Bitmap bitmap);
