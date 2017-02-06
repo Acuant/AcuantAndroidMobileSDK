@@ -1177,7 +1177,7 @@ Changes:
 
 		public void onOriginalCapture(Bitmap bitmap);
 		
-- Added API to enable Barcode side image capture and cropping when back  button is pressed
+- Added API to enable Barcode side image capture and cropping when back button is pressed on the barcode capture camera interface.
 
 		/*setCropBarcodeOnCancel : Enable or disable the barcode image
 		cropping while pressing the back button.The default if false;*/
