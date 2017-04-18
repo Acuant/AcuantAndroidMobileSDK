@@ -1,0 +1,86 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="com.cssn.samplesdk.ImageConformationActivity">
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/mainLayout"
+            android:layout_centerHorizontal="true">
+            <LinearLayout android:orientation="vertical"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:id="@+id/messageLayout"
+                android:layout_above="@id/imageLayout"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Please make sure all the text on the ID image is readable,otherwise retry."
+                    android:id="@+id/messageTextView"
+                    android:layout_centerInParent="true"
+                    android:textAlignment="center"
+                    android:gravity="center"/>
+            </LinearLayout>
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:paddingTop="10dip" android:paddingBottom="10dip"
+            android:id="@+id/imageLayout"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+            <ImageView
+                android:id="@+id/titleImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_launcher" android:contentDescription="titleImg"/>
+            <ImageView
+                android:id="@+id/cropImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_launcher" android:contentDescription="CropImage"/>
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="10dip"
+            android:id="@+id/buttonsLayout"
+            android:layout_below="@id/imageLayout"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+            <LinearLayout android:orientation="vertical"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:id="@+id/confirmButtonLayout"
+                android:layout_weight=".50"
+                android:layout_alignParentLeft="true">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm"
+                    android:id="@+id/buttonConfirm"
+                    android:onClick="confirmButtonPressed"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:id="@+id/retryButtonLayout"
+                android:layout_weight=".50"
+                android:layout_alignParentRight="true">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Retry"
+                android:id="@+id/buttonRetry"
+                android:onClick="retryButtonPressed"/>
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

@@ -8,6 +8,7 @@
     <string name="about">about</string>
     <string name="none">none</string>
     <string name="action_settings">Settings</string>
+    <string name="action_connect_settings">Connect Subscription(Optional)</string>
     <string name="hello_world">Hello world!</string>
     <string name="license_key">License Key</string>
     <string name="activate">Activate</string>

@@ -1,69 +1,89 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.cssn.samplesdk.ImageConformationActivity">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
 
-    <LinearLayout android:orientation="vertical"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:paddingTop="10dip" android:paddingBottom="10dip"
-        android:id="@+id/imageLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
-        <ImageView
-            android:id="@+id/titleImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher" android:contentDescription="titleImg"/>
-        <ImageView
-            android:id="@+id/cropImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_launcher" android:contentDescription="CropImage"/>
-    </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Please make sure all the text on the ID image is readable,otherwise retry."
-        android:id="@+id/messageTextView"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/imageLayout"
-        android:layout_marginBottom="30dip"
-        android:layout_alignParentStart="false" />
-
-    <LinearLayout android:orientation="vertical"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:paddingTop="10dip" android:paddingBottom="10dip"
-        android:id="@+id/buttonLayout"
-        android:layout_below="@id/imageLayout"
-        android:layout_centerHorizontal="true">
-
-    <Button
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirm"
-        android:id="@+id/buttonConfirm"
-        android:onClick="confirmButtonPressed"
-        android:layout_centerHorizontal="true"
-        android:paddingBottom="20dip"
-        android:layout_above="@+id/buttonRetry"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Retry"
-        android:id="@+id/buttonRetry"
-        android:onClick="retryButtonPressed"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/imageLayout"/>
-    </LinearLayout>
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.cssn.samplesdk.ImageConformationActivity">
 
-</RelativeLayout>
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:paddingTop="10dip" android:paddingBottom="10dip"
+            android:id="@+id/imageLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+            <ImageView
+                android:id="@+id/titleImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_launcher" android:contentDescription="titleImg"/>
+            <ImageView
+                android:id="@+id/cropImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_launcher" android:contentDescription="CropImage"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="10dip" android:paddingBottom="10dip"
+            android:id="@+id/messageLayout"
+            android:layout_above="@id/imageLayout"
+            android:layout_centerHorizontal="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please make sure all the text on the ID image is readable,otherwise retry."
+            android:id="@+id/messageTextView"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dip"
+            android:layout_alignParentStart="false" />
+        </LinearLayout>
+
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingTop="10dip" android:paddingBottom="10dip"
+            android:id="@+id/confirmButtonLayout"
+            android:layout_below="@id/imageLayout"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirm"
+                android:id="@+id/buttonConfirm"
+                android:onClick="confirmButtonPressed"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@+id/retryButtonLayout"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingBottom="10dip"
+            android:id="@+id/retryButtonLayout"
+            android:layout_below="@id/confirmButtonLayout"
+            android:layout_centerHorizontal="true">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Retry"
+                android:id="@+id/buttonRetry"
+                android:onClick="retryButtonPressed"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/imageLayout"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</ScrollView>

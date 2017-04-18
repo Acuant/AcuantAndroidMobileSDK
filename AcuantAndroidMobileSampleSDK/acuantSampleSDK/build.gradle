@@ -7,7 +7,7 @@ repositories {
 android {
     useLibrary 'org.apache.http.legacy'
     compileSdkVersion 25
-    buildToolsVersion "24.0.3"
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
         applicationId "com.cssn.samplesdk"
@@ -41,9 +41,9 @@ android {
 
 dependencies {
     compile project(':acuantMobileSDK')
-    compile ('com.microblink:pdf417.mobi:6.0.1@aar')
+    compile ('com.microblink:pdf417.mobi:6.2.1@aar')
     compile ('com.android.support:multidex:1.0.1')
-    compile ('com.android.support:appcompat-v7:25.0.0')
+    compile ('com.android.support:appcompat-v7:25.2.0')
     compile ('com.squareup.okhttp3:okhttp:3.2.0')
     compile ('com.google.code.gson:gson:2.5')
     compile ('org.jmrtd:jmrtd:0.5.6')

@@ -43,4 +43,8 @@ public class TempImageStore {
     public static void setBitmapImage(Bitmap bitmapImage) {
         TempImageStore.bitmapImage = bitmapImage;
     }
+
+    public static void cleanup(){
+        TempImageStore.imageConfirmationListener = null;
+    }
 }

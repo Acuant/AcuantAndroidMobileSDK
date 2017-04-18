@@ -26,6 +26,7 @@ import com.acuant.mobilesdk.PassportCard;
 import com.acuant.mobilesdk.util.Utils;
 import com.cssn.samplesdk.util.DataContext;
 import com.cssn.samplesdk.util.NFCStore;
+import com.cssn.samplesdk.util.TempImageStore;
 import com.cssn.samplesdk.util.Util;
 
 import java.text.SimpleDateFormat;
@@ -53,8 +54,10 @@ public class NFCConfirmationActivity extends Activity implements AcuantTagReadin
     private TextView mrzDOB = null;
     private TextView mrzDOE = null;
 
+    private AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance = null;
 
-    private static AlertDialog alertDialog;
+
+    private AlertDialog alertDialog;
 
     public void DateDialog(final TextView tv, int year, int month, int day){
         DatePickerDialog.OnDateSetListener listener=new DatePickerDialog.OnDateSetListener() {
@@ -153,9 +156,18 @@ public class NFCConfirmationActivity extends Activity implements AcuantTagReadin
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        acuantAndroidMobileSdkControllerInstance.cleanup();
+        if (Util.LOG_ENABLED) {
+            Utils.appendLog(TAG, "protected void onDestroy()");
+        }
+    }
+
     public void nfcPressed(View v){
         ensureSensorIsOn();
-        AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance();
+        acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance();
         if(acuantAndroidMobileSdkControllerInstance!=null){
             acuantAndroidMobileSdkControllerInstance.listenNFC(this,nfcAdapter);
             if(alertDialog!=null && alertDialog.isShowing()){
@@ -168,7 +180,7 @@ public class NFCConfirmationActivity extends Activity implements AcuantTagReadin
 
     private void ensureSensorIsOn()
     {
-        if(!this.nfcAdapter.isEnabled())
+        if(this.nfcAdapter!=null && !this.nfcAdapter.isEnabled())
         {
             // Alert the user that NFC is off
             new AlertDialog.Builder(this)
@@ -199,6 +211,9 @@ public class NFCConfirmationActivity extends Activity implements AcuantTagReadin
                         }
                     })
                     .show();
+        }else if(this.nfcAdapter==null){
+
+
         }
 
     }
@@ -211,7 +226,7 @@ public class NFCConfirmationActivity extends Activity implements AcuantTagReadin
             Util.dismissDialog(alertDialog);
         }
         alertDialog = Util.showProgessDialog(this, "Reading passport chip...\n\nPlease don't move passport or phone.");
-        AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance();
+        acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance();
         if(acuantAndroidMobileSdkControllerInstance!=null){
             acuantAndroidMobileSdkControllerInstance.setAcuantTagReadingListener(this);
             String docNumber = mrzDocNumber.getText().toString().trim();

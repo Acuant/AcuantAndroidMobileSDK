@@ -40,7 +40,12 @@ public class ImageConformationActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.image_confirmation);
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            setContentView(R.layout.image_confirmation_landscape);
+        }else {
+            setContentView(R.layout.image_confirmation);
+        }
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
@@ -54,11 +59,6 @@ public class ImageConformationActivity extends Activity {
 
             ImageView titleImg = (ImageView)  findViewById(R.id.titleImg);
             titleImg.setVisibility(View.GONE);
-
-            if(isTabletDevice(this)){
-                LinearLayout buttonLayout = (LinearLayout)findViewById(R.id.buttonLayout);
-                buttonLayout.getLayoutParams().width = width/2;
-            }
 
         }else{
             Button confirmButton = (Button) findViewById(R.id.buttonConfirm);
@@ -94,12 +94,16 @@ public class ImageConformationActivity extends Activity {
     }
 
     public void retryButtonPressed(View v) {
-        TempImageStore.getImageConfirmationListener().retry();
+        if(TempImageStore.getImageConfirmationListener()!=null) {
+            TempImageStore.getImageConfirmationListener().retry();
+        }
         finish();
     }
 
     public void confirmButtonPressed(View v) {
-        TempImageStore.getImageConfirmationListener().confimed();
+        if(TempImageStore.getImageConfirmationListener()!=null) {
+            TempImageStore.getImageConfirmationListener().confimed();
+        }
         finish();
     }
 

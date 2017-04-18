@@ -11,6 +11,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SET_DEBUG_APP"></uses-permission>
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:name="android.support.multidex.MultiDexApplication"
@@ -43,8 +46,12 @@
         <activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual" />
         <activity android:name="com.acuant.mobilesdk.detect.Camera2FacialRecognitionManual" />
         <activity android:name=".ImageConformationActivity" />
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".NFCResultActivity" />
         <activity android:name=".NFCConfirmationActivity"  android:noHistory="true"></activity>
+        <activity
+            android:name=".ShowConnectDataActivity"
+            android:label="@string/title_activity_show_connect_data"></activity>
     </application>
 
 </manifest>

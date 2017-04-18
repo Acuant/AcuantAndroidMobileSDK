@@ -10,21 +10,28 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import android.view.inputmethod.InputMethodManager;
@@ -41,6 +48,7 @@ import com.acuant.mobilesdk.AcuantErrorListener;
 import com.acuant.mobilesdk.Card;
 import com.acuant.mobilesdk.CardCroppingListener;
 import com.acuant.mobilesdk.CardType;
+import com.acuant.mobilesdk.ConnectWebserviceListener;
 import com.acuant.mobilesdk.DriversLicenseCard;
 import com.acuant.mobilesdk.ErrorType;
 import com.acuant.mobilesdk.FacialData;
@@ -62,55 +70,76 @@ import com.cssn.samplesdk.util.DataContext;
 import com.cssn.samplesdk.util.TempImageStore;
 import com.cssn.samplesdk.util.Util;
 
+import org.apache.commons.codec.binary.Base64;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 /**
  *
  */
-public class MainActivity extends Activity implements WebServiceListener, CardCroppingListener, AcuantErrorListener, FacialRecognitionListener {
+public class MainActivity extends Activity implements WebServiceListener,ConnectWebserviceListener, CardCroppingListener, AcuantErrorListener, FacialRecognitionListener {
 
     private static final String TAG = MainActivity.class.getName();
-    private static final String IS_SHOWING_DIALOG_KEY = "isShowingDialog";
-    private static final String IS_PROCESSING_DIALOG_KEY = "isProcessing";
-    private static final String IS_CROPPING_DIALOG_KEY = "isCropping";
-    private static final String IS_VALIDATING_DIALOG_KEY = "isValidating";
-    private static final String IS_ACTIVATING_DIALOG_KEY = "isActivating";
-    private static final String IS_SHOWDUPLEXDIALOG_DIALOG_KEY = "isShowDuplexDialog";
-    private static String sPdf417String = "";
+    private  final String IS_SHOWING_DIALOG_KEY = "isShowingDialog";
+    private  final String IS_PROCESSING_DIALOG_KEY = "isProcessing";
+    private  final String IS_CROPPING_DIALOG_KEY = "isCropping";
+    private  final String IS_VALIDATING_DIALOG_KEY = "isValidating";
+    private  final String IS_ACTIVATING_DIALOG_KEY = "isActivating";
+    private  final String IS_SHOWDUPLEXDIALOG_DIALOG_KEY = "isShowDuplexDialog";
+    public  String sPdf417String = "";
     AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance = null;
-    private ImageView frontImageView;
-    private ImageView backImageView;
+    public ImageView frontImageView;
+    public ImageView backImageView;
     private TextView txtTapToCaptureFront;
     private TextView txtTapToCaptureBack;
-    private Button processCardButton;
+    public Button processCardButton;
+    private Button buttonMedical;
     private RelativeLayout layoutFrontImage;
     private RelativeLayout layoutBackImage;
     private LinearLayout layoutCards;
     private EditText editTextLicense;
-    private MainActivityModel mainActivityModel = null;
+    private TextView textViewCardInfo;
+    public MainActivityModel mainActivityModel = null;
     private Button activateLicenseButton;
-    private static ProgressDialog progressDialog;
-    private static AlertDialog showDuplexAlertDialog;
-    private static AlertDialog alertDialog;
-    private static boolean isShowErrorAlertDialog;
-    private static boolean isProcessing;
-    private static boolean isValidating;
-    private static boolean isActivating;
-    private static boolean isCropping;
-    private static boolean isBackSide;
-    private static boolean isShowDuplexDialog;
-    private static boolean isProcessingFacial;
-    private static boolean isFacialFlow;
+    private  ProgressDialog progressDialog;
+    private  AlertDialog showDuplexAlertDialog;
+    private  AlertDialog alertDialog;
+    private  boolean isShowErrorAlertDialog;
+    private  boolean isProcessing;
+    private  boolean isValidating;
+    private  boolean isActivating;
+    private  boolean isCropping;
+    private  boolean isBackSide;
+    private  boolean isShowDuplexDialog;
+    private  boolean isProcessingFacial;
+    private  boolean isFacialFlow;
     private MainActivity mainActivity;
     private int cardRegion;
     private Bitmap originalImage;
     private Card processedCardInformation;
     private FacialData processedFacialData;
+
+    private String assureIDUsername;
+    private String assureIDPassword;
+    private String assureIDSubscription;
+    private String assureIDURL;
+    private boolean isConnect = false;
+    private boolean isFirstLoad = true;
     /**
      *
      */
@@ -118,7 +147,6 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
         if (Util.LOG_ENABLED) {
             Utils.appendLog(TAG, "protected void onCreate(Bundle savedInstanceState)");
         }
@@ -140,11 +168,116 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             }
         }
         DataContext.getInstance().setContext(getApplicationContext());
+        setContentView(R.layout.activity_main);
 
+        layoutCards = (LinearLayout) findViewById(R.id.cardImagesLayout);
+        layoutBackImage = (RelativeLayout) findViewById(R.id.relativeLayoutBackImage);
+        layoutFrontImage = (RelativeLayout) findViewById(R.id.relativeLayoutFrontImage);
+
+        frontImageView = (ImageView) findViewById(R.id.frontImageView);
+        backImageView = (ImageView) findViewById(R.id.backImageView);
+
+        editTextLicense = (EditText) findViewById(R.id.editTextLicenceKey);
+        editTextLicense.setText(DataContext.getInstance().getLicenseKey());
+
+        textViewCardInfo = (TextView) findViewById(R.id.textViewCardInfo);
+
+        buttonMedical = (Button)findViewById(R.id.buttonMedical);
+
+        txtTapToCaptureFront = (TextView) findViewById(R.id.txtTapToCaptureFront);
+        txtTapToCaptureBack = (TextView) findViewById(R.id.txtTapToCaptureBack);
+
+        activateLicenseButton = (Button) findViewById(R.id.activateLicenseButton);
+
+        processCardButton = (Button) findViewById(R.id.processCardButton);
+        processCardButton.setVisibility(View.INVISIBLE);
+
+        editTextLicense.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                validateLicenseKey(editTextLicense.getText().toString());
+                DataContext.getInstance().setLicenseKey(editTextLicense.getText().toString());
+                return true;
+            }
+        });
+
+        // it is necessary to use a post UI call, because of the previous set text on 'editTextLicense'
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                editTextLicense.addTextChangedListener(new TextWatcher() {
+                    public void afterTextChanged(Editable s) {
+                        mainActivityModel.setState(State.NO_VALIDATED);
+                        updateActivateLicenseButtonFromModel();
+                    }
+
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+                });
+            }
+        });
+
+        editTextLicense.setOnFocusChangeListener(new OnFocusChangeListener() {
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    hideVirtualKeyboard();
+                }
+            }
+        });
+
+        initializeSDK();
+        // update the UI from the model
+        updateUI();
+        if (Utils.LOG_ENABLED) {
+            Utils.appendLog(TAG, "getScreenOrientation()=" + Util.getScreenOrientation(this));
+        }
+    }
+
+    private void initializeSDK(){
         String licenseKey = DataContext.getInstance().getLicenseKey();
+        isConnect = isConnectWS();
 
         // load the controller instance
-        acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this, licenseKey);
+        Util.lockScreen(this);
+        if(isConnect){
+            if(buttonMedical!=null){
+                buttonMedical.setEnabled(false);
+            }
+            if(textViewCardInfo!=null){
+                textViewCardInfo.setVisibility(View.GONE);
+            }
+            if(editTextLicense!=null){
+                editTextLicense.setVisibility(View.GONE);
+            }
+            if(activateLicenseButton!=null){
+                activateLicenseButton.setVisibility(View.GONE);
+            }
+            acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this,assureIDUsername,assureIDPassword,assureIDSubscription,assureIDURL);
+            acuantAndroidMobileSdkControllerInstance.setConnectWebServiceListener(this);
+
+        }else {
+            if(buttonMedical!=null){
+                buttonMedical.setEnabled(true);
+            }
+            if(textViewCardInfo!=null){
+                textViewCardInfo.setVisibility(View.VISIBLE);
+            }
+            if(editTextLicense!=null){
+                editTextLicense.setVisibility(View.VISIBLE);
+            }
+            if(activateLicenseButton!=null){
+                activateLicenseButton.setVisibility(View.VISIBLE);
+            }
+            acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this, licenseKey);
+            acuantAndroidMobileSdkControllerInstance.setCloudUrl("cssnwebservices.com");
+            //acuantAndroidMobileSdkControllerInstance.setCloudUrl("cssnwebservicestest.com");
+
+        }
         Util.lockScreen(this);
         if (!Util.isTablet(this)) {
             acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));
@@ -152,7 +285,6 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
 
 
         acuantAndroidMobileSdkControllerInstance.setWebServiceListener(this);
-        acuantAndroidMobileSdkControllerInstance.setCloudUrl("cssnwebservices.com");
         acuantAndroidMobileSdkControllerInstance.setWatermarkText("Powered By Acuant", 0, 0, 30, 0);
         acuantAndroidMobileSdkControllerInstance.setFacialRecognitionTimeoutInSeconds(20);
         DisplayMetrics metrics = this.getResources().getDisplayMetrics();
@@ -235,71 +367,33 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         //acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeDialogWaitingBarcode("AcuantAndroidMobileSampleSDK","ALIGN AND TAP", 10, "Try Again", "Yes");
         //acuantAndroidMobileSdkControllerInstance.setCanShowBracketsOnTablet(true);
         // load several member variables
-        setContentView(R.layout.activity_main);
 
-        layoutCards = (LinearLayout) findViewById(R.id.cardImagesLayout);
-        layoutBackImage = (RelativeLayout) findViewById(R.id.relativeLayoutBackImage);
-        layoutFrontImage = (RelativeLayout) findViewById(R.id.relativeLayoutFrontImage);
-
-        frontImageView = (ImageView) findViewById(R.id.frontImageView);
-        backImageView = (ImageView) findViewById(R.id.backImageView);
-
-        editTextLicense = (EditText) findViewById(R.id.editTextLicenceKey);
-        editTextLicense.setText(DataContext.getInstance().getLicenseKey());
-
-        txtTapToCaptureFront = (TextView) findViewById(R.id.txtTapToCaptureFront);
-        txtTapToCaptureBack = (TextView) findViewById(R.id.txtTapToCaptureBack);
-
-        activateLicenseButton = (Button) findViewById(R.id.activateLicenseButton);
-
-        processCardButton = (Button) findViewById(R.id.processCardButton);
-        processCardButton.setVisibility(View.INVISIBLE);
-
-        editTextLicense.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                validateLicenseKey(editTextLicense.getText().toString());
-                DataContext.getInstance().setLicenseKey(editTextLicense.getText().toString());
-                return true;
-            }
-        });
-
-        // it is necessary to use a post UI call, because of the previous set text on 'editTextLicense'
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                editTextLicense.addTextChangedListener(new TextWatcher() {
-                    public void afterTextChanged(Editable s) {
-                        mainActivityModel.setState(State.NO_VALIDATED);
-                        updateActivateLicenseButtonFromModel();
-                    }
-
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                    }
-                });
-            }
-        });
-
-        editTextLicense.setOnFocusChangeListener(new OnFocusChangeListener() {
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    hideVirtualKeyboard();
-                }
-            }
-        });
-
-        // update the UI from the model
-        updateUI();
         acuantAndroidMobileSdkControllerInstance.setCardCroppingListener(this);
         acuantAndroidMobileSdkControllerInstance.setAcuantErrorListener(this);
-        if (Utils.LOG_ENABLED) {
-            Utils.appendLog(TAG, "getScreenOrientation()=" + Util.getScreenOrientation(this));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
+            startActivity(settingsIntent);
+            return true;
         }
+
+        return super.onOptionsItemSelected(item);
     }
 
 
@@ -309,6 +403,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         File file = new File (fname);
         if (file.exists ()) file.delete ();
         try {
+            file.createNewFile();
             FileOutputStream out = new FileOutputStream(file);
             finalBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
             out.flush();
@@ -317,6 +412,29 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private boolean isConnectWS(){
+        boolean retValue = false;
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        assureIDSubscription = sharedPref.getString("AssureID_Subscription","");
+        assureIDUsername = sharedPref.getString("AssureID_Username","");
+        assureIDPassword = sharedPref.getString("AssureID_Password","");
+        assureIDURL = sharedPref.getString("AssureID_Cloud_URL","");
+        boolean enabled = sharedPref.getBoolean("AssureID_Enable",false);
+
+
+        if(enabled && assureIDSubscription!=null && !assureIDSubscription.trim().equalsIgnoreCase("")
+                && assureIDUsername!=null && !assureIDUsername.trim().equalsIgnoreCase("")
+                && assureIDPassword!=null && !assureIDPassword.trim().equalsIgnoreCase("")
+                && assureIDURL!=null && !assureIDURL.trim().equalsIgnoreCase("")){
+
+            retValue = true;
+
+        }
+
+        return retValue;
     }
 
 
@@ -464,10 +582,8 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             isBackSide = scanBackSide;
             if (isBackSide) {
                 mainActivityModel.setCardSideSelected(MainActivityModel.CardSide.FRONT);
-                //saveBitmap(bitmap);
             } else {
                 mainActivityModel.setCardSideSelected(MainActivityModel.CardSide.BACK);
-                //saveBitmap(bitmap);
             }
 
             if (mainActivityModel.getCurrentOptionType() == CardType.DRIVERS_LICENSE && isBackSide) {
@@ -571,7 +687,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
                 // User clicked OK button
                 if(cImage!=null){
                     mainActivityModel.setBackSideCardImage(cImage);
-                }else if(oImage!=null){
+                }else if (oImage != null) {
                     mainActivityModel.setBackSideCardImage(oImage);
                 }
                 acuantAndroidMobileSdkControllerInstance.finishScanningBarcodeCamera();
@@ -665,7 +781,6 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         acuantAndroidMobileSdkControllerInstance.setInitialMessageDescriptor(R.layout.align_and_tap);
         acuantAndroidMobileSdkControllerInstance.setFinalMessageDescriptor(R.layout.hold_steady);
         acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(this, currentOptionType, cardRegion, isBackSide);
-
     }
     /**
      * Called after a tap in the driver's card button.
@@ -959,8 +1074,13 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             options.iRegion = DataContext.getInstance().getCardRegion();
             options.acuantCardType = mainActivityModel.getCurrentOptionType();
 
-            acuantAndroidMobileSdkControllerInstance.callProcessImageServices(mainActivityModel.getFrontSideCardImage(), mainActivityModel.getBackSideCardImage(), sPdf417String, this, options);
+            if(isConnect){
+                acuantAndroidMobileSdkControllerInstance.callProcessImageConnectServices(mainActivityModel.getFrontSideCardImage(), mainActivityModel.getBackSideCardImage(), sPdf417String, this, options);
+            }else {
 
+                acuantAndroidMobileSdkControllerInstance.callProcessImageServices(mainActivityModel.getFrontSideCardImage(), mainActivityModel.getBackSideCardImage(), sPdf417String, this, options);
+
+            }
             resetPdf417String();
         }
     }
@@ -1100,7 +1220,6 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
                 }
 
                 Util.unLockScreen(MainActivity.this);
-
                 Intent showDataActivityIntent = new Intent(this, ShowDataActivity.class);
                 showDataActivityIntent.putExtra("FACIAL",isFacialFlow);
                 this.startActivity(showDataActivityIntent);
@@ -1164,7 +1283,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      */
     @Override
     public void validateLicenseKeyCompleted(LicenseDetails details) {
-
+        isFirstLoad = false;
         Util.dismissDialog(progressDialog);
         Util.unLockScreen(MainActivity.this);
 
@@ -1182,6 +1301,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         // message dialogs
         acuantAndroidMobileSdkControllerInstance.enableLocationAuthentication(this);
         isValidating = false;
+
     }
 
     /**
@@ -1246,7 +1366,11 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     @Override
     protected void onResume() {
         super.onResume();
-
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        boolean wschanged = sharedPref.getBoolean("WSCHANGED",false);
+        if(wschanged && !isFirstLoad){
+            initializeSDK();
+        }
         if (Util.LOG_ENABLED) {
             Utils.appendLog(TAG, "protected void onResume()");
         }
@@ -1327,7 +1451,8 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
+        TempImageStore.cleanup();
+        acuantAndroidMobileSdkControllerInstance.cleanup();
         if (Util.LOG_ENABLED) {
             Utils.appendLog(TAG, "protected void onDestroy()");
         }
@@ -1516,4 +1641,128 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             }
         }
     }
+
+    @Override
+    public void processImageConnectServiceCompleted(String jsonString) {
+        DataContext.getInstance().setCardType(mainActivityModel.getCurrentOptionType());
+        if(progressDialog!=null && progressDialog.isShowing()){
+            Util.dismissDialog(progressDialog);
+        }
+        String front_image_Loc="";
+        String back_image_Loc="";
+        String signature_image_loc="";
+        String face_image_loc="";
+        String dateOfBirth="";
+        String dateofExpiry="";
+        String documentNumber="";
+        String documentType="";
+        try {
+            JSONObject jsonResponse = new JSONObject(jsonString);
+            JSONArray images = jsonResponse.getJSONArray("Images");
+            for(int i =0;i<images.length();i++){
+                JSONObject imageDict = images.getJSONObject(i);
+                if(imageDict.has("Side")){
+                    int side = imageDict.getInt("Side");
+                    if(side==0 && imageDict.has("Uri")){
+                        front_image_Loc = imageDict.getString("Uri");
+                    }else if(side==1 && imageDict.has("Uri")){
+                        back_image_Loc = imageDict.getString("Uri");
+                    }
+                }
+            }
+
+            JSONArray fields = jsonResponse.getJSONArray("Fields");
+            for(int i=0;i<fields.length();i++){
+                JSONObject dict = fields.getJSONObject(i);
+                if(dict.has("IsImage")){
+                    boolean IsImage = dict.getBoolean("IsImage");
+                    if(IsImage && dict.has("Value")){
+                        if(dict.has("Key")){
+                            if(dict.getString("Key").equalsIgnoreCase("Signature")){
+                                signature_image_loc = dict.getString("Value");
+                            }else if(dict.getString("Key").equalsIgnoreCase("Photo")){
+                                face_image_loc = dict.getString("Value");
+                            }
+                        }
+                    }
+                }
+                if(dict.has("Key") && dict.has("Type") && dict.getString("Type").equalsIgnoreCase("datetime") &&
+                        dict.getString("Key").equalsIgnoreCase("Birth Date")|| (dict.getString("Key").equalsIgnoreCase("Expiration Date"))){
+                    String dateStr = dict.getString("Value");
+                    if(dateStr!=null && !dateStr.trim().equalsIgnoreCase("")) {
+                        dateStr = dateStr.replace("Date","");
+                        dateStr = dateStr.replace(")","");
+                        dateStr = dateStr.replace("(","");
+                        dateStr = dateStr.replace("/","");
+                        if(dateStr!=null) {
+                            Long longDate = Long.parseLong(dateStr);
+                            if (longDate != null) {
+                                Date date = new Date(longDate);
+                                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yy");
+                                sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
+                                if (dict.getString("Key").equalsIgnoreCase("Birth Date")) {
+                                    dateOfBirth = sdf.format(date);
+                                } else if (dict.getString("Key").equalsIgnoreCase("Expiration Date")) {
+                                    dateofExpiry = sdf.format(date);
+                                }
+                            }
+                        }
+                    }
+
+                }
+                if(dict.has("Key") && dict.has("Type") && dict.getString("Type").equalsIgnoreCase("string") &&
+                        dict.getString("Key").equalsIgnoreCase("Document Number")){
+                    documentNumber = dict.getString("Value");
+                }
+
+                if(dict.has("Key") && dict.has("Type") && dict.getString("Type").equalsIgnoreCase("string") &&
+                        dict.getString("Key").equalsIgnoreCase("Document Class Name")){
+                    documentType = dict.getString("Value");
+                }
+            }
+            //String instanceID = jsonResponse.getString("InstanceId");
+            Intent showDataActivityIntent = new Intent(this, ShowConnectDataActivity.class);
+            showDataActivityIntent.putExtra("FACEIMAGEURL",face_image_loc);
+            showDataActivityIntent.putExtra("SIGNATUREIMAGEURL",signature_image_loc);
+            showDataActivityIntent.putExtra("FRONTIMAGEURL",front_image_Loc);
+            showDataActivityIntent.putExtra("BACKIMAGEURL",back_image_Loc);
+            showDataActivityIntent.putExtra("RESPONSE",jsonString);
+            showDataActivityIntent.putExtra("DOB",dateOfBirth);
+            showDataActivityIntent.putExtra("DOE",dateofExpiry);
+            showDataActivityIntent.putExtra("DOCNUM",documentNumber);
+            showDataActivityIntent.putExtra("DOCTYPE",documentType);
+            showDataActivityIntent.putExtra("USERNAME",assureIDUsername);
+            showDataActivityIntent.putExtra("PASSWORD",assureIDPassword);
+            this.startActivity(showDataActivityIntent);
+            //acuantAndroidMobileSdkControllerInstance.deleteInstanceConnectServices(this,instanceID);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void processImageConnectServiceFailed(int code, String message) {
+        Log.d(TAG,message);
+        if(progressDialog!=null && progressDialog.isShowing()){
+            Util.dismissDialog(progressDialog);
+        }
+    }
+
+    @Override
+    public void deleteImageConnectServiceCompleted(String instanceID) {
+        Log.d(TAG,instanceID);
+        if(progressDialog!=null && progressDialog.isShowing()){
+            Util.dismissDialog(progressDialog);
+        }
+    }
+
+    @Override
+    public void deleteImageConnectServiceFailed(int code, String message) {
+        Log.d(TAG,message);
+        if(progressDialog!=null && progressDialog.isShowing()){
+            Util.dismissDialog(progressDialog);
+        }
+    }
+
 }

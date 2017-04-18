@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 02/06/2017
+Last updated on – 04/18/2017
 
 # Introduction
 
@@ -91,8 +91,8 @@ Add the following code in your build.gradle to avoid some file collision
 	 }
 	
 	 dependencies {
-	 	compile ('com.microblink:pdf417.mobi:6.0.1@aar')
-		compile ('com.android.support:appcompat-v7:25.0.0')
+	 	compile ('com.microblink:pdf417.mobi:6.2.1@aar')
+		compile ('com.android.support:appcompat-v7:25.2.0')
 		compile ('com.google.code.gson:gson:2.5')
 		compile ('com.squareup.okhttp3:okhttp:3.2.0')
 		compile ('org.jmrtd:jmrtd:0.5.6')
@@ -109,9 +109,9 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 	}
 	
 	 dependencies {
-		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.6'
-		compile ('com.microblink:pdf417.mobi:6.0.1@aar')
-		compile ('com.android.support:appcompat-v7:25.0.0')
+		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.7'
+		compile ('com.microblink:pdf417.mobi:6.2.1@aar')
+		compile ('com.android.support:appcompat-v7:25.2.0')
 		compile ('com.google.code.gson:gson:2.5')
 		compile ('com.squareup.okhttp3:okhttp:3.2.0')
 		compile ('org.jmrtd:jmrtd:0.5.6')
@@ -342,6 +342,18 @@ This function close the barcode camera.
 	public void onCancelCapture();
 
 Called when the user tap the back button.
+
+### Cleanup SDK Controller
+
+To avoid any memory leak cleanup the SDK controller when the Activitiy is destoyed.
+
+			@Override
+    		protected void onDestroy() {
+        		super.onDestroy();
+        		acuantAndroidMobileSdkControllerInstance.cleanup();
+    		}
+    		
+This will cleanup any static reference to the Context Activity, Web Service Listener, Card Cropping Listener. If the new Activity has to be made the listener, then set the new activity as the listner as per the API documentation.
 
 ## Optional, Add the following methods to customize.
 
@@ -1152,46 +1164,17 @@ This is the implementation in the Sample project:
 
 # Change Log
 
-Acuant Android MobileSDK version 4.6
+Acuant Android MobileSDK version 4.7
 
 Changes:
 
-- Optimizations for Android 7.
-- Modified the signature of onBarcodeTimeOut
-
-		from,
-		
-		public void onBarcodeTimeOut();
-		
-		to,
-
-		public void onBarcodeTimeOut(Bitmap croppedImage,Bitmap originalImage);
-		
-		/*This function will be triggered to alert that the capture is
-		pending without closing the camera view. The argument
-		croppedImage will have the cropped image of the last frame
-		before this function is triggered.If the frame could not be 
-		cropped this argument will be null.*/
-
--	When the barcode side cropping is enabled, the following listener function will be called to retrieve the original image of the barcode side.
-
-		public void onOriginalCapture(Bitmap bitmap);
-		
-- Added API to enable Barcode side image capture and cropping when back  button is pressed
-
-		/*setCropBarcodeOnCancel : Enable or disable the barcode image
-		cropping while pressing the back button.The default if false;*/
-
-		setCropBarcodeOnCancel(true);
-	
-		
-- Modified the onCancelCapture call back as below :
-
-		public void onCancelCapture(Bitmap croppedImage,Bitmap originalImage);
-
-		/*Called when the user tap the back button.If the back button is
-		pressed in barcode interface and the barcode cropping on cancel
-		is enabled then the arguments will contain the cropped image and
-		original image.Otherwise the arguments will be null.*/
-
-	
+-  Resolved focus issue for Samsung Galaxy S7
+-  Memory optimization
+-  Added an API to clean SDK Controller variables
+  		
+  			@Override
+    		protected void onDestroy() {
+        		super.onDestroy();
+        		acuantAndroidMobileSdkControllerInstance.cleanup();
+    		}
+-  Improved image cropping for IDs and Passports
