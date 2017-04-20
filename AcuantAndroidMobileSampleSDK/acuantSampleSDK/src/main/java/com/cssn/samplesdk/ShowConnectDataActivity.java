@@ -1,14 +1,26 @@
 package com.cssn.samplesdk;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.app.Activity;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.acuant.mobilesdk.CardType;
+import com.acuant.mobilesdk.PassportCard;
+import com.cssn.samplesdk.util.DataContext;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,6 +28,9 @@ import java.net.Authenticator;
 import java.net.HttpURLConnection;
 import java.net.PasswordAuthentication;
 import java.net.URL;
+
+import static com.cssn.samplesdk.R.id.faceImage;
+import static com.cssn.samplesdk.R.id.textViewCardInfo;
 
 public class ShowConnectDataActivity extends Activity {
 
@@ -80,52 +95,54 @@ public class ShowConnectDataActivity extends Activity {
         displayImage(faceImageURL,faceImageView);
     }
 
-    public void displayImage(final String stringURL,final ImageView imageView)
+    public synchronized void displayImage(final String stringURL,final ImageView imageView)
     {
-        if(username!=null && password!=null && stringURL!=null && !stringURL.trim().equalsIgnoreCase("") && imageView!=null) {
-            try {
-                Thread thread = new Thread(new Runnable() {
+        synchronized (this) {
+            if (username != null && password != null && stringURL != null && !stringURL.trim().equalsIgnoreCase("") && imageView != null) {
+                try {
+                    Thread thread = new Thread(new Runnable() {
 
-                    @Override
-                    public void run() {
-                        try  {
-                            Authenticator.setDefault(new Authenticator(){
-                                protected PasswordAuthentication getPasswordAuthentication() {
-                                    return new PasswordAuthentication(username,password.toCharArray());
-                                }});
-                            HttpURLConnection c = (HttpURLConnection) new URL(stringURL).openConnection();
-                            c.setUseCaches(false);
-                            c.connect();
-                            InputStream is = c.getInputStream();
-                            final Bitmap bmImg = BitmapFactory.decodeStream(is);
-                            if(bmImg!=null){
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        imageView.setImageBitmap(bmImg);
-
+                        @Override
+                        public void run() {
+                            try {
+                                Authenticator.setDefault(new Authenticator() {
+                                    protected PasswordAuthentication getPasswordAuthentication() {
+                                        return new PasswordAuthentication(username, password.toCharArray());
                                     }
                                 });
-                            }else{
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        imageView.setVisibility(View.GONE);
-                                    }
-                                });
+                                HttpURLConnection c = (HttpURLConnection) new URL(stringURL).openConnection();
+                                c.setUseCaches(false);
+                                c.connect();
+                                InputStream is = c.getInputStream();
+                                final Bitmap bmImg = BitmapFactory.decodeStream(is);
+                                if (bmImg != null) {
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            imageView.setImageBitmap(bmImg);
+                                        }
+                                    });
+                                } else {
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            imageView.setVisibility(View.GONE);
+                                        }
+                                    });
+                                }
+                            } catch (IOException e) {
+                                e.printStackTrace();
                             }
-                        } catch (IOException e) {
-                            e.printStackTrace();
                         }
-                    }
-                });
+                    });
 
-                thread.start();
-            } catch (Exception e) {
-                e.printStackTrace();
+                    thread.start();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                imageView.setVisibility(View.GONE);
             }
-        }else{
-            imageView.setVisibility(View.GONE);
         }
     }
 

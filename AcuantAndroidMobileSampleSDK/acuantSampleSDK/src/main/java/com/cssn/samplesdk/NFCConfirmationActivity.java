@@ -26,7 +26,6 @@ import com.acuant.mobilesdk.PassportCard;
 import com.acuant.mobilesdk.util.Utils;
 import com.cssn.samplesdk.util.DataContext;
 import com.cssn.samplesdk.util.NFCStore;
-import com.cssn.samplesdk.util.TempImageStore;
 import com.cssn.samplesdk.util.Util;
 
 import java.text.SimpleDateFormat;
@@ -54,10 +53,8 @@ public class NFCConfirmationActivity extends Activity implements AcuantTagReadin
     private TextView mrzDOB = null;
     private TextView mrzDOE = null;
 
-    private AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance = null;
 
-
-    private AlertDialog alertDialog;
+    private static AlertDialog alertDialog;
 
     public void DateDialog(final TextView tv, int year, int month, int day){
         DatePickerDialog.OnDateSetListener listener=new DatePickerDialog.OnDateSetListener() {
@@ -156,18 +153,9 @@ public class NFCConfirmationActivity extends Activity implements AcuantTagReadin
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        acuantAndroidMobileSdkControllerInstance.cleanup();
-        if (Util.LOG_ENABLED) {
-            Utils.appendLog(TAG, "protected void onDestroy()");
-        }
-    }
-
     public void nfcPressed(View v){
         ensureSensorIsOn();
-        acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance();
+        AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance();
         if(acuantAndroidMobileSdkControllerInstance!=null){
             acuantAndroidMobileSdkControllerInstance.listenNFC(this,nfcAdapter);
             if(alertDialog!=null && alertDialog.isShowing()){
@@ -226,7 +214,7 @@ public class NFCConfirmationActivity extends Activity implements AcuantTagReadin
             Util.dismissDialog(alertDialog);
         }
         alertDialog = Util.showProgessDialog(this, "Reading passport chip...\n\nPlease don't move passport or phone.");
-        acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance();
+        AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance();
         if(acuantAndroidMobileSdkControllerInstance!=null){
             acuantAndroidMobileSdkControllerInstance.setAcuantTagReadingListener(this);
             String docNumber = mrzDocNumber.getText().toString().trim();

@@ -109,6 +109,8 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
     private TextView txtTapToCaptureBack;
     public Button processCardButton;
     private Button buttonMedical;
+    private Button buttonDL;
+    private Button buttonPassport;
     private RelativeLayout layoutFrontImage;
     private RelativeLayout layoutBackImage;
     private LinearLayout layoutCards;
@@ -183,6 +185,8 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
         textViewCardInfo = (TextView) findViewById(R.id.textViewCardInfo);
 
         buttonMedical = (Button)findViewById(R.id.buttonMedical);
+        buttonDL = (Button)findViewById(R.id.buttonDriver);
+        buttonPassport = (Button)findViewById(R.id.buttonPassport);
 
         txtTapToCaptureFront = (TextView) findViewById(R.id.txtTapToCaptureFront);
         txtTapToCaptureBack = (TextView) findViewById(R.id.txtTapToCaptureBack);
@@ -246,8 +250,17 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
         Util.lockScreen(this);
         if(isConnect){
             if(buttonMedical!=null){
-                buttonMedical.setEnabled(false);
+                buttonMedical.setVisibility(View.INVISIBLE);
             }
+
+            if(buttonDL!=null){
+                buttonDL.setVisibility(View.INVISIBLE);
+            }
+
+            if(buttonPassport!=null){
+                buttonPassport.setText("Capture");
+            }
+
             if(textViewCardInfo!=null){
                 textViewCardInfo.setVisibility(View.GONE);
             }
@@ -261,8 +274,15 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
             acuantAndroidMobileSdkControllerInstance.setConnectWebServiceListener(this);
 
         }else {
+            if(buttonPassport!=null){
+                buttonPassport.setText("Passport");
+            }
             if(buttonMedical!=null){
-                buttonMedical.setEnabled(true);
+                buttonMedical.setVisibility(View.VISIBLE);
+            }
+
+            if(buttonDL!=null){
+                buttonDL.setVisibility(View.VISIBLE);
             }
             if(textViewCardInfo!=null){
                 textViewCardInfo.setVisibility(View.VISIBLE);
@@ -490,6 +510,10 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
      */
     @Override
     public void onCardCroppingFinish(final Bitmap bitmap) {
+        if(isConnect){
+            mainActivityModel.setCurrentOptionType(CardType.PASSPORT);
+            DataContext.getInstance().setCardType(CardType.PASSPORT);
+        }
         if(progressDialog!=null && progressDialog.isShowing()) {
             Util.dismissDialog(progressDialog);
             progressDialog = null;
@@ -539,6 +563,10 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
      */
     @Override
     public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide) {
+        if(isConnect){
+            mainActivityModel.setCurrentOptionType(CardType.DRIVERS_LICENSE);
+            DataContext.getInstance().setCardType(CardType.DRIVERS_LICENSE);
+        }
         if(progressDialog!=null && progressDialog.isShowing()) {
             Util.dismissDialog(progressDialog);
             progressDialog = null;
@@ -573,7 +601,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
     }
 
     public void presentCameraForBackSide(final Bitmap bitmap, boolean scanBackSide) {
-
         if (Util.LOG_ENABLED) {
             Utils.appendLog("appendLog", "public void onCardCroppedFinish(final Bitmap bitmap) - begin");
         }
@@ -812,19 +839,31 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
      */
 
     public void passportCardWithFacialButtonPressed(View v) {
-        processedCardInformation = null;
-        processedFacialData=null;
-        mainActivityModel.setCurrentOptionType(CardType.PASSPORT);
-        isProcessing=false;
-        isProcessingFacial=false;
-        if(DataContext.getInstance().getCssnLicenseDetails()!=null && DataContext.getInstance().getCssnLicenseDetails().isFacialAllowed()) {
-            isFacialFlow = true;
-        }else{
+        if(isConnect){
+            DataContext.getInstance().setCardRegion(-1);
+            processedCardInformation = null;
+            processedFacialData = null;
+            mainActivityModel.setCurrentOptionType(CardType.DRIVERS_LICENSE);
+            isProcessing = false;
+            isProcessingFacial = false;
             isFacialFlow = false;
-        }
-        mainActivityModel.clearImages();
+            mainActivityModel.clearImages();
+            updateUI();
+        }else {
+            processedCardInformation = null;
+            processedFacialData = null;
+            mainActivityModel.setCurrentOptionType(CardType.PASSPORT);
+            isProcessing = false;
+            isProcessingFacial = false;
+            if (DataContext.getInstance().getCssnLicenseDetails() != null && DataContext.getInstance().getCssnLicenseDetails().isFacialAllowed()) {
+                isFacialFlow = true;
+            } else {
+                isFacialFlow = false;
+            }
+            mainActivityModel.clearImages();
 
-        updateUI();
+            updateUI();
+        }
     }
 
     /**
@@ -1038,7 +1077,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
             progressDialog = Util.showProgessDialog(MainActivity.this, "Capturing data ...");
             Util.lockScreen(this);
         }
-        if ((!isProcessing && processedCardInformation==null) || mainActivityModel.getCurrentOptionType()==CardType.MEDICAL_INSURANCE) {
+        if ((!isProcessing && processedCardInformation==null) || mainActivityModel.getCurrentOptionType()==CardType.MEDICAL_INSURANCE  || isConnect) {
             isProcessing = true;
             // check for the internet connection
             if (!Utils.isNetworkAvailable(this)) {
