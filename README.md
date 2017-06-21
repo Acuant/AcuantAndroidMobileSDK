@@ -106,6 +106,7 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 
 	repositories {
 		jcenter ()
+		maven { url 'http://maven.microblink.com' }
 	}
 	
 	 dependencies {
