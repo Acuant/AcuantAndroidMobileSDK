@@ -293,10 +293,9 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
             if(activateLicenseButton!=null){
                 activateLicenseButton.setVisibility(View.VISIBLE);
             }
+            //acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this,"cssnwebservicestest.com",licenseKey);
             acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this, licenseKey);
-            acuantAndroidMobileSdkControllerInstance.setCloudUrl("cssnwebservices.com");
-            //acuantAndroidMobileSdkControllerInstance.setCloudUrl("cssnwebservicestest.com");
-
+            
         }
         Util.lockScreen(this);
         if (!Util.isTablet(this)) {
@@ -382,7 +381,8 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
         //acuantAndroidMobileSdkControllerInstance.setFlashlight(0,0,50,0);
         //acuantAndroidMobileSdkControllerInstance.setFlashlightImageDrawable(getResources().getDrawable(R.drawable.lighton), getResources().getDrawable(R.drawable.lightoff));
         //acuantAndroidMobileSdkControllerInstance.setShowInitialMessage(true);
-        //acuantAndroidMobileSdkControllerInstance.setCropBarcode(true);
+        acuantAndroidMobileSdkControllerInstance.setCropBarcode(false);
+        acuantAndroidMobileSdkControllerInstance.setCaptureOriginalCapture(false);
         //acuantAndroidMobileSdkControllerInstance.setCropBarcodeOnCancel(true);
         //acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeDialogWaitingBarcode("AcuantAndroidMobileSampleSDK","ALIGN AND TAP", 10, "Try Again", "Yes");
         //acuantAndroidMobileSdkControllerInstance.setCanShowBracketsOnTablet(true);
@@ -509,7 +509,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
      * popover == true
      */
     @Override
-    public void onCardCroppingFinish(final Bitmap bitmap) {
+    public void onCardCroppingFinish(final Bitmap bitmap,int detectedCardType) {
         if(isConnect){
             mainActivityModel.setCurrentOptionType(CardType.PASSPORT);
             DataContext.getInstance().setCardType(CardType.PASSPORT);
@@ -562,7 +562,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
      * popover == true
      */
     @Override
-    public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide) {
+    public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide,int detectedCardType) {
         if(isConnect){
             mainActivityModel.setCurrentOptionType(CardType.DRIVERS_LICENSE);
             DataContext.getInstance().setCardType(CardType.DRIVERS_LICENSE);
@@ -651,7 +651,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
                 } else {
                     acuantAndroidMobileSdkControllerInstance.showManualCameraInterface(mainActivity, CardType.DRIVERS_LICENSE, cardRegion, isBackSide);
                 }
-                dialog.dismiss();
+                showDuplexAlertDialog.dismiss();
                 isShowDuplexDialog = false;
             }
         });
@@ -1109,14 +1109,12 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
             options.cropImage = false;
             options.faceDetec = true;
             options.signDetec = true;
-            options.imageSource = 101;
             options.iRegion = DataContext.getInstance().getCardRegion();
             options.acuantCardType = mainActivityModel.getCurrentOptionType();
 
             if(isConnect){
                 acuantAndroidMobileSdkControllerInstance.callProcessImageConnectServices(mainActivityModel.getFrontSideCardImage(), mainActivityModel.getBackSideCardImage(), sPdf417String, this, options);
             }else {
-
                 acuantAndroidMobileSdkControllerInstance.callProcessImageServices(mainActivityModel.getFrontSideCardImage(), mainActivityModel.getBackSideCardImage(), sPdf417String, this, options);
 
             }

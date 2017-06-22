@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 04/18/2017
+Last updated on – 06/15/2017
 
 # Introduction
 
@@ -91,10 +91,10 @@ Add the following code in your build.gradle to avoid some file collision
 	 }
 	
 	 dependencies {
-	 	compile ('com.microblink:pdf417.mobi:6.2.1@aar')
-		compile ('com.android.support:appcompat-v7:25.2.0')
-		compile ('com.google.code.gson:gson:2.5')
-		compile ('com.squareup.okhttp3:okhttp:3.2.0')
+	 	compile ('com.microblink:pdf417.mobi:6.4.0@aar')
+		compile ('com.android.support:appcompat-v7:25.3.1')
+		compile ('com.google.code.gson:gson:2.8')
+		compile ('com.squareup.okhttp3:okhttp:3.8.0')
 		compile ('org.jmrtd:jmrtd:0.5.6')
     	compile ('org.ejbca.cvc:cert-cvc:1.4.3')
     	compile ('com.madgag.spongycastle:prov:1.54.0.0')
@@ -109,11 +109,11 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 	}
 	
 	 dependencies {
-		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.7'
-		compile ('com.microblink:pdf417.mobi:6.2.1@aar')
-		compile ('com.android.support:appcompat-v7:25.2.0')
-		compile ('com.google.code.gson:gson:2.5')
-		compile ('com.squareup.okhttp3:okhttp:3.2.0')
+		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.8'
+		compile ('com.microblink:pdf417.mobi:6.4.0@aar')
+		compile ('com.android.support:appcompat-v7:25.3.1')
+		compile ('com.google.code.gson:gson:2.8')
+		compile ('com.squareup.okhttp3:okhttp:3.8.0')
 		compile ('org.jmrtd:jmrtd:0.5.6')
     	compile ('org.ejbca.cvc:cert-cvc:1.4.3')
     	compile ('com.madgag.spongycastle:prov:1.54.0.0')
@@ -248,13 +248,13 @@ After the user taps the screen, the image capture process begins, there are four
 *activity*: the activity of the full screen Window, or the activity owner
 of the modal dialog (in case of Passport and Tablet for example)
 
-	public void onCardCroppedFinish(Bitmap bitmap);
+	public void onCardCroppingFinish(Bitmap bitmap,int detectedCardType);
 
 *bitmap*: the image card result
 
 This function returns the cropped card image is returned.
 
-	public void onCardCroppedFinish(final Bitmap bitmap, boolean, scanBackSide);`
+	public void onCardCroppingFinish(final Bitmap bitmap, boolean scanBackSide,int detectedCardType);`
 
 *bitmap*: the image card result
 This function returns the cropped card image is returned.
@@ -391,6 +391,10 @@ setCropBarcode: Enable or disable the barcode image cropping. By default is fals
 
 	setCropBarcode(canCropBarcode);
 	
+setCaptureOriginalCapture : Enable or disable capturing the original uncropped image.
+
+	setCaptureOriginalCapture(false);
+	
 setCropBarcodeOnCancel : Enable or disable the barcode image cropping while pressing the back button.The default if false;
 
 	setCropBarcodeOnCancel(true);
@@ -468,8 +472,6 @@ options.signDetec = true;
 
 options.iRegion = region;
 
-options.imageSource = 101;
-
 options.acuantCardType = cardType;
 
 AcuantAndroidMobileSDKControllerInstance.callProcessImageServices(frontSideCardImage, backSideCardImage, barcodeString,callerActivity, options);
@@ -538,9 +540,6 @@ DPI value. Size of the image will depend on the DPI value. Lower value
 **cropImage –** Boolean value. When true, cloud will crop the RAW image.
 Boolean value. Since MobileSDK crops the image, leave this flag to
 false.
-
-**imageSource –** To identify the source of the image. 101 is the value
-for MobileSDK.
 
 ### For Medical Insurance Cards
 
@@ -1160,21 +1159,53 @@ This is the implementation in the Sample project:
 	
 	public final static int *AcuantErrorCameraUnauthorized* = 14; //The privacy settings are preventing us from accessing your camera.
 	
+	public static final int AcuantErrorIncorrectDocumentScanned = 16; // The scanned document is of 
+	
 	public final static int *AcuantNoneError* = 200; //The privacy settings are preventing us from accessing your camera.
 
 # Change Log
 
-Acuant Android MobileSDK version 4.7
+Acuant Android MobileSDK version 4.8
 
 Changes:
 
--  Resolved focus issue for Samsung Galaxy S7
--  Memory optimization
--  Added an API to clean SDK Controller variables
-  		
-  			@Override
-    		protected void onDestroy() {
-        		super.onDestroy();
-        		acuantAndroidMobileSdkControllerInstance.cleanup();
-    		}
--  Improved image cropping for IDs and Passports
+-  Improvements in barcode capture interface.
+-  Fixed Nexus 5X image rotation issue.
+-  Fixed Samsung S7 focus issue.
+-  Added check for scanned document type. For example, if a driving license is scanned for a passport then the SDK will throw AcuantErrorIncorrectDocumentScanned.
+-  Modified the signature for following methods to add the detected card type after cropping.
+
+		1.
+		
+		From : 
+		public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide)
+	
+		To :
+		public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide,
+		int detectedCardType)
+		
+  		2.
+
+		From :
+		public void onCardCroppingFinish(Bitmap bitmap)
+
+		To : 
+
+		public void onCardCroppingFinish(Bitmap bitmap,int detectedCardType);
+		
+		
+- Added an API to enable original image capture. By default it is disabled.
+
+		acuantAndroidMobileSdkControllerInstance.setCaptureOriginalCapture(false);
+		
+- Removed the imageSource variable from ProcessImageRequestOptions . No need to set this variable anymore.
+- Internal bug fixes.
+
+        
+	
+	
+	
+	
+
+		
+	

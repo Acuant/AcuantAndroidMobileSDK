@@ -154,15 +154,30 @@ public class NFCConfirmationActivity extends Activity implements AcuantTagReadin
     }
 
     public void nfcPressed(View v){
-        ensureSensorIsOn();
-        AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance();
-        if(acuantAndroidMobileSdkControllerInstance!=null){
-            acuantAndroidMobileSdkControllerInstance.listenNFC(this,nfcAdapter);
-            if(alertDialog!=null && alertDialog.isShowing()){
-                Util.dismissDialog(alertDialog);
+       if(nfcAdapter!=null) {
+            ensureSensorIsOn();
+            AcuantAndroidMobileSDKController acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance();
+            if (acuantAndroidMobileSdkControllerInstance != null) {
+                acuantAndroidMobileSdkControllerInstance.listenNFC(this, nfcAdapter);
+                if (alertDialog != null && alertDialog.isShowing()) {
+                    Util.dismissDialog(alertDialog);
+                }
+                alertDialog = Util.showDialog(this, "Searching for passport chip...\n\nTap and place the phone on top of passport chip.");
+                alertDialog.setCancelable(false);
             }
-            alertDialog = Util.showDialog(this, "Searching for passport chip...\n\nTap and place the phone on top of passport chip.");
-            alertDialog.setCancelable(false);
+        }else{
+            new AlertDialog.Builder(this)
+                    .setTitle("NFC error!")
+                    .setMessage("NFC is not available for this device")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i)
+                        {
+                            dialogInterface.dismiss();
+                        }
+                    })
+                    .show();
         }
     }
 
