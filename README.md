@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 06/15/2017
+Last updated on – 06/22/2017
 
 # Introduction
 
@@ -106,6 +106,7 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 
 	repositories {
 		jcenter ()
+		maven { url 'http://maven.microblink.com' }
 	}
 	
 	 dependencies {
@@ -1200,12 +1201,3 @@ Changes:
 		
 - Removed the imageSource variable from ProcessImageRequestOptions . No need to set this variable anymore.
 - Internal bug fixes.
-
-        
-	
-	
-	
-	
-
-		
-	
