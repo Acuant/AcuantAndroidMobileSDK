@@ -1170,28 +1170,25 @@ Acuant Android MobileSDK version 4.8
 
 Changes:
 
--  Improvements in barcode capture interface.
+-  Improved ID and passport cropping.
 -  Fixed Nexus 5X image rotation issue.
--  Fixed Samsung S7 focus issue.
--  Added check for scanned document type. For example, if a driving license is scanned for a passport then the SDK will throw AcuantErrorIncorrectDocumentScanned.
--  Modified the signature for following methods to add the detected card type after cropping.
+-  Fixed focus issue for Samsung S7 US models.
+-  Added a check for scanned document type. For example, if a driver's license is scanned instead of a passport then SDK will throw an error (AcuantErrorIncorrectDocumentScanned).
+-  Modified the signature of the following two methods to output the detected card type after cropping.
 
 		1.
-		
-		From : 
+		Old function signature : 
 		public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide)
 	
-		To :
+		New function signature :
 		public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide,
 		int detectedCardType)
 		
   		2.
-
-		From :
+		Old function signature :
 		public void onCardCroppingFinish(Bitmap bitmap)
 
-		To : 
-
+		New function signature :
 		public void onCardCroppingFinish(Bitmap bitmap,int detectedCardType);
 		
 		
@@ -1200,4 +1197,3 @@ Changes:
 		acuantAndroidMobileSdkControllerInstance.setCaptureOriginalCapture(false);
 		
 - Removed the imageSource variable from ProcessImageRequestOptions . No need to set this variable anymore.
-- Internal bug fixes.
