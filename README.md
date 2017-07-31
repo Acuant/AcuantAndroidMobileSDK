@@ -201,6 +201,12 @@ Pass an activity to initialize the AcuantAndroidMobileSDKController class, the c
 
 `	AcuantAndroidMobileSDKController.getInstance(activity,“cloud.myAddress.com”, licenseKey);`
 
+## license key validation
+
+Once the license key validation is completed the following callback will be called.The app should wait until this callback is called.
+	
+`	public void validateLicenseKeyCompleted(LicenseDetails details){}`
+
 ## With activity.
 
 Pass an activity to initialize the AcuantAndroidMobileSDKController class, the entry point to the library:
