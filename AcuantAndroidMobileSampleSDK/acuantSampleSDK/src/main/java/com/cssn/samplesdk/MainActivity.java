@@ -19,6 +19,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -294,6 +295,8 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
                 activateLicenseButton.setVisibility(View.VISIBLE);
             }
             //acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this,"cssnwebservicestest.com",licenseKey);
+            //acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this,"192.168.1.62",licenseKey);
+
             acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this, licenseKey);
             
         }
@@ -304,7 +307,8 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
 
 
         acuantAndroidMobileSdkControllerInstance.setWebServiceListener(this);
-        acuantAndroidMobileSdkControllerInstance.setWatermarkText("Powered By Acuant", 0, 0, 30, 0);
+        //acuantAndroidMobileSdkControllerInstance.setWatermarkText("Powered By Acuant", 0, 0, 0, 0);
+        acuantAndroidMobileSdkControllerInstance.setWatermarkText(null, 0, 0, 30, 0);
         acuantAndroidMobileSdkControllerInstance.setFacialRecognitionTimeoutInSeconds(20);
         DisplayMetrics metrics = this.getResources().getDisplayMetrics();
 
@@ -360,6 +364,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
         int left = (width-bounds.width())/2;
 
         textPaint.getTextBounds(subInstString, 0, subInstString.length(), bounds);
+        textPaint.setTextAlign(Paint.Align.LEFT);
         int subLeft = (width-bounds.width())/2;
 
         acuantAndroidMobileSdkControllerInstance.setInstructionText(instrunctionStr, left,top,textPaint);
@@ -419,7 +424,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
 
     private void SaveImage(Bitmap finalBitmap) {
 
-        String fname = "/sdcard/cropped.jpg";
+        String fname = "/sdcard/face.jpg";
         File file = new File (fname);
         if (file.exists ()) file.delete ();
         try {
@@ -488,6 +493,12 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
     protected void onPostResume() {
         super.onPostResume();
         updateUI();
+    }
+
+    @Override
+    public void onCardImageCaptured(){
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.shutter);
+        mp.start();
     }
 
     @Override
@@ -563,6 +574,8 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
      */
     @Override
     public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide,int detectedCardType) {
+        //final Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.test_sa_dl);
+
         if(isConnect){
             mainActivityModel.setCurrentOptionType(CardType.DRIVERS_LICENSE);
             DataContext.getInstance().setCardType(CardType.DRIVERS_LICENSE);
@@ -804,6 +817,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
             }else {
                 acuantAndroidMobileSdkControllerInstance.setWidth(AcuantUtil.DEFAULT_CROP_DRIVERS_LICENSE_WIDTH);
             }
+            //acuantAndroidMobileSdkControllerInstance.setWidth(2600);
         }
         acuantAndroidMobileSdkControllerInstance.setInitialMessageDescriptor(R.layout.align_and_tap);
         acuantAndroidMobileSdkControllerInstance.setFinalMessageDescriptor(R.layout.hold_steady);
@@ -1111,10 +1125,16 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
             options.signDetec = true;
             options.iRegion = DataContext.getInstance().getCardRegion();
             options.acuantCardType = mainActivityModel.getCurrentOptionType();
-
+            //options.logTransaction = false;
             if(isConnect){
                 acuantAndroidMobileSdkControllerInstance.callProcessImageConnectServices(mainActivityModel.getFrontSideCardImage(), mainActivityModel.getBackSideCardImage(), sPdf417String, this, options);
             }else {
+                //Test code
+                //sPdf417String = null;
+                //options.imageSettings=390;
+                //mainActivityModel.setBackSideCardImage(null);
+
+                //Test code ends
                 acuantAndroidMobileSdkControllerInstance.callProcessImageServices(mainActivityModel.getFrontSideCardImage(), mainActivityModel.getBackSideCardImage(), sPdf417String, this, options);
 
             }
@@ -1152,6 +1172,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
 
         ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
         options.acuantCardType = CardType.FACIAL_RECOGNITION;
+        //options.logTransaction = true;
         acuantAndroidMobileSdkControllerInstance.callProcessImageServices(faceImage, idCropedFaceImage, null, this, options);
     }
 
@@ -1289,6 +1310,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
     public void activateLicenseKeyCompleted(LicenseActivationDetails cssnLicenseActivationDetails) {
         Util.dismissDialog(progressDialog);
         Util.unLockScreen(MainActivity.this);
+        isActivating = false;
         isActivating = false;
 
         String msg="";
@@ -1593,6 +1615,9 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
 
     @Override
     public void onFacialRecognitionCompleted(final Bitmap bitmap) {
+        if(bitmap!=null){
+            SaveImage(bitmap);
+        }
         if(isShowErrorAlertDialog){
             return;
         }

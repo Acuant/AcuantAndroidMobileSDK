@@ -49,6 +49,14 @@ public class Util
         return retString;
     }
 
+    public static String getInMMddyyFormat(int year,int month,int day){
+        String retString = null;
+        Date date = new Date(year, month, day);
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yy");
+        retString = sdf.format(date);
+        return retString;
+    }
+
     public static int get4DigitYear(int year,int month,int day){
         Date date = new Date(year, month, day);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");

@@ -274,7 +274,6 @@ public class ShowDataActivity extends Activity
             info.append("FTID".concat(" - ")).append(processedFacialData.getTransactionId()).append("<br/>");
             info.append("Facial Matched".concat(" - ")).append(processedFacialData.getFacialMatch()).append("<br/>");
             info.append("Facial Match Confidence Rating".concat(" - ")).append(processedFacialData.getFacialMatchConfidenceRating()).append("<br/>");
-            info.append("Facial Enabled".concat(" - ")).append(processedFacialData.getFacialEnabled()).append("<br/>");
             info.append("Live Face Detected".concat(" - ")).append(processedFacialData.getFaceLivelinessDetection()).append("<br/>");
         }
 
@@ -703,7 +702,6 @@ public class ShowDataActivity extends Activity
             info.append("FTID".concat(" - ")).append(processedFacialData.getTransactionId()).append("<br/>");
             info.append("Facial Matched".concat(" - ")).append(processedFacialData.getFacialMatch()).append("<br/>");
             info.append("Facial Match Confidence Rating".concat(" - ")).append(processedFacialData.getFacialMatchConfidenceRating()).append("<br/>");
-            info.append("Facial Enabled".concat(" - ")).append(processedFacialData.getFacialEnabled()).append("<br/>");
             info.append("Live Face Detected".concat(" - ")).append(processedFacialData.getFaceLivelinessDetection()).append("<br/>");
         }
 

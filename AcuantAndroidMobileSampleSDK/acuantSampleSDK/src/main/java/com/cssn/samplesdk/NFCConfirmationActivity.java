@@ -63,7 +63,7 @@ public class NFCConfirmationActivity extends Activity implements AcuantTagReadin
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)
             {
 
-                tv.setText(Util.getDisplayFromattedStringFromDateString(year,(monthOfYear),dayOfMonth));
+                tv.setText(Util.getInMMddyyFormat(year,(monthOfYear),dayOfMonth));
 
             }};
 
@@ -235,7 +235,7 @@ public class NFCConfirmationActivity extends Activity implements AcuantTagReadin
             String docNumber = mrzDocNumber.getText().toString().trim();
             String dateOfBirth = getFromattedStringFromDateString(mrzDOB.getText().toString().trim());
             String dateOfExpiry = getFromattedStringFromDateString(mrzDOE.getText().toString().trim());
-            if(docNumber!=null && docNumber.length()==9 && dateOfBirth!=null && dateOfBirth.length()==6 && dateOfExpiry!=null && dateOfExpiry.length()==6) {
+            if(docNumber != null && !docNumber.trim().equals("") && dateOfBirth!=null && dateOfBirth.length()==6 && dateOfExpiry!=null && dateOfExpiry.length()==6) {
                 acuantAndroidMobileSdkControllerInstance.readNFCTag(intent, docNumber, dateOfBirth, dateOfExpiry);
             }
         }

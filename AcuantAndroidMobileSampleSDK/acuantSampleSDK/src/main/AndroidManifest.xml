@@ -11,13 +11,14 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.SET_DEBUG_APP"></uses-permission>
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
 
     <uses-feature android:name="android.hardware.camera.autofocus" />
-
+<!--android:name="android.support.multidex.MultiDexApplication"
+        -->
     <application
-        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
+        android:testOnly="false"
         android:allowClearUserData="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
@@ -48,7 +49,9 @@
         <activity android:name=".ImageConformationActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".NFCResultActivity" />
-        <activity android:name=".NFCConfirmationActivity"  android:noHistory="true"></activity>
+        <activity
+            android:name=".NFCConfirmationActivity"
+            android:noHistory="true" />
         <activity
             android:name=".ShowConnectDataActivity"
             android:label="@string/title_activity_show_connect_data"></activity>
