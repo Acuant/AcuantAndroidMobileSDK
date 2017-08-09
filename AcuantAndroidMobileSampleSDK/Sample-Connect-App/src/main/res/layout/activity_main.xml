@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="5dp"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutKeyValidation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/topButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+       <Button
+            android:id="@+id/captureButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:onClick="captureButtonPressed"
+            android:text="Capture"
+            android:textSize="11sp" android:layout_weight="1"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/cardImagesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutFrontImage"
+            android:layout_width="@dimen/card_frame_width"
+            android:layout_height="@dimen/card_frame_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone"
+            android:background="@drawable/border_card_image" >
+
+            <ImageView
+                android:id="@+id/frontImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/tap_to_capture"
+                android:onClick="frontSideCapturePressed"
+                android:scaleType="fitXY" />
+            
+            <TextView
+                android:id="@+id/txtTapToCaptureFront"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:hint="@string/tap_to_capture"
+                android:text="@string/tap_to_capture"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutBackImage"
+            android:layout_width="@dimen/card_frame_width"
+            android:layout_height="@dimen/card_frame_height"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+			android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:id="@+id/backImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/tap_to_capture_back_side_optional_"
+                android:onClick="backSideCapturePressed"
+                android:scaleType="fitXY"
+                android:background="@drawable/border_card_image"
+                 />
+
+            <TextView
+                android:id="@+id/txtTapToCaptureBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:hint="@string/tap_to_capture_back_side_optional_"
+                android:text="@string/tap_to_capture_back_side_optional_"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_gravity="bottom" 
+        >
+
+        <Button
+            android:id="@+id/processCardButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="processCard"
+            android:text="@string/process" />
+    </RelativeLayout>
+
+</LinearLayout>

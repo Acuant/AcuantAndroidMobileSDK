@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hold_steady">HOLD STEADY</string>
+    <string name="tap_to_focus">TAP TO FOCUS</string>
+    <string name="align_and_tap">ALIGN AND TAP</string>
+    <string name="app_name">AcuantAndroidMobileSampleSDK</string>
+    <string name="about">about</string>
+    <string name="none">none</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_connect_settings">Connect Subscription(Optional)</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="license_key">License Key</string>
+    <string name="activate">Activate</string>
+    <string name="medical_insurance">Medical card</string>
+    <string name="passport">Passport</string>
+    <string name="passport_facial">Passport with Facial</string>
+    <string name="cam_front">Front Side</string>
+    <string name="process">Process</string>
+    <string name="cam_back">Back Side</string>
+    <string name="driver_license">Drivers License</string>
+    <string name="driver_license_facial">Drivers License with Facial</string>
+    <string name="todo">TODO</string>
+    <string name="tap_to_capture_back_side_optional_">Tap to capture back side (Optional)</string>
+    <string name="tap_to_capture_front_side">Tap to capture front side</string>
+    <string name="manual_capture">Manual Capture</string>
+    <string name="automatic_capture">Automatic capture</string>
+    <string name="tap_to_capture">Tap to capture card</string>
+    <string name="dl_duplex">DL Duplex</string>
+    <string name="dl_duplex_dialog">Scan the backside of the license</string>
+    <string name="facial_instruction_dialog">Please position your face in front of the front camera and blink when red rectangle appears.</string>
+    <string name="no_internet_message">Internet connection appears to be offline. Please check your network settings.
+    </string>
+
+    <string name="settingsButton">Settings</string>
+    <string name="help">Help</string>
+    <string name="onSettingsClick">onSettingsClick</string>
+    <string name="onHelpClick">onHelpClick</string>
+
+    <string name="face_detection">Face detection</string>
+    <string name="signature_detection">Signature detection</string>
+    <string name="turn_passcode_on">Turn Passcode On</string>
+    <string name="change_passcode">Change Passcode</string>
+
+    <string name="title_activity_image_pick">ImagePickActivity</string>
+
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="united_states">United States</string>
+    <string name="australia">Australia</string>
+    <string name="canada">Canada</string>
+    <string name="america">America</string>
+    <string name="europe">Europe</string>
+    <string name="africa">Africa</string>
+    <string name="asia">Asia</string>
+    <string name="latin_america">Latin America</string>
+    <string name="title_activity_show_data">ShowDataActivity</string>
+
+    <string name="Name">Name</string>
+    <string name="License_No.">License No.</string>
+    <string name="Date_of_Birth">Date of Birth</string>
+    <string name="Issue_Date">Issue Date</string>
+    <string name="Expiration_Date">Expiration Date</string>
+    <string name="Address">Address</string>
+    <string name="City">City</string>
+    <string name="Zip">Zip</string>
+    <string name="State">State</string>
+    <string name="Country">Country</string>
+    <string name="Eye_Color">Eye Color</string>
+    <string name="Hair_Color">Hair Color</string>
+    <string name="Height">Height</string>
+    <string name="Weight">Weight</string>
+    <string name="License_Class">License_Class</string>
+    <string name="Restriction">Restriction</string>
+    <string name="Sex">Sex</string>
+    <string name="title_activity_help_screen">HelpScreenActivity</string>
+    <string name="default_watermark">Powered by Acuant</string>
+    <string name="CopiedText">Text copied to clipboard</string>
+
+</resources>

@@ -52,9 +52,6 @@
         <activity
             android:name=".NFCConfirmationActivity"
             android:noHistory="true" />
-        <activity
-            android:name=".ShowConnectDataActivity"
-            android:label="@string/title_activity_show_connect_data"></activity>
     </application>
 
 </manifest>

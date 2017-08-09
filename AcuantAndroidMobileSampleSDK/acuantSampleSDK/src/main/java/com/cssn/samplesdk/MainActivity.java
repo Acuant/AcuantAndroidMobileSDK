@@ -14,7 +14,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -24,11 +23,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
-import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -49,7 +46,6 @@ import com.acuant.mobilesdk.AcuantErrorListener;
 import com.acuant.mobilesdk.Card;
 import com.acuant.mobilesdk.CardCroppingListener;
 import com.acuant.mobilesdk.CardType;
-import com.acuant.mobilesdk.ConnectWebserviceListener;
 import com.acuant.mobilesdk.DriversLicenseCard;
 import com.acuant.mobilesdk.ErrorType;
 import com.acuant.mobilesdk.FacialData;
@@ -71,29 +67,17 @@ import com.cssn.samplesdk.util.DataContext;
 import com.cssn.samplesdk.util.TempImageStore;
 import com.cssn.samplesdk.util.Util;
 
-import org.apache.commons.codec.binary.Base64;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
 
 /**
  *
  */
-public class MainActivity extends Activity implements WebServiceListener,ConnectWebserviceListener, CardCroppingListener, AcuantErrorListener, FacialRecognitionListener {
+public class MainActivity extends Activity implements WebServiceListener, CardCroppingListener, AcuantErrorListener, FacialRecognitionListener {
 
     private static final String TAG = MainActivity.class.getName();
     private  final String IS_SHOWING_DIALOG_KEY = "isShowingDialog";
@@ -115,10 +99,8 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
     private RelativeLayout layoutFrontImage;
     private RelativeLayout layoutBackImage;
     private LinearLayout layoutCards;
-    private EditText editTextLicense;
     private TextView textViewCardInfo;
     public MainActivityModel mainActivityModel = null;
-    private Button activateLicenseButton;
     private  ProgressDialog progressDialog;
     private  AlertDialog showDuplexAlertDialog;
     private  AlertDialog alertDialog;
@@ -136,12 +118,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
     private Bitmap originalImage;
     private Card processedCardInformation;
     private FacialData processedFacialData;
-
-    private String assureIDUsername;
-    private String assureIDPassword;
-    private String assureIDSubscription;
-    private String assureIDURL;
-    private boolean isConnect = false;
     private boolean isFirstLoad = true;
     /**
      *
@@ -180,9 +156,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
         frontImageView = (ImageView) findViewById(R.id.frontImageView);
         backImageView = (ImageView) findViewById(R.id.backImageView);
 
-        editTextLicense = (EditText) findViewById(R.id.editTextLicenceKey);
-        editTextLicense.setText(DataContext.getInstance().getLicenseKey());
-
         textViewCardInfo = (TextView) findViewById(R.id.textViewCardInfo);
 
         buttonMedical = (Button)findViewById(R.id.buttonMedical);
@@ -192,48 +165,8 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
         txtTapToCaptureFront = (TextView) findViewById(R.id.txtTapToCaptureFront);
         txtTapToCaptureBack = (TextView) findViewById(R.id.txtTapToCaptureBack);
 
-        activateLicenseButton = (Button) findViewById(R.id.activateLicenseButton);
-
         processCardButton = (Button) findViewById(R.id.processCardButton);
         processCardButton.setVisibility(View.INVISIBLE);
-
-        editTextLicense.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                validateLicenseKey(editTextLicense.getText().toString());
-                DataContext.getInstance().setLicenseKey(editTextLicense.getText().toString());
-                return true;
-            }
-        });
-
-        // it is necessary to use a post UI call, because of the previous set text on 'editTextLicense'
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                editTextLicense.addTextChangedListener(new TextWatcher() {
-                    public void afterTextChanged(Editable s) {
-                        mainActivityModel.setState(State.NO_VALIDATED);
-                        updateActivateLicenseButtonFromModel();
-                    }
-
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                    }
-                });
-            }
-        });
-
-        editTextLicense.setOnFocusChangeListener(new OnFocusChangeListener() {
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    hideVirtualKeyboard();
-                }
-            }
-        });
 
         initializeSDK();
         // update the UI from the model
@@ -244,37 +177,10 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
     }
 
     private void initializeSDK(){
-        String licenseKey = DataContext.getInstance().getLicenseKey();
-        isConnect = isConnectWS();
-
+        String licenseKey = "xxxxxxxxxxxx";//Set license keey here
         // load the controller instance
         Util.lockScreen(this);
-        if(isConnect){
-            if(buttonMedical!=null){
-                buttonMedical.setVisibility(View.INVISIBLE);
-            }
 
-            if(buttonDL!=null){
-                buttonDL.setVisibility(View.INVISIBLE);
-            }
-
-            if(buttonPassport!=null){
-                buttonPassport.setText("Capture");
-            }
-
-            if(textViewCardInfo!=null){
-                textViewCardInfo.setVisibility(View.GONE);
-            }
-            if(editTextLicense!=null){
-                editTextLicense.setVisibility(View.GONE);
-            }
-            if(activateLicenseButton!=null){
-                activateLicenseButton.setVisibility(View.GONE);
-            }
-            acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this,assureIDUsername,assureIDPassword,assureIDSubscription,assureIDURL);
-            acuantAndroidMobileSdkControllerInstance.setConnectWebServiceListener(this);
-
-        }else {
             if(buttonPassport!=null){
                 buttonPassport.setText("Passport");
             }
@@ -288,18 +194,12 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
             if(textViewCardInfo!=null){
                 textViewCardInfo.setVisibility(View.VISIBLE);
             }
-            if(editTextLicense!=null){
-                editTextLicense.setVisibility(View.VISIBLE);
-            }
-            if(activateLicenseButton!=null){
-                activateLicenseButton.setVisibility(View.VISIBLE);
-            }
             //acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this,"cssnwebservicestest.com",licenseKey);
             //acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this,"192.168.1.62",licenseKey);
 
             acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this, licenseKey);
             
-        }
+
         Util.lockScreen(this);
         if (!Util.isTablet(this)) {
             acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeImageDrawable(getResources().getDrawable(R.drawable.barcode));
@@ -422,61 +322,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
     }
 
 
-    private void SaveImage(Bitmap finalBitmap) {
-
-        String fname = "/sdcard/face.jpg";
-        File file = new File (fname);
-        if (file.exists ()) file.delete ();
-        try {
-            file.createNewFile();
-            FileOutputStream out = new FileOutputStream(file);
-            finalBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
-            out.flush();
-            out.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private boolean isConnectWS(){
-        boolean retValue = false;
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-
-        assureIDSubscription = sharedPref.getString("AssureID_Subscription","");
-        assureIDUsername = sharedPref.getString("AssureID_Username","");
-        assureIDPassword = sharedPref.getString("AssureID_Password","");
-        assureIDURL = sharedPref.getString("AssureID_Cloud_URL","");
-        boolean enabled = sharedPref.getBoolean("AssureID_Enable",false);
-
-
-        if(enabled && assureIDSubscription!=null && !assureIDSubscription.trim().equalsIgnoreCase("")
-                && assureIDUsername!=null && !assureIDUsername.trim().equalsIgnoreCase("")
-                && assureIDPassword!=null && !assureIDPassword.trim().equalsIgnoreCase("")
-                && assureIDURL!=null && !assureIDURL.trim().equalsIgnoreCase("")){
-
-            retValue = true;
-
-        }
-
-        return retValue;
-    }
-
-
-    /**
-     *
-     */
-    private void validateLicenseKey(String licenseKey) {
-        Util.lockScreen(MainActivity.this);
-        DataContext.getInstance().setLicenseKey(editTextLicense.getText().toString());
-        if(progressDialog!=null && progressDialog.isShowing()){
-            Util.dismissDialog(progressDialog);
-        }
-        isValidating = true;
-        acuantAndroidMobileSdkControllerInstance.setLicensekey(licenseKey);
-        hideVirtualKeyboard();
-    }
-
     /**
      *
      */
@@ -521,10 +366,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
      */
     @Override
     public void onCardCroppingFinish(final Bitmap bitmap,int detectedCardType) {
-        if(isConnect){
-            mainActivityModel.setCurrentOptionType(CardType.PASSPORT);
-            DataContext.getInstance().setCardType(CardType.PASSPORT);
-        }
         if(progressDialog!=null && progressDialog.isShowing()) {
             Util.dismissDialog(progressDialog);
             progressDialog = null;
@@ -575,11 +416,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
     @Override
     public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide,int detectedCardType) {
         //final Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.test_sa_dl);
-
-        if(isConnect){
-            mainActivityModel.setCurrentOptionType(CardType.DRIVERS_LICENSE);
-            DataContext.getInstance().setCardType(CardType.DRIVERS_LICENSE);
-        }
         if(progressDialog!=null && progressDialog.isShowing()) {
             Util.dismissDialog(progressDialog);
             progressDialog = null;
@@ -853,17 +689,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
      */
 
     public void passportCardWithFacialButtonPressed(View v) {
-        if(isConnect){
-            DataContext.getInstance().setCardRegion(-1);
-            processedCardInformation = null;
-            processedFacialData = null;
-            mainActivityModel.setCurrentOptionType(CardType.DRIVERS_LICENSE);
-            isProcessing = false;
-            isProcessingFacial = false;
-            isFacialFlow = false;
-            mainActivityModel.clearImages();
-            updateUI();
-        }else {
             processedCardInformation = null;
             processedFacialData = null;
             mainActivityModel.setCurrentOptionType(CardType.PASSPORT);
@@ -875,9 +700,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
                 isFacialFlow = false;
             }
             mainActivityModel.clearImages();
-
             updateUI();
-        }
     }
 
     /**
@@ -944,9 +767,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
         } else {
             layoutCards.setOrientation(LinearLayout.VERTICAL);
         }
-
-        // enable/disable the activate button
-        updateActivateLicenseButtonFromModel();
 
         if (mainActivityModel.getCurrentOptionType() == -1) {
             // do not do any extra processing
@@ -1091,7 +911,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
             progressDialog = Util.showProgessDialog(MainActivity.this, "Capturing data ...");
             Util.lockScreen(this);
         }
-        if ((!isProcessing && processedCardInformation==null) || mainActivityModel.getCurrentOptionType()==CardType.MEDICAL_INSURANCE  || isConnect) {
+        if ((!isProcessing && processedCardInformation==null) || mainActivityModel.getCurrentOptionType()==CardType.MEDICAL_INSURANCE) {
             isProcessing = true;
             // check for the internet connection
             if (!Utils.isNetworkAvailable(this)) {
@@ -1126,18 +946,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
             options.iRegion = DataContext.getInstance().getCardRegion();
             options.acuantCardType = mainActivityModel.getCurrentOptionType();
             //options.logTransaction = false;
-            if(isConnect){
-                acuantAndroidMobileSdkControllerInstance.callProcessImageConnectServices(mainActivityModel.getFrontSideCardImage(), mainActivityModel.getBackSideCardImage(), sPdf417String, this, options);
-            }else {
-                //Test code
-                //sPdf417String = null;
-                //options.imageSettings=390;
-                //mainActivityModel.setBackSideCardImage(null);
-
-                //Test code ends
-                acuantAndroidMobileSdkControllerInstance.callProcessImageServices(mainActivityModel.getFrontSideCardImage(), mainActivityModel.getBackSideCardImage(), sPdf417String, this, options);
-
-            }
+            acuantAndroidMobileSdkControllerInstance.callProcessImageServices(mainActivityModel.getFrontSideCardImage(), mainActivityModel.getBackSideCardImage(), sPdf417String, this, options);
             resetPdf417String();
         }
     }
@@ -1180,34 +989,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
         sPdf417String = "";
     }
 
-    /**
-     * @param v
-     */
-    public void activateLicenseKey(View v) {
-        hideVirtualKeyboard();
-
-        String key = editTextLicense.getText().toString().trim();
-        if (!key.equals("")) {
-            Util.lockScreen(MainActivity.this);
-            if(progressDialog!=null && progressDialog.isShowing()){
-                Util.dismissDialog(progressDialog);
-            }
-            progressDialog = Util.showProgessDialog(MainActivity.this, "Activating License ..");
-            isActivating = true;
-            acuantAndroidMobileSdkControllerInstance.callActivateLicenseKeyService(key);
-
-        } else {
-            Util.dismissDialog(alertDialog);
-            alertDialog = Util.showDialog(this, "The license key cannot be empty.",new DialogInterface.OnClickListener() {
-
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    isShowErrorAlertDialog = false;
-                }
-            });
-            isShowErrorAlertDialog = true;
-        }
-    }
 
     /**
      *
@@ -1308,32 +1089,7 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
      */
     @Override
     public void activateLicenseKeyCompleted(LicenseActivationDetails cssnLicenseActivationDetails) {
-        Util.dismissDialog(progressDialog);
-        Util.unLockScreen(MainActivity.this);
-        isActivating = false;
-        isActivating = false;
 
-        String msg="";
-
-        if (cssnLicenseActivationDetails != null) {
-            msg = cssnLicenseActivationDetails.getIsLicenseKeyActivatedDescscription();
-        }
-
-        Util.lockScreen(this);
-        alertDialog =  Util.showDialog(this, msg, new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Util.dismissDialog((Dialog) dialog);
-                Util.unLockScreen(MainActivity.this);
-                // validation if there was not error in the activation, because the
-                // validation is done before, every time the license key text
-                // changes.
-                validateLicenseKey(editTextLicense.getText().toString());
-                isShowErrorAlertDialog = false;
-            }
-        });
-        isShowErrorAlertDialog = true;
 
     }
 
@@ -1356,7 +1112,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
         } else {
             mainActivityModel.setValidatedStateActivation(State.ValidatedStateActivation.NO_ACTIVATED);
         }
-        updateActivateLicenseButtonFromModel();
         // message dialogs
         acuantAndroidMobileSdkControllerInstance.enableLocationAuthentication(this);
         isValidating = false;
@@ -1433,7 +1188,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
         if (Util.LOG_ENABLED) {
             Utils.appendLog(TAG, "protected void onResume()");
         }
-        editTextLicense.clearFocus();
         frontImageView.requestFocus();
     }
 
@@ -1558,22 +1312,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
         }
     }
 
-    /**
-     *
-     */
-    private void hideVirtualKeyboard() {
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(editTextLicense.getWindowToken(), 0);
-    }
-
-    /**
-     *
-     */
-    private void updateActivateLicenseButtonFromModel() {
-        activateLicenseButton.setEnabled(
-                mainActivityModel.getState() == State.NO_VALIDATED || (mainActivityModel.getState() == State.VALIDATED && mainActivityModel.getValidatedStateActivation() == State.ValidatedStateActivation.NO_ACTIVATED));
-    }
-
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -1615,9 +1353,6 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
 
     @Override
     public void onFacialRecognitionCompleted(final Bitmap bitmap) {
-        if(bitmap!=null){
-            SaveImage(bitmap);
-        }
         if(isShowErrorAlertDialog){
             return;
         }
@@ -1703,128 +1438,4 @@ public class MainActivity extends Activity implements WebServiceListener,Connect
             }
         }
     }
-
-    @Override
-    public void processImageConnectServiceCompleted(String jsonString) {
-        DataContext.getInstance().setCardType(mainActivityModel.getCurrentOptionType());
-        if(progressDialog!=null && progressDialog.isShowing()){
-            Util.dismissDialog(progressDialog);
-        }
-        String front_image_Loc="";
-        String back_image_Loc="";
-        String signature_image_loc="";
-        String face_image_loc="";
-        String dateOfBirth="";
-        String dateofExpiry="";
-        String documentNumber="";
-        String documentType="";
-        try {
-            JSONObject jsonResponse = new JSONObject(jsonString);
-            JSONArray images = jsonResponse.getJSONArray("Images");
-            for(int i =0;i<images.length();i++){
-                JSONObject imageDict = images.getJSONObject(i);
-                if(imageDict.has("Side")){
-                    int side = imageDict.getInt("Side");
-                    if(side==0 && imageDict.has("Uri")){
-                        front_image_Loc = imageDict.getString("Uri");
-                    }else if(side==1 && imageDict.has("Uri")){
-                        back_image_Loc = imageDict.getString("Uri");
-                    }
-                }
-            }
-
-            JSONArray fields = jsonResponse.getJSONArray("Fields");
-            for(int i=0;i<fields.length();i++){
-                JSONObject dict = fields.getJSONObject(i);
-                if(dict.has("IsImage")){
-                    boolean IsImage = dict.getBoolean("IsImage");
-                    if(IsImage && dict.has("Value")){
-                        if(dict.has("Key")){
-                            if(dict.getString("Key").equalsIgnoreCase("Signature")){
-                                signature_image_loc = dict.getString("Value");
-                            }else if(dict.getString("Key").equalsIgnoreCase("Photo")){
-                                face_image_loc = dict.getString("Value");
-                            }
-                        }
-                    }
-                }
-                if(dict.has("Key") && dict.has("Type") && dict.getString("Type").equalsIgnoreCase("datetime") &&
-                        dict.getString("Key").equalsIgnoreCase("Birth Date")|| (dict.getString("Key").equalsIgnoreCase("Expiration Date"))){
-                    String dateStr = dict.getString("Value");
-                    if(dateStr!=null && !dateStr.trim().equalsIgnoreCase("")) {
-                        dateStr = dateStr.replace("Date","");
-                        dateStr = dateStr.replace(")","");
-                        dateStr = dateStr.replace("(","");
-                        dateStr = dateStr.replace("/","");
-                        if(dateStr!=null) {
-                            Long longDate = Long.parseLong(dateStr);
-                            if (longDate != null) {
-                                Date date = new Date(longDate);
-                                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yy");
-                                sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
-                                if (dict.getString("Key").equalsIgnoreCase("Birth Date")) {
-                                    dateOfBirth = sdf.format(date);
-                                } else if (dict.getString("Key").equalsIgnoreCase("Expiration Date")) {
-                                    dateofExpiry = sdf.format(date);
-                                }
-                            }
-                        }
-                    }
-
-                }
-                if(dict.has("Key") && dict.has("Type") && dict.getString("Type").equalsIgnoreCase("string") &&
-                        dict.getString("Key").equalsIgnoreCase("Document Number")){
-                    documentNumber = dict.getString("Value");
-                }
-
-                if(dict.has("Key") && dict.has("Type") && dict.getString("Type").equalsIgnoreCase("string") &&
-                        dict.getString("Key").equalsIgnoreCase("Document Class Name")){
-                    documentType = dict.getString("Value");
-                }
-            }
-            //String instanceID = jsonResponse.getString("InstanceId");
-            Intent showDataActivityIntent = new Intent(this, ShowConnectDataActivity.class);
-            showDataActivityIntent.putExtra("FACEIMAGEURL",face_image_loc);
-            showDataActivityIntent.putExtra("SIGNATUREIMAGEURL",signature_image_loc);
-            showDataActivityIntent.putExtra("FRONTIMAGEURL",front_image_Loc);
-            showDataActivityIntent.putExtra("BACKIMAGEURL",back_image_Loc);
-            showDataActivityIntent.putExtra("RESPONSE",jsonString);
-            showDataActivityIntent.putExtra("DOB",dateOfBirth);
-            showDataActivityIntent.putExtra("DOE",dateofExpiry);
-            showDataActivityIntent.putExtra("DOCNUM",documentNumber);
-            showDataActivityIntent.putExtra("DOCTYPE",documentType);
-            showDataActivityIntent.putExtra("USERNAME",assureIDUsername);
-            showDataActivityIntent.putExtra("PASSWORD",assureIDPassword);
-            this.startActivity(showDataActivityIntent);
-            //acuantAndroidMobileSdkControllerInstance.deleteInstanceConnectServices(this,instanceID);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @Override
-    public void processImageConnectServiceFailed(int code, String message) {
-        Log.d(TAG,message);
-        if(progressDialog!=null && progressDialog.isShowing()){
-            Util.dismissDialog(progressDialog);
-        }
-    }
-
-    @Override
-    public void deleteImageConnectServiceCompleted(String instanceID) {
-        Log.d(TAG,instanceID);
-        if(progressDialog!=null && progressDialog.isShowing()){
-            Util.dismissDialog(progressDialog);
-        }
-    }
-
-    @Override
-    public void deleteImageConnectServiceFailed(int code, String message) {
-        Log.d(TAG,message);
-        if(progressDialog!=null && progressDialog.isShowing()){
-            Util.dismissDialog(progressDialog);
-        }
-    }
-
 }

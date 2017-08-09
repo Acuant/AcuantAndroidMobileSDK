@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:title="Connect Subscriptions"
+        android:key="AssureID_Enable" />
+    <EditTextPreference
+        android:defaultValue=""
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Subscription"
+        android:summary=""
+        android:key="AssureID_Subscription" />
+    <EditTextPreference
+        android:defaultValue=""
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:summary=""
+        android:key="AssureID_Username"
+        android:title="Username" />
+    <EditTextPreference
+        android:defaultValue=""
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Password"
+        android:summary=""
+        android:key="AssureID_Password" />
+    <EditTextPreference
+        android:defaultValue="https://services.assureid.net/AssureIDService"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:summary=""
+        android:key="AssureID_Cloud_URL"
+        android:title="URL" />
+</PreferenceScreen>

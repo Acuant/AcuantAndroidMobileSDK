@@ -171,6 +171,17 @@ Add the followings activities into manifest.xml file:
 
 Multiple APK support is a feature on Google Play that allows to split the large APK file into smaller APKs for different CPU architectures. This helps in keeping the application size small for the end user. Please follow the instructions from Google to split the application as specified at https://developer.android.com/google/play/publishing/multiple-apks.html 
 
+# Sample Apps
+There are three sample apps.To run these sample apps please contact Acuant to obtain the license key or credentials.
+
+- acuantSampleSDK  : Demonstrates Acufill Data Capture & FRM
+- Sample-Connect-App : Demonstrates Connect Data Capture
+- Sample-Connect-With-Facial : Demonstrates Connect Data Capture with Acufill FRM
+
+Please watch the following video which demonstrates how to set license key or credentials in all the projects.
+
+[![Watch the video]](document_media/SampleApps.mov)
+
 
 # Activating the license key
 

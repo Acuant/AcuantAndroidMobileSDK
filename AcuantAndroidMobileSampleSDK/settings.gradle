@@ -1,1 +1,1 @@
-include ':acuantSampleSDK', ':acuantMobileSDK'
+include ':acuantSampleSDK',':Sample-Connect-With-Facial','Sample-Connect-App',':acuantMobileSDK'

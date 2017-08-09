@@ -1,0 +1,7 @@
+<resources>
+    <bool name="isTablet">true</bool>
+    
+    <dimen name="card_frame_width">432dp</dimen>
+    <dimen name="card_frame_height">274dp</dimen>
+    
+</resources>

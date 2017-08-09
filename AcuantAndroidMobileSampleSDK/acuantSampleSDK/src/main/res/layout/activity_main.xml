@@ -13,22 +13,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <RelativeLayout
-        android:id="@+id/RelativeLayoutKeyValidation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true" >
-
-        <include
-            android:id="@+id/include_key_validation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            layout="@layout/include_key_validation"
-            android:nextFocusLeft="@id/include_key_validation"
-            android:nextFocusUp="@id/include_key_validation" />
-    </RelativeLayout>
-
     <LinearLayout
         android:id="@+id/topButtons"
         android:layout_width="match_parent"
