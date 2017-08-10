@@ -47,7 +47,6 @@
         <activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual" />
         <activity android:name="com.acuant.mobilesdk.detect.Camera2FacialRecognitionManual" />
         <activity android:name=".ImageConformationActivity" />
-        <activity android:name=".SettingsActivity" />
         <activity android:name=".NFCResultActivity" />
         <activity
             android:name=".NFCConfirmationActivity"

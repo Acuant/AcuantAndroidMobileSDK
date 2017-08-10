@@ -177,7 +177,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     }
 
     private void initializeSDK(){
-        String licenseKey = "xxxxxxxxxxxx";//Set license keey here
+        String licenseKey = "XXXXXXXXXXX";//Set license keey here
         // load the controller instance
         Util.lockScreen(this);
 
@@ -310,14 +310,6 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent settingsIntent = new Intent(this, SettingsActivity.class);
-            startActivity(settingsIntent);
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 

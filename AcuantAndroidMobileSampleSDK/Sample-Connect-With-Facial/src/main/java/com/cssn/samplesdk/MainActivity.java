@@ -80,14 +80,14 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     private MainActivity mainActivity;
 
     //Set credentials
-    private String assureIDUsername = "xxxxxxxxxxx";
-    private String assureIDPassword = "xxxxxxxxxxx";
-    private String assureIDSubscription = "xxxxxxxxxxxx";
+    private String assureIDUsername = "XXXXXXXXXX";
+    private String assureIDPassword = "XXXXXXXXXX";
+    private String assureIDSubscription = "XXXXXXXXXX";
     private String assureIDURL = "https://devconnect.assureid.net/AssureIDService";
     private String acufillURL = "cssnwebservices.com";
 
     //set license key
-    private String licenseKey = "xxxxxxxxxxx";
+    private String licenseKey = "XXXXXXXXXX";
 
     private boolean wasLicenseValided = false;
     private boolean wasAcufillLicenseValidated = false;
