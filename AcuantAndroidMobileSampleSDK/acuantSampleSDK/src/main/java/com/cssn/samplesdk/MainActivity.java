@@ -177,7 +177,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     }
 
     private void initializeSDK(){
-        String licenseKey = "XXXXXXXXXXX";//Set license keey here
+        String licenseKey = "XXXXXXXXXX";//Set license keey here
         // load the controller instance
         Util.lockScreen(this);
 
