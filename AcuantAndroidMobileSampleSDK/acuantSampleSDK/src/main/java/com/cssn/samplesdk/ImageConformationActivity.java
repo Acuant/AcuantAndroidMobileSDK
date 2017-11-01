@@ -93,7 +93,17 @@ public class ImageConformationActivity extends Activity {
 
     }
 
+    public void clearImage(){
+        if(image!=null){
+            image.recycle();
+            image = null;
+        }
+    }
+
     public void retryButtonPressed(View v) {
+        clearImage();
+        System.gc();
+        System.runFinalization();
         if(TempImageStore.getImageConfirmationListener()!=null) {
             TempImageStore.getImageConfirmationListener().retry();
         }

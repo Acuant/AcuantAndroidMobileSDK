@@ -80,14 +80,14 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     private MainActivity mainActivity;
 
     //Set credentials
-    private String assureIDUsername = "XXXXXXXXXX";
-    private String assureIDPassword = "XXXXXXXXXX";
-    private String assureIDSubscription = "XXXXXXXXXX";
+    private String assureIDUsername = "xxxxxxxxxxxxxxxxxx";
+    private String assureIDPassword = "xxxxxxxxxxxxxxxxxx";
+    private String assureIDSubscription = "xxxxxxxxxxxxxxxxxx";
     private String assureIDURL = "https://devconnect.assureid.net/AssureIDService";
     private String acufillURL = "cssnwebservices.com";
 
     //set license key
-    private String licenseKey = "XXXXXXXXXX";
+    private String licenseKey = "xxxxxxxxxxxxxxxxxx";
 
     private boolean wasLicenseValided = false;
     private boolean wasAcufillLicenseValidated = false;
@@ -617,6 +617,18 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
             public void run() {
                 if(progressDialog!=null && progressDialog.isShowing()){
                     Util.dismissDialog(progressDialog);
+                    if(face_image_loc!=null){
+                        face_image_loc = face_image_loc.replace("http://","https://");
+                    }
+                    if(signature_image_loc!=null){
+                        signature_image_loc = signature_image_loc.replace("http://","https://");
+                    }
+                    if(front_image_Loc!=null){
+                        front_image_Loc = front_image_Loc.replace("http://","https://");
+                    }
+                    if(back_image_Loc!=null){
+                        back_image_Loc = back_image_Loc.replace("http://","https://");
+                    }
                     if(card instanceof FacialData){
                         showResult(face_image_loc,signature_image_loc,front_image_Loc,back_image_Loc,cardDatajsonString,dateOfBirth,dateofExpiry,documentNumber,documentType,(FacialData)card);
 
@@ -624,11 +636,6 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
                 }
             }
         });
-    }
-
-    @Override
-    public void activateLicenseKeyCompleted(LicenseActivationDetails licenseActivationDetails) {
-
     }
 
     /**
@@ -851,6 +858,9 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
                     }
                 });
                }else {
+                if(face_image_loc!=null){
+                    face_image_loc = face_image_loc.replace("http://","https://");
+                }
                 loadFaceImage(face_image_loc);
             }
         } catch (JSONException e) {

@@ -92,6 +92,13 @@ public class ShowDataActivity extends Activity
         super.onPause();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent();
+        setResult(RESULT_OK, intent);
+    }
+
     public void nfcPressed(View v){
         Intent confirmNFCDataActivity = new Intent(this, NFCConfirmationActivity.class);
         PassportCard processedPassportCard = DataContext.getInstance().getProcessedPassportCard();

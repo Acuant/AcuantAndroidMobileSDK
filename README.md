@@ -3,128 +3,131 @@
 Acuant Android SDK API
 ======================
 
-Last updated on – 06/22/2017
+**Last updated on – 11/01/2017**
+
+Copyright <sup>©</sup> 2003-2017 Acuant Inc. All rights reserved.
+
+This document contains proprietary and confidential technology, information, and creative works owned by Acuant and its respective licensors, if any. Any use, copying, publication, distribution, display, modification, or transmission of such technology in whole or in part in any form or by any means without the prior express written permission of Acuant is strictly prohibited. Except where expressly provided by Acuant in writing, possession of this technology or information shall not be construed to confer any license or rights under any Acuant intellectual property rights, whether by estoppel, implication, or otherwise.
+
+AssureID and <em>i-D</em>entify are trademarks of Acuant Inc.
+
+Other Acuant product or service names or logos referenced this document are either trademarks or registered trademarks of Acuant.
+
+All 3M trademarks are trademarks of 3M Company.
+Windows<sup>®</sup> is a registered trademark of Microsoft Corporation.
+Certain product, service, or company designations for companies other than Acuant may be mentioned in this document for identification purposes only. Such designations are often claimed as trademarks or service marks. In all instances where Acuant is aware of a claim, the designation appears in initial capital or all capital letters. However, you should contact the appropriate companies for more complete information regarding such designations and their registration status.
+
+<p><strong>September 2017</strong></p>
+<p>Acuant Inc.</p>
+<p>6080 Center Drive, Suite 850</p>
+<p>Los Angeles, CA 90045</p>
+<p>==================</p>
+
 
 # Introduction
 
-The AcuantAndroidMobileSDK is designed to simplify your development efforts. 
-Processing of the captured images takes place via Acuant’s Web Services.  Acuant’s Web Services offer fast data extraction and authentication with zero downtime. 
+<p>Acuant Web Services supports data extraction from driver’s licenses, state IDs, other government issued IDs, custom IDs, driver’s licenses, barcodes, passports, and medical insurance cards. It also supports document authentication and facial recognition to verify and authenticate the identity.</p>
 
-Benefits:
-
--   Process Enhancement: Faster data extraction and authentication is performed on the captured images via Acuant’s Web Services.
-
--   Easy to set up and deploy.
-
--   No maintenance and support: All maintenance and updates are done on Acuant servers.
-
--   Secured Connection: Secured via SSL and HTTPS AES 256-bit encryption.
-
-Acuant Web Services supports processing of drivers licenses, state IDs,
-other govt issued IDs, custom IDs, driver’s license barcodes, passports,
-medical insurance cards etc. It also supports address verification,
-identity verification and personal verification.
-
-For IDs from Asia, Australia, Europe, South America, Africa – we return dd-mm-yyyy date format.
-
-For IDs from Canada, USA – we return mm-dd-yyyy date format.
-
-For a complete list of regions, states, and countries supported for ID
-processing, please see Appendix F of ScanW document -
-<http://www.id-reader.com/ftp/applications/sdk/docs/ScanW.pdf>
-
-To execute any Acuant Android Mobile SDK method, a valid license key is
-required. Please contact <sales@acuantcorp.com> to obtain a license key.
-
-This Acuant Android Mobile SDK API documentation document has the
-detailed description of all the important functions a developer would
-need to write integration with Acuant Android Mobile SDK.
-
-# Requirements
+<p>This document contains a detailed description of all functions that developers need to integrate with the Acuant Android Mobile SDK. The Acuant Android Mobile SDK requires a valid license key. Contact sales@acuantcorp.com to obtain a license key.</p>
 
 
--   AndroidSDK Version 17 or later.
+# Revision History
+##Acuant Android Mobile SDK version 4.8.1##
 
--   5 MP camera resolution or higher.
+- Added new CardType constant **CardType.AUTO**. If CardType.AUTO is set, then **onCardCroppingFinish** the last parameter will contain the automatically detected card type.
 
--   The card image must be taken in an acceptable light conditions to avoid glare and overhead lights for example.
+##Acuant Android Mobile SDK version 4.8##
 
--   The card must preferably be fitted with in the brackets on the camera screen, to allow the picture to be taken at a maximum resolution.
+-  Improved ID and passport cropping.
+-  Fixed Nexus 5X image rotation issue.
+-  Fixed focus issue for Samsung S7 US models.
+-  Added a check for scanned document type. For example, if a driver's license is scanned instead of a passport then SDK will throw an error (**AcuantErrorIncorrectDocumentScanned**).
+-  Modified the signature of the following two methods to output the detected card type after cropping.
 
-# Integration
-
-## Add AcuantAndroidMobileSDK SDK
-
-### Using Gradle
-In order to add the framework to your project, add the
-AcuantAndroidMobileSDK.aar dependencies  
-
-#### Local file
-Add the following code in your build.gradle to avoid some file collision
-
-	dependencies {
-	
-	   configurations.create("default")
-	
-	   artifacts.add("default", file('acuantMobileSDK.aar'))
-	
-	 }
-	
-	 android{
-	
-		 packagingOptions {
+		//Previous function signature: 
+			public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide)
+		//  Replaced with:
+			public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide, int detectedCardType)
 		
-		 exclude 'META-INF/NOTICE'
+  		//Previous function signature:
+			public void onCardCroppingFinish(Bitmap bitmap)
+		//  Replaced with:
+			public void onCardCroppingFinish(Bitmap bitmap,int detectedCardType);
 		
-		 exclude 'META-INF/LICENSE'
 		
-		 exclude 'META-INF/DEPENDENCIES'
-		
-		 exclude 'META-INF/DEPENDENCIES.txt'
-		
-		 exclude 'META-INF/LICENSE.txt'
-		
-		 exclude 'META-INF/NOTICE.txt'
-		
-		 }
-	
-	 }
-	
-	 dependencies {
-	 	compile ('com.microblink:pdf417.mobi:6.4.0@aar')
-		compile ('com.android.support:appcompat-v7:25.3.1')
-		compile ('com.google.code.gson:gson:2.8')
-		compile ('com.squareup.okhttp3:okhttp:3.8.0')
-		compile ('org.jmrtd:jmrtd:0.5.6')
-    	compile ('org.ejbca.cvc:cert-cvc:1.4.3')
-    	compile ('com.madgag.spongycastle:prov:1.54.0.0')
-    	compile ('net.sf.scuba:scuba-sc-android:0.0.9')
-	 }
+- Added an API to enable original image capture (disabled by default).
 
-#### JCenter repositories
-In order to add the framework to your project, add the AcuantAndroidMobileSDK dependecie from JCenter
+		acuantAndroidMobileSdkControllerInstance.setCaptureOriginalCapture(false);
+		
+- Removed the **imageSource** variable from **ProcessImageRequestOptions** . No need to set this variable anymore.
 
-	repositories {
-		jcenter ()
-		maven { url 'http://maven.microblink.com' }
-	}
+# Operating system and device requirements
+
+The Acuant Android Mobile SDK API supports the following operating system version and devices:
+
+**Operating System:**  Android SDK Version 17 or later
+
+**Devices:**  5 MP camera resolution or higher
+
+**Note** The card image must be taken in acceptable light conditions to avoid glare and overhead lights. The card should preferably be fitted within the brackets on the camera screen to allow the picture to be taken at maximum resolution.
+
+# Preparing to install the Acuant Android Mobile SDK
+
+This section describes how to add the Gradle framework to your project, including adding the **AcuantAndroidMobileSDK.aar** and JCenter dependencies.
+
+#### Add the Gradle framework:
+1. Add the **AcuantAndroidMobileSDK.aar** dependencies to add the framework to your project.
+2. Add the following code to your **build.gradle** file:
+
+		dependencies {
+			configurations.create("default")
+			artifacts.add("default", file('acuantMobileSDK.aar'))
+		}
 	
-	 dependencies {
-		compile 'com.acuant.mobilesdk:acuantMobileSDK:4.8'
-		compile ('com.microblink:pdf417.mobi:6.4.0@aar')
-		compile ('com.android.support:appcompat-v7:25.3.1')
-		compile ('com.google.code.gson:gson:2.8')
-		compile ('com.squareup.okhttp3:okhttp:3.8.0')
-		compile ('org.jmrtd:jmrtd:0.5.6')
-    	compile ('org.ejbca.cvc:cert-cvc:1.4.3')
-    	compile ('com.madgag.spongycastle:prov:1.54.0.0')
-    	compile ('net.sf.scuba:scuba-sc-android:0.0.9')
-	}
+		android{
+			packagingOptions {
+			exclude 'META-INF/NOTICE'
+			exclude 'META-INF/LICENSE'
+			exclude 'META-INF/DEPENDENCIES'
+			exclude 'META-INF/DEPENDENCIES.txt'
+			exclude 'META-INF/LICENSE.txt'
+			exclude 'META-INF/NOTICE.txt'
+			}
+		}
 	
+		dependencies {
+			compile ('com.microblink:pdf417.mobi:6.4.0@aar')
+			compile ('com.android.support:appcompat-v7:26+')
+			compile ('com.google.code.gson:gson:2.8')
+			compile ('com.squareup.okhttp3:okhttp:3.8.0')
+			compile ('org.jmrtd:jmrtd:0.5.6')
+			compile ('org.ejbca.cvc:cert-cvc:1.4.3')
+			compile ('com.madgag.spongycastle:prov:1.54.0.0')
+			compile ('net.sf.scuba:scuba-sc-android:0.0.9')
+		}
+
+3. Add the **AcuantAndroidMobileSDK** dependecies from **JCenter**:
+
+		repositories {
+			jcenter ()
+			maven { url 'http://maven.microblink.com' }
+		}
+
+		dependencies {
+			compile 'com.acuant.mobilesdk:acuantMobileSDK:4.8'
+			compile ('com.microblink:pdf417.mobi:6.4.0@aar')
+			compile ('com.android.support:appcompat-v7:26+')
+			compile ('com.google.code.gson:gson:2.8')
+			compile ('com.squareup.okhttp3:okhttp:3.8.0')
+			compile ('org.jmrtd:jmrtd:0.5.6')
+    		compile ('org.ejbca.cvc:cert-cvc:1.4.3')
+    		compile ('com.madgag.spongycastle:prov:1.54.0.0')
+    		compile ('net.sf.scuba:scuba-sc-android:0.0.9')
+		}
 	
-	Add the following code in your build.gradle to avoid some file collision
+4. Add the following code to your **build.gradle** file:
 	
-	android{
+		android{
 		 packagingOptions {
 			 exclude 'META-INF/NOTICE'
 			 exclude 'META-INF/LICENSE'
@@ -133,166 +136,175 @@ In order to add the framework to your project, add the AcuantAndroidMobileSDK de
 			 exclude 'META-INF/LICENSE.txt'
 			 exclude 'META-INF/NOTICE.txt'
 		 }
-	 }
-	 
-	 
-##Obfuscation 
+		}
+	  
 
-If you are using ProGaurd to obfuscate, make sure to add the following rules
+5. If you are using **ProGuard** to obfuscate, add the following rules:
 
-	-keep class com.microblink.** { *; }
-	-keepclassmembers class com.microblink.** { *; }
-	-dontwarn android.hardware.**
-	-dontwarn android.support.v4.**
+		-keep class com.microblink.** { *; }
+		-keepclassmembers class com.microblink.** { *; }
+		-dontwarn android.hardware.**
+		-dontwarn android.support.v4.**
 
+6. Add the followings activities to the **manifest.xml** file:
 
-
-## Add views into manifest
-
-Add the followings activities into manifest.xml file:
-
-	< uses-permissionandroid:name="android.permission.CAMERA"/>
-	< uses-permissionandroid:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-	< uses-permissionandroid:name="android.permission.READ_EXTERNAL_STORAGE"/>
-	< uses-permissionandroid:name="android.permission.READ_PHONE_STATE"/>
-	< uses-permissionandroid:name="android.permission.ACCESS_NETWORK_STATE"/>
-	< uses-permissionandroid:name="android.permission.INTERNET"/>
-	<uses-permission android:name="android.permission.FLASHLIGHT" />
-	<uses-permission android:name="android.permission.NFC" />
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+		< uses-permissionandroid:name="android.permission.CAMERA"/>
+		< uses-permissionandroid:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+		< uses-permissionandroid:name="android.permission.READ_EXTERNAL_STORAGE"/>
+		< uses-permissionandroid:name="android.permission.READ_PHONE_STATE"/>
+		< uses-permissionandroid:name="android.permission.ACCESS_NETWORK_STATE"/>
+		< uses-permissionandroid:name="android.permission.INTERNET"/>
+		<uses-permission android:name="android.permission.FLASHLIGHT" />
+		<uses-permission android:name="android.permission.NFC" />
+		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     
-	<activity android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"></activity>
-	<activity android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417"> </activity>
-	<activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual"></activity>
-	<activity android:name="com.acuant.mobilesdk.detect.Camera2FacialRecognitionManual" />
+		<activity android:name="com.acuant.mobilesdk.detect.CameraCardDetectManual"></activity>
+		<activity android:name="com.acuant.mobilesdk.detect.PDF417.CameraPDF417"> </activity>
+		<activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual"></activity>
+		<activity android:name="com.acuant.mobilesdk.detect.Camera2FacialRecognitionManual" />
+		
+7. Add the following flag to <application> tag only if out of memory error is observed.
+
+		android:largeHeap="true"
+		
+	Refer : https://developer.android.com/guide/topics/manifest/application-element.html
+		
+7. Add the following flag to gradle.properties file (optional)
+
+		// Some versions of Android studio may need this setting. This is required only 
+		//when java.lang.UnsatisfiedLinkError is observed
+		android.useDeprecatedNdk=true
 	
 	
-## Multiple APK Support (Optional)
+## Using multiple APK support *(optional)*
 
-Multiple APK support is a feature on Google Play that allows to split the large APK file into smaller APKs for different CPU architectures. This helps in keeping the application size small for the end user. Please follow the instructions from Google to split the application as specified at https://developer.android.com/google/play/publishing/multiple-apks.html 
+Multiple APK support is a feature on Google Play that allows to split the large APK file into smaller APKs for different CPU architectures. This helps reduce the application size for the end user. See the instructions from Google to split the application as specified in https://developer.android.com/google/play/publishing/multiple-apks.html.
 
-# Sample Apps
-There are three sample apps.To run these sample apps please contact Acuant to obtain the license key or credentials.
+## Sample Applications
+Acuant provides three sample applications.
 
-- acuantSampleSDK  : Demonstrates Acufill Data Capture & FRM
-- Sample-Connect-App : Demonstrates Connect Data Capture
-- Sample-Connect-With-Facial : Demonstrates Connect Data Capture with Acufill FRM
+**Note** You need a license key from Acuant to run these applications. Contact Acuant Technical Support to obtain a license key and the proper credentials.
 
-Please watch the following video which demonstrates how to set license key or credentials in all the projects.
+- **acuantSampleSDK**				demonstrates AcuFill Data Capture and FRM
+- **Sample-Connect-App**			demonstrates Connect Data Capture
+- **Sample-Connect-With-Facial**	demonstrates Connect Data Capture with AcuFill FRM
 
-[![Watch the video]](document_media/SampleApps.mov)
+The following video demonstrates how to set up the license key or credentials for all projects.
 
+[![Check the video tutorial](document_media/AndroidVideoImage.png)](https://youtu.be/q8St8ILZFys)
 
-# Activating the license key
-
-In order to activate the license key, use the following method:
-
-`	AcuantAndroidMobileSDKControllerInstance.setWebServiceListener(this);`
-
-then, call the web service:
-
-`	AcuantAndroidMobileSDKControllerInstance.callActivateLicenseKeyService(key);`
-
-the callback method activateLicenseKeyCompleted in the listener will be called when the activation finishes.
-
-**Note:** The license key only needs to be activated once. Execute this method only one time. Some licensees are issued by Acuant pre-activated and don’t need further actions.
+Contact Acuant Technical Support if you need assistance. 
 
 
-# Initialize and create the SDK’s instance
+####Initialize and create the Android Mobile SDK instance:
 
-## With activity and license key.
+Use the following call to pass an activity to initialize the **AcuantAndroidMobileSDKController** class, the cloud address, and the license key.
 
-Pass an activity to initialize the AcuantAndroidMobileSDKController class, and the license key. 
+**Note** Do <em>not</em> include the **“https://”** as part of the cloud address. The correct form is:
+**cloud.myAddress.com**.  Only set the cloud address if you are hosting Acuant Web Services in your own data center. By default, the Android MobileSDK communicates with the Acuant Data Center. 
 
-`	AcuantAndroidMobileSDKController.getInstance(activity,licenseKey);`
+  <pre><code>//Obtain the main controller instance
+_instance = [AcuantMobileSDKController initAcuantMobileSDKWithLicenseKey:@&quot;MyLicensekey&quot;
+andDelegate:self];
+</code></pre>
 
-## With activity, cloud address. And license Key
+<p><strong>Note</strong> This method verifies if the license key is valid and it returns an instance that can be used to reference the methods. Acuant recommends that you <em>create one instance per session</em> in order to optimize your resources.</p>
 
-Pass an activity to initialize the AcuantAndroidMobileSDKController class, the cloud address and the license key. The cloud Address must not contain “https://”. Ex: “https://cloud.myAddress.com/” must be written “cloud.myAddress.com”. Note: Only set cloud address if you are hosting Acuant web services in your own data center. By default, Android MobileSDK communicates with the Acuant data center. 
 
-`	AcuantAndroidMobileSDKController.getInstance(activity,“cloud.myAddress.com”, licenseKey);`
+####Initialize the AcuantAndroidMobileSDKController class and license key: 
 
-## license key validation
+    AcuantAndroidMobileSDKController.getInstance(activity,licenseKey);`
 
-Once the license key validation is completed the following callback will be called.The app should wait until this callback is called.
+####Initialize the AcuantAndroidMobileSDKController class with activity, cloud address, and license key:
+
+    AcuantAndroidMobileSDKController.getInstance(activity,“cloud.myAddress.com”, licenseKey);`
+
+#### Create the SDK instance with a valid license key:
+
+Use the following call to validate the license key and create an SDK instance:
 	
-`	public void validateLicenseKeyCompleted(LicenseDetails details){}`
+    public void validateLicenseKeyCompleted(LicenseDetails details){}`
 
-## With activity.
+After the license key is validated, the following callback will be called. The app should wait until this callback is called.
 
-Pass an activity to initialize the AcuantAndroidMobileSDKController class, the entry point to the library:
 
-`	AcuantAndroidMobileSDKController.getInstance(activity);`
+####Create the SDK instance with activity:
 
-## If your instance was created previously.
+Pass an activity to initialize the **AcuantAndroidMobileSDKController** class, the entry point to the library:
 
-Once the controller was created, you can obtain it through:
+    AcuantAndroidMobileSDKController.getInstance(activity);`
 
-`	AcuantAndroidMobileSDKController.getInstance();`
+If your instance was created previously, you can obtain it using:
+
+    AcuantAndroidMobileSDKController.getInstance();`
 
 # Capturing and cropping a card
 
-## Add the card capture method.
+You need to know the card type that you want to capture to show the camera interface. Use the *manual* camera interface to capture a driver’s license, medical card, or passport. 
 
-In order to show the camera interface, you need to know the card type
-that you want to capture.
+**Note** To capture a driver’s license, you must call two times (for the front and back sides of the card).
 
-If you need to capture driver’s license card or medical card or passport you will need to use the manual camera interfaces.
+####Capture and crop a card:
+1. Validate the license key and show the camera interface:
 
-If you need to capture Driver’s License, you need to call 2 times: for
-the front side card and for the back side card.
+	    AcuantAndroidMobileSDKControllerInstance.getInstanceAndShowCameraInterface(contextActivity, license, activity,cardType, region, isBarcodeSide);
 
-### Validating a license key and show the camera interface
+1. Show the manual camera interface methods:
 
-
-AcuantAndroidMobileSDKControllerInstance.getInstanceAndShowCameraInterface(contextActivity, license, activity,cardType, region, isBarcodeSide);
-
-
-### Show the manual camera interface methods
-
-	AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
-	
-	acuantAndroidMobileSdkControllerInstance.
-	showManualCameraInterface(mainActivity,CardType.DRIVERS_LICENSE,
-	cardRegion, isBackSide);
+	    AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
+	    acuantAndroidMobileSdkControllerInstance.
+	    showManualCameraInterface(mainActivity,CardType.DRIVERS_LICENSE,
+	    cardRegion, isBackSide);
+	    
+**Note** If CardType.AUTO is set, then **onCardCroppingFinish** the last parameter will contain the automatically detected card type. If a card type such as CardType.DRIVERS_LICENSE is set and a different card type such as CardType.PASSPORT is detected, then an AcuantErrorIncorrectDocumentScanned error occurs.
 
 
-The width value is mandatory, it is set to indicate the width of the cropped card image.
+**Note** The width value is required and is set to indicate the width of the cropped card image.
 
-After the user taps the screen, the image capture process begins, there are four callback methods:
+After the user taps the screen, the image capture process begins. 
 
 	public void onCardCroppedStart(Activity activity);
 
-*activity*: the activity of the full screen Window, or the activity owner
+There are four callback methods:
+
+**activity**
+
+The activity of the full screen Window, or the activity owner
 of the modal dialog (in case of Passport and Tablet for example)
 
 	public void onCardCroppingFinish(Bitmap bitmap,int detectedCardType);
 
-*bitmap*: the image card result
+**bitmap**
 
-This function returns the cropped card image is returned.
+The image card result. This function returns the cropped card image:
 
 	public void onCardCroppingFinish(final Bitmap bitmap, boolean scanBackSide,int detectedCardType);`
 
-*bitmap*: the image card result
-This function returns the cropped card image is returned.
+**bitmap**
 
-*scanBackSide*: A flag to alert the user to capture the back side of the
-card.
+The image card result. This function returns the cropped card image.
 
-	public void onOriginalCapture(Bitmap bitmap);
+**bitmap**
 
-*bitmap*: the image before the cropping process begins. 
-
-This function returns the card image without crop process.
+The image before the cropping process begins. This function returns the card image *without* cropping.
 
 	public void onCancelCapture(Bitmap croppedImage,Bitmap originalImage);
 
-Called when the user tap the back button.If the back button is pressed in barcode interface and the barcode cropping on cancel is enabled then the arguments will contain the cropped image and original image.Otherwise the arguments will be null.
+This function is called when the user taps the **Back** button. 
 
-If the application is targeted for Android API 23 and above, the control will return to the following method after the user taps on allow/deny for camera permission. The requestCode will be Permission.PERMISSION_CAMERA. If the permission is already given manually then the control won’t come here.
+**Note** If **Back** is tapped in barcode interface and the barcode cropping on Cancel is enabled, then the arguments will contain the cropped image and the original image. Otherwise, the arguments will be Null.
 
-	//Override this only for API 23 and Above
+
+**scanBackSide**
+
+Alerts the user to capture the back side of the card:
+
+	public void onOriginalCapture(Bitmap bitmap);
+
+If the application is targeted for Android API level 23 and later, the control will return to the following method after the user taps Allow/Deny for camera permission. The **requestCode** will be **Permission. PERMISSION_CAMERA.** If the permission was previously granted manually, then the control won’t come here.
+
+	//Override only for API level 23 and later
+
  	@Override
  	public void onRequestPermissionsResult(int requestCode,
 										String permissions[], int[] grantResults) {
@@ -312,7 +324,7 @@ If the application is targeted for Android API 23 and above, the control will re
 
 
 
-### Show the barcode camera methods
+#### Show the barcode camera methods:
 
 	AcuantAndroidMobileSDKControllerInstance.setWidth(myWidth);
 
@@ -325,45 +337,57 @@ If the application is targeted for Android API 23 and above, the control will re
 	cardRegion);
 
 
-The width value is mandatory, it is set to indicate the width of the cropped card image.
-A Drawable can be provided before calling showCameraInterfacePDF417 method in order to be displayed in the barcode scanning functionality. If not, no image will be shown.
+**Note** The width value is required and is set to indicate the width of the cropped card image.
+A drawable can be provided before calling the **showCameraInterfacePDF417** method in order to be displayed in the barcode scanning functionality. If not, no image is shown.
 
-After the user opens the camera, the detection process begins, there is
-only one callback methods:
+After the user opens the camera, the detection process begins. There is only one callback method:
 
  	public void onPDF417Finish(String result);
 
-result: the barcode string result
+**result**
+
+The barcode string result.
 
  	public void onBarcodeTimeOut(Bitmap croppedImage,Bitmap originalImage);
 
-This function will be triggered to alert that the capture is pending without closing the camera view. The argument croppedImage will have the cropped image of the last frame before this function is triggered.If the frame could not be cropped this argument will be null.
+This function will be triggered to alert that the capture is pending without closing the camera view. The argument croppedImage will have the cropped image of the last frame before this function is triggered. If the frame could not be cropped, then this argument will be Null.
 
  	getBarcodeCameraContext();
 
-return: The current barcode camera context.
-This function return null if the barcode camera is close.
+
+**return**
+
+The current barcode camera context. This function returns Null if the barcode camera is closed.
+
+**pause**
+
+This function pauses the barcode camera detection:
 
 	pauseScanningBarcodeCamera();
 
-This function pause the barcode camera detection
+**resume**
+
+This function resumes the barcode camera detection:
 
 	resumeScanningBarcodeCamera();
 
-return: The current barcode camera context.This function resume the barcode camera detection
+**return**
+
+The current barcode camera context. This function resumes the barcode camera detection.
 
 	finishScanningBarcodeCamera();
 
-return: The current barcode camera context.
-This function close the barcode camera.
+**return**
+
+The current barcode camera context. This function closes the barcode camera.
 
 	public void onCancelCapture();
 
-Called when the user tap the back button.
+Called when the user tap the **Back** button.
 
-### Cleanup SDK Controller
+## Cleaning up the SDK controller
 
-To avoid any memory leak cleanup the SDK controller when the Activitiy is destoyed.
+To avoid memory leaks, clean up the SDK controller when the Activity is destroyed. This will clean up any static reference to the Context Activity, Web Service Listener, and Card Cropping Listener. If a different Activity needs to listen to SDK callbacks while transitioning to a new Activity, then set the new Activity as the Listener. See the API documentation for more information.
 
 			@Override
     		protected void onDestroy() {
@@ -371,76 +395,98 @@ To avoid any memory leak cleanup the SDK controller when the Activitiy is destoy
         		acuantAndroidMobileSdkControllerInstance.cleanup();
     		}
     		
-This will cleanup any static reference to the Context Activity, Web Service Listener, Card Cropping Listener. If the new Activity has to be made the listener, then set the new activity as the listner as per the API documentation.
 
-## Optional, Add the following methods to customize.
 
-setPdf417BarcodeImageDrawable  : Customize the barcode interface
-	with an image, default empty.
+## Customizing the interface  *(optional)*
+
+You can add methods to customize the interface:
+
+**setPdf417BarcodeImageDrawable**
+
+Customize the barcode interface with an image (empty by default):
 			
 	AcuantAndroidMobileSDKControllerInstance.
 		setPdf417BarcodeImageDrawable(
 		getResources().getDrawable(R.drawable.barcode));
 
 
-setWatermarkText: method to see the watermark on your camera
+**setWatermarkText**
+
+Method to see the watermark on your camera:
 
 	AcuantAndroidMobileSDKController.setWatermarkText("Powered By Acuant",0,0,30,0);
 
-setInitialMessageDescriptor: Customize the initial message, default implementation says "Align and Tap" or “Tap to Focus”.
+**setInitialMessageDescriptor**
+
+Customize the initial message (default is "Align and Tap" or “Tap to Focus”):
 
 	setInitialMessageDescriptor(R.layout.hold_steady);
 
 	setInitialMessageDescriptor(message, red, green, blue, alpha);
 
-setFinalMessageDescriptor : Customize the capturing message, default implementation says "hold steady".
+**setFinalMessageDescriptor**
+
+Customize the capturing message (default is "hold steady"):
 
 	setFinalMessageDescriptor(R.layout.align_and_tap);
 
 	setFinalMessageDescriptor(message, red, green, blue, alpha);
 
-setFlashlight: Enable or disable the flashlight, by default is false.
+**setFlashlight**
+
+Enable or disable the flashlight (False by default):
 
 	setFlashlight(showFlashlight);
 
 	setFlashlight(left, top, right, bottom);
 
-setCropBarcode: Enable or disable the barcode image cropping. By default is false.
+**setCropBarcode**
+
+Enable or disable the barcode image cropping (False by default):
 
 	setCropBarcode(canCropBarcode);
 	
-setCaptureOriginalCapture : Enable or disable capturing the original uncropped image.
+**setCaptureOriginalCapture**
+
+Enables/disables capturing the original uncropped image:
 
 	setCaptureOriginalCapture(false);
 	
-setCropBarcodeOnCancel : Enable or disable the barcode image cropping while pressing the back button.The default if false;
+**setCropBarcodeOnCancel**
+
+Enables/disables the barcode image cropping while tapping the Back button (False by default):
 
 	setCropBarcodeOnCancel(true);
 
-setShowActionBar: Enable or disable the action bar. By default is false.
+**setShowInitialMessage**
+
+Enables/disables the action bar (False by default):
 
 	setShowActionBar (false);
 
-setShowStatusBar: Enable or disable the status bar. By default is false.
+**setShowInitialMessage**
+
+Enables/disables the status bar (False by default):
 
 	setShowStatusBar (false);
 
-setShowInitialMessage: Enable or disable the barcode camera message. By default is false.
+**setShowInitialMessage**
+
+Enables/disables the barcode camera message (False by default):
 
 	setShowInitialMessage (false);
 
-setCanShowBracketsOnTablet: Enable or disable the guiding brackets for tablets
+**setCanShowBracketsOnTablet**
+
+Enables/disables the guiding brackets for tablets:
 
 	setCanShowBracketsOnTablet(true);
 
+## Specifying the card size 
 
+Add the following methods to set the size of the card. If the proper card width is not set, the Mobile SDK will  be unable to process the card.
 
-## Add the following methods to set the size of the card. 
-
-If the proper card width is not set, MobileSDK will not be able to
-process the card.
-
-**For Driver's License Cards**
+**For driver's license cards:**
 
 	LicenseDetails details ;  // license details obtained during license key validation
 	if(details.isAssureIDAllowed()){
@@ -449,300 +495,244 @@ process the card.
 		AcuantAndroidMobileSDKControllerInstance.setWidth(1250);
 	}
 
-**For Medical Insurance Cards**
+**For medical insurance cards:**
 
 	AcuantAndroidMobileSDKControllerInstance.setWidth(1500);
 
-**For Passport Documents**
+**For passport documents:**
 
 	AcuantAndroidMobileSDKControllerInstance.setWidth(1478);
 
-# Processing a card
+## Processing a card
 
-After the capture and the crop process, you can retrieve information
-through processing of the cropped image.
+After the capture and crop process, you can retrieve information by processing the cropped image.
 
-## Add a callback for the web service.
+#### Add a callback for the Web Service:
 
-AcuantAndroidMobileSDKControllerInstance.setWebServiceListener(callback);
+	AcuantAndroidMobileSDKControllerInstance.setWebServiceListener(callback);
 
-## Call the web service to process the card image
+#### Process the card image (driver's license cards):
 
-### For Driver's License Cards
-
-ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
-
-options.autoDetectState = true;
-
-options.stateID = -1;
-
-options.reformatImage = true;
-
-options.reformatImageColor = 0;
-
-options.DPI = 150;
-
-options.cropImage = false;
-
-options.faceDetec = true;
-
-options.signDetec = true;
-
-options.iRegion = region;
-
-options.acuantCardType = cardType;
-
-AcuantAndroidMobileSDKControllerInstance.callProcessImageServices(frontSideCardImage, backSideCardImage, barcodeString,callerActivity, options);
-
-**Explanation of the parameters:**
-
-**region** - Integer parameter for the Region ID. Parameter value -
-
-United States – 0
-
-Australia – 4
-
-Asia – 5
-
-Canada – 1
-
-America – 2
-
-Europe – 3
-
-Africa – 7
-
-General Documents – 6
-
-**autoDetectState**- Boolean value. True – SDK will auto detect the
-state of the ID. False – SDK wont auto detect the state of the ID and
-will use the value of ProcState integer.
-
-**stateID** - Integer value of the state to which ID belongs to. If
-AutoDetectState is true, SDK automatically detects the state of the ID
-and stateID value is ignored. If AutoDetectState is false, SDK uses
-stateID integer value for processing. For a complete list of the
-different countries supported by the SDK and their different State
-integer values, please see Appendix F of ScanW document -
-<http://www.id-reader.com/ftp/applications/sdk/docs/ScanW.pdf>
-
-**faceDetec** - Boolean value. True - Return face image. False – Won’t
-return face image.
-
-**signDetec** - Boolean value. True – Return signature image. False –
-Won’t return signature image.
-
-**reformatImage** - Boolean value. True – Return formatted processed
-image. False – Won’t return formatted image. Values of
-ReformatImageColor and ReformatImageDpi will be ignored.
-
-**reformatImageColor** - Integer value specifying the color value to
-reformat the image. Values –
-
-Image same color – 0
-
-Black and White – 1
-
-Grayscale 256 – 2
-
-Color 256 – 3
-
-True color – 4
-
-Enhanced Image – 5
-
-**DPI -** Integer value up to 600. Reformats the image to the provided
-DPI value. Size of the image will depend on the DPI value. Lower value
-(150) is recommended to get a smaller image.
-
-**cropImage –** Boolean value. When true, cloud will crop the RAW image.
-Boolean value. Since MobileSDK crops the image, leave this flag to
-false.
-
-### For Medical Insurance Cards
-
-ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
-
-options.reformatImage = true;
-
-options.reformatImageColor = 0;
-
-options.DPI = 150;
-
-options.cropImage = false;
-
-options.acuantCardType = cardType;
-
-AcuantAndroidMobileSDKControllerInstance.callProcessImageServices(frontSideCardImage, backSideCardImage, null, callerActivity, options);
-
-**Explanation of the parameters:**
-
-**reformatImage** - Boolean value. True – Return formatted processed
-image. False – Won’t return formatted image. Values of
-ReformatImageColor and ReformatImageDpi will be ignored.
-
-**reformatImageColor** - Integer value specifying the color value to
-reformat the image. Values –
-
-Image same color – 0
-
-Black and White – 1
-
-Grayscale 256 – 2
-
-Color 256 – 3
-
-True color – 4
-
-Enhanced Image – 5
-
-**DPI -** Integer value up to 600. Reformats the image to the provided
-DPI value. Size of the image will depend on the DPI value. Lower value
-(150) is recommended to get a smaller image.
-
-**cropImage –** Boolean value. When true, cloud will crop the RAW image.
-Boolean value. Since MobileSDK crops the image, leave this flag to
-false.
-
-### For Passport Cards
-
-ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
-
-options.reformatImage = true;
-
-options.reformatImageColor = 0;
-
-options.DPI = 150;
-
-options.cropImage = false;
-
-options.faceDetec = true;
-
-options.signDetec = true;
-
-options.acuantCardType = cardType;
-
-AcuantAndroidMobileSDKControllerInstance.callProcessImageServices(frontSideCardImage, null, null, callerActivity, options);
-
-**Explanation of the parameters:**
-
-**faceDetec** - Boolean value. True - Return face image. False – Won’t
-return face image.
-
-**signDetec**- Boolean value. True – Return signature image. False –
-Won’t return signature image.
-
-**reformatImage** - Boolean value. True – Return formatted processed
-image. False – Won’t return formatted image. Values of
-ReformatImageColor and ReformatImageDpi will be ignored.
-
-**reformatImageColor** - Integer value specifying the color value to
-reformat the image. Values –
-
-Image same color – 0
-
-Black and White – 1
-
-Grayscale 256 – 2
-
-Color 256 – 3
-
-True color – 4
-
-Enhanced Image – 5
-
-**DPI -** Integer value up to 600. Reformats the image to the provided
-DPI value. Size of the image will depend on the DPI value. Lower value
-(150) is recommended to get a smaller image.
-
-**cropImage –** Boolean value. When true, cloud will crop the RAW image.
-Boolean value. Since MobileSDK crops the image, leave this flag to
-false.
-
-## Finally, do your post-processing of the card information
-
-The callback method:
-
-processImageServiceCompleted(AcuantCard card);
-
-card: a ‘card ‘ object with the scanned information
-
-status: one of the constants of AcuantErrorType
-
-message: error message from the server
-
-is called when the web service completes. A ‘card’ with the card
-information is returned. It will be an instance of DRIVERS_LICENSE,
-PASSPORT, MEDICAL_INSURANCE according to the original card type you
-passed to the web service. You can retrieve state, signature, name, etc.
-from this class, for example for license driver’s card, these are some
-properties:
-
-	String name;
+	ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
 	
-	String licenceID;
-	
-	String address;
-	
-	String city;
-	
-	String zip;
-	
-	String state;
-	
-	String idCountry;
-	
-	String eyeColor;
-	
-	String hair;
-	
-	String height;
-	
-	String weight;
-	
-	String licenceClass;
-	
-	String restriction;
-	
-	String sex;
-	
-	String county;
-	
-	String dateOfBirth;
-	
-	String expirationDate;
-	
-	String nameLast;
-	
-	String nationality;
-	
-	String placeOfBirth;
-	
-	Bitmap faceImage;
-	
-	Bitmap signImage;
-	
-	Bitmap reformatImage;
-	
-	String authenticationResult;
-	
-	ArrayList<String> authenticationResultSummaryList 
+		options.autoDetectState = true;
+		options.stateID = -1;
+		options.reformatImage = true;
+		options.reformatImageColor = 0;
+		options.DPI = 150;
+		options.cropImage = false;
+		options.faceDetec = true;
+		options.signDetec = true;
+		options.iRegion = region;
+		options.acuantCardType = cardType;
 
-You can retrieve the name through:
+	AcuantAndroidMobileSDKControllerInstance.callProcessImageServices(frontSideCardImage, backSideCardImage, barcodeString,callerActivity, options);
 
-card.getName()
+###Parameters
 
-also, you can check all the properties for all the card types in the API
-doc.
+**region**
 
-This is the implementation in the Sample project:
+Integer parameter for the Region ID . Values: United States – 0 | Australia – 4 | Asia – 5 | 
+Canada – 1 | America – 2 | Europe – 3 | Africa – 7 | General Documents – 6
+
+**autoDetectState**
+
+Boolean value that indicates whether to auto detect the state of the ID.  Values: True | False (SDK won't auto detect the state of the ID and will use the value of ProcState integer)
+
+**stateID**
+
+Integer value of the state to which the ID belongs
+
+- If **AutoDetectState** is True, then the SDK automatically detects the state of the ID and **stateID** value is ignored.
+- If **AutoDetectState** is False, then the SDK uses the **stateID** integer value for processing. 
+
+For a complete list of the different countries supported by the SDK and their different State integer values, see the ScanW document: <http://www.id-reader.com/ftp/applications/sdk/docs/ScanW.pdf>
+
+**faceDetec**
+
+Boolean value that indicates whether a face image is returned. True | False
+
+**signDetec**
+
+Boolean value that indicates whether a signature image is returned. True | False
+
+**reformatImage**
+
+Boolean value  that indicates whether a formatted image is returned. True | False (ignores value of **ReformatImageColor** and **ReformatImageDpi**)
+
+**reformatImageColor**
+
+Integer value that specifies the color value to reformat the image. Values: Image same color – 0 | Black and White – 1 | Gray scale 256 – 2 | Color 256 – 3 | True color – 4 | Enhanced Image – 5
+
+**DPI**
+
+Integer value that indicates the DPI value to reformat the image. Range is 150 - 600. The size of the image is dependent on the DPI value. Use a lower value (150 DPI) for a smaller image. 
+
+**cropImage**
+
+Boolean value that indicates whether to crop the RAW image. True | False Boolean value
+
+**Note** The Mobile SDK crops the image; therefore, leave this flag set to **False**.
+
+#### Process the card image (medical insurance cards):
+
+	ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
+
+		options.reformatImage = true;
+		options.reformatImageColor = 0;
+		options.DPI = 150;
+		options.cropImage = false;
+		options.acuantCardType = cardType;
+
+	AcuantAndroidMobileSDKControllerInstance.callProcessImageServices(frontSideCardImage, backSideCardImage, null, callerActivity, options);
+
+###Parameters
+
+**reformatImage**
+
+Boolean value  that indicates whether a formatted image is returned. True | False (ignores value of **ReformatImageColor** and **ReformatImageDpi**)
+
+**reformatImageColor**
+
+Integer value that specifies the color value to reformat the image. Values: Image same color – 0 | Black and White – 1 | Gray scale 256 – 2 | Color 256 – 3 | True color – 4 | Enhanced Image – 5
+
+**DPI**
+
+Integer value that indicates the DPI value to reformat the image. Range is 150 - 600. The size of the image is dependent on the DPI value. Use a lower value (150 DPI) for a smaller image. 
+
+**cropImage**
+
+Boolean value that indicates whether to crop the RAW image. True | False Boolean value
+
+**Note** The Mobile SDK crops the image; therefore, leave this flag set to **False**.
+
+#### Process the card image (passport cards):
+
+	ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
+
+		options.reformatImage = true;
+		options.reformatImageColor = 0;
+		options.DPI = 150;
+		options.cropImage = false;
+		options.faceDetec = true;
+		options.signDetec = true;
+		options.acuantCardType = cardType;
+
+	AcuantAndroidMobileSDKControllerInstance.callProcessImageServices(frontSideCardImage, null, null, callerActivity, options);
+
+###Parameters
+
+**faceDetec**
+
+Boolean value that indicates whether to return a face image. True | False 
+
+**signDetec**
+
+Boolean value that indicates whether to return a signature image. True | False 
+
+**reformatImage**
+
+Boolean value  that indicates whether a formatted image is returned. True | False (ignores value of **ReformatImageColor** and **ReformatImageDpi**)
+
+**reformatImageColor**
+
+Integer value that specifies the color value to reformat the image. Values: Image same color – 0 | Black and White – 1 | Gray scale 256 – 2 | Color 256 – 3 | True color – 4 | Enhanced Image – 5
+
+**DPI**
+
+Integer value that indicates the DPI value to reformat the image. Range is 150 - 600. The size of the image is dependent on the DPI value. Use a lower value (150 DPI) for a smaller image. 
+
+**cropImage**
+
+Boolean value that indicates whether to crop the RAW image. True | False Boolean value
+
+**Note** The Mobile SDK crops the image; therefore, leave this flag set to **False**.
+
+## Post-processing card information
+
+Use the **processImageServiceCompleted** callback method:
+
+The **processImageServiceCompleted** method is called when Web Services completes. A ‘card’ with the card information is returned. It will be an instance of DRIVERS LICENSE, PASSPORT, or MEDICAL INSURANCE, according to the original card type you passed to Web Services.
+
+	processImageServiceCompleted(AcuantCard card);
+	
+**card**
+
+A ‘card ‘ object with the scanned information
+
+**status**
+
+One of the constants of **AcuantErrorType**
+
+**message**
+
+Error message from the server
+
+You can retrieve properties such as state, signature, and name from this class. For example, these are some of the properties for a driver’s license card:
+
+**String name;**
+
+**String licenceID;**
+
+**String address;**
+
+**String city;**
+
+**String zip;**
+
+**String state;**
+
+**String idCountry;**
+
+**String eyeColor;**
+
+**String hair;**
+
+**String height;**
+
+**String weight;**
+
+**String licenceClass;**
+
+**String restriction;**
+
+**String sex;**
+
+**String county;**
+
+**String dateOfBirth;**
+
+**String expirationDate;**
+
+**String nameLast;**
+
+**String nationality;**
+
+**String placeOfBirth;**
+
+**Bitmap faceImage;**
+
+**Bitmap signImage;**
+
+**Bitmap reformatImage;**
+
+**String authenticationResult;**
+**ArrayList<String> authenticationResultSummaryList**
+
+###getName
+
+You can retrieve the name by using:
+
+	card.getName()
+
+See the properties for all card types in the API documentation.
+
+**Sample project implementation:**
 
 
 	/**
-	
-	 *
-	
-	 */
+		 *
+		 */
 	
 	@Override
 	
@@ -792,148 +782,142 @@ This is the implementation in the Sample project:
 	}
 	
 	
-# Facial Recognition and Match Feature
+# Facial Recognition and Match
 
-Acuant FRM (Facial Recognition Match) is a person authentication solution for mobile devices based on biometric face recognition.
+Acuant FRM (Facial Recognition Match) is a person authentication solution for mobile devices based on biometric facial recognition. Acuant FRM reduces fraud by matching the face biometrics to the face image on the driver’s license or passport. It performs real-time checks and processes the data within seconds. This secure solution is easy to integrate using the Acuant Android Mobile SDK.
 
-Acuant FRM 
+Acuant FRM performs following checks to recognize a live face and match face biometrics to the face picture on the driver’s license or passport.
 
--	Opens the front camera
--	Ensures the user is correctly placed in front of the camera
--	Detects a live person 
--	Detects spoofing attacks by presenting eye blink challenge 
--	Acquires biometric samples
--	Verifies the identity of a user
--	All the steps are done in real time.
+1. **Face position checks** ensure that the face is well detected, correctly centered, and at the appropriate distance from the camera.
+2. **Distance-to-person algorithm** ensures that individual’s face is at optimal distance from the front camera. 
+3. **Frontal face presentation** Ensures that individual is only presenting frontal face (Side faces are rejected).
+4. **Eye blink tracking** checks for face liveliness to avoid spoofing attacks.
+5. **Face biometrics capture** matches biometric data to the face image on a driver’s license or passport.
 
-Benefits of Acuant FRM 
+##  Acuant FRM APIs and classes
 
--	Helps in reducing fraud by matching the face biometrics to the face image on the driver’s license or passport.
--	Easy to integrate
--	Secure
--	Fast and convenient
--	Real time checks and processing within seconds
-
-The Acuant FRM performs following checks to recognize a live face and match face biometrics to the face picture on the driver’s license or passport.
-
- 
-###### 1 - Face position checks: check that the face is well detected, correctly centered and in a good distance from the camera.
-
-- Distance to person algorithm ensures that person’s face is at optimal distance from the front camera. 
-
-- Ensures that person is only presenting frontal face (Side faces are rejected).
-
-###### 2 - Tracks eye blinks as an added layer to check for face liveliness and avoid spoofing attacks.
+The **FacialRecognitionListener** gets a callback from the SDK interface. It includes the **onFacialRecognitionCompleted** and **onFacialRecognitionCanceled** interfaces:
 
 
-###### 3 - Captures face biometrics and matches it to the face picture on the driver’s license or passport.
+####onFacialRecognitionCompleted
 
-####  Following are the APIs/Classes to use the Facial Match feature.
-
-**a. FacialRecognitionListener**
-
-This is the listener to be used to get the call back from the SDK interface. It has two interfaces
-
-- public void onFacialRecognitionCompleted(final Bitmap bitmap);
-
-	This is called when a live face is successfully recognized. The parameter “bitmap”  contains  the face image recognized by facial recognition.
-
-- Public void onFacialRecognitionCanceled();
-  This is called when the user cancels facial recognition.
+Called when a live face is successfully recognized. The **bitmap** parameter contains the face image recognized by facial recognition.
+	
+	public void onFacialRecognitionCompleted(final Bitmap bitmap);
 
 
+####onFacialRecognitionCanceled
 
-**b.	Show facial recognition user interface**
+Called when the user cancels facial recognition.
 
-To show the facial recognition interface, call the following method: 
+	Public void onFacialRecognitionCanceled();
+
+
+####showManualFacialCameraInterface
+
+Shows the facial recognition interface: 
 
 	AcuantAndroidMobileSDKController.getInstance().showManualFacialCameraInterface(Activity activity);
 
-To customize “Blink Slowly” instruction message, use the following API.
+Use the following API to customize “Blink Slowly” instruction message:
 
 	setInstructionText(String instructionStr, int left, int top,Paint paint)
 
-	Parameters : 
-	instructionStr : instruction to be displayed
-	left : left padding
-	top : top padding
-	paint : Paint object to specify color,text font etc
+###Parameters
+
+**instructionStr**
+
+Instruction to be displayed
+
+**left**
+
+Left padding
+
+**top**
+
+Top padding
+
+**paint**
+
+Paints object to specify color, text, or font
 
 
-**c.	Facial Match function call**
+####processImageValidation
 
-The facial match function call can be made the same way as the other card processing function calls. Below is an example:
+The facial match **processImageValidation** function call can be made the same way as the other card processing function calls, for example:
 	
 	public void processImageValidation(Bitmap faceImage,Bitmap idCropedFaceImage)
 	{
-		//code
-			ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
-			options.acuantCardType = CardType.FACIAL_RECOGNITION;
-			acuantAndroidMobileSdkControllerInstance.callProcessImageServices(faceImage, 		idCropedFaceImage, null, this, options);
-
-		//Code
+		ProcessImageRequestOptions options = ProcessImageRequestOptions.getInstance();
+		options.acuantCardType = CardType.FACIAL_RECOGNITION;
+		acuantAndroidMobileSdkControllerInstance.callProcessImageServices(faceImage, idCropedFaceImage, null, this, options);
 	}
 
+####processImageServiceCompleted
 
-The following web service call back method will be called after the above function call returns
+The following Web Services callback method will be called after the above function call returns:
 
 	@Override
-	public void processImageServiceCompleted(Card card) {
-	//Code
-	if(mainActivityModel.getCurrentOptionType()==CardType.FACIAL_RECOGNITION) {
-		FacialData  processedFacialData = (FacialData) card;
+		public void processImageServiceCompleted(Card card) {
 
+		if(mainActivityModel.getCurrentOptionType()==CardType.FACIAL_RECOGNITION) {
+			FacialData  processedFacialData = (FacialData) card;
+		}
 	}
 
-	//Code
-	
-}
-
-If either live face image or face image from ID card is not valid then it won’t make any web service call. The call will return successfully with following values
+If either a live face image or face image from ID card is not valid, then it won’t make any Web Services call. The call will return successfully with following values:
 
 	facialData.facialMatch = false;
 	facialData.faceLivelinessDetection = <Based on if live face detected or not>
 	transactionId=null
 	facialData.facialMatchConfidenceRating = null;
 
-**d.	Facial Liveliness timeout** 
+####setFacialRecognitionTimeoutInSeconds
 
-This SDK method will allow to set a timeout limit for facial liveliness detection. By default it is set to 20 seconds.
+Sets a timeout limit for facial liveliness detection (20 seconds by default):
 
 	public synchronized void setFacialRecognitionTimeoutInSeconds(int seconds)
 	
 
-When it times out the following call back method will be called.
+When it times out, the following callback method is called:
 
 	public void onFacialRecognitionTimedOut(final Bitmap bitmap)
- 
-**e.	FacialData**
+	
+####showFacialTimeoutErrorDialog 
 
-This class is the data class for facial results. Following are the methods to get the facial data
+Specifies whether to show an alert or dismiss the facial interface immediately after a facial timeout
+
+	public synchronized void showFacialTimeoutErrorDialog(boolean flag)
+ 
+####getFacialMatch
+
+The data class for facial results. Use the following methods to get the facial data:
 
 	public boolean getFacialMatch() 
+	public String getTransactionId() // Facial match transaction ID
+	public Boolean getFacialEnabled() // If facial feature is enabled
+	public Boolean getFaceLivelinessDetection() // If a live face was detected
+	public String getFacialMatchConfidenceRating() // Confidence level out of 100
 
-	public String getTransactionId() // Facial match transaction id
 
-		  public Boolean getFacialEnabled() // If facial feature is enabled.
+####getAuthenticationResult
 
-		  public Boolean getFaceLivelinessDetection() // If a live face was detected.
-		
-		  public String getFacialMatchConfidenceRating() // Confidence level out of 100
+ Use the **public String getAuthenticationResult()** and **public ArrayList<String> getAuthenticationResultSummaryList()** methods to see AssureID authentication results for driver's licenses and passports.
 
-# AssureID Authentication
-For Driving license and Passport , in order to see AssureID authentication results, please look for these two methods : “public String getAuthenticationResult()”, “public ArrayList<String> getAuthenticationResultSummaryList()”.
+**getAuthenticationResult** can return one of the following values:
 
-getAuthenticationResult: can return either of the following values:
+- Passed
+- Failed
+- Attention
+- Unknown
+- Skipped
 
-        -  Passed
-        -  Failed
-        -  Attention
-        -  Unknown
-        -  Skipped
-getAuthenticationResultSummaryList: When “AuthenticationResult” will have the value “Attention”, “getAuthenticationResultSummaryList” will return the list of reasons for “Attention’.
 
-Note: getAuthenticationResultSummaryList will return empty list for “Passed”,“Failed”,"Unknown" and "Skipped" results.
+**getAuthenticationResultSummaryList**
+
+Returns the list of reasons when **AuthenticationResult** returns an *Attention* result.
+
+**Note**  **getAuthenticationResultSummaryList** will return empty list for **Passed**,**Failed**,**Unknown**, and **Skipped** results.
 
 # Tracking Capture Device Location
 
@@ -942,7 +926,7 @@ If it is required to detect the location at which the ID/Passport is captured, l
 	//public void enableLocationAuthentication(Activity activity)
 	acuantAndroidMobileSdkControllerInstance.enableLocationAuthentication(this);
 	
-Whenever during the capture process location is required, the following methods will return location details.
+Whenever location is required during the capture process, use the following methods to return location details:
 
 	AcuantAndroidMobileSDKController instance = 
 	AcuantAndroidMobileSDKController.getInstance();
@@ -955,37 +939,37 @@ Whenever during the capture process location is required, the following methods 
 	instance.getDeviceAddress(); // Street address of device location
 	
 	
-Following constants are added for location test result
+The following constants are included for location test result:
 
-			public class LocationVerificationResult {
-        		public final static int PASSED = 1;
-        		public final static int FAILED = 0;
-        		public final static int NOT_AVAILABLE = 2;
-			}
+	public class LocationVerificationResult {
+        public final static int PASSED = 1;
+        public final static int FAILED = 0;
+        public final static int NOT_AVAILABLE = 2;
+	}
 			
- Below are the location test fields in the Card class
+ The following location test fields are included in the **Card** class:
 
-			public int idLocationStateTestResult;
-			public int idLocationCountryTestResult;
-			public int idLocationCityTestResult;
-    		public int idLocationZipcodeTestResult;
+	public int idLocationStateTestResult;
+	public int idLocationCountryTestResult;
+	public int idLocationCityTestResult;
+	public int idLocationZipcodeTestResult;
     		
     		
-# Reading e-Passports Chips
+# Reading an e-Passport chip
 
-If AssureID is enabled on your licenseKey then information from the chip in an e-Passport can be read by using Acuant Android mobile SDK.
+If AssureID is enabled on your license key, then you can use the Acuant Android Mobile SDK to read the information on an e-Passport chip. 
 
-To scan and read information from a e-passport chip , follow the steps below .
+####Scan and read an e-passport chip:
 
--	Ensure the following permission is enter in the application manifest file.
+1. Specify the permission in the application manifest file:
 		
 		<uses-permission android:name="android.permission.NFC" />
-		
-- Initialize Android NFC Adapter as below
+
+1. Initialize the Android NFC Adapter:
 
 		NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this);
 		
-- Ensure the permission is provided in runtime for API level 23 and above. This could be modified as per the application need.Below is just an example.
+1. Ensure that the permission is provided in runtime for API level 23 and above. This can be modified as needed. For example:
 
 		private void ensureSensorIsOn(){
         if(!this.nfcAdapter.isEnabled())
@@ -1027,7 +1011,9 @@ To scan and read information from a e-passport chip , follow the steps below .
 		//public void listenNFC(Activity activity,NfcAdapter nfcAdapter)
 		acuantAndroidMobileSdkControllerInstance.listenNFC(this,nfcAdapter);
 		
-- If a NFC Tag is successfully discovered , the control will come back to the following overrided method of the Activity.
+
+
+1. If an NFC Tag is successfully discovered, then the control will return to the method of the Activity that was previously overridden:
 
 		@Override
     	protected void onNewIntent(Intent intent)
@@ -1036,15 +1022,19 @@ To scan and read information from a e-passport chip , follow the steps below .
        
        }
         
--	Inside the above method , set the listener to which the control will come after a chip is read successfully or an error occurs.
 
-AcuantTagReadingListener is an interface with the following methods
+-	Set the Listener (inside the above method) to which the control will come after a chip is read successfully or an error occurs.
+
+**AcuantTagReadingListener** 
+
+The **AcuantTagReadingListener** is an interface with the following methods:
 
 	public void tagReadSucceeded(final AcuantNFCCardDetails cardDetails, final Bitmap image, final Bitmap sign_image);
 	public void tagReadFailed(final String message);
 	
 	
 API to set callback listener.
+
 
 		@Override
     	protected void onNewIntent(Intent intent)
@@ -1064,7 +1054,7 @@ API to set callback listener.
         }
         
         
- - Finally the chip reading method to be called with three parameters (document number, date of birth and date of expiry) to read the information from the chip.
+Finally the chip reading method to be called with three parameters (document number, date of birth and date of expiry) to read the information from the chip.
 
  	
 	@Override
@@ -1088,7 +1078,7 @@ API to set callback listener.
 
 	
 
-# Errors handling
+# Error handling
 In order to handle the errors or alert over SDK’s action , you will receive the error on didFailWithError(int code, String message) method.
 
 This is the implementation in the Sample project:
@@ -1097,120 +1087,131 @@ This is the implementation in the Sample project:
 	@Override
 	
 	public void didFailWithError(int code, String message) {
-	
 	Util.dismissDialog(progressDialog);
-	
 	Util.unLockScreen(MainActivity.this);
-	
 	String msg = message;
-	
 	if (code == ErrorType.AcuantErrorCouldNotReachServer) {
-	
 	msg = getString(R.string.no_internet_message);
-	
-	}else if (code == ErrorType.AcuantErrorUnableToCrop){
-	
+	}
+
+	else if (code == ErrorType.AcuantErrorUnableToCrop){
 	updateModelAndUIFromCroppedCard(originalImage);
-	
 	}
 	
 	alertDialog = Util.showDialog(this, msg, new DialogInterface.OnClickListener() {
-	
 	@Override
-	
 	public void onClick(DialogInterface dialog, int which) {
-	
 	isShowErrorAlertDialog = false;
-	
 	}
-	
 	});
 	
 	isShowErrorAlertDialog = true;
-	
 	if (Util.LOG_ENABLED) {
-	
 	Utils.appendLog(TAG, "didFailWithError:" + message);
-	
 	}
 	
-	// message dialogs
+	// Message dialogs
 	
 	isValidating = false;
-	
 	isProcessing = false;
-	
 	isActivating = false;
-	
 	}
 
 
 # Error Types
 
-	public final static int *AcuantErrorCouldNotReachServer* = 0; //check internet connection
-	
-	public final static int *AcuantErrorUnableToAuthenticate* = 1; //keyLicense are incorrect
-	
-	public final static int *AcuantErrorUnableToProcess* = 2; //image eceived by the server was unreadable, take a new one
-	
-	public final static int *AcuantErrorInternalServerError* = 3; //there was an error in our server, try again later
-	
-	public final static int *AcuantErrorUnknown* = 4; //there was an error but we were unable to determine the reason, try again later
-	
-	public final static int *AcuantErrorTimedOut* = 5; //request timed out, may be because internet connection is too slow
-	
-	public final static int *AcuantErrorAutoDetectState* = 6; //Error when try to detect the state
-	
-	public final static int *AcuantErrorWebResponse* = 7; //the json was received by the server contain error
-	
-	public final static int *AcuantErrorUnableToCrop* = 8; //the received image can't be cropped.
-	
-	public final static int *AcuantErrorInvalidLicenseKey* = 9; //Is an invalid license key.
-	
-	public final static int *AcuantErrorInactiveLicenseKey* = 10; //Is an inactive license key.
-	
-	public final static int *AcuantErrorAccountDisabled* = 11; //Is an account disabled.
-	
-	public final static int *AcuantErrorOnActiveLicenseKey* = 12; //there was an error on activation key.
-	
-	public final static int *AcuantErrorValidatingLicensekey* = 13; //The validation is still in process.
-	
-	public final static int *AcuantErrorCameraUnauthorized* = 14; //The privacy settings are preventing us from accessing your camera.
-	
-	public static final int AcuantErrorIncorrectDocumentScanned = 16; // The scanned document is of 
-	
-	public final static int *AcuantNoneError* = 200; //The privacy settings are preventing us from accessing your camera.
+**AcuantErrorCouldNotReachServer = 0**
 
-# Change Log
+Could not reach server. Check the Internet connection.
 
-Acuant Android MobileSDK version 4.8
-
-Changes:
-
--  Improved ID and passport cropping.
--  Fixed Nexus 5X image rotation issue.
--  Fixed focus issue for Samsung S7 US models.
--  Added a check for scanned document type. For example, if a driver's license is scanned instead of a passport then SDK will throw an error (AcuantErrorIncorrectDocumentScanned).
--  Modified the signature of the following two methods to output the detected card type after cropping.
-
-		1.
-		Old function signature : 
-		public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide)
+	public final static int *AcuantErrorCouldNotReachServer* = 0; 
 	
-		New function signature :
-		public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide,
-		int detectedCardType)
-		
-  		2.
-		Old function signature :
-		public void onCardCroppingFinish(Bitmap bitmap)
+**AcuantErrorUnableToAuthenticate = 1**
 
-		New function signature :
-		public void onCardCroppingFinish(Bitmap bitmap,int detectedCardType);
-		
-		
-- Added an API to enable original image capture. By default it is disabled.
+The license key information is incorrect.
 
-		acuantAndroidMobileSdkControllerInstance.setCaptureOriginalCapture(false);
-		
-- Removed the imageSource variable from ProcessImageRequestOptions . No need to set this variable anymore.
+	public final static int *AcuantErrorUnableToAuthenticate* = 1;
+	
+**AcuantErrorUnableToProcess = 2**
+
+The image received by the server was unreadable. Take a new one.
+
+	public final static int *AcuantErrorUnableToProcess* = 2;
+	
+**AcuantErrorInternalServerError = 3**
+
+Server error. Try again later.
+
+	public final static int *AcuantErrorInternalServerError* = 3; 
+
+**AcuantErrorUnknown = 4**
+	
+An unknown error occurred; unable to determine the reason. Try again later.
+
+	public final static int *AcuantErrorUnknown* = 4; 
+	
+**AcuantErrorTimedOut = 5**
+
+Request timed out, maybe because Internet connection is too slow.
+
+	public final static int *AcuantErrorTimedOut* = 5;
+	
+**AcuantErrorAutoDetectState = 6**
+
+An error occurred while trying to detect the state.
+
+	public final static int *AcuantErrorAutoDetectState* = 6;
+	
+**AcuantErrorWebResponse = 7**
+
+The json that was received by the server contained an error.
+
+	public final static int *AcuantErrorWebResponse* = 7;
+	
+**AcuantErrorUnableToCrop = 8**
+
+The received image can't be cropped.
+
+	public final static int *AcuantErrorUnableToCrop* = 8;
+
+**AcuantErrorInvalidLicenseKey = 9**
+
+Invalid license key.
+
+	public final static int *AcuantErrorInvalidLicenseKey* = 9;
+	
+**AcuantErrorInactiveLicenseKey = 10**
+
+Inactive license key.
+
+	public final static int *AcuantErrorInactiveLicenseKey* = 10;
+
+**AcuantErrorAccountDisabled = 11**
+
+Account is disabled.
+
+	public final static int *AcuantErrorAccountDisabled* = 11;
+	
+**AcuantErrorOnActiveLicenseKey = 12**
+
+Error on activation key.
+
+	public final static int *AcuantErrorOnActiveLicenseKey* = 12;
+	
+**AcuantErrorValidatingLicensekey = 13**
+
+Validation is still in progress.
+
+	public final static int *AcuantErrorValidatingLicensekey* = 13;
+	
+**AcuantErrorIncorrectDocumentScanned = 16**
+
+An incorrect document was scanned.
+
+	public static final int AcuantErrorIncorrectDocumentScanned = 16;
+	
+**AcuantNoneError = 200**
+
+Privacy settings are preventing access to the camera.
+
+	public final static int *AcuantNoneError* = 200;

@@ -4,6 +4,7 @@
 package com.cssn.samplesdk.model;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 
 import com.cssn.samplesdk.model.MainActivityModel.State.ValidatedStateActivation;
 
@@ -15,8 +16,8 @@ public class MainActivityModel
     private static final String TAG = MainActivityModel.class.getName();
     
     private int currentOptionType = -1;
-    private Bitmap frontSideCardImage = null;
-    private Bitmap backSideCardImage = null;
+    //private Bitmap frontSideCardImage = null;
+    //private Bitmap backSideCardImage = null;
 
     private CardSide cardSideSelected;
     
@@ -54,7 +55,6 @@ public class MainActivityModel
     }
 
     /**
-     * @param validatedStateActivation the validatedStateActivation to set
      */
     public void setValidatedStateActivation(ValidatedStateActivation activated)
     {
@@ -86,54 +86,69 @@ public class MainActivityModel
     /**
      * @return the frontSideCardImage
      */
-    public Bitmap getFrontSideCardImage()
+    /*public Bitmap getFrontSideCardImage()
     {
         return frontSideCardImage;
-    }
+    }*/
 
     /**
      * @param frontSideCardImage
      *            the frontSideCardImage to set
      */
-    public void setFrontSideCardImage(Bitmap frontSideCardImage)
+    /*public void setFrontSideCardImage(Bitmap frontSideCardImage)
     {
         this.frontSideCardImage = frontSideCardImage;
-    }
+
+    }*/
 
     /**
      * @return the backSideCardImage
      */
-    public Bitmap getBackSideCardImage()
+    /*public Bitmap getBackSideCardImage()
     {
         return backSideCardImage;
-    }
+    }*/
 
     /**
      * @param backSideCardImage
      *            the backSideCardImage to set
      */
-    public void setBackSideCardImage(Bitmap backSideCardImage)
+    /*public void setBackSideCardImage(Bitmap backSideCardImage)
     {
         this.backSideCardImage = backSideCardImage;
-    }
+    }8?
 
     /**
      * 
      * @return true if the model has no images.
      */
-    public boolean isEmpty()
+    /*public boolean isEmpty()
     {
         return frontSideCardImage == null && backSideCardImage == null;
-    }
+    }*/
 
     /**
      * clears the images in the model
      */
-    public void clearImages()
+    /*public void clearImages()
     {
-        frontSideCardImage = null;
-        backSideCardImage = null;
-    }
+        if(frontSideCardImage!=null) {
+            frontSideCardImage.recycle();
+            frontSideCardImage = null;
+        }
+        if(backSideCardImage!=null) {
+            backSideCardImage.recycle();
+            backSideCardImage = null;
+        }
+    }*/
+
+    /*public void clearBackImage()
+    {
+        if(backSideCardImage!=null) {
+            backSideCardImage.recycle();
+            backSideCardImage = null;
+        }
+    }*/
 
     /**
      * @return the cardSideSelected

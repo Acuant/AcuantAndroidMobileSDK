@@ -3,19 +3,20 @@ apply plugin: 'com.android.application'
 repositories {
     jcenter()
     maven { url 'http://maven.microblink.com' }
+    google()
 }
 
 android {
     useLibrary 'org.apache.http.legacy'
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         applicationId "com.cssn.samplesdk"
         minSdkVersion 17
-        targetSdkVersion 25
-        versionCode 113
-        versionName "4.8"
+        targetSdkVersion 26
+        versionCode 114
+        versionName "4.8.1"
         multiDexEnabled true
     }
 
@@ -44,7 +45,7 @@ dependencies {
     compile project(':acuantMobileSDK')
     compile ('com.microblink:pdf417.mobi:6.4.0@aar')
     compile ('com.android.support:multidex:1.0.1')
-    compile ('com.android.support:appcompat-v7:25.3.1')
+    compile ('com.android.support:appcompat-v7:26+')
     compile ('com.squareup.okhttp3:okhttp:3.8.0')
     compile ('com.google.code.gson:gson:2.8.0')
     compile ('org.jmrtd:jmrtd:0.5.6')

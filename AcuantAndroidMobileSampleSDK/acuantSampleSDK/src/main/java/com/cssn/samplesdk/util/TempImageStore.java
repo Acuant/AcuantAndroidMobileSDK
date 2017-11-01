@@ -45,6 +45,10 @@ public class TempImageStore {
     }
 
     public static void cleanup(){
+        if(bitmapImage!=null){
+            bitmapImage.recycle();
+            bitmapImage=null;
+        }
         TempImageStore.imageConfirmationListener = null;
     }
 }

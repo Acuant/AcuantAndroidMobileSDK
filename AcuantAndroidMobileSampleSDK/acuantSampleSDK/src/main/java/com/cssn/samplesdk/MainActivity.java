@@ -18,6 +18,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -177,7 +178,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     }
 
     private void initializeSDK(){
-        String licenseKey = "XXXXXXXXXX";//Set license keey here
+        String licenseKey = "xxxxxxxxxxxxxxxxxx";//Set license keey here
         // load the controller instance
         Util.lockScreen(this);
 
@@ -320,7 +321,23 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        //mainActivityModel.clearImages();
+        BitmapDrawable front_drawable = (BitmapDrawable) frontImageView.getDrawable();
+        if(front_drawable!=null) {
+            Bitmap bitmap = front_drawable.getBitmap();
+            bitmap.recycle();
+            frontImageView.setImageBitmap(null);
+        }
 
+        BitmapDrawable back_drawable = (BitmapDrawable)backImageView.getDrawable();
+        if(back_drawable!=null) {
+            Bitmap bitmap = back_drawable.getBitmap();
+            bitmap.recycle();
+            backImageView.setImageBitmap(null);
+        }
+        processedCardInformation = null;
+        System.gc();
+        System.runFinalization();
         if (Util.LOG_ENABLED) {
             Utils.appendLog(TAG, "protected void onActivityResult(int requestCode, int resultCode, Intent data)");
         }
@@ -340,6 +357,8 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
 
     @Override
     public void onCardCroppingStart(Activity activity) {
+        System.gc();
+        System.runFinalization();
         if (Utils.LOG_ENABLED) {
             Utils.appendLog(TAG, "public void onCardCroppingStart(Activity activity)");
         }
@@ -536,9 +555,11 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             final Bitmap cImage = croppedImage;
             final Bitmap oImage = originalImage;
             if (cImage != null) {
-                mainActivityModel.setBackSideCardImage(cImage);
+                //mainActivityModel.setBackSideCardImage(cImage);
+                backImageView.setImageBitmap(cImage);
             } else if (oImage != null) {
-                mainActivityModel.setBackSideCardImage(oImage);
+                //mainActivityModel.setBackSideCardImage(oImage);
+                backImageView.setImageBitmap(oImage);
             }
         }
     }
@@ -554,9 +575,11 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             public void onClick(DialogInterface dialog, int id) {
                 // User clicked OK button
                 if(cImage!=null){
-                    mainActivityModel.setBackSideCardImage(cImage);
+                    //mainActivityModel.setBackSideCardImage(cImage);
+                    backImageView.setImageBitmap(cImage);
                 }else if (oImage != null) {
-                    mainActivityModel.setBackSideCardImage(oImage);
+                    backImageView.setImageBitmap(oImage);
+                    //mainActivityModel.setBackSideCardImage(oImage);
                 }
                 acuantAndroidMobileSdkControllerInstance.finishScanningBarcodeCamera();
                 dialog.dismiss();
@@ -582,11 +605,13 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     private void updateModelAndUIFromCroppedCard(final Bitmap bitmap) {
         switch (mainActivityModel.getCardSideSelected()) {
             case FRONT:
-                mainActivityModel.setFrontSideCardImage(bitmap);
+                //mainActivityModel.setFrontSideCardImage(bitmap);
+                frontImageView.setImageBitmap(bitmap);
                 break;
 
             case BACK:
-                mainActivityModel.setBackSideCardImage(bitmap);
+                backImageView.setImageBitmap(bitmap);
+                //mainActivityModel.setBackSideCardImage(bitmap);
                 break;
 
             default:
@@ -605,7 +630,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         }
         isBackSide = false;
 
-        mainActivityModel.clearImages();
+        //mainActivityModel.clearImages();
 
         mainActivityModel.setCardSideSelected(MainActivityModel.CardSide.FRONT);
 
@@ -621,7 +646,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         }
         isBackSide = true;
 
-        //mainActivityModel.clearImages();
+        //mainActivityModel.clearBackImage();
 
         mainActivityModel.setCardSideSelected(MainActivityModel.CardSide.BACK);
         showCameraInterface();
@@ -657,11 +682,13 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      * @param v
      */
     public void driverCardWithFacialButtonPressed(View v){
+        System.gc();
+        System.runFinalization();
         // update the model
         processedCardInformation = null;
         processedFacialData=null;
         mainActivityModel.setCurrentOptionType(CardType.DRIVERS_LICENSE);
-        mainActivityModel.clearImages();
+        //mainActivityModel.clearImages();
         isProcessing=false;
         isProcessingFacial=false;
         if(DataContext.getInstance().getCssnLicenseDetails()!=null && DataContext.getInstance().getCssnLicenseDetails().isFacialAllowed()) {
@@ -681,6 +708,8 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      */
 
     public void passportCardWithFacialButtonPressed(View v) {
+            System.gc();
+            System.runFinalization();
             processedCardInformation = null;
             processedFacialData = null;
             mainActivityModel.setCurrentOptionType(CardType.PASSPORT);
@@ -691,7 +720,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             } else {
                 isFacialFlow = false;
             }
-            mainActivityModel.clearImages();
+            //mainActivityModel.clearImages();
             updateUI();
     }
 
@@ -701,10 +730,12 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      * @param v
      */
     public void medicalCardButtonPressed(View v) {
+        System.gc();
+        System.runFinalization();
         processedCardInformation = null;
         processedFacialData=null;
         mainActivityModel.setCurrentOptionType(CardType.MEDICAL_INSURANCE);
-        mainActivityModel.clearImages();
+        //mainActivityModel.clearImages();
 
         updateUI();
     }
@@ -778,11 +809,12 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
 
             case CardType.DRIVERS_LICENSE:
                 showFrontSideCardImage();
-                if (mainActivityModel.getBackSideCardImage() != null){
-                    showBackSideCardImage();
-                }else{
+                if(cardRegion == Region.REGION_UNITED_STATES || cardRegion == Region.REGION_CANADA){
                     hideBackSideCardImage();
+                }else {
+                    showBackSideCardImage();
                 }
+
                 break;
 
             case CardType.MEDICAL_INSURANCE:
@@ -792,11 +824,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
                 break;
             case CardType.FACIAL_RECOGNITION:
                 showFrontSideCardImage();
-                if (mainActivityModel.getBackSideCardImage() != null){
-                    showBackSideCardImage();
-                }else{
-                    hideBackSideCardImage();
-                }
+                showBackSideCardImage();
                 break;
 
             default:
@@ -806,83 +834,42 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         }
 
         // update card in front image view
-        frontImageView.setImageBitmap( Util.getRoundedCornerBitmap(mainActivityModel.getFrontSideCardImage(), this.getApplicationContext()));
-
-        if (mainActivityModel.getFrontSideCardImage() != null) {
+        //frontImageView.setImageBitmap( Util.getRoundedCornerBitmap(mainActivityModel.getFrontSideCardImage(), this.getApplicationContext()));
+        BitmapDrawable front_drawable = (BitmapDrawable) frontImageView.getDrawable();
+        if(front_drawable!=null) {
+            Bitmap bitmap = front_drawable.getBitmap();
+        if (bitmap != null) {
             hideFrontImageText();
         } else {
             showFrontImageText();
         }
+        }
 
         // update card in back image view
-        backImageView.setImageBitmap(Util.getRoundedCornerBitmap(mainActivityModel.getBackSideCardImage(), this.getApplicationContext()));
-
-        if (mainActivityModel.getBackSideCardImage() != null) {
-            hideBackImageText();
-        } else {
-            showBackImageText();
+        BitmapDrawable back_drawable = (BitmapDrawable) backImageView.getDrawable();
+        if(back_drawable!=null) {
+            Bitmap bitmap = front_drawable.getBitmap();
+            if (bitmap != null) {
+                hideBackImageText();
+            } else {
+                showBackImageText();
+            }
         }
 
         // update the process button
-        if (mainActivityModel.getFrontSideCardImage() != null) {
-            processCardButton.setVisibility(View.VISIBLE);
-        } else {
-            processCardButton.setVisibility(View.GONE);
+        BitmapDrawable drawable = (BitmapDrawable) frontImageView.getDrawable();
+        if(drawable!=null) {
+            Bitmap bitmap = drawable.getBitmap();
+            if (bitmap != null) {
+                processCardButton.setVisibility(View.VISIBLE);
+            } else {
+                processCardButton.setVisibility(View.GONE);
+            }
         }
 
-        highlightCurrentCardOption();
 
     }
 
-    /**
-     * Highlights the current option: drivers card, medical or passport.
-     */
-    private void highlightCurrentCardOption() {
-        int buttonId = 0;
-
-        switch (mainActivityModel.getCurrentOptionType()) {
-
-            case CardType.DRIVERS_LICENSE:
-                buttonId = R.id.buttonDriver;
-
-                buttonId = R.id.buttonDriver;
-
-                break;
-
-            case CardType.PASSPORT:
-                buttonId = R.id.buttonPassport;
-
-                buttonId = R.id.buttonPassport;
-
-                break;
-
-            case CardType.MEDICAL_INSURANCE:
-
-                buttonId = R.id.buttonMedical;
-
-                break;
-            case CardType.FACIAL_RECOGNITION:
-                if(processedCardInformation instanceof DriversLicenseCard) {
-                    buttonId = R.id.buttonDriver;
-                }else if(processedCardInformation instanceof PassportCard){
-                    buttonId = R.id.buttonPassport;
-                }
-
-                break;
-
-            default:
-                throw new IllegalArgumentException(
-                        "This method is wrong implemented, there is not processing for the card type '"
-                                + mainActivityModel.getCurrentOptionType() + "'");
-
-        }
-
-        ((Button) findViewById(R.id.buttonDriver)).setTypeface(null, Typeface.NORMAL);
-        ((Button) findViewById(R.id.buttonPassport)).setTypeface(null, Typeface.NORMAL);
-        ((Button) findViewById(R.id.buttonMedical)).setTypeface(null, Typeface.NORMAL);
-
-        ((Button) findViewById(buttonId)).setTypeface(null, Typeface.BOLD);
-    }
 
     /**
      * Called by the process Button
@@ -938,7 +925,15 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             options.iRegion = DataContext.getInstance().getCardRegion();
             options.acuantCardType = mainActivityModel.getCurrentOptionType();
             //options.logTransaction = false;
-            acuantAndroidMobileSdkControllerInstance.callProcessImageServices(mainActivityModel.getFrontSideCardImage(), mainActivityModel.getBackSideCardImage(), sPdf417String, this, options);
+            BitmapDrawable drawable = (BitmapDrawable) frontImageView.getDrawable();
+            Bitmap front_bitmap = drawable.getBitmap();
+
+            BitmapDrawable back_drawable = (BitmapDrawable) backImageView.getDrawable();
+            Bitmap back_bitmap = null;
+            if(back_drawable!=null) {
+                back_bitmap = back_drawable.getBitmap();
+            }
+            acuantAndroidMobileSdkControllerInstance.callProcessImageServices(front_bitmap, back_bitmap, sPdf417String, this, options);
             resetPdf417String();
         }
     }
@@ -998,7 +993,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
             isProcessingFacial=false;
             processedFacialData = (FacialData) card;
         }
-
+        System.gc();
         presentResults(processedCardInformation,processedFacialData);
 
     }
@@ -1053,7 +1048,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
                 Util.unLockScreen(MainActivity.this);
                 Intent showDataActivityIntent = new Intent(this, ShowDataActivity.class);
                 showDataActivityIntent.putExtra("FACIAL",isFacialFlow);
-                this.startActivity(showDataActivityIntent);
+                this.startActivityForResult(showDataActivityIntent,100);
             }
 
 
@@ -1076,14 +1071,6 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         }
     }
 
-    /**
-     *
-     */
-    @Override
-    public void activateLicenseKeyCompleted(LicenseActivationDetails cssnLicenseActivationDetails) {
-
-
-    }
 
     /**
      *
@@ -1321,12 +1308,14 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         }else if (code == ErrorType.AcuantErrorUnableToCrop){
             updateModelAndUIFromCroppedCard(originalImage);
         }
-        alertDialog = Util.showDialog(this, msg, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                isShowErrorAlertDialog = false;
-            }
-        });
+        if(alertDialog!=null && !alertDialog.isShowing()) {
+            alertDialog = Util.showDialog(this, msg, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    isShowErrorAlertDialog = false;
+                }
+            });
+        }
         isShowErrorAlertDialog = true;
         if (Util.LOG_ENABLED) {
             Utils.appendLog(TAG, "didFailWithError:" + message);

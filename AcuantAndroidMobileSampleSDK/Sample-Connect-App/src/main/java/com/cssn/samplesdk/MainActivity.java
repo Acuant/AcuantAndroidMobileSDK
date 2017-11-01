@@ -64,9 +64,9 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     private MainActivity mainActivity;
 
     //set credentials
-    private String assureIDUsername = "xxxxxxxxxxx";
-    private String assureIDPassword = "xxxxxxxxxxx";
-    private String assureIDSubscription = "xxxxxxxxxxx";
+    private String assureIDUsername = "xxxxxxxxxxxxxxxxxx";
+    private String assureIDPassword = "xxxxxxxxxxxxxxxxxx";
+    private String assureIDSubscription = "xxxxxxxxxxxxxxxxxx";
     private String assureIDURL = "https://devconnect.assureid.net/AssureIDService";
 
 
@@ -460,11 +460,6 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
 
     }
 
-    @Override
-    public void activateLicenseKeyCompleted(LicenseActivationDetails licenseActivationDetails) {
-
-    }
-
     /**
      */
     private void showFrontSideCardImage() {
@@ -625,6 +620,18 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
                  public void run() {
                      if(progressDialog!=null && progressDialog.isShowing()) {
                          Util.dismissDialog(progressDialog);
+                     }
+                     if(face_image_loc!=null) {
+                         face_image_loc = face_image_loc.replace("http://", "https://");
+                     }
+                     if(signature_image_loc!=null) {
+                         signature_image_loc = signature_image_loc.replace("http://", "https://");
+                     }
+                     if(back_image_Loc!=null) {
+                         back_image_Loc = back_image_Loc.replace("http://", "https://");
+                     }
+                     if(front_image_Loc!=null) {
+                         front_image_Loc = front_image_Loc.replace("http://", "https://");
                      }
                      showResult(face_image_loc,signature_image_loc,front_image_Loc,back_image_Loc,jsonString,dateOfBirth,dateofExpiry,documentNumber,documentType,null);
                  }
