@@ -80,14 +80,14 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     private MainActivity mainActivity;
 
     //Set credentials
-    private String assureIDUsername = "xxxxxxxxxxxxxxxxxx";
-    private String assureIDPassword = "xxxxxxxxxxxxxxxxxx";
-    private String assureIDSubscription = "xxxxxxxxxxxxxxxxxx";
+    private String assureIDUsername = "XXXXXXXXXXXXX";
+    private String assureIDPassword = "XXXXXXXXXXXXX";
+    private String assureIDSubscription = "XXXXXXXXXXXXX";
     private String assureIDURL = "https://devconnect.assureid.net/AssureIDService";
     private String acufillURL = "cssnwebservices.com";
 
     //set license key
-    private String licenseKey = "xxxxxxxxxxxxxxxxxx";
+    private String licenseKey = null; // Set this to null if facial liveliness feature is not required. Other wise get a license key and set it here.
 
     private boolean wasLicenseValided = false;
     private boolean wasAcufillLicenseValidated = false;
@@ -111,6 +111,8 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     String documentType = "";
     FacialData facialData = null;
     String cardDatajsonString="";
+
+    boolean facialEnabled = false;
 
 
     private void resetAllData(){
@@ -223,7 +225,11 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
         assureId_Instance.setCloudUrl(assureIDURL);
         isProcessing=true;
         assureId_Instance.callProcessImageConnectServices(frontImage, backImage, "", this, options);
-        showFacialDialog();
+        if(facialEnabled) {
+            showFacialDialog();
+        }else{
+            progressDialog = Util.showProgessDialog(MainActivity.this, "Capturing data...");
+        }
     }
 
 
@@ -304,6 +310,10 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
         processCardButton.setVisibility(View.INVISIBLE);
 
         mainActivity = this;
+
+        if(licenseKey!=null && !licenseKey.trim().equals("")){
+            facialEnabled = true;
+        }
 
     }
 
@@ -499,16 +509,19 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     //license validation callback
     @Override
     public void validateLicenseKeyCompleted(LicenseDetails details) {
-        if(wasAcufillLicenseValidated==false && isAcufillLicenseValidating==false){
-            isAcufillLicenseValidating = true;
-            acufill_Instance = AcuantAndroidMobileSDKController.getInstance(mainActivity,acufillURL,licenseKey);
-            if(acufill_Instance!=null) {
-                setFacialUI();
+        if(facialEnabled && wasAcufillLicenseValidated==false && isAcufillLicenseValidating==false){
+            if(details.isLicenseKeyActivated()) {
+                isAcufillLicenseValidating = true;
+                acufill_Instance = AcuantAndroidMobileSDKController.getInstance(mainActivity, acufillURL, licenseKey);
+                if (acufill_Instance != null) {
+                    setFacialUI();
+                }
+                return;
+            }else{
+                facialEnabled = false;
             }
-            return;
         }
         assureId_Instance.setCaptureOriginalCapture(true);
-        acufill_Instance.setCaptureOriginalCapture(true);
         wasAcufillLicenseValidated = true;
         wasLicenseValided= true;
         isAcufillLicenseValidating = false;
@@ -594,7 +607,7 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
 
     @Override
     public void onOriginalCapture(Bitmap bitmap) {
-       //SaveImage(bitmap);
+        //SaveImage(bitmap);
     }
 
     @Override
@@ -615,25 +628,26 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                if(progressDialog!=null && progressDialog.isShowing()){
+                if(progressDialog!=null && progressDialog.isShowing()) {
                     Util.dismissDialog(progressDialog);
-                    if(face_image_loc!=null){
-                        face_image_loc = face_image_loc.replace("http://","https://");
-                    }
-                    if(signature_image_loc!=null){
-                        signature_image_loc = signature_image_loc.replace("http://","https://");
-                    }
-                    if(front_image_Loc!=null){
-                        front_image_Loc = front_image_Loc.replace("http://","https://");
-                    }
-                    if(back_image_Loc!=null){
-                        back_image_Loc = back_image_Loc.replace("http://","https://");
-                    }
-                    if(card instanceof FacialData){
-                        showResult(face_image_loc,signature_image_loc,front_image_Loc,back_image_Loc,cardDatajsonString,dateOfBirth,dateofExpiry,documentNumber,documentType,(FacialData)card);
-
-                    }
                 }
+                if(face_image_loc!=null){
+                    face_image_loc = face_image_loc.replace("http://","https://");
+                }
+                if(signature_image_loc!=null){
+                    signature_image_loc = signature_image_loc.replace("http://","https://");
+                }
+                if(front_image_Loc!=null){
+                    front_image_Loc = front_image_Loc.replace("http://","https://");
+                }
+                if(back_image_Loc!=null){
+                    back_image_Loc = back_image_Loc.replace("http://","https://");
+                }
+                if(card instanceof FacialData){
+                    showResult(face_image_loc,signature_image_loc,front_image_Loc,back_image_Loc,cardDatajsonString,dateOfBirth,dateofExpiry,documentNumber,documentType,(FacialData)card);
+
+                }
+
             }
         });
     }
@@ -781,7 +795,7 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     @Override
     public void processImageConnectServiceCompleted(final String jsonString) {
         cardDatajsonString = jsonString;
-         try {
+        try {
             JSONObject jsonResponse = new JSONObject(jsonString);
             JSONArray images = jsonResponse.getJSONArray("Images");
             for (int i = 0; i < images.length(); i++) {
@@ -846,18 +860,30 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
                 }
             }
             //String instanceID = jsonResponse.getString("InstanceId");
-            if(face_image_loc.equalsIgnoreCase("")){
+            if(face_image_loc.equalsIgnoreCase("") || facialEnabled==false){
                 isProcessing=false;
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         if(progressDialog!=null && progressDialog.isShowing()){
                             Util.dismissDialog(progressDialog);
-                            showResult(face_image_loc,signature_image_loc,front_image_Loc,back_image_Loc,jsonString,dateOfBirth,dateofExpiry,documentNumber,documentType,null);
                         }
+                        if(face_image_loc!=null){
+                            face_image_loc = face_image_loc.replace("http://","https://");
+                        }
+                        if(signature_image_loc!=null){
+                            signature_image_loc = signature_image_loc.replace("http://","https://");
+                        }
+                        if(front_image_Loc!=null){
+                            front_image_Loc = front_image_Loc.replace("http://","https://");
+                        }
+                        if(back_image_Loc!=null){
+                            back_image_Loc = back_image_Loc.replace("http://","https://");
+                        }
+                        showResult(face_image_loc,signature_image_loc,front_image_Loc,back_image_Loc,jsonString,dateOfBirth,dateofExpiry,documentNumber,documentType,null);
                     }
                 });
-               }else {
+            }else {
                 if(face_image_loc!=null){
                     face_image_loc = face_image_loc.replace("http://","https://");
                 }

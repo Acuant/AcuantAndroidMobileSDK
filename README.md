@@ -34,6 +34,20 @@ Certain product, service, or company designations for companies other than Acuan
 # Revision History
 ##Acuant Android Mobile SDK version 4.8.1##
 
+- Added the following API to check whether the SDK controller was validated.
+
+		public synchronized boolean isSDKValidated()
+		
+- Added a method to CardCroppingListener to capture the begining of image capture event:
+
+		void onCardImageCaptured();
+		
+- Added logTransaction property to ProcessImageRequestOptions. If logging is enabled on the license key and logTransaction is set to true then transaction response is saved on the Acuant cloud for future retrieval.
+
+- Added the property imageSettings to ProcessImageRequestOptions. The default value for imageSettings is -1. Please set this value to -1 always unless any special instruction is provided.
+
+- Removed "IsFacialEnabled" from the FacialData.
+		
 - Added new CardType constant **CardType.AUTO**. If CardType.AUTO is set, then **onCardCroppingFinish** the last parameter will contain the automatically detected card type.
 
 ##Acuant Android Mobile SDK version 4.8##
@@ -163,7 +177,7 @@ This section describes how to add the Gradle framework to your project, includin
 		<activity android:name="com.acuant.mobilesdk.detect.Camera2CardDetectManual"></activity>
 		<activity android:name="com.acuant.mobilesdk.detect.Camera2FacialRecognitionManual" />
 		
-7. Add the following flag to <application> tag only if out of memory error is observed.
+7. Add the following flag to <application> tag only if out of memory error is observed (optional)
 
 		android:largeHeap="true"
 		
@@ -186,7 +200,6 @@ Acuant provides three sample applications.
 **Note** You need a license key from Acuant to run these applications. Contact Acuant Technical Support to obtain a license key and the proper credentials.
 
 - **acuantSampleSDK**				demonstrates AcuFill Data Capture and FRM
-- **Sample-Connect-App**			demonstrates Connect Data Capture
 - **Sample-Connect-With-Facial**	demonstrates Connect Data Capture with AcuFill FRM
 
 The following video demonstrates how to set up the license key or credentials for all projects.
@@ -227,6 +240,10 @@ Use the following call to validate the license key and create an SDK instance:
 
 After the license key is validated, the following callback will be called. The app should wait until this callback is called.
 
+The following API can be used to check if a license key is already validated.
+
+	public synchronized boolean isSDKValidated()
+
 
 ####Create the SDK instance with activity:
 
@@ -264,6 +281,11 @@ You need to know the card type that you want to capture to show the camera inter
 After the user taps the screen, the image capture process begins. 
 
 	public void onCardCroppedStart(Activity activity);
+	
+	
+At the begining of image capture event the following method will be called
+
+	void onCardImageCaptured();
 
 There are four callback methods:
 
@@ -525,6 +547,7 @@ After the capture and crop process, you can retrieve information by processing t
 		options.signDetec = true;
 		options.iRegion = region;
 		options.acuantCardType = cardType;
+		options.logTransaction = false;
 
 	AcuantAndroidMobileSDKControllerInstance.callProcessImageServices(frontSideCardImage, backSideCardImage, barcodeString,callerActivity, options);
 
@@ -573,6 +596,14 @@ Integer value that indicates the DPI value to reformat the image. Range is 150 -
 Boolean value that indicates whether to crop the RAW image. True | False Boolean value
 
 **Note** The Mobile SDK crops the image; therefore, leave this flag set to **False**.
+
+**logTransaction** 
+
+Boolean value that indicates whether to save the transaction response on the Acuant cloud for future retrieval if logging is enabled on the license key. Values: True | False
+
+**imageSettings**
+
+The default value for imageSettings is -1. Do not adjust this value unless instructed by Acuant Technical Support.
 
 #### Process the card image (medical insurance cards):
 
