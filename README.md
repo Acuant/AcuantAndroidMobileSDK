@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-**Last updated on – 11/01/2017**
+**Last updated on – 11/02/2017**
 
 Copyright <sup>©</sup> 2003-2017 Acuant Inc. All rights reserved.
 
