@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AcuantAndroidMobileSampleSDK.iml" filepath="$PROJECT_DIR$/AcuantAndroidMobileSampleSDK.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Sample-Connect-With-Facial/Sample-Connect-With-Facial.iml" filepath="$PROJECT_DIR$/Sample-Connect-With-Facial/Sample-Connect-With-Facial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sample-App/Sample-App.iml" filepath="$PROJECT_DIR$/Sample-App/Sample-App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sample-Connect-App/Sample-Connect-App.iml" filepath="$PROJECT_DIR$/Sample-Connect-App/Sample-Connect-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/acuantMobileSDK/acuantMobileSDK.iml" filepath="$PROJECT_DIR$/acuantMobileSDK/acuantMobileSDK.iml" />
-      <module fileurl="file://$PROJECT_DIR$/acuantSampleSDK/acuantSampleSDK.iml" filepath="$PROJECT_DIR$/acuantSampleSDK/acuantSampleSDK.iml" />
     </modules>
   </component>
 </project>

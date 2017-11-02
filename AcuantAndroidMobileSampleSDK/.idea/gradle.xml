@@ -8,9 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Sample-Connect-With-Facial" />
+            <option value="$PROJECT_DIR$/Sample-App" />
+            <option value="$PROJECT_DIR$/Sample-Connect-App" />
             <option value="$PROJECT_DIR$/acuantMobileSDK" />
-            <option value="$PROJECT_DIR$/acuantSampleSDK" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

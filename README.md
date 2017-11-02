@@ -199,12 +199,12 @@ Acuant provides three sample applications.
 
 **Note** You need a license key from Acuant to run these applications. Contact Acuant Technical Support to obtain a license key and the proper credentials.
 
-- **acuantSampleSDK**				demonstrates AcuFill Data Capture and FRM
-- **Sample-Connect-With-Facial**	demonstrates Connect Data Capture with AcuFill FRM
+- **Sample-App**				demonstrates AcuFill Data Capture and FRM
+- **Sample-Connect-App**	demonstrates Connect Data Capture with AcuFill FRM
 
 The following video demonstrates how to set up the license key or credentials for all projects.
 
-[![Check the video tutorial](document_media/AndroidVideoImage.png)](https://youtu.be/q8St8ILZFys)
+[![Check the video tutorial](document_media/AndroidVideoImage.png)](https://youtu.be/Zjf1x3U0cCA)
 
 Contact Acuant Technical Support if you need assistance. 
 

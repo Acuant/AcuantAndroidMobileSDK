@@ -178,7 +178,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     }
 
     private void initializeSDK(){
-        String licenseKey = "xxxxxxxxxxxxxxxxxx";//Set license keey here
+        String licenseKey = "XXXXXXXXXXXX";//Set license key here
         // load the controller instance
         Util.lockScreen(this);
 
@@ -325,14 +325,18 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         BitmapDrawable front_drawable = (BitmapDrawable) frontImageView.getDrawable();
         if(front_drawable!=null) {
             Bitmap bitmap = front_drawable.getBitmap();
-            bitmap.recycle();
+            if(bitmap!=null) {
+                bitmap.recycle();
+            }
             frontImageView.setImageBitmap(null);
         }
 
         BitmapDrawable back_drawable = (BitmapDrawable)backImageView.getDrawable();
         if(back_drawable!=null) {
             Bitmap bitmap = back_drawable.getBitmap();
-            bitmap.recycle();
+            if(bitmap!=null) {
+                bitmap.recycle();
+            }
             backImageView.setImageBitmap(null);
         }
         processedCardInformation = null;
