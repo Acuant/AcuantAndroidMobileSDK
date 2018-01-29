@@ -162,13 +162,10 @@ This section describes how to add the Gradle framework to your project, includin
 
 6. Add the followings activities to the **manifest.xml** file:
 
-		< uses-permissionandroid:name="android.permission.CAMERA"/>
-		< uses-permissionandroid:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-		< uses-permissionandroid:name="android.permission.READ_EXTERNAL_STORAGE"/>
-		< uses-permissionandroid:name="android.permission.READ_PHONE_STATE"/>
-		< uses-permissionandroid:name="android.permission.ACCESS_NETWORK_STATE"/>
-		< uses-permissionandroid:name="android.permission.INTERNET"/>
-		<uses-permission android:name="android.permission.FLASHLIGHT" />
+		<uses-permission android:name="android.permission.CAMERA" />
+    	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    	<uses-permission android:name="android.permission.INTERNET" />
+    	<uses-permission android:name="android.permission.FLASHLIGHT" />
 		<uses-permission android:name="android.permission.NFC" />
 		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     
