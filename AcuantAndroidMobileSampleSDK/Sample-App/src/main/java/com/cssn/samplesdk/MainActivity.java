@@ -5,9 +5,7 @@ package com.cssn.samplesdk;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,18 +22,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.view.Display;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnFocusChangeListener;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -51,7 +43,6 @@ import com.acuant.mobilesdk.DriversLicenseCard;
 import com.acuant.mobilesdk.ErrorType;
 import com.acuant.mobilesdk.FacialData;
 import com.acuant.mobilesdk.FacialRecognitionListener;
-import com.acuant.mobilesdk.LicenseActivationDetails;
 import com.acuant.mobilesdk.LicenseDetails;
 import com.acuant.mobilesdk.MedicalCard;
 import com.acuant.mobilesdk.PassportCard;
@@ -67,6 +58,7 @@ import com.cssn.samplesdk.util.ConfirmationListener;
 import com.cssn.samplesdk.util.DataContext;
 import com.cssn.samplesdk.util.TempImageStore;
 import com.cssn.samplesdk.util.Util;
+import com.microblink.util.Log;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -74,6 +66,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 
 /**
  *
@@ -288,7 +281,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         //acuantAndroidMobileSdkControllerInstance.setFlashlightImageDrawable(getResources().getDrawable(R.drawable.lighton), getResources().getDrawable(R.drawable.lightoff));
         //acuantAndroidMobileSdkControllerInstance.setShowInitialMessage(true);
         acuantAndroidMobileSdkControllerInstance.setCropBarcode(false);
-        acuantAndroidMobileSdkControllerInstance.setCaptureOriginalCapture(false);
+        acuantAndroidMobileSdkControllerInstance.setCaptureOriginalCapture(true);
         //acuantAndroidMobileSdkControllerInstance.setCropBarcodeOnCancel(true);
         //acuantAndroidMobileSdkControllerInstance.setPdf417BarcodeDialogWaitingBarcode("AcuantAndroidMobileSampleSDK","ALIGN AND TAP", 10, "Try Again", "Yes");
         //acuantAndroidMobileSdkControllerInstance.setCanShowBracketsOnTablet(true);
@@ -380,11 +373,12 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      * popover == true
      */
     @Override
-    public void onCardCroppingFinish(final Bitmap bitmap,int detectedCardType) {
+    public void onCardCroppingFinish(final Bitmap bitmap, int detectedCardType, HashMap<String,Object> imageMetrics) {
         if(progressDialog!=null && progressDialog.isShowing()) {
             Util.dismissDialog(progressDialog);
             progressDialog = null;
         }
+        TempImageStore.setImageMetrics(imageMetrics);
         TempImageStore.setBitmapImage(bitmap);
         TempImageStore.setImageConfirmationListener(new ConfirmationListener() {
             @Override
@@ -419,6 +413,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         }else{
             TempImageStore.setCroppingPassed(true);
         }
+        TempImageStore.setImageMetrics(imageMetrics);
         TempImageStore.setCardType(mainActivityModel.getCurrentOptionType());
         startActivity(imageConfirmationIntent);
 
@@ -429,7 +424,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
      * popover == true
      */
     @Override
-    public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide,int detectedCardType) {
+    public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide,int detectedCardType,HashMap<String,Object>imageMetrics) {
         //final Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.test_sa_dl);
         if(progressDialog!=null && progressDialog.isShowing()) {
             Util.dismissDialog(progressDialog);
@@ -460,6 +455,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         }else{
             TempImageStore.setCroppingPassed(true);
         }
+        TempImageStore.setImageMetrics(imageMetrics);
         TempImageStore.setCardType(mainActivityModel.getCurrentOptionType());
         startActivity(imageConfirmationIntent);
     }
@@ -549,11 +545,18 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
 
     @Override
     public void onOriginalCapture(Bitmap bitmap) {
+        if(bitmap == null){
+            Log.d("Original","Original Capture is Null");
+        }
         originalImage = bitmap;
+
+        if(originalImage != null){
+            Log.d("Original","Original Capture is not null");
+        }
     }
 
     @Override
-    public void onCancelCapture(Bitmap croppedImage,Bitmap originalImage) {
+    public void onCancelCapture(Bitmap croppedImage,HashMap<String,Object>imageMetrics,Bitmap originalImage) {
         Utils.appendLog("Acuant", "onCancelCapture");
         if(croppedImage!=null || originalImage!=null) {
             final Bitmap cImage = croppedImage;
@@ -569,7 +572,7 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     }
 
     @Override
-    public void onBarcodeTimeOut(Bitmap croppedImage,Bitmap originalImage) {
+    public void onBarcodeTimeOut(Bitmap croppedImage,HashMap<String,Object>imageMetrics,Bitmap originalImage) {
         final Bitmap cImage = croppedImage;
         final Bitmap oImage = originalImage;
         acuantAndroidMobileSdkControllerInstance.pauseScanningBarcodeCamera();

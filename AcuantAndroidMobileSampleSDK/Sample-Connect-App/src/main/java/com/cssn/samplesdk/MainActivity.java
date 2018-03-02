@@ -55,6 +55,7 @@ import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.TimeZone;
 
 /**
@@ -83,6 +84,7 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     private String assureIDUsername = "XXXXXXXXXXXXXXXXXXXXX";
     private String assureIDPassword = "XXXXXXXXXXXXXXXX";
     private String assureIDSubscription = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+
     private String assureIDURL = "https://devconnect.assureid.net/AssureIDService";
     private String acufillURL = "cssnwebservices.com";
 
@@ -454,7 +456,7 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
      * popover == true
      */
     @Override
-    public void onCardCroppingFinish(final Bitmap bitmap, int detectedCardType) {
+    public void onCardCroppingFinish(final Bitmap bitmap, int detectedCardType, HashMap<String,Object>imageMetrics) {
         //SaveImage(bitmap);
         cardType = detectedCardType;
         if(detectedCardType==CardType.PASSPORT){
@@ -474,7 +476,7 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
      * popover == true
      */
     @Override
-    public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide, int detectedCardType) {
+    public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide, int detectedCardType,HashMap<String,Object>imageMetrics) {
         //SaveImage(bitmap);
         cardType = detectedCardType;
         if(detectedCardType==CardType.DRIVERS_LICENSE){
@@ -611,12 +613,12 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     }
 
     @Override
-    public void onCancelCapture(Bitmap croppedImage, Bitmap originalImage) {
+    public void onCancelCapture(Bitmap croppedImage,HashMap<String,Object>imageMetrics, Bitmap originalImage) {
 
     }
 
     @Override
-    public void onBarcodeTimeOut(Bitmap bitmap, Bitmap bitmap1) {
+    public void onBarcodeTimeOut(Bitmap bitmap,HashMap<String,Object>imageMetrics, Bitmap bitmap1) {
 
     }
 

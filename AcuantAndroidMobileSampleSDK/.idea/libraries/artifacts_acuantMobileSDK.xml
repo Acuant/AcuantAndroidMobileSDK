@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="artifacts:acuantMobileSDK">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/acuantMobileSDK.aar/000dc1eb0187c3ce717f9302200d6e5c/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/acuantMobileSDK.aar/000dc1eb0187c3ce717f9302200d6e5c/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/acuantMobileSDK.aar/71f8903269794f09b5018d8c44194bb7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/acuantMobileSDK.aar/71f8903269794f09b5018d8c44194bb7/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

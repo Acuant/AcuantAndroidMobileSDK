@@ -26,6 +26,8 @@ import com.cssn.samplesdk.model.MainActivityModel;
 import com.cssn.samplesdk.util.TempImageStore;
 import com.cssn.samplesdk.util.Util;
 
+import java.util.HashMap;
+
 
 /**
  * Created by tapasbehera on 5/9/16.
@@ -127,8 +129,15 @@ public class ImageConformationActivity extends Activity {
             }else if(TempImageStore.getCardType()== CardType.MEDICAL_INSURANCE){
                 retString = "Please make sure all the text on the Insurance Card image is readable,otherwise retry.";
             }
+            HashMap<String,Object> imageMetrics = TempImageStore.getImageMetrics();
+            if(imageMetrics!=null && imageMetrics.get("IS_SHARP")!=null) {
+                boolean isSHarp = Boolean.parseBoolean(imageMetrics.get("IS_SHARP").toString());
+                if(!isSHarp){
+                    retString = "The image appears to be blurry,please retry.";
+                }
+            }
 
-        }else{
+    }else{
             if(TempImageStore.getCardType()== CardType.DRIVERS_LICENSE){
                 retString = "Unable to detect ID, please retry.";
             }else if(TempImageStore.getCardType()== CardType.PASSPORT){

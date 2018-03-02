@@ -3,21 +3,36 @@
 Acuant Android SDK API
 ======================
 
-**Last updated on – 11/02/2017**
+**Last updated – March 1, 2018**
 
-Copyright <sup>©</sup> 2003-2017 Acuant Inc. All rights reserved.
+Copyright <sup>©</sup> 2003-2018 Acuant Inc. All rights reserved.
 
-This document contains proprietary and confidential technology, information, and creative works owned by Acuant and its respective licensors, if any. Any use, copying, publication, distribution, display, modification, or transmission of such technology in whole or in part in any form or by any means without the prior express written permission of Acuant is strictly prohibited. Except where expressly provided by Acuant in writing, possession of this technology or information shall not be construed to confer any license or rights under any Acuant intellectual property rights, whether by estoppel, implication, or otherwise.
+This document contains proprietary and confidential 
+information and creative works owned by Acuant and its respective
+licensors, if any. Any use, copying, publication, distribution, display,
+modification, or transmission of such technology in whole or in part in
+any form or by any means without the prior express written permission of
+Acuant is strictly prohibited. Except where expressly provided by Acuant
+in writing, possession of this information shall not be
+construed to confer any license or rights under any Acuant intellectual
+property rights, whether by estoppel, implication, or otherwise.
 
-AssureID and <em>i-D</em>entify are trademarks of Acuant Inc.
-
-Other Acuant product or service names or logos referenced this document are either trademarks or registered trademarks of Acuant.
+AssureID and *i-D*entify are trademarks of Acuant Inc. Other Acuant product or service names or logos referenced this document are either trademarks or registered trademarks of Acuant.
 
 All 3M trademarks are trademarks of 3M Company.
-Windows<sup>®</sup> is a registered trademark of Microsoft Corporation.
-Certain product, service, or company designations for companies other than Acuant may be mentioned in this document for identification purposes only. Such designations are often claimed as trademarks or service marks. In all instances where Acuant is aware of a claim, the designation appears in initial capital or all capital letters. However, you should contact the appropriate companies for more complete information regarding such designations and their registration status.
 
-<p><strong>September 2017</strong></p>
+Windows<sup>®</sup> is a registered trademark of Microsoft Corporation.
+
+Certain product, service, or company designations for companies other
+than Acuant may be mentioned in this document for identification
+purposes only. Such designations are often claimed as trademarks or
+service marks. In all instances where Acuant is aware of a claim, the
+designation appears in initial capital or all capital letters. However,
+you should contact the appropriate companies for more complete
+information regarding such designations and their registration status.
+
+**March 2018**
+
 <p>Acuant Inc.</p>
 <p>6080 Center Drive, Suite 850</p>
 <p>Los Angeles, CA 90045</p>
@@ -32,23 +47,45 @@ Certain product, service, or company designations for companies other than Acuan
 
 
 # Revision History
+
+##Acuant Android Mobile SDK version 4.9##
+
+- Resolved an issue where a white bar was displayed on the top Sony Xperia Z5P camera view while capturing an image.
+
+- Resolved an issue which caused an occasional **NullPointerException** when opening the camera to capture an image.
+
+- Resolved an issue which caused a liveliness check to rotate the camera by 180 degrees on a Google Nexus 6. 
+
+- Resolved an issue where **onCardCroppingStart** did not get called when cropping on the barcode side is enabled.
+
+- Resolved an issue where **onOriginalCapture** was returning null even if original capture was set to true.
+
+
+- Added the **ImageMetrics** parameter to the following methods:
+
+	- **onCardCroppingFinish**
+
+	- **onCancelCapture**
+
+	- **onBarcodeTimeOut** 
+
 ##Acuant Android Mobile SDK version 4.8.1##
 
 - Added the following API to check whether the SDK controller was validated.
 
 		public synchronized boolean isSDKValidated()
 		
-- Added a method to CardCroppingListener to capture the begining of image capture event:
+- Added a method to **CardCroppingListener** to capture the beginning of image capture event:
 
 		void onCardImageCaptured();
 		
-- Added logTransaction property to ProcessImageRequestOptions. If logging is enabled on the license key and logTransaction is set to true then transaction response is saved on the Acuant cloud for future retrieval.
+- Added **logTransaction** property to **ProcessImageRequestOptions**. If logging is enabled on the license key and **logTransaction** is set to true then transaction response is saved on the Acuant cloud for future retrieval.
 
-- Added the property imageSettings to ProcessImageRequestOptions. The default value for imageSettings is -1. Please set this value to -1 always unless any special instruction is provided.
+- Added the **imageSettings** property to **ProcessImageRequestOptions**. The default value for **imageSettings** is -1. Set this value to -1 always unless any special instruction is provided.
 
-- Removed "IsFacialEnabled" from the FacialData.
+- Removed **IsFacialEnabled** from the **FacialData**.
 		
-- Added new CardType constant **CardType.AUTO**. If CardType.AUTO is set, then **onCardCroppingFinish** the last parameter will contain the automatically detected card type.
+- Added new **CardType** constant **CardType.AUTO**. If **CardType.AUTO** is set, then **onCardCroppingFinish** the last parameter will contain the automatically detected card type.
 
 ##Acuant Android Mobile SDK version 4.8##
 
@@ -63,7 +100,7 @@ Certain product, service, or company designations for companies other than Acuan
 		//  Replaced with:
 			public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide, int detectedCardType)
 		
-  		//Previous function signature:
+		//Previous function signature:
 			public void onCardCroppingFinish(Bitmap bitmap)
 		//  Replaced with:
 			public void onCardCroppingFinish(Bitmap bitmap,int detectedCardType);
@@ -120,7 +157,7 @@ This section describes how to add the Gradle framework to your project, includin
 			compile ('net.sf.scuba:scuba-sc-android:0.0.9')
 		}
 
-3. Add the **AcuantAndroidMobileSDK** dependecies from **JCenter**:
+3. Add the **AcuantAndroidMobileSDK** dependencies from **JCenter**:
 
 		repositories {
 			jcenter ()
@@ -128,7 +165,7 @@ This section describes how to add the Gradle framework to your project, includin
 		}
 
 		dependencies {
-			compile 'com.acuant.mobilesdk:acuantMobileSDK:4.8.1'
+			compile 'com.acuant.mobilesdk:acuantMobileSDK:4.9'
 			compile ('com.microblink:pdf417.mobi:6.4.0@aar')
 			compile ('com.android.support:appcompat-v7:26+')
 			compile ('com.google.code.gson:gson:2.8')
@@ -196,7 +233,7 @@ Acuant provides three sample applications.
 
 **Note** You need a license key from Acuant to run these applications. Contact Acuant Technical Support to obtain a license key and the proper credentials.
 
-- **Sample-App**				demonstrates AcuFill Data Capture and FRM
+- **Sample-App**			demonstrates AcuFill Data Capture and FRM
 - **Sample-Connect-App**	demonstrates Connect Data Capture with AcuFill FRM
 
 The following video demonstrates how to set up the license key or credentials for all projects.
@@ -270,7 +307,7 @@ You need to know the card type that you want to capture to show the camera inter
 	    showManualCameraInterface(mainActivity,CardType.DRIVERS_LICENSE,
 	    cardRegion, isBackSide);
 	    
-**Note** If CardType.AUTO is set, then **onCardCroppingFinish** the last parameter will contain the automatically detected card type. If a card type such as CardType.DRIVERS_LICENSE is set and a different card type such as CardType.PASSPORT is detected, then an AcuantErrorIncorrectDocumentScanned error occurs.
+**Note** If CardType.AUTO is set, then **onCardCroppingFinish** the last parameter will contain the automatically detected card type. If a card type such as CardType.DRIVERS_LICENSE is set and a different card type such as **CardType.PASSPORT** is detected, then an **AcuantErrorIncorrectDocumentScanned** error occurs.
 
 
 **Note** The width value is required and is set to indicate the width of the cropped card image.
@@ -280,7 +317,7 @@ After the user taps the screen, the image capture process begins.
 	public void onCardCroppedStart(Activity activity);
 	
 	
-At the begining of image capture event the following method will be called
+At the beginning of image capture event the following method will be called:
 
 	void onCardImageCaptured();
 
@@ -288,16 +325,24 @@ There are four callback methods:
 
 **activity**
 
-The activity of the full screen Window, or the activity owner
-of the modal dialog (in case of Passport and Tablet for example)
+The activity of the full screen window, or the activity owner of the modal dialog (for example, for Passport and Tablet).
 
-	public void onCardCroppingFinish(Bitmap bitmap,int detectedCardType);
+	public void onCardCroppingFinish(Bitmap card_bitmap,int detectedCardType, HashMap<String,Object>imageMetrics); 
+The **Imagemetrics** hashmap contains information about the sharpness of the image. The information can be retrieved as follows: 
+
+		if(imageMetrics!=null && imageMetrics.get("IS_SHARP")!=null) { 
+			boolean isSHarp = Boolean.parseBoolean(imageMetrics.get("IS_SHARP").toString()); 
+			}
+		if(imageMetrics!=null && imageMetrics.get("SHARPNESS_GRADE")!=null) 			
+			float sharpnessGrade = Float.parseFloat(imageMetrics.get("SHARPNESS_GRADE").toString()); 
+		    } 
+
 
 **bitmap**
 
 The image card result. This function returns the cropped card image:
 
-	public void onCardCroppingFinish(final Bitmap bitmap, boolean scanBackSide,int detectedCardType);`
+	public void onCardCroppingFinish (Bitmap bitmapCropped, boolean scanBackSide, int detectedCardType, HashMap<String,Object>imageMetrics); `
 
 **bitmap**
 
@@ -307,7 +352,16 @@ The image card result. This function returns the cropped card image.
 
 The image before the cropping process begins. This function returns the card image *without* cropping.
 
-	public void onCancelCapture(Bitmap croppedImage,Bitmap originalImage);
+	public void onCancelCapture(Bitmap croppedImageOnCancel, HashMap<String,Object>imageMetrics,Bitmap originalImageonCancel);
+
+The **Imagemetrics** hashmap contains information about the sharpness of the image. The information can be retrieved as follows: 
+
+		if(imageMetrics!=null && imageMetrics.get("IS_SHARP")!=null) { 
+			boolean isSHarp = Boolean.parseBoolean(imageMetrics.get("IS_SHARP").toString()); 
+			}
+		if(imageMetrics!=null && imageMetrics.get("SHARPNESS_GRADE")!=null) 			
+			float sharpnessGrade = Float.parseFloat(imageMetrics.get("SHARPNESS_GRADE").toString()); 
+		    } 
 
 This function is called when the user taps the **Back** button. 
 
@@ -324,8 +378,8 @@ If the application is targeted for Android API level 23 and later, the control w
 
 	//Override only for API level 23 and later
 
- 	@Override
- 	public void onRequestPermissionsResult(int requestCode,
+	@Override
+	public void onRequestPermissionsResult(int requestCode,
 										String permissions[], int[] grantResults) {
 	 		switch (requestCode) {
 		 		case Permission.PERMISSION_CAMERA: {
@@ -339,7 +393,7 @@ If the application is targeted for Android API level 23 and later, the control w
 			 		return;
 		 		}
 	 		}
- 	}
+	}
 
 
 
@@ -361,17 +415,26 @@ A drawable can be provided before calling the **showCameraInterfacePDF417** meth
 
 After the user opens the camera, the detection process begins. There is only one callback method:
 
- 	public void onPDF417Finish(String result);
+	public void onPDF417Finish(String result);
 
 **result**
 
 The barcode string result.
 
- 	public void onBarcodeTimeOut(Bitmap croppedImage,Bitmap originalImage);
+	public void onBarcodeTimeOut(Bitmap croppedImageOnTimeout, HashMap<String,Object>imageMetrics,Bitmap originalImageOnTimeout);
+
+The **Imagemetrics** hashmap contains information about the sharpness of the image. The information can be retrieved as follows: 
+
+		if(imageMetrics!=null && imageMetrics.get("IS_SHARP")!=null) { 
+			boolean isSHarp = Boolean.parseBoolean(imageMetrics.get("IS_SHARP").toString()); 
+			}
+		if(imageMetrics!=null && imageMetrics.get("SHARPNESS_GRADE")!=null) 			
+			float sharpnessGrade = Float.parseFloat(imageMetrics.get("SHARPNESS_GRADE").toString()); 
+		    } 
 
 This function will be triggered to alert that the capture is pending without closing the camera view. The argument croppedImage will have the cropped image of the last frame before this function is triggered. If the frame could not be cropped, then this argument will be Null.
 
- 	getBarcodeCameraContext();
+	getBarcodeCameraContext();
 
 
 **return**
@@ -402,7 +465,7 @@ The current barcode camera context. This function closes the barcode camera.
 
 	public void onCancelCapture();
 
-Called when the user tap the **Back** button.
+Called when the user taps the **Back** button.
 
 ## Cleaning up the SDK controller
 
@@ -552,12 +615,13 @@ After the capture and crop process, you can retrieve information by processing t
 
 **region**
 
-Integer parameter for the Region ID . Values: United States – 0 | Australia – 4 | Asia – 5 | 
+Integer parameter for the Region ID.
+**Values:** United States – 0 | Australia – 4 | Asia – 5 | 
 Canada – 1 | America – 2 | Europe – 3 | Africa – 7 | General Documents – 6
 
 **autoDetectState**
 
-Boolean value that indicates whether to auto detect the state of the ID.  Values: True | False (SDK won't auto detect the state of the ID and will use the value of ProcState integer)
+Boolean value that indicates whether to auto detect the state of the ID.  **Values**: True | False (SDK won't auto detect the state of the ID and will use the value of ProcState integer)
 
 **stateID**
 
@@ -600,7 +664,7 @@ Boolean value that indicates whether to save the transaction response on the Acu
 
 **imageSettings**
 
-The default value for imageSettings is -1. Do not adjust this value unless instructed by Acuant Technical Support.
+The default value for **imageSettings** is -1. Do not adjust this value unless instructed by Acuant Technical Support.
 
 #### Process the card image (medical insurance cards):
 
@@ -622,7 +686,7 @@ Boolean value  that indicates whether a formatted image is returned. True | Fals
 
 **reformatImageColor**
 
-Integer value that specifies the color value to reformat the image. Values: Image same color – 0 | Black and White – 1 | Gray scale 256 – 2 | Color 256 – 3 | True color – 4 | Enhanced Image – 5
+Integer value that specifies the color value to reformat the image. **Values**: Image same color – 0 | Black and White – 1 | Gray scale 256 – 2 | Color 256 – 3 | True color – 4 | Enhanced Image – 5
 
 **DPI**
 
@@ -698,54 +762,55 @@ Error message from the server
 
 You can retrieve properties such as state, signature, and name from this class. For example, these are some of the properties for a driver’s license card:
 
-**String name;**
+-  **String name;**
 
-**String licenceID;**
+-  **String licenceID;**
 
-**String address;**
+-  **String address;**
 
-**String city;**
+-  **String city;**
 
-**String zip;**
+-  **String zip;**
 
-**String state;**
+-  **String state;**
 
-**String idCountry;**
+-  **String idCountry;**
 
-**String eyeColor;**
+-  **String eyeColor;**
 
-**String hair;**
+-  **String hair;**
 
-**String height;**
+-  **String height;**
 
-**String weight;**
+-  **String weight;**
 
-**String licenceClass;**
+-  **String licenceClass;**
 
-**String restriction;**
+-  **String restriction;**
 
-**String sex;**
+-  **String sex;**
 
-**String county;**
+-  **String county;**
 
-**String dateOfBirth;**
+-  **String dateOfBirth;**
 
-**String expirationDate;**
+-  **String expirationDate;**
 
-**String nameLast;**
+-  **String nameLast;**
 
-**String nationality;**
+-  **String nationality;**
 
-**String placeOfBirth;**
+-  **String placeOfBirth;**
 
-**Bitmap faceImage;**
+-  **Bitmap faceImage;**
 
-**Bitmap signImage;**
+-  **Bitmap signImage;**
 
-**Bitmap reformatImage;**
+-  **Bitmap reformatImage;**
 
-**String authenticationResult;**
-**ArrayList<String> authenticationResultSummaryList**
+-  **String authenticationResult;**
+
+-  **ArrayList<String> authenticationResultSummaryList**
 
 ###getName
 
@@ -941,11 +1006,9 @@ The data class for facial results. Use the following methods to get the facial d
 - Skipped
 
 
-**getAuthenticationResultSummaryList**
+**getAuthenticationResultSummaryList** returns the list of reasons when **AuthenticationResult** returns an *Attention* result.
 
-Returns the list of reasons when **AuthenticationResult** returns an *Attention* result.
-
-**Note**  **getAuthenticationResultSummaryList** will return empty list for **Passed**,**Failed**,**Unknown**, and **Skipped** results.
+**Note**:   **getAuthenticationResultSummaryList** will return empty list for **Passed**,**Failed**,**Unknown**, and **Skipped** results.
 
 # Tracking Capture Device Location
 

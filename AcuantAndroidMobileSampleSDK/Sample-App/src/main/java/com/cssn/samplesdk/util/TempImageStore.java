@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 
 import com.acuant.mobilesdk.CardType;
 
+import java.util.HashMap;
+
 /**
  * Created by tapasbehera on 5/11/16.
  */
@@ -12,6 +14,15 @@ public class TempImageStore {
     private static ConfirmationListener imageConfirmationListener;
     private static boolean croppingPassed = false;
     private static int cardType;
+    private static HashMap<String,Object> imageMetrics;
+
+    public static HashMap<String, Object> getImageMetrics() {
+        return imageMetrics;
+    }
+
+    public static void setImageMetrics(HashMap<String, Object> imageMetrics) {
+        TempImageStore.imageMetrics = imageMetrics;
+    }
 
     public static int getCardType() {
         return cardType;
