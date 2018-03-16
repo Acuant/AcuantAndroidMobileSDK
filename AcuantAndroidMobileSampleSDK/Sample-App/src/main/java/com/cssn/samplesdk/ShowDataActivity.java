@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,11 +24,10 @@ import com.acuant.mobilesdk.MedicalCard;
 import com.acuant.mobilesdk.PassportCard;
 import com.acuant.mobilesdk.Region;
 import com.acuant.mobilesdk.util.Constants;
-import com.acuant.mobilesdk.util.Utils;
 import com.cssn.samplesdk.util.DataContext;
 import com.cssn.samplesdk.util.Util;
-
 import java.util.ArrayList;
+import static com.cssn.samplesdk.util.Constants.ERROR_RESULT;
 
 /**
  *
@@ -117,7 +117,7 @@ public class ShowDataActivity extends Activity
                 setResultFields();
             } else
             {
-                Toast.makeText(ShowDataActivity.this, Constants.ERROR_RESULT, Toast.LENGTH_LONG).show();
+                Toast.makeText(ShowDataActivity.this, ERROR_RESULT, Toast.LENGTH_LONG).show();
             }
         } else if (DataContext.getInstance().getCardType() == CardType.MEDICAL_INSURANCE)
         {
@@ -126,7 +126,7 @@ public class ShowDataActivity extends Activity
                 setResultFields();
             } else
             {
-                Toast.makeText(ShowDataActivity.this, Constants.ERROR_RESULT, Toast.LENGTH_LONG).show();
+                Toast.makeText(ShowDataActivity.this, ERROR_RESULT, Toast.LENGTH_LONG).show();
             }
         } else if (DataContext.getInstance().getCardType() == CardType.PASSPORT)
         {
@@ -135,11 +135,11 @@ public class ShowDataActivity extends Activity
                 setResultFields();
             } else
             {
-                Toast.makeText(ShowDataActivity.this, Constants.ERROR_RESULT, Toast.LENGTH_LONG).show();
+                Toast.makeText(ShowDataActivity.this, ERROR_RESULT, Toast.LENGTH_LONG).show();
             }
         } else
         {
-            Toast.makeText(ShowDataActivity.this, Constants.ERROR_RESULT, Toast.LENGTH_LONG).show();
+            Toast.makeText(ShowDataActivity.this, ERROR_RESULT, Toast.LENGTH_LONG).show();
         }
 
     }
@@ -168,14 +168,14 @@ public class ShowDataActivity extends Activity
                     break;
 
                 default:
-                    Utils.appendLog(TAG,"Invalid card type. This method is bad implemented or DataContext.getInstance().getCardType() has an invalid card type.");
+                    Log.d(TAG,"Invalid card type. This method is bad implemented or DataContext.getInstance().getCardType() has an invalid card type.");
                     break;
 
             }
 
         } catch (Exception e)
         {
-            Utils.appendLog(TAG, e.getMessage());
+            Log.d(TAG, e.getMessage());
         }
 
     }

@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.acuant.mobilesdk.PassportCard;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -92,11 +94,11 @@ public class ShowConnectDataActivity extends Activity {
 
 
 
-        /*if (documentType.equalsIgnoreCase("Passport")){
+        if (documentType.equalsIgnoreCase("Passport")){
             nfcScanningBtn.setVisibility(View.VISIBLE);
         }else{
             nfcScanningBtn.setVisibility(View.GONE);
-        }*/
+        }
 
         if(!failedCroppingFaceImage){
             String facialStr = "Facial Match :"+isFacialMatch+"\nFacial Match Confident Rating :"+facialMatchConfidenceRating+"\nLiveliness Detected :"+livelinessDetected;
@@ -217,6 +219,14 @@ public class ShowConnectDataActivity extends Activity {
                 imageView.setVisibility(View.GONE);
             }
         }
+    }
+
+    public void nfcPressed(View v){
+        Intent confirmNFCDataActivity = new Intent(this, NFCConfirmationActivity.class);
+        confirmNFCDataActivity.putExtra("DOB",dateOfBirth);
+        confirmNFCDataActivity.putExtra("DOE",dateOfExpiry);
+        confirmNFCDataActivity.putExtra("DOCNUMBER",documentNumber);
+        this.startActivity(confirmNFCDataActivity);
     }
 
 

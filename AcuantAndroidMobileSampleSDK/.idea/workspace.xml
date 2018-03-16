@@ -39,54 +39,17 @@
     <favorites_list name="AcuantAndroidMobileSampleSDK" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="173" column="41" lean-forward="false" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#55538#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#20858#20894#0" expanded="true" />
-                <element signature="e#20896#21694#0" expanded="true" />
-                <element signature="e#21693#21694#0" expanded="true" />
-                <element signature="e#21908#21953#0" expanded="true" />
-                <element signature="e#22000#22463#0" expanded="true" />
-                <element signature="e#22462#22463#0" expanded="true" />
-                <element signature="e#24149#24794#0" expanded="true" />
-                <element signature="e#24793#24794#0" expanded="true" />
-                <element signature="e#24885#25136#0" expanded="true" />
-                <element signature="e#25135#25136#0" expanded="true" />
-                <element signature="e#31822#32105#0" expanded="true" />
-                <element signature="e#32104#32105#0" expanded="true" />
-                <element signature="e#32952#33001#0" expanded="true" />
-                <element signature="e#33544#33578#0" expanded="true" />
-                <element signature="e#36438#36477#0" expanded="true" />
-                <element signature="e#36627#36870#0" expanded="true" />
-                <element signature="e#36869#36870#0" expanded="true" />
-                <element signature="e#38698#38737#0" expanded="true" />
-                <element signature="e#38875#39098#0" expanded="true" />
-                <element signature="e#39097#39098#0" expanded="true" />
-                <element signature="e#43238#43461#0" expanded="true" />
-                <element signature="e#43460#43461#0" expanded="true" />
-                <element signature="e#51079#51118#0" expanded="true" />
-                <element signature="e#51365#51587#0" expanded="true" />
-                <element signature="e#51586#51587#0" expanded="true" />
-                <element signature="e#52208#54069#0" expanded="true" />
-                <element signature="e#52601#54034#0" expanded="true" />
-                <element signature="e#54033#54034#0" expanded="true" />
-                <element signature="e#54068#54069#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>option</find>
       <find>processCard</find>
       <find>facialData</find>
       <find>start</find>
@@ -116,6 +79,7 @@
       <find>4.8.</find>
       <find>4.8.1</find>
       <find>licenseKey</find>
+      <find>showDialog</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -3029,13 +2993,17 @@
         <option value="$PROJECT_DIR$/acuantSampleSDK/src/main/java/com/cssn/samplesdk/MainActivity.java" />
         <option value="$PROJECT_DIR$/Sample-Connect-With-Facial/src/main/java/com/cssn/samplesdk/MainActivity.java" />
         <option value="$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/util/TempImageStore.java" />
-        <option value="$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/ImageConformationActivity.java" />
         <option value="$PROJECT_DIR$/Sample-App/build.gradle" />
         <option value="$PROJECT_DIR$/Sample-Connect-App/build.gradle" />
-        <option value="$PROJECT_DIR$/Sample-Connect-App/src/main/java/com/cssn/samplesdk/MainActivity.java" />
         <option value="$PROJECT_DIR$/Sample-Connect-App/build/generated/source/buildConfig/release/com/cssn/samplesdk/BuildConfig.java" />
         <option value="$PROJECT_DIR$/Sample-App/build/generated/source/buildConfig/release/com/cssn/samplesdk/BuildConfig.java" />
+        <option value="$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/util/Util.java" />
+        <option value="$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/ShowDataActivity.java" />
+        <option value="$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/util/Constants.java" />
         <option value="$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/MainActivity.java" />
+        <option value="$PROJECT_DIR$/Sample-Connect-App/src/main/java/com/cssn/samplesdk/util/Util.java" />
+        <option value="$PROJECT_DIR$/Sample-Connect-App/src/main/java/com/cssn/samplesdk/MainActivity.java" />
+        <option value="$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/ImageConformationActivity.java" />
       </list>
     </option>
   </component>
@@ -3060,9 +3028,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -3075,8 +3040,61 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AcuantAndroidMobileSampleSDK" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample-App" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AcuantAndroidMobileSampleSDK" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample-App" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cssn" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="samplesdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AcuantAndroidMobileSampleSDK" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample-App" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cssn" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3086,7 +3104,7 @@
     <property name="android.project.structure.last.selected" value="acuantMobileSDK" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="9888e3473153505631" />
+    <property name="device.picker.selection" value="T062800MMP" />
     <property name="UI_DESIGNER_EDITOR_MODE.CaptureAnalysis.SHOW" value="false" />
     <property name="DEBUGGABLE_DEVICE" value="huawei-nexus_6p-8XV7N16A14000114" />
     <property name="DEBUGGABLE_PROCESS" value="com.cssn.samplesdk" />
@@ -3180,7 +3198,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520031312389" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1521223936757" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -3228,7 +3246,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520031312389" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1521223936757" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -3390,7 +3408,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520031312390" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1521223936758" />
       </method>
     </configuration>
     <configuration default="false" name="Sample-App" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -3439,7 +3457,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520031312390" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1521223936759" />
       </method>
     </configuration>
     <list size="2">
@@ -3478,11 +3496,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1007" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32912844" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32211" sideWeight="0.49520767" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40422535" sideWeight="0.48712447" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3494,9 +3511,9 @@
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40516275" sideWeight="0.8620873" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3939394" sideWeight="0.5149095" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2570146" sideWeight="0.51287556" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18530351" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18903089" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -3516,6 +3533,43 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756633" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4019608" sideWeight="0.50500715" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256617" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40516275" sideWeight="0.8620873" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3939394" sideWeight="0.48509052" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40422535" sideWeight="0.48712447" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33108866" sideWeight="0.48136315" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2570146" sideWeight="0.51287556" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18903089" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756633" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -3551,7 +3605,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/MainActivity.java</url>
-          <line>1032</line>
+          <line>1031</line>
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
@@ -3573,66 +3627,97 @@
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Sample-Connect-App/src/main/java/com/cssn/samplesdk/MainActivity.java</url>
-          <line>940</line>
-          <properties />
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/acuantMobileSDK.aar/ff3aa5e5711f22b74cf5d6425f96d8d1/jars/classes.jar!/com/acuant/mobilesdk/task/CroppingTaskManual.class</url>
-          <line>181</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/MainActivity.java</url>
-          <line>1308</line>
-          <properties />
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="69" />
+      <option name="time" value="70" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/ImageConformationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1335">
+          <caret line="89" column="28" lean-forward="true" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#55232#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-Connect-App/src/main/java/com/cssn/samplesdk/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6600">
+          <caret line="444" column="17" lean-forward="false" selection-start-line="444" selection-start-column="17" selection-end-line="444" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#55538#0" expanded="true" />
+            <element signature="e#0#55232#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#20858#20894#0" expanded="true" />
-            <element signature="e#20896#21694#0" expanded="true" />
-            <element signature="e#21693#21694#0" expanded="true" />
-            <element signature="e#21908#21953#0" expanded="true" />
-            <element signature="e#22000#22463#0" expanded="true" />
-            <element signature="e#22462#22463#0" expanded="true" />
-            <element signature="e#24149#24794#0" expanded="true" />
-            <element signature="e#24793#24794#0" expanded="true" />
-            <element signature="e#24885#25136#0" expanded="true" />
-            <element signature="e#25135#25136#0" expanded="true" />
-            <element signature="e#31822#32105#0" expanded="true" />
-            <element signature="e#32104#32105#0" expanded="true" />
-            <element signature="e#32952#33001#0" expanded="true" />
-            <element signature="e#33544#33578#0" expanded="true" />
-            <element signature="e#36438#36477#0" expanded="true" />
-            <element signature="e#36627#36870#0" expanded="true" />
-            <element signature="e#36869#36870#0" expanded="true" />
-            <element signature="e#38698#38737#0" expanded="true" />
-            <element signature="e#38875#39098#0" expanded="true" />
-            <element signature="e#39097#39098#0" expanded="true" />
-            <element signature="e#43238#43461#0" expanded="true" />
-            <element signature="e#43460#43461#0" expanded="true" />
-            <element signature="e#51079#51118#0" expanded="true" />
-            <element signature="e#51365#51587#0" expanded="true" />
-            <element signature="e#51586#51587#0" expanded="true" />
-            <element signature="e#52208#54069#0" expanded="true" />
-            <element signature="e#52601#54034#0" expanded="true" />
-            <element signature="e#54033#54034#0" expanded="true" />
-            <element signature="e#54068#54069#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2010">
+          <caret line="134" column="21" lean-forward="false" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#55232#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/ShowDataActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="119" column="57" lean-forward="true" selection-start-line="119" selection-start-column="57" selection-end-line="119" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#55232#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#55232#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#55232#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3642,37 +3727,8 @@
         <state relative-caret-position="8100">
           <caret line="548" column="0" lean-forward="false" selection-start-line="548" selection-start-column="0" selection-end-line="548" selection-end-column="0" />
           <folding>
-            <element signature="e#0#55538#0" expanded="true" />
+            <element signature="e#0#55232#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#20858#20894#0" expanded="true" />
-            <element signature="e#20896#21694#0" expanded="true" />
-            <element signature="e#21693#21694#0" expanded="true" />
-            <element signature="e#21908#21953#0" expanded="true" />
-            <element signature="e#22000#22463#0" expanded="true" />
-            <element signature="e#22462#22463#0" expanded="true" />
-            <element signature="e#24149#24794#0" expanded="true" />
-            <element signature="e#24793#24794#0" expanded="true" />
-            <element signature="e#24885#25136#0" expanded="true" />
-            <element signature="e#25135#25136#0" expanded="true" />
-            <element signature="e#31822#32105#0" expanded="true" />
-            <element signature="e#32104#32105#0" expanded="true" />
-            <element signature="e#32952#33001#0" expanded="true" />
-            <element signature="e#33544#33578#0" expanded="true" />
-            <element signature="e#36438#36477#0" expanded="true" />
-            <element signature="e#36627#36870#0" expanded="true" />
-            <element signature="e#36869#36870#0" expanded="true" />
-            <element signature="e#38698#38737#0" expanded="true" />
-            <element signature="e#38875#39098#0" expanded="true" />
-            <element signature="e#39097#39098#0" expanded="true" />
-            <element signature="e#43238#43461#0" expanded="true" />
-            <element signature="e#43460#43461#0" expanded="true" />
-            <element signature="e#51079#51118#0" expanded="true" />
-            <element signature="e#51365#51587#0" expanded="true" />
-            <element signature="e#51586#51587#0" expanded="true" />
-            <element signature="e#52208#54069#0" expanded="true" />
-            <element signature="e#52601#54034#0" expanded="true" />
-            <element signature="e#54033#54034#0" expanded="true" />
-            <element signature="e#54068#54069#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3703,37 +3759,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#55538#0" expanded="true" />
+            <element signature="e#0#55232#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#20858#20894#0" expanded="true" />
-            <element signature="e#20896#21694#0" expanded="true" />
-            <element signature="e#21693#21694#0" expanded="true" />
-            <element signature="e#21908#21953#0" expanded="true" />
-            <element signature="e#22000#22463#0" expanded="true" />
-            <element signature="e#22462#22463#0" expanded="true" />
-            <element signature="e#24149#24794#0" expanded="true" />
-            <element signature="e#24793#24794#0" expanded="true" />
-            <element signature="e#24885#25136#0" expanded="true" />
-            <element signature="e#25135#25136#0" expanded="true" />
-            <element signature="e#31822#32105#0" expanded="true" />
-            <element signature="e#32104#32105#0" expanded="true" />
-            <element signature="e#32952#33001#0" expanded="true" />
-            <element signature="e#33544#33578#0" expanded="true" />
-            <element signature="e#36438#36477#0" expanded="true" />
-            <element signature="e#36627#36870#0" expanded="true" />
-            <element signature="e#36869#36870#0" expanded="true" />
-            <element signature="e#38698#38737#0" expanded="true" />
-            <element signature="e#38875#39098#0" expanded="true" />
-            <element signature="e#39097#39098#0" expanded="true" />
-            <element signature="e#43238#43461#0" expanded="true" />
-            <element signature="e#43460#43461#0" expanded="true" />
-            <element signature="e#51079#51118#0" expanded="true" />
-            <element signature="e#51365#51587#0" expanded="true" />
-            <element signature="e#51586#51587#0" expanded="true" />
-            <element signature="e#52208#54069#0" expanded="true" />
-            <element signature="e#52601#54034#0" expanded="true" />
-            <element signature="e#54033#54034#0" expanded="true" />
-            <element signature="e#54068#54069#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3750,37 +3777,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#55538#0" expanded="true" />
+            <element signature="e#0#55232#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#20858#20894#0" expanded="true" />
-            <element signature="e#20896#21694#0" expanded="true" />
-            <element signature="e#21693#21694#0" expanded="true" />
-            <element signature="e#21908#21953#0" expanded="true" />
-            <element signature="e#22000#22463#0" expanded="true" />
-            <element signature="e#22462#22463#0" expanded="true" />
-            <element signature="e#24149#24794#0" expanded="true" />
-            <element signature="e#24793#24794#0" expanded="true" />
-            <element signature="e#24885#25136#0" expanded="true" />
-            <element signature="e#25135#25136#0" expanded="true" />
-            <element signature="e#31822#32105#0" expanded="true" />
-            <element signature="e#32104#32105#0" expanded="true" />
-            <element signature="e#32952#33001#0" expanded="true" />
-            <element signature="e#33544#33578#0" expanded="true" />
-            <element signature="e#36438#36477#0" expanded="true" />
-            <element signature="e#36627#36870#0" expanded="true" />
-            <element signature="e#36869#36870#0" expanded="true" />
-            <element signature="e#38698#38737#0" expanded="true" />
-            <element signature="e#38875#39098#0" expanded="true" />
-            <element signature="e#39097#39098#0" expanded="true" />
-            <element signature="e#43238#43461#0" expanded="true" />
-            <element signature="e#43460#43461#0" expanded="true" />
-            <element signature="e#51079#51118#0" expanded="true" />
-            <element signature="e#51365#51587#0" expanded="true" />
-            <element signature="e#51586#51587#0" expanded="true" />
-            <element signature="e#52208#54069#0" expanded="true" />
-            <element signature="e#52601#54034#0" expanded="true" />
-            <element signature="e#54033#54034#0" expanded="true" />
-            <element signature="e#54068#54069#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3820,13 +3818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/ImageConformationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="134" column="20" lean-forward="false" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/acuantMobileSDK.aar/9666f9de19c1a75cd0e19f4d5bcaf36a/jars/classes.jar!/com/acuant/mobilesdk/AcuantAndroidMobileSDKController.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -3841,32 +3832,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sample-Connect-App/src/main/java/com/cssn/samplesdk/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="91" column="32" lean-forward="false" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#24389#24629#0" expanded="true" />
-            <element signature="e#24628#24629#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sample-App/build/generated/source/buildConfig/release/com/cssn/samplesdk/BuildConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="48" lean-forward="false" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sample-Connect-App/build/generated/source/buildConfig/release/com/cssn/samplesdk/BuildConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="48" lean-forward="false" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-App/build/generated/source/buildConfig/release/com/cssn/samplesdk/BuildConfig.java" />
+    <entry file="file://$PROJECT_DIR$/Sample-Connect-App/build/generated/source/buildConfig/release/com/cssn/samplesdk/BuildConfig.java" />
     <entry file="file://$PROJECT_DIR$/Sample-App/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -3888,42 +3855,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/acuantMobileSDK.aar/cca5f33bde2e3b1af9be008af6321bba/jars/classes.jar!/com/acuant/mobilesdk/util/Constants.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/util/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/ShowDataActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-364">
+          <caret line="26" column="43" lean-forward="true" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-Connect-App/src/main/java/com/cssn/samplesdk/util/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3540">
+          <caret line="268" column="26" lean-forward="false" selection-start-line="268" selection-start-column="26" selection-end-line="268" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/util/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="73" column="40" lean-forward="false" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-Connect-App/src/main/java/com/cssn/samplesdk/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="737" column="12" lean-forward="false" selection-start-line="737" selection-start-column="12" selection-end-line="737" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-Connect-App/src/main/java/com/cssn/samplesdk/NFCConfirmationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/acuantMobileSDK.aar/4766f67ff1161d783ddb73fa65876685/jars/classes.jar!/com/acuant/mobilesdk/task/CroppingTaskManual.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="174" column="0" lean-forward="false" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/ImageConformationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="160" column="9" lean-forward="true" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Sample-App/src/main/java/com/cssn/samplesdk/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="173" column="41" lean-forward="false" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="41" />
+        <state relative-caret-position="287">
+          <caret line="1307" column="0" lean-forward="false" selection-start-line="1307" selection-start-column="0" selection-end-line="1307" selection-end-column="0" />
           <folding>
-            <element signature="e#0#55538#0" expanded="true" />
+            <element signature="e#0#55232#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#20858#20894#0" expanded="true" />
-            <element signature="e#20896#21694#0" expanded="true" />
-            <element signature="e#21693#21694#0" expanded="true" />
-            <element signature="e#21908#21953#0" expanded="true" />
-            <element signature="e#22000#22463#0" expanded="true" />
-            <element signature="e#22462#22463#0" expanded="true" />
-            <element signature="e#24149#24794#0" expanded="true" />
-            <element signature="e#24793#24794#0" expanded="true" />
-            <element signature="e#24885#25136#0" expanded="true" />
-            <element signature="e#25135#25136#0" expanded="true" />
-            <element signature="e#31822#32105#0" expanded="true" />
-            <element signature="e#32104#32105#0" expanded="true" />
-            <element signature="e#32952#33001#0" expanded="true" />
-            <element signature="e#33544#33578#0" expanded="true" />
-            <element signature="e#36438#36477#0" expanded="true" />
-            <element signature="e#36627#36870#0" expanded="true" />
-            <element signature="e#36869#36870#0" expanded="true" />
-            <element signature="e#38698#38737#0" expanded="true" />
-            <element signature="e#38875#39098#0" expanded="true" />
-            <element signature="e#39097#39098#0" expanded="true" />
-            <element signature="e#43238#43461#0" expanded="true" />
-            <element signature="e#43460#43461#0" expanded="true" />
-            <element signature="e#51079#51118#0" expanded="true" />
-            <element signature="e#51365#51587#0" expanded="true" />
-            <element signature="e#51586#51587#0" expanded="true" />
-            <element signature="e#52208#54069#0" expanded="true" />
-            <element signature="e#52601#54034#0" expanded="true" />
-            <element signature="e#54033#54034#0" expanded="true" />
-            <element signature="e#54068#54069#0" expanded="true" />
           </folding>
         </state>
       </provider>

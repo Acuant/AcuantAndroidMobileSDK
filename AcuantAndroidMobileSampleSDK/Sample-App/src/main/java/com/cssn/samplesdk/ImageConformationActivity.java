@@ -129,12 +129,25 @@ public class ImageConformationActivity extends Activity {
             }else if(TempImageStore.getCardType()== CardType.MEDICAL_INSURANCE){
                 retString = "Please make sure all the text on the Insurance Card image is readable,otherwise retry.";
             }
+            boolean isSHarp = true;
             HashMap<String,Object> imageMetrics = TempImageStore.getImageMetrics();
             if(imageMetrics!=null && imageMetrics.get("IS_SHARP")!=null) {
-                boolean isSHarp = Boolean.parseBoolean(imageMetrics.get("IS_SHARP").toString());
+                isSHarp = Boolean.parseBoolean(imageMetrics.get("IS_SHARP").toString());
                 if(!isSHarp){
-                    retString = "The image appears to be blurry,please retry.";
+                    retString = "The image appears to be blurry. Please retry.";
                 }
+            }
+
+            if(imageMetrics!=null && imageMetrics.get("HAS_GLARE")!=null) {
+                boolean hasGlare = Boolean.parseBoolean(imageMetrics.get("HAS_GLARE").toString());
+                if(hasGlare){
+                    retString = "The image has glare.";
+                }
+                if(!isSHarp){
+                    retString = "The image appears to be blurry.";
+                }
+
+                retString = retString + " Please retry.";
             }
 
     }else{

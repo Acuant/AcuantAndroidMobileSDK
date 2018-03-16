@@ -3,7 +3,7 @@
 Acuant Android SDK API
 ======================
 
-**Last updated – March 1, 2018**
+**Last updated – March 16, 2018**
 
 Copyright <sup>©</sup> 2003-2018 Acuant Inc. All rights reserved.
 
@@ -48,6 +48,27 @@ information regarding such designations and their registration status.
 
 # Revision History
 
+##Acuant Android Mobile SDK version 5.0##
+
+- Added glare to the **ImageMetrics** parameter:
+
+		if(imageMetrics!=null && imageMetrics.get("HAS_GLARE")!=null) { 
+			boolean hasGlare = Boolean.parseBoolean(imageMetrics.get("HAS_GLARE").toString()); 
+		} 
+		if(imageMetrics!=null && imageMetrics.get("GLARE_GRADE")!=null) 
+		float glareGrade = Float.parseFloat(imageMetrics.get("GLARE_GRADE").toString()); 
+		}  
+
+In general, a glare grade of 1 means no glare and 0 means there is a high chance of having a glare in the captured image. A glare grade 0.88f and above means there is no glare. 
+
+The following methods use **ImageMetrics**:
+
+- **onCardCroppingFinish**
+
+- **onCancelCapture**
+
+- **onBarcodeTimeOut** 
+
 ##Acuant Android Mobile SDK version 4.9##
 
 - Resolved an issue where a white bar was displayed on the top Sony Xperia Z5P camera view while capturing an image.
@@ -68,6 +89,15 @@ information regarding such designations and their registration status.
 	- **onCancelCapture**
 
 	- **onBarcodeTimeOut** 
+
+The ImageMetrics parameter has the sharpness information of a cropped image. An image with a sharpness grade of 0.3f or above is considered a sharp image. The information can be retrieved as follows:
+
+	if(imageMetrics!=null && imageMetrics.get("IS_SHARP")!=null){ 
+	boolean isSHarp = Boolean.parseBoolean(imageMetrics.get("IS_SHARP").toString()); 
+	}
+	if(imageMetrics!=null && imageMetrics.get("SHARPNESS_GRADE")!=null){
+	float sharpnessGrade = 	Float.parseFloat(imageMetrics.get("SHARPNESS_GRADE").toString()); 
+	}
 
 ##Acuant Android Mobile SDK version 4.8.1##
 
@@ -328,7 +358,9 @@ There are four callback methods:
 The activity of the full screen window, or the activity owner of the modal dialog (for example, for Passport and Tablet).
 
 	public void onCardCroppingFinish(Bitmap card_bitmap,int detectedCardType, HashMap<String,Object>imageMetrics); 
-The **Imagemetrics** hashmap contains information about the sharpness of the image. The information can be retrieved as follows: 
+The **ImageMetrics** hashmap specifies the sharpness and glare threshold of a cropped image. An image with a sharpness grade of 0.3f or above is considered a sharp image. In general, a GLARE_GRADE of 1 means no glare and 0 means there is a high chance of having glare in the captured image. A glare grade 0.88f and above means there is no glare. Users may set the threshold based on their requirements.
+
+The information can be retrieved as follows:  
 
 		if(imageMetrics!=null && imageMetrics.get("IS_SHARP")!=null) { 
 			boolean isSHarp = Boolean.parseBoolean(imageMetrics.get("IS_SHARP").toString()); 
@@ -336,6 +368,12 @@ The **Imagemetrics** hashmap contains information about the sharpness of the ima
 		if(imageMetrics!=null && imageMetrics.get("SHARPNESS_GRADE")!=null) 			
 			float sharpnessGrade = Float.parseFloat(imageMetrics.get("SHARPNESS_GRADE").toString()); 
 		    } 
+		if(imageMetrics!=null && imageMetrics.get("HAS_GLARE")!=null) { 
+			boolean hasGlare = Boolean.parseBoolean(imageMetrics.get("HAS_GLARE").toString()); 
+			} 
+		if(imageMetrics!=null && imageMetrics.get("GLARE_GRADE")!=null) 
+			float glareGrade = Float.parseFloat(imageMetrics.get("GLARE_GRADE").toString()); 
+    } 
 
 
 **bitmap**
@@ -354,7 +392,9 @@ The image before the cropping process begins. This function returns the card ima
 
 	public void onCancelCapture(Bitmap croppedImageOnCancel, HashMap<String,Object>imageMetrics,Bitmap originalImageonCancel);
 
-The **Imagemetrics** hashmap contains information about the sharpness of the image. The information can be retrieved as follows: 
+The **ImageMetrics** hashmap specifies the sharpness and glare threshold of a cropped image. An image with a sharpness grade of 0.3f or above is considered a sharp image. In general, a GLARE_GRADE of 1 means no glare and 0 means there is a high chance of having glare in the captured image. A glare grade 0.88f and above means there is no glare. Users may set the threshold based on their requirements.
+
+The information can be retrieved as follows: 
 
 		if(imageMetrics!=null && imageMetrics.get("IS_SHARP")!=null) { 
 			boolean isSHarp = Boolean.parseBoolean(imageMetrics.get("IS_SHARP").toString()); 
@@ -362,6 +402,13 @@ The **Imagemetrics** hashmap contains information about the sharpness of the ima
 		if(imageMetrics!=null && imageMetrics.get("SHARPNESS_GRADE")!=null) 			
 			float sharpnessGrade = Float.parseFloat(imageMetrics.get("SHARPNESS_GRADE").toString()); 
 		    } 
+		if(imageMetrics!=null && imageMetrics.get("HAS_GLARE")!=null) { 
+			boolean hasGlare = Boolean.parseBoolean(imageMetrics.get("HAS_GLARE").toString()); 
+			} 
+		if(imageMetrics!=null && imageMetrics.get("GLARE_GRADE")!=null) 
+			float glareGrade = Float.parseFloat(imageMetrics.get("GLARE_GRADE").toString()); 
+    }
+
 
 This function is called when the user taps the **Back** button. 
 
@@ -423,7 +470,9 @@ The barcode string result.
 
 	public void onBarcodeTimeOut(Bitmap croppedImageOnTimeout, HashMap<String,Object>imageMetrics,Bitmap originalImageOnTimeout);
 
-The **Imagemetrics** hashmap contains information about the sharpness of the image. The information can be retrieved as follows: 
+The **ImageMetrics** hashmap specifies the sharpness and glare threshold of a cropped image. An image with a sharpness grade of 0.3f or above is considered a sharp image. In general, a GLARE_GRADE of 1 means no glare and 0 means there is a high chance of having glare in the captured image. A glare grade 0.88f and above means there is no glare. Users may set the threshold based on their requirements.
+
+The information can be retrieved as follows: 
 
 		if(imageMetrics!=null && imageMetrics.get("IS_SHARP")!=null) { 
 			boolean isSHarp = Boolean.parseBoolean(imageMetrics.get("IS_SHARP").toString()); 
@@ -431,6 +480,13 @@ The **Imagemetrics** hashmap contains information about the sharpness of the ima
 		if(imageMetrics!=null && imageMetrics.get("SHARPNESS_GRADE")!=null) 			
 			float sharpnessGrade = Float.parseFloat(imageMetrics.get("SHARPNESS_GRADE").toString()); 
 		    } 
+		if(imageMetrics!=null && imageMetrics.get("HAS_GLARE")!=null) { 
+			boolean hasGlare = Boolean.parseBoolean(imageMetrics.get("HAS_GLARE").toString()); 
+			} 
+		if(imageMetrics!=null && imageMetrics.get("GLARE_GRADE")!=null) 
+			float glareGrade = Float.parseFloat(imageMetrics.get("GLARE_GRADE").toString()); 
+    } 
+
 
 This function will be triggered to alert that the capture is pending without closing the camera view. The argument croppedImage will have the cropped image of the last frame before this function is triggered. If the frame could not be cropped, then this argument will be Null.
 

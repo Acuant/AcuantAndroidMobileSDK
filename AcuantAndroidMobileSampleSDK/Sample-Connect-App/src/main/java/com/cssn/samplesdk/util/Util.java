@@ -17,6 +17,8 @@ import android.graphics.Paint;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -264,7 +266,7 @@ public class Util
                     retVal = ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
                     break;
                 default:
-                    Utils.appendLog(TAG, "Unknown screen orientation. Defaulting to " + "portrait.");
+                    Log.d(TAG, "Unknown screen orientation. Defaulting to " + "portrait.");
                     retVal = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
                     break;
             }
@@ -289,13 +291,24 @@ public class Util
                     retVal = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
                     break;
                 default:
-                    Utils.appendLog(TAG, "Unknown screen orientation. Defaulting to " + "landscape.");
+                    Log.d(TAG, "Unknown screen orientation. Defaulting to " + "landscape.");
                     retVal = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
                     break;
             }
         }
         
         return retVal;
+    }
+
+    public static boolean isNetworkAvailable(Context c)
+    {
+        ConnectivityManager cm = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnectedOrConnecting())
+        {
+            return true;
+        }
+        return false;
     }
     
 

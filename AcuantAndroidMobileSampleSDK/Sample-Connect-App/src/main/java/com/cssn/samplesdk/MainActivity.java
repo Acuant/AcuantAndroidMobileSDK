@@ -81,9 +81,9 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     private MainActivity mainActivity;
 
     //Set credentials
-    private String assureIDUsername = "XXXXXXXXXXXXXXXXXXXXX";
-    private String assureIDPassword = "XXXXXXXXXXXXXXXX";
-    private String assureIDSubscription = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+    private String assureIDUsername = "XXXXXXXXXX@acuantcorp.com";
+    private String assureIDPassword = "XXXXXXXXXXXXX";
+    private String assureIDSubscription = "XXXXXXX-XXXXX-XXXX-XXXX-XXXXXXXXX";
 
     private String assureIDURL = "https://devconnect.assureid.net/AssureIDService";
     private String acufillURL = "cssnwebservices.com";
@@ -241,9 +241,9 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
      * @param
      */
     public void processImageValidation(final Bitmap faceImage, final Bitmap idCropedFaceImage) {
-        if (!Utils.isNetworkAvailable(this)) {
+        if (!Util.isNetworkAvailable(this)) {
             String msg = getString(R.string.no_internet_message);
-            Utils.appendLog(TAG, msg);
+            Log.d(TAG, msg);
             Util.dismissDialog(alertDialog);
             alertDialog = Util.showDialog(this, msg, new DialogInterface.OnClickListener() {
 
@@ -283,17 +283,17 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
 
         super.onCreate(savedInstanceState);
         if (Util.LOG_ENABLED) {
-            Utils.appendLog(TAG, "protected void onCreate(Bundle savedInstanceState)");
+            Log.d(TAG, "protected void onCreate(Bundle savedInstanceState)");
         }
 
         // load the model
         if (savedInstanceState == null) {
             if (Util.LOG_ENABLED) {
-                Utils.appendLog(TAG, "if (savedInstanceState == null)");
+                Log.d(TAG, "if (savedInstanceState == null)");
             }
         } else {
             if (Util.LOG_ENABLED) {
-                Utils.appendLog(TAG, "if (savedInstanceState != null)");
+                Log.d(TAG, "if (savedInstanceState != null)");
             }
         }
         setContentView(R.layout.activity_main);
@@ -340,7 +340,7 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
         super.onSaveInstanceState(outState);
 
         if (Util.LOG_ENABLED) {
-            Utils.appendLog(TAG, "protected void onSaveInstanceState(Bundle outState)");
+            Log.d(TAG, "protected void onSaveInstanceState(Bundle outState)");
         }
 
     }
@@ -352,8 +352,8 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     protected void onPause() {
         super.onPause();
 
-        if (Utils.LOG_ENABLED) {
-            Utils.appendLog(TAG, "protected void onPause()");
+        if (Util.LOG_ENABLED) {
+            Log.d(TAG, "protected void onPause()");
         }
     }
 
@@ -380,7 +380,7 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
             acufill_Instance.cleanup();
         }
         if (Util.LOG_ENABLED) {
-            Utils.appendLog(TAG, "protected void onDestroy()");
+            Log.d(TAG, "protected void onDestroy()");
         }
     }
 
@@ -441,8 +441,8 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
 
     @Override
     public void onCardCroppingStart(Activity activity) {
-        if (Utils.LOG_ENABLED) {
-            Utils.appendLog(TAG, "public void onCardCroppingStart(Activity activity)");
+        if (Util.LOG_ENABLED) {
+            Log.d(TAG, "public void onCardCroppingStart(Activity activity)");
         }
         if (progressDialog != null && progressDialog.isShowing()) {
             Util.dismissDialog(progressDialog);
@@ -511,6 +511,9 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     //license validation callback
     @Override
     public void validateLicenseKeyCompleted(LicenseDetails details) {
+        if(details==null){
+            return;
+        }
         if(facialEnabled && wasAcufillLicenseValidated==false && isAcufillLicenseValidating==false){
             if(details.isLicenseKeyActivated()) {
                 isAcufillLicenseValidating = true;
@@ -735,7 +738,7 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
                 }
             }
         });
-        Utils.showDialog(mainActivity,message);
+        Util.showDialog(mainActivity,message);
         isProcessing = false;
     }
 
