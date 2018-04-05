@@ -1,0 +1,93 @@
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# You can edit the include path and order by changing the proguardFiles
+# directive in build.gradle.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,LocalVariable*Table,*Annotation*,Synthetic,EnclosingMethod
+-keepparameternames
+-dontpreverify
+-ignorewarnings
+
+-keep public class * extends android.app.Activity
+
+-keep public class * extends android.app.Application
+
+-keep public class * extends android.app.Service
+
+-keep public class * extends android.content.BroadcastReceiver
+
+-keep public class * extends android.content.ContentProvider
+
+-keep public class * extends android.app.backup.BackupAgentHelper
+
+-keep public class * extends android.preference.Preference
+
+-keep public class com.android.vending.licensing.ILicensingService
+
+-keep public class * extends java.io.Serializable
+
+-keep public class * extends android.support.v4.app.Fragment
+
+-keep public class * extends android.support.v4.app.ListFragment
+
+-keep public class org.apache.** {
+    <fields>;
+    <methods>;
+}
+
+-keep class * {
+    native <methods>;
+}
+
+-keep class System {
+    <fields>;
+    <methods>;
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context,android.util.AttributeSet);
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context,android.util.AttributeSet,int);
+}
+
+-keepclassmembers class * extends android.app.Activity {
+    public void *(android.view.View);
+}
+
+-keep class * extends android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+
+-keepclassmembers class * extends java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
+# Keep names - Native method names. Keep all native class/method names.
+-keepclasseswithmembers,allowshrinking class * {
+    native <methods>;
+}
+
+# Also keep - Enumerations. Keep the special static methods that are required in
+# enumeration classes.
+-keepclassmembers enum  * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
