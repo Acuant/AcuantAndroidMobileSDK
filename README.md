@@ -1,9 +1,9 @@
 ![alt tag](https://github.com/Acuant/AcuantAndroidMobileSDK/blob/master/Logo.png)
 
-Acuant Android SDK API
-======================
+Acuant Android SDK Programmer's Guide
+=====================================
 
-**Last updated – March 16, 2018**
+**Last updated – April 5, 2018**
 
 Copyright <sup>©</sup> 2003-2018 Acuant Inc. All rights reserved.
 
@@ -31,7 +31,7 @@ designation appears in initial capital or all capital letters. However,
 you should contact the appropriate companies for more complete
 information regarding such designations and their registration status.
 
-**March 2018**
+**April 2018**
 
 <p>Acuant Inc.</p>
 <p>6080 Center Drive, Suite 850</p>
@@ -47,6 +47,16 @@ information regarding such designations and their registration status.
 
 
 # Revision History
+
+##Acuant Android Mobile SDK version 5.1##
+
+- Resolved an image capture issue in Google Pixel (1st Gen) phone
+- Resolved an error that occurred when processing U.S. and Canadian driver's  licenses, with both front and back images, without a barcode string
+- Resolved the issue of image capture was getting stuck in BLU R1 HD Cell Phone 
+- Supported rotation of UI messages while the camera is rotated in landscape mode by 180 degrees
+- Resolved the issue of onFacialRecognitionCompleted being called back to back 
+- Resolved a crash when trying to open camera for facial workflow, then close it and then immediately open again 
+- Resolved an issue of Location Permission being requested while initializing the SDK when AssureID is enabled on the license key 
 
 ##Acuant Android Mobile SDK version 5.0##
 
@@ -195,7 +205,7 @@ This section describes how to add the Gradle framework to your project, includin
 		}
 
 		dependencies {
-			compile 'com.acuant.mobilesdk:acuantMobileSDK:5.0'
+			compile 'com.acuant.mobilesdk:acuantMobileSDK:5.1'
 			compile ('com.microblink:pdf417.mobi:6.4.0@aar')
 			compile ('com.android.support:appcompat-v7:26+')
 			compile ('com.google.code.gson:gson:2.8')
@@ -358,6 +368,7 @@ There are four callback methods:
 The activity of the full screen window, or the activity owner of the modal dialog (for example, for Passport and Tablet).
 
 	public void onCardCroppingFinish(Bitmap card_bitmap,int detectedCardType, HashMap<String,Object>imageMetrics); 
+
 The **ImageMetrics** hashmap specifies the sharpness and glare threshold of a cropped image. An image with a sharpness grade of 0.3f or above is considered a sharp image. In general, a GLARE_GRADE of 1 means no glare and 0 means there is a high chance of having glare in the captured image. A glare grade 0.88f and above means there is no glare. Users may set the threshold based on their requirements.
 
 The information can be retrieved as follows:  
@@ -375,51 +386,29 @@ The information can be retrieved as follows:
 			float glareGrade = Float.parseFloat(imageMetrics.get("GLARE_GRADE").toString()); 
     } 
 
-
 **bitmap**
 
 The image card result. This function returns the cropped card image:
 
 	public void onCardCroppingFinish (Bitmap bitmapCropped, boolean scanBackSide, int detectedCardType, HashMap<String,Object>imageMetrics); `
 
+**scanBackSide**
+
+This function is called when the user taps the **Back** button. 
+
+**Note** If **Back** is tapped in barcode interface and the barcode cropping on Cancel is enabled, then the arguments will contain the cropped image and the original image. Otherwise, the arguments will be Null.
+
 **bitmap**
 
-The image card result. This function returns the cropped card image.
+The image card result. This function returns the cropped card image:
+
+	public void onOriginalCapture(Bitmap bitmap);
 
 **bitmap**
 
 The image before the cropping process begins. This function returns the card image *without* cropping.
 
 	public void onCancelCapture(Bitmap croppedImageOnCancel, HashMap<String,Object>imageMetrics,Bitmap originalImageonCancel);
-
-The **ImageMetrics** hashmap specifies the sharpness and glare threshold of a cropped image. An image with a sharpness grade of 0.3f or above is considered a sharp image. In general, a GLARE_GRADE of 1 means no glare and 0 means there is a high chance of having glare in the captured image. A glare grade 0.88f and above means there is no glare. Users may set the threshold based on their requirements.
-
-The information can be retrieved as follows: 
-
-		if(imageMetrics!=null && imageMetrics.get("IS_SHARP")!=null) { 
-			boolean isSHarp = Boolean.parseBoolean(imageMetrics.get("IS_SHARP").toString()); 
-			}
-		if(imageMetrics!=null && imageMetrics.get("SHARPNESS_GRADE")!=null) 			
-			float sharpnessGrade = Float.parseFloat(imageMetrics.get("SHARPNESS_GRADE").toString()); 
-		    } 
-		if(imageMetrics!=null && imageMetrics.get("HAS_GLARE")!=null) { 
-			boolean hasGlare = Boolean.parseBoolean(imageMetrics.get("HAS_GLARE").toString()); 
-			} 
-		if(imageMetrics!=null && imageMetrics.get("GLARE_GRADE")!=null) 
-			float glareGrade = Float.parseFloat(imageMetrics.get("GLARE_GRADE").toString()); 
-    }
-
-
-This function is called when the user taps the **Back** button. 
-
-**Note** If **Back** is tapped in barcode interface and the barcode cropping on Cancel is enabled, then the arguments will contain the cropped image and the original image. Otherwise, the arguments will be Null.
-
-
-**scanBackSide**
-
-Alerts the user to capture the back side of the card:
-
-	public void onOriginalCapture(Bitmap bitmap);
 
 If the application is targeted for Android API level 23 and later, the control will return to the following method after the user taps Allow/Deny for camera permission. The **requestCode** will be **Permission. PERMISSION_CAMERA.** If the permission was previously granted manually, then the control won’t come here.
 
