@@ -8,13 +8,13 @@ repositories {
 
 android {
     useLibrary 'org.apache.http.legacy'
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "com.cssn.samplesdk"
         minSdkVersion 17
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 114
         versionName "4.9"
         multiDexEnabled true
@@ -42,14 +42,14 @@ android {
 }
 
 dependencies {
-    compile project(':acuantMobileSDK')
-    compile ('com.microblink:pdf417.mobi:6.4.0@aar')
-    compile ('com.android.support:multidex:1.0.1')
-    compile ('com.android.support:appcompat-v7:26+')
-    compile ('com.squareup.okhttp3:okhttp:3.8.0')
-    compile ('com.google.code.gson:gson:2.8.0')
-    compile ('org.jmrtd:jmrtd:0.5.6')
-    compile ('org.ejbca.cvc:cert-cvc:1.4.3')
-    compile ('com.madgag.spongycastle:prov:1.54.0.0')
-    compile ('net.sf.scuba:scuba-sc-android:0.0.9')
+    implementation project(':acuantMobileSDK')
+    implementation ('com.microblink:pdf417.mobi:6.4.0@aar')
+    implementation ('com.android.support:multidex:1.0.1')
+    implementation ('com.android.support:appcompat-v7:27+')
+    implementation ('com.squareup.okhttp3:okhttp:3.8.0')
+    implementation ('com.google.code.gson:gson:2.8.0')
+    implementation ('org.jmrtd:jmrtd:0.5.6')
+    implementation ('org.ejbca.cvc:cert-cvc:1.4.3')
+    implementation ('com.madgag.spongycastle:prov:1.54.0.0')
+    implementation ('net.sf.scuba:scuba-sc-android:0.0.9')
 }

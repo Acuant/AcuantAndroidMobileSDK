@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: net.sf.scuba:scuba-sc-android-0.0.9">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/scuba-sc-android-0.0.9.aar/1ea6f4d9423d1c275e8636f92ec1b4a5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/scuba-sc-android-0.0.9.aar/1ea6f4d9423d1c275e8636f92ec1b4a5/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
