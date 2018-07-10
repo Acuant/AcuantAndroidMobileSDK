@@ -3,7 +3,7 @@
 Acuant Android SDK Programmer's Guide
 =====================================
 
-**Last updated – April 5, 2018**
+**Last updated – July 10, 2018**
 
 Copyright <sup>©</sup> 2003-2018 Acuant Inc. All rights reserved.
 
@@ -47,6 +47,10 @@ information regarding such designations and their registration status.
 
 
 # Revision History
+
+##Acuant Android Mobile SDK version 5.2##
+
+- Removed aspect ratio check after cropping
 
 ##Acuant Android Mobile SDK version 5.1##
 
