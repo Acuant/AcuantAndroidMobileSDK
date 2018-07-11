@@ -3,7 +3,7 @@
 Acuant Android SDK Programmer's Guide
 =====================================
 
-**Last updated – July 10, 2018**
+**Last updated – July 11, 2018**
 
 Copyright <sup>©</sup> 2003-2018 Acuant Inc. All rights reserved.
 
@@ -31,7 +31,7 @@ designation appears in initial capital or all capital letters. However,
 you should contact the appropriate companies for more complete
 information regarding such designations and their registration status.
 
-**April 2018**
+**July 2018**
 
 <p>Acuant Inc.</p>
 <p>6080 Center Drive, Suite 850</p>
@@ -50,7 +50,7 @@ information regarding such designations and their registration status.
 
 ##Acuant Android Mobile SDK version 5.2##
 
-- Removed aspect ratio check after cropping
+- Removed aspect ratio check after cropping 
 
 ##Acuant Android Mobile SDK version 5.1##
 
@@ -209,7 +209,7 @@ This section describes how to add the Gradle framework to your project, includin
 		}
 
 		dependencies {
-			compile 'com.acuant.mobilesdk:acuantMobileSDK:5.1'
+			compile 'com.acuant.mobilesdk:acuantMobileSDK:5.2'
 			compile ('com.microblink:pdf417.mobi:6.4.0@aar')
 			compile ('com.android.support:appcompat-v7:26+')
 			compile ('com.google.code.gson:gson:2.8')
@@ -295,8 +295,7 @@ Use the following call to pass an activity to initialize the **AcuantAndroidMobi
 **cloud.myAddress.com**.  Only set the cloud address if you are hosting Acuant Web Services in your own data center. By default, the Android MobileSDK communicates with the Acuant Data Center. 
 
   <pre><code>//Obtain the main controller instance
-_instance = [AcuantMobileSDKController initAcuantMobileSDKWithLicenseKey:@&quot;MyLicensekey&quot;
-andDelegate:self];
+Instance = AcuantAndroidMobileSDKController.getInstance(activity, licenseKey);
 </code></pre>
 
 <p><strong>Note</strong> This method verifies if the license key is valid and it returns an instance that can be used to reference the methods. Acuant recommends that you <em>create one instance per session</em> in order to optimize your resources.</p>
