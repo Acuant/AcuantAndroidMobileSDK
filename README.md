@@ -240,6 +240,7 @@ This section describes how to add the Gradle framework to your project, includin
 		-keepclassmembers class com.microblink.** { *; }
 		-dontwarn android.hardware.**
 		-dontwarn android.support.v4.**
+		-keep class cvlib.** { native <methods>; }
 
 6. Add the followings activities to the **manifest.xml** file:
 
