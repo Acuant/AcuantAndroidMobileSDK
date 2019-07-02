@@ -3,7 +3,7 @@
 Acuant Android SDK Programmer's Guide
 =====================================
 
-**Last updated – July 11, 2018**
+**Last updated – July 02, 2019**
 
 Copyright <sup>©</sup> 2003-2018 Acuant Inc. All rights reserved.
 
@@ -31,7 +31,7 @@ designation appears in initial capital or all capital letters. However,
 you should contact the appropriate companies for more complete
 information regarding such designations and their registration status.
 
-**July 2018**
+**July 2019**
 
 <p>Acuant Inc.</p>
 <p>6080 Center Drive, Suite 850</p>
@@ -45,116 +45,6 @@ information regarding such designations and their registration status.
 
 <p>This document contains a detailed description of all functions that developers need to integrate with the Acuant Android Mobile SDK. The Acuant Android Mobile SDK requires a valid license key. Contact sales@acuantcorp.com to obtain a license key.</p>
 
-
-# Revision History
-
-##Acuant Android Mobile SDK version 5.2##
-
-- Removed aspect ratio check after cropping 
-
-##Acuant Android Mobile SDK version 5.1##
-
-- Resolved an image capture issue in Google Pixel (1st Gen) phone
-- Resolved an error that occurred when processing U.S. and Canadian driver's  licenses, with both front and back images, without a barcode string
-- Resolved the issue of image capture was getting stuck in BLU R1 HD Cell Phone 
-- Supported rotation of UI messages while the camera is rotated in landscape mode by 180 degrees
-- Resolved the issue of onFacialRecognitionCompleted being called back to back 
-- Resolved a crash when trying to open camera for facial workflow, then close it and then immediately open again 
-- Resolved an issue of Location Permission being requested while initializing the SDK when AssureID is enabled on the license key 
-
-##Acuant Android Mobile SDK version 5.0##
-
-- Added glare to the **ImageMetrics** parameter:
-
-		if(imageMetrics!=null && imageMetrics.get("HAS_GLARE")!=null) { 
-			boolean hasGlare = Boolean.parseBoolean(imageMetrics.get("HAS_GLARE").toString()); 
-		} 
-		if(imageMetrics!=null && imageMetrics.get("GLARE_GRADE")!=null) 
-		float glareGrade = Float.parseFloat(imageMetrics.get("GLARE_GRADE").toString()); 
-		}  
-
-In general, a glare grade of 1 means no glare and 0 means there is a high chance of having a glare in the captured image. A glare grade 0.88f and above means there is no glare. 
-
-The following methods use **ImageMetrics**:
-
-- **onCardCroppingFinish**
-
-- **onCancelCapture**
-
-- **onBarcodeTimeOut** 
-
-##Acuant Android Mobile SDK version 4.9##
-
-- Resolved an issue where a white bar was displayed on the top Sony Xperia Z5P camera view while capturing an image.
-
-- Resolved an issue which caused an occasional **NullPointerException** when opening the camera to capture an image.
-
-- Resolved an issue which caused a liveliness check to rotate the camera by 180 degrees on a Google Nexus 6. 
-
-- Resolved an issue where **onCardCroppingStart** did not get called when cropping on the barcode side is enabled.
-
-- Resolved an issue where **onOriginalCapture** was returning null even if original capture was set to true.
-
-
-- Added the **ImageMetrics** parameter to the following methods:
-
-	- **onCardCroppingFinish**
-
-	- **onCancelCapture**
-
-	- **onBarcodeTimeOut** 
-
-The ImageMetrics parameter has the sharpness information of a cropped image. An image with a sharpness grade of 0.3f or above is considered a sharp image. The information can be retrieved as follows:
-
-	if(imageMetrics!=null && imageMetrics.get("IS_SHARP")!=null){ 
-	boolean isSHarp = Boolean.parseBoolean(imageMetrics.get("IS_SHARP").toString()); 
-	}
-	if(imageMetrics!=null && imageMetrics.get("SHARPNESS_GRADE")!=null){
-	float sharpnessGrade = 	Float.parseFloat(imageMetrics.get("SHARPNESS_GRADE").toString()); 
-	}
-
-##Acuant Android Mobile SDK version 4.8.1##
-
-- Added the following API to check whether the SDK controller was validated.
-
-		public synchronized boolean isSDKValidated()
-		
-- Added a method to **CardCroppingListener** to capture the beginning of image capture event:
-
-		void onCardImageCaptured();
-		
-- Added **logTransaction** property to **ProcessImageRequestOptions**. If logging is enabled on the license key and **logTransaction** is set to true then transaction response is saved on the Acuant cloud for future retrieval.
-
-- Added the **imageSettings** property to **ProcessImageRequestOptions**. The default value for **imageSettings** is -1. Set this value to -1 always unless any special instruction is provided.
-
-- Removed **IsFacialEnabled** from the **FacialData**.
-		
-- Added new **CardType** constant **CardType.AUTO**. If **CardType.AUTO** is set, then **onCardCroppingFinish** the last parameter will contain the automatically detected card type.
-
-##Acuant Android Mobile SDK version 4.8##
-
--  Improved ID and passport cropping.
--  Fixed Nexus 5X image rotation issue.
--  Fixed focus issue for Samsung S7 US models.
--  Added a check for scanned document type. For example, if a driver's license is scanned instead of a passport then SDK will throw an error (**AcuantErrorIncorrectDocumentScanned**).
--  Modified the signature of the following two methods to output the detected card type after cropping.
-
-		//Previous function signature: 
-			public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide)
-		//  Replaced with:
-			public void onCardCroppingFinish(final Bitmap bitmap, final boolean scanBackSide, int detectedCardType)
-		
-		//Previous function signature:
-			public void onCardCroppingFinish(Bitmap bitmap)
-		//  Replaced with:
-			public void onCardCroppingFinish(Bitmap bitmap,int detectedCardType);
-		
-		
-- Added an API to enable original image capture (disabled by default).
-
-		acuantAndroidMobileSdkControllerInstance.setCaptureOriginalCapture(false);
-		
-- Removed the **imageSource** variable from **ProcessImageRequestOptions** . No need to set this variable anymore.
 
 # Operating system and device requirements
 
