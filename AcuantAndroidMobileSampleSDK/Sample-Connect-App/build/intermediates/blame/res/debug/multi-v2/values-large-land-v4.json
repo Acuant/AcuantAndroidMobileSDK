@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-land-v4/values-large-land-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/values-large-land/dimens.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "36",
+                        "endOffsets": "48"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "36",
+                        "endOffsets": "87"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,252 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:2:1-51:12
+MERGED from [com.android.support:multidex:1.0.2] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/5ec507d849df188c3e188fd5def45766/AndroidManifest.xml:17:1-22:12
+MERGED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:2:1-26:12
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:2:1-41:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/AndroidManifest.xml:17:1-22:12
+MERGED from [net.sf.scuba:scuba-sc-android:0.0.9] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/197e17ba852386704a3b3951c506dcb0/AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/f6d2f95282f3b989c08d89f220b36536/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/2e2b3c9774c18cee5ef72e2d20dc54ca/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/37bf938d52dc910e28ee6be092d67449/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/88c321c2dc4abe945848d0e53d396c9a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/0e17ee8216516266cb4bfb3eced3adca/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/0f4ea2c25da6f590c0b80dbd16176a49/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/66af6e452ffc136a537ee924840a971e/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/9d4b07106dca4e9d7d821aa136419046/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/f9b9ba60d4301a6202839df5a57f616c/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:2:1-51:12
+	package
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:3:5-33
+		INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+		INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:2:1-51:12
+		INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:2:1-51:12
+		INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.NFC
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:5:5-62
+MERGED from [net.sf.scuba:scuba-sc-android:0.0.9] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/197e17ba852386704a3b3951c506dcb0/AndroidManifest.xml:11:5-62
+MERGED from [net.sf.scuba:scuba-sc-android:0.0.9] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/197e17ba852386704a3b3951c506dcb0/AndroidManifest.xml:11:5-62
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:5:22-59
+uses-permission#android.permission.CAMERA
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:6:5-65
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:19:5-65
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:19:5-65
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:6:22-62
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:7:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:8:22-77
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:9:5-75
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:9:22-72
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:10:22-76
+uses-permission#android.permission.INTERNET
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:11:22-64
+uses-permission#android.permission.FLASHLIGHT
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:12:5-69
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:20:5-69
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:20:5-69
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:12:22-66
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:13:22-76
+uses-permission#android.permission.SET_DEBUG_APP
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:14:5-72
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:14:22-69
+uses-feature#android.hardware.camera.autofocus
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:16:5-70
+MERGED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:17:5-19:36
+MERGED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:17:5-19:36
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:25:5-27:36
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:25:5-27:36
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:16:19-67
+application
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:19:5-49:19
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:32:5-39:19
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:32:5-39:19
+	android:label
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:26:9-41
+	android:allowClearUserData
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:22:9-42
+	android:hardwareAccelerated
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:23:9-43
+	android:testOnly
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:21:9-33
+	tools:ignore
+		ADDED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:34:9-39
+	android:largeHeap
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:24:9-33
+	android:icon
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:25:9-45
+	android:allowBackup
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:20:9-35
+	android:theme
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:27:9-40
+activity#com.cssn.samplesdk.MainActivity
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:28:9-37:20
+	android:label
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:31:13-45
+	android:configChanges
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:30:13-48
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:29:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:32:13-36:29
+action#android.intent.action.MAIN
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:33:17-69
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:33:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:35:17-77
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:35:27-74
+activity#com.acuant.mobilesdk.detect.PDF417.CameraPDF417
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:38:9-84
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:38:19-81
+activity#com.acuant.mobilesdk.detect.CameraCardDetectManual
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:39:9-87
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:39:19-84
+activity#com.acuant.mobilesdk.detect.Camera2CardDetectManual
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:40:9-88
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:40:19-85
+activity#com.acuant.mobilesdk.detect.Camera2FacialRecognitionManual
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:41:9-95
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:41:19-92
+activity#com.cssn.samplesdk.ShowConnectDataActivity
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:42:9-44:81
+	android:label
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:44:13-69
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:43:13-52
+activity#com.cssn.samplesdk.NFCResultActivity
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:45:9-55
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:45:19-52
+activity#com.cssn.samplesdk.NFCConfirmationActivity
+ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:46:9-48:40
+	android:noHistory
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:48:13-37
+	android:name
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml:47:13-52
+uses-sdk
+INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+MERGED from [com.android.support:multidex:1.0.2] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/5ec507d849df188c3e188fd5def45766/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/5ec507d849df188c3e188fd5def45766/AndroidManifest.xml:20:5-43
+MERGED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:7:5-9:41
+MERGED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:7:5-9:41
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:8:5-10:41
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/AndroidManifest.xml:20:5-44
+MERGED from [net.sf.scuba:scuba-sc-android:0.0.9] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/197e17ba852386704a3b3951c506dcb0/AndroidManifest.xml:7:5-9:41
+MERGED from [net.sf.scuba:scuba-sc-android:0.0.9] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/197e17ba852386704a3b3951c506dcb0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/f6d2f95282f3b989c08d89f220b36536/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/f6d2f95282f3b989c08d89f220b36536/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/2e2b3c9774c18cee5ef72e2d20dc54ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/2e2b3c9774c18cee5ef72e2d20dc54ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/37bf938d52dc910e28ee6be092d67449/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/37bf938d52dc910e28ee6be092d67449/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/88c321c2dc4abe945848d0e53d396c9a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/88c321c2dc4abe945848d0e53d396c9a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/0e17ee8216516266cb4bfb3eced3adca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/0e17ee8216516266cb4bfb3eced3adca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/0f4ea2c25da6f590c0b80dbd16176a49/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/0f4ea2c25da6f590c0b80dbd16176a49/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/66af6e452ffc136a537ee924840a971e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/66af6e452ffc136a537ee924840a971e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/9d4b07106dca4e9d7d821aa136419046/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/9d4b07106dca4e9d7d821aa136419046/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/f9b9ba60d4301a6202839df5a57f616c/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/f9b9ba60d4301a6202839df5a57f616c/AndroidManifest.xml:20:5-44
+INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+		INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+		ADDED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+		INJECTED from /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/AndroidManifest.xml
+uses-feature#android.hardware.camera
+ADDED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:11:5-13:36
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:22:5-24:36
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:22:5-24:36
+	android:required
+		ADDED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:13:9-33
+	android:name
+		ADDED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:12:9-47
+uses-feature#android.hardware.camera2
+ADDED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:14:5-16:36
+	android:required
+		ADDED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:16:9-33
+	android:name
+		ADDED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:15:9-48
+uses-feature#android.hardware.camera.flash
+ADDED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:20:5-22:36
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:28:5-30:36
+MERGED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:28:5-30:36
+	android:required
+		ADDED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:22:9-33
+	android:name
+		ADDED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:21:9-53
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:24:5-81
+	android:name
+		ADDED from [:acuantMobileSDK] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/AndroidManifest.xml:24:22-78
+supports-screens
+ADDED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:12:5-17:39
+	android:largeScreens
+		ADDED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:14:9-36
+	android:smallScreens
+		ADDED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:17:9-36
+	android:normalScreens
+		ADDED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:15:9-37
+	android:resizeable
+		ADDED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:16:9-34
+	android:anyDensity
+		ADDED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:13:9-34
+activity#com.microblink.activity.Pdf417ScanActivity
+ADDED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:35:9-38:20
+	android:screenOrientation
+		ADDED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:37:13-49
+	android:name
+		ADDED from [com.microblink:pdf417.mobi:6.4.0] /Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/AndroidManifest.xml:36:13-70

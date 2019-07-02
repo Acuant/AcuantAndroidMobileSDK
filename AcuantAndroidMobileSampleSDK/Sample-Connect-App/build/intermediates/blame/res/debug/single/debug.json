@@ -1,0 +1,1738 @@
+[
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_cab_background_internal_bg.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-v21_abc_action_bar_item_background_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_tooltip.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_tooltip.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_imagepickertoolbar.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/imagepickertoolbar.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-xxxhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_switch_thumb_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_settings_button.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/settings_button.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_rounded_border.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/res/drawable/rounded_border.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_select_dialog_singlechoice_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_ic_voice_search_api_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_idhelpscreencapture.png.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable/idhelpscreencapture.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_align_and_tap.xml.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/layout/align_and_tap.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-xxxhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout-v21_notification_template_icon_group.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_greencheckmark.png.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/greencheckmark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color-v23_abc_tint_seek_thumb.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color-v23/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-xxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-xxhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-xhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_tint_switch_track.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_action_bar_up_container.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_hold_steady.xml.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/layout/hold_steady.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_btn_default_mtrl_shape.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout-v21_notification_action.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_tab_indicator_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_test_canada_dl_front.jpg.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/test_canada_dl_front.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_textfield_search_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_test_sa_dl.JPG.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/test_sa_dl.JPG"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_light.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_alert_dialog_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_list_selector_background_transition_holo_light.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_item_background_holo_dark.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_action_menu_item_layout.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_activity_chooser_view_list_item.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_lighton.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/lighton.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_btn_colored_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout-v26_abc_screen_toolbar.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout-v26/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_focused_holo.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_hint_foreground_material_dark.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_abc_grow_fade_in_from_bottom.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_item_background_holo_light.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_longpressed_holo.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/menu_main.xml.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/menu/main.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_seekbar_track_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_tint_btn_checkable.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_acuant__fade_in.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/anim/acuant__fade_in.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_alert_dialog_button_bar_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color-v23_abc_tint_default.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color-v23/abc_tint_default.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_tint_spinner.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_switch_thumb_material_light.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_abc_shrink_fade_out_from_bottom.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_action_bar_title_item.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_photo1.jpg.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/photo1.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_longpressed_holo.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_support_simple_spinner_dropdown_item.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_ic_clear_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_default_barcode_camera_overlay.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/res/layout/default_barcode_camera_overlay.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi_help_screen_tip_title_1.png.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-hdpi/help_screen_tip_title_1.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_activity_nfcconfirmation.xml.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/layout/activity_nfcconfirmation.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_48dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_face.jpg.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/face.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_primary_text_disable_only_material_dark.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_signature.jpg.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/signature.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_abc_slide_out_bottom.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_screen_simple.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_screen_simple.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_btn_colored_borderless_text_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_alert_dialog_title_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_abc_popup_enter.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_notification_action.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_seekbar_tick_mark_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_test_dl_australia_front.jpg.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/test_dl_australia_front.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/raw_shutter.wav.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/raw/shutter.wav"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_abc_slide_in_bottom.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_photo2.jpg.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/photo2.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_btn_colored_text_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_redcheckmark.png.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/redcheckmark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-v21_notification_action_background.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_dialog_material_background.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_vector_test.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_spinner_textfield_background_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_action_mode_bar.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_select_dialog_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_ic_arrow_drop_right_black_24dp.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_ratingbar_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_pressed_settings_button.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/pressed_settings_button.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_notification_template_part_time.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_barcode.png.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/barcode.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_test_dl_australia_back.jpg.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/test_dl_australia_back.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_cameratakephoto.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/cameratakephoto.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_list_selector_holo_light.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher.png.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color-v23_abc_tint_edittext.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color-v23/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_camera_splash.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/res/layout/camera_splash.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_cab_background_top_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_test_dl_usa_front.jpg.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/test_dl_usa_front.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_notification_action_tombstone.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout-watch-v20_abc_alert_dialog_title_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout-watch-v20/abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_notification_bg_low.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-v21_abc_edit_text_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color-v23_abc_btn_colored_borderless_text_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_ratingbar_indicator_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-hdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_switch_thumb_material_dark.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_secondary_text_material_light.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_abc_fade_in.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_activity_show_connect_data.xml.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/layout/activity_show_connect_data.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_ratingbar_small_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_focused_holo.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_border_card_image.xml.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable/border_card_image.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_primary_text_material_light.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_secondary_text_material_dark.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_abc_slide_in_top.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_ic_search_api_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_primary_text_material_dark.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color-v23_abc_btn_colored_text_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color-v23/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-xxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-xxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_48dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-xxxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-xxxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color-v21_abc_btn_colored_borderless_text_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color-v21/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_test_dl_europe_back.jpg.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/test_dl_europe_back.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-xxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-xxhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_screen_toolbar.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_notification_bg.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_test_passport.jpg.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/test_passport.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-v21_abc_btn_colored_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_btn_check_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_list_selector_holo_dark.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_notification_template_part_chronometer.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_popup_menu_header_item_layout.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_lightoff.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/lightoff.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_tint_edittext.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_search_url_text.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_edit_text_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_camera_permission_overlay.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/res/layout/camera_permission_overlay.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_tint_default.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_tint_default.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color-v23_abc_tint_spinner.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout-v21_notification_template_custom_big.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_tooltip_frame_dark.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/tooltip_frame_dark.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_scan_button.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/scan_button.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color-v23_abc_tint_switch_track.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_barcode.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-mdpi-v4/barcode.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_expanded_menu_layout.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_ic_go_search_api_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_browse_button.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/browse_button.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_test_medical_back.jpg.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/test_medical_back.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_help_scr.jpg.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/help_scr.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-watch-v20_abc_dialog_material_background.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-watch-v20/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi_help_screen_tip_1.png.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-hdpi/help_screen_tip_1.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldpi-v4_lightoff.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/res/drawable-ldpi-v4/lightoff.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_text_cursor_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/xml_preference.xml.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/xml/preference.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_acuant__face_capture.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/layout/acuant__face_capture.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_list_menu_item_icon.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout-v16_notification_template_custom_big.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/layout-v16/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_list_selector_background_transition_holo_dark.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_logo.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/res/drawable-hdpi-v4/logo.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_list_menu_item_checkbox.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_black_48dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-v23_abc_control_background_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-v23/abc_control_background_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_notification_tile_bg.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_dialog_title_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_test_dl_europe_front.jpg.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/test_dl_europe_front.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_select_dialog_multichoice_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_tap_to_focus.xml.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/layout/tap_to_focus.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_abc_tooltip_enter.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/anim/abc_tooltip_enter.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_abc_fade_out.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_activity_chooser_view.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_tooltip_frame_light.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/tooltip_frame_light.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_hint_foreground_material_light.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_ic_menu_overflow_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color-v23_abc_tint_btn_checkable.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_screen_content_include.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_notification_icon_background.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_action_mode_close_item_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-hdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_36dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-mdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout-watch-v20_abc_alert_dialog_button_bar_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_abc_tooltip_exit.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/anim/abc_tooltip_exit.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_select_dialog_item_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldpi-v4_lighton.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/res/drawable-ldpi-v4/lighton.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_search_dropdown_item_icons_2line.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_microblink_button.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/res/drawable/microblink_button.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_tint_seek_thumb.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color-v23_abc_color_highlight_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_background.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/drawable-hdpi-v4/background.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_primary_text_disable_only_material_light.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_search_view.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-mdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_seekbar_thumb_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_camera_denied.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/res/drawable-hdpi-v4/camera_denied.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_btn_borderless_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi_test_medical_front.jpg.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/drawable-xhdpi/test_medical_front.jpg"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_screen_simple_overlay_action_mode.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_ic_ab_back_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_activity_nfcresult.xml.flat",
+        "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/layout/activity_nfcresult.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_abc_slide_out_top.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_action_menu_layout.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/433772cd515677fe94e8f4199567038a/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_black_48dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/anim_abc_popup_exit.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_list_menu_item_radio.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_list_menu_item_layout.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_longpressed_holo.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-mdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/drawable_abc_btn_radio_material.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_dark.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/color/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/res/merged/debug/layout_abc_popup_menu_item_layout.xml.flat",
+        "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/layout/abc_popup_menu_item_layout.xml"
+    }
+]

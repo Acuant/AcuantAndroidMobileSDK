@@ -1,0 +1,2 @@
+# Referenced at /Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/merged_manifests/debug/AndroidManifest.xml:42
+-keep class android.support.multidex.MultiDexApplication { <init>(); }

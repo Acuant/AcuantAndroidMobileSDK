@@ -92,7 +92,6 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
     private RelativeLayout layoutFrontImage;
     private RelativeLayout layoutBackImage;
     private LinearLayout layoutCards;
-    private TextView textViewCardInfo;
     public MainActivityModel mainActivityModel = null;
     private  ProgressDialog progressDialog;
     private  AlertDialog showDuplexAlertDialog;
@@ -149,7 +148,6 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
         frontImageView = (ImageView) findViewById(R.id.frontImageView);
         backImageView = (ImageView) findViewById(R.id.backImageView);
 
-        textViewCardInfo = (TextView) findViewById(R.id.textViewCardInfo);
 
         buttonMedical = (Button)findViewById(R.id.buttonMedical);
         buttonDL = (Button)findViewById(R.id.buttonDriver);
@@ -183,9 +181,6 @@ public class MainActivity extends Activity implements WebServiceListener, CardCr
 
             if(buttonDL!=null){
                 buttonDL.setVisibility(View.VISIBLE);
-            }
-            if(textViewCardInfo!=null){
-                textViewCardInfo.setVisibility(View.VISIBLE);
             }
             //acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this,"cssnwebservicestest.com",licenseKey);
             //acuantAndroidMobileSdkControllerInstance = AcuantAndroidMobileSDKController.getInstance(this,"192.168.1.62",licenseKey);

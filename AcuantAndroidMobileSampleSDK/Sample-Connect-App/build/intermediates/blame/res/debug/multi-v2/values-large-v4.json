@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/values-large/dimens.xml",
+                    "from": {
+                        "startLines": "1,4,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "16,108,59",
+                        "endColumns": "37,49,48",
+                        "endOffsets": "49,153,103"
+                    },
+                    "to": {
+                        "startLines": "2,10,11",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,570,620",
+                        "endColumns": "37,49,48",
+                        "endOffsets": "88,615,664"
+                    }
+                },
+                {
+                    "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/values-large-v4/values-large-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,114,185,256,326,396,464,532,636",
+                        "endColumns": "58,70,70,69,69,67,67,103,115",
+                        "endOffsets": "109,180,251,321,391,459,527,631,747"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "93,152,223,294,364,434,502,669,773",
+                        "endColumns": "58,70,70,69,69,67,67,103,115",
+                        "endOffsets": "147,218,289,359,429,497,565,768,884"
+                    }
+                }
+            ]
+        }
+    ]
+}

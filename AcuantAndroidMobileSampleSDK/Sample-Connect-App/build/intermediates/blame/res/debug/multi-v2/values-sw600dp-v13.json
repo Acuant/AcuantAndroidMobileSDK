@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "36",
+                        "endOffsets": "87"
+                    }
+                },
+                {
+                    "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,193,263,337,413,472,543",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "119,188,258,332,408,467,538,606"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "92,161,230,300,374,450,509,580",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "156,225,295,369,445,504,575,643"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/tbehera/Desktop/Android-github/AcuantAndroidMobileSDK/AcuantAndroidMobileSampleSDK/Sample-Connect-App/src/main/res/values-xlarge/dimens.xml",
+                    "from": {
+                        "startLines": "1,4,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "16,108,59",
+                        "endColumns": "37,49,48",
+                        "endOffsets": "49,153,103"
+                    },
+                    "to": {
+                        "startLines": "2,9,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,511,561",
+                        "endColumns": "37,49,48",
+                        "endOffsets": "88,556,605"
+                    }
+                },
+                {
+                    "source": "/Users/tbehera/.gradle/caches/transforms-2/files-2.1/b753929bc6bbbd685febcdb33d5d7a0c/res/values-xlarge-v4/values-xlarge-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,126,197,267,337,405",
+                        "endColumns": "70,70,69,69,67,67",
+                        "endOffsets": "121,192,262,332,400,468"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "93,164,235,305,375,443",
+                        "endColumns": "70,70,69,69,67,67",
+                        "endOffsets": "159,230,300,370,438,506"
+                    }
+                }
+            ]
+        }
+    ]
+}

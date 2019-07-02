@@ -85,11 +85,12 @@ public class MainActivity extends Activity implements WebServiceListener, Connec
     private String assureIDPassword = "XXXXXXXXXXXXX";
     private String assureIDSubscription = "XXXXXXX-XXXXX-XXXX-XXXX-XXXXXXXXX";
 
+
     private String assureIDURL = "https://devconnect.assureid.net/AssureIDService";
     private String acufillURL = "cssnwebservices.com";
 
     //set license key
-    private String licenseKey = "XXXXXXXXXXXX"; // Set this to null if facial liveliness feature is not required. Otherwise get a license key and set it here.
+    private String licenseKey = null; // Set this to null if facial liveliness feature is not required. Otherwise get a license key and set it here.
 
     private boolean wasLicenseValided = false;
     private boolean wasAcufillLicenseValidated = false;
