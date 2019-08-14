@@ -3,40 +3,7 @@
 Acuant Android SDK Programmer's Guide
 =====================================
 
-**Last updated – August 13, 2019**
-
-Copyright <sup>©</sup> 2003-2018 Acuant Inc. All rights reserved.
-
-This document contains proprietary and confidential 
-information and creative works owned by Acuant and its respective
-licensors, if any. Any use, copying, publication, distribution, display,
-modification, or transmission of such technology in whole or in part in
-any form or by any means without the prior express written permission of
-Acuant is strictly prohibited. Except where expressly provided by Acuant
-in writing, possession of this information shall not be
-construed to confer any license or rights under any Acuant intellectual
-property rights, whether by estoppel, implication, or otherwise.
-
-AssureID and *i-D*entify are trademarks of Acuant Inc. Other Acuant product or service names or logos referenced this document are either trademarks or registered trademarks of Acuant.
-
-All 3M trademarks are trademarks of 3M Company.
-
-Windows<sup>®</sup> is a registered trademark of Microsoft Corporation.
-
-Certain product, service, or company designations for companies other
-than Acuant may be mentioned in this document for identification
-purposes only. Such designations are often claimed as trademarks or
-service marks. In all instances where Acuant is aware of a claim, the
-designation appears in initial capital or all capital letters. However,
-you should contact the appropriate companies for more complete
-information regarding such designations and their registration status.
-
 **August 2019**
-
-<p>Acuant Inc.</p>
-<p>6080 Center Drive, Suite 850</p>
-<p>Los Angeles, CA 90045</p>
-<p>==================</p>
 
 
 # Introduction
@@ -99,7 +66,7 @@ This section describes how to add the Gradle framework to your project, includin
 		}
 
 		dependencies {
-			compile 'com.acuant.mobilesdk:acuantMobileSDK:5.2.2'
+			compile 'com.acuant.mobilesdk:acuantMobileSDK:5.2'
 			compile ('com.microblink:pdf417.mobi:6.4.0@aar')
 			compile ('com.android.support:appcompat-v7:26+')
 			compile ('com.google.code.gson:gson:2.8')
@@ -1106,6 +1073,8 @@ Finally the chip reading method to be called with three parameters (document num
         	}
         }
 
+
+
 	
 
 # Error handling
@@ -1245,3 +1214,35 @@ An incorrect document was scanned.
 Privacy settings are preventing access to the camera.
 
 	public final static int *AcuantNoneError* = 200;
+
+Copyright <sup>©</sup> 2003-2019 Acuant Inc. All rights reserved.
+
+This document contains proprietary and confidential 
+information and creative works owned by Acuant and its respective
+licensors, if any. Any use, copying, publication, distribution, display,
+modification, or transmission of such technology in whole or in part in
+any form or by any means without the prior express written permission of
+Acuant is strictly prohibited. Except where expressly provided by Acuant
+in writing, possession of this information shall not be
+construed to confer any license or rights under any Acuant intellectual
+property rights, whether by estoppel, implication, or otherwise.
+
+AssureID and *i-D*entify are trademarks of Acuant Inc. Other Acuant product or service names or logos referenced this document are either trademarks or registered trademarks of Acuant.
+
+All 3M trademarks are trademarks of Gemalto Inc.
+
+Windows ® is a registered trademark of Microsoft Corporation.
+
+Certain product, service, or company designations for companies other
+than Acuant may be mentioned in this document for identification
+purposes only. Such designations are often claimed as trademarks or
+service marks. In all instances where Acuant is aware of a claim, the
+designation appears in initial capital or all capital letters. However,
+you should contact the appropriate companies for more complete
+information regarding such designations and their registration status.
+
+**Acuant Inc.**
+
+**6080 Center Drive, Suite 850**
+
+**Los Angeles, CA 90045**
