@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: artifacts:acuantMobileSDK:unspecified@jar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8918ee353f6eb263d0a94b4b5e7d16bb/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b9d84927592715de8997c818247aab5b/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b9d84927592715de8997c818247aab5b/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

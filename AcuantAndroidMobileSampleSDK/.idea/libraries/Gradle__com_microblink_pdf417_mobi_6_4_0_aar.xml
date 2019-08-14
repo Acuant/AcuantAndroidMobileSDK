@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.microblink:pdf417.mobi:6.4.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e7b3354723219f9a235f412cf8b55945/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7b594c0a7f9db638012656386fc40700/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e7b3354723219f9a235f412cf8b55945/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e7b3354723219f9a235f412cf8b55945/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.microblink/pdf417.mobi/6.4.0/59d1e7533da5744e340bda7253405d2280f2c1/pdf417.mobi-6.4.0-javadoc.jar!/" />
