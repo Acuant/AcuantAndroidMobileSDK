@@ -3,7 +3,7 @@
 Acuant Android SDK Programmer's Guide
 =====================================
 
-**Last updated – July 02, 2019**
+**Last updated – August 13, 2019**
 
 Copyright <sup>©</sup> 2003-2018 Acuant Inc. All rights reserved.
 
@@ -31,7 +31,7 @@ designation appears in initial capital or all capital letters. However,
 you should contact the appropriate companies for more complete
 information regarding such designations and their registration status.
 
-**July 2019**
+**August 2019**
 
 <p>Acuant Inc.</p>
 <p>6080 Center Drive, Suite 850</p>
@@ -99,7 +99,7 @@ This section describes how to add the Gradle framework to your project, includin
 		}
 
 		dependencies {
-			compile 'com.acuant.mobilesdk:acuantMobileSDK:5.2'
+			compile 'com.acuant.mobilesdk:acuantMobileSDK:5.2.2'
 			compile ('com.microblink:pdf417.mobi:6.4.0@aar')
 			compile ('com.android.support:appcompat-v7:26+')
 			compile ('com.google.code.gson:gson:2.8')
