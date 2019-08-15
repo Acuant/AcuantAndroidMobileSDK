@@ -66,7 +66,7 @@ This section describes how to add the Gradle framework to your project, includin
 		}
 
 		dependencies {
-			compile 'com.acuant.mobilesdk:acuantMobileSDK:5.2'
+			compile 'com.acuant.mobilesdk:acuantMobileSDK:5.2.2'
 			compile ('com.microblink:pdf417.mobi:6.4.0@aar')
 			compile ('com.android.support:appcompat-v7:26+')
 			compile ('com.google.code.gson:gson:2.8')
