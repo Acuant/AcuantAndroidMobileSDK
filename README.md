@@ -8,6 +8,8 @@ Acuant Android SDK Programmer's Guide
 
 # Introduction
 
+**THIS SDK HAS BEEN DEPRECATED**
+
 <p>Acuant Web Services supports data extraction from driver’s licenses, state IDs, other government issued IDs, custom IDs, driver’s licenses, barcodes, passports, and medical insurance cards. It also supports document authentication and facial recognition to verify and authenticate the identity.</p>
 
 <p>This document contains a detailed description of all functions that developers need to integrate with the Acuant Android Mobile SDK. The Acuant Android Mobile SDK requires a valid license key. Contact sales@acuantcorp.com to obtain a license key.</p>
