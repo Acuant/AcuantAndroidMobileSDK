@@ -5,9 +5,8 @@ Acuant Android SDK v5.2.2 [DEPRECATED]
 
 ## License
 This software is subject to Acuant's end user license agreement (EULA), which can be found [here](EULA.pdf).
-=====================================
-**August 2019**
 
+**August 2019**
 
 # Introduction
 
