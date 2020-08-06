@@ -1,4 +1,5 @@
 ![alt tag](https://github.com/Acuant/AcuantAndroidMobileSDK/blob/master/Logo.png)
+
 Acuant Android SDK v5.2.2 [DEPRECATED]
 =====================================
 
